@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2B2452306B00077B33 /* AppDelegate.swift */; };
+		5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2D2452306B00077B33 /* SceneDelegate.swift */; };
+		5CF24C302452306B00077B33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2F2452306B00077B33 /* ViewController.swift */; };
+		5CF24C332452306B00077B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C312452306B00077B33 /* Main.storyboard */; };
+		5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C342452306B00077B33 /* PetRescue.xcdatamodeld */; };
+		5CF24C382452307000077B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C372452307000077B33 /* Assets.xcassets */; };
+		5CF24C3B2452307000077B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C392452307000077B33 /* LaunchScreen.storyboard */; };
+		5CF24C462452307000077B33 /* PetRescueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C452452307000077B33 /* PetRescueTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CF24C422452307000077B33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CF24C202452306B00077B33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CF24C272452306B00077B33;
+			remoteInfo = PetRescue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5CF24C282452306B00077B33 /* PetRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CF24C2B2452306B00077B33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5CF24C2D2452306B00077B33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5CF24C2F2452306B00077B33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CF24C322452306B00077B33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5CF24C352452306B00077B33 /* PetRescue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetRescue.xcdatamodel; sourceTree = "<group>"; };
+		5CF24C372452307000077B33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CF24C3A2452307000077B33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5CF24C3C2452307000077B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CF24C412452307000077B33 /* PetRescueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetRescueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CF24C452452307000077B33 /* PetRescueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRescueTests.swift; sourceTree = "<group>"; };
+		5CF24C472452307000077B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CF24C252452306B00077B33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CF24C3E2452307000077B33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5CF24C1F2452306B00077B33 = {
+			isa = PBXGroup;
+			children = (
+				5CF24C2A2452306B00077B33 /* PetRescue */,
+				5CF24C442452307000077B33 /* PetRescueTests */,
+				5CF24C292452306B00077B33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5CF24C292452306B00077B33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CF24C282452306B00077B33 /* PetRescue.app */,
+				5CF24C412452307000077B33 /* PetRescueTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CF24C2A2452306B00077B33 /* PetRescue */ = {
+			isa = PBXGroup;
+			children = (
+				5CF24C2B2452306B00077B33 /* AppDelegate.swift */,
+				5CF24C2D2452306B00077B33 /* SceneDelegate.swift */,
+				5CF24C2F2452306B00077B33 /* ViewController.swift */,
+				5CF24C312452306B00077B33 /* Main.storyboard */,
+				5CF24C372452307000077B33 /* Assets.xcassets */,
+				5CF24C392452307000077B33 /* LaunchScreen.storyboard */,
+				5CF24C3C2452307000077B33 /* Info.plist */,
+				5CF24C342452306B00077B33 /* PetRescue.xcdatamodeld */,
+			);
+			path = PetRescue;
+			sourceTree = "<group>";
+		};
+		5CF24C442452307000077B33 /* PetRescueTests */ = {
+			isa = PBXGroup;
+			children = (
+				5CF24C452452307000077B33 /* PetRescueTests.swift */,
+				5CF24C472452307000077B33 /* Info.plist */,
+			);
+			path = PetRescueTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CF24C272452306B00077B33 /* PetRescue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CF24C4A2452307000077B33 /* Build configuration list for PBXNativeTarget "PetRescue" */;
+			buildPhases = (
+				5CF24C242452306B00077B33 /* Sources */,
+				5CF24C252452306B00077B33 /* Frameworks */,
+				5CF24C262452306B00077B33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PetRescue;
+			productName = PetRescue;
+			productReference = 5CF24C282452306B00077B33 /* PetRescue.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5CF24C402452307000077B33 /* PetRescueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CF24C4D2452307000077B33 /* Build configuration list for PBXNativeTarget "PetRescueTests" */;
+			buildPhases = (
+				5CF24C3D2452307000077B33 /* Sources */,
+				5CF24C3E2452307000077B33 /* Frameworks */,
+				5CF24C3F2452307000077B33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CF24C432452307000077B33 /* PBXTargetDependency */,
+			);
+			name = PetRescueTests;
+			productName = PetRescueTests;
+			productReference = 5CF24C412452307000077B33 /* PetRescueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CF24C202452306B00077B33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Flo;
+				TargetAttributes = {
+					5CF24C272452306B00077B33 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					5CF24C402452307000077B33 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 5CF24C272452306B00077B33;
+					};
+				};
+			};
+			buildConfigurationList = 5CF24C232452306B00077B33 /* Build configuration list for PBXProject "PetRescue" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5CF24C1F2452306B00077B33;
+			productRefGroup = 5CF24C292452306B00077B33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CF24C272452306B00077B33 /* PetRescue */,
+				5CF24C402452307000077B33 /* PetRescueTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CF24C262452306B00077B33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF24C3B2452307000077B33 /* LaunchScreen.storyboard in Resources */,
+				5CF24C382452307000077B33 /* Assets.xcassets in Resources */,
+				5CF24C332452306B00077B33 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CF24C3F2452307000077B33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CF24C242452306B00077B33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF24C302452306B00077B33 /* ViewController.swift in Sources */,
+				5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */,
+				5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */,
+				5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CF24C3D2452307000077B33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF24C462452307000077B33 /* PetRescueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CF24C432452307000077B33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CF24C272452306B00077B33 /* PetRescue */;
+			targetProxy = 5CF24C422452307000077B33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5CF24C312452306B00077B33 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CF24C322452306B00077B33 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5CF24C392452307000077B33 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CF24C3A2452307000077B33 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CF24C482452307000077B33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5CF24C492452307000077B33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CF24C4B2452307000077B33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U52V863HN3;
+				INFOPLIST_FILE = PetRescue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flo.PetRescue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5CF24C4C2452307000077B33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U52V863HN3;
+				INFOPLIST_FILE = PetRescue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flo.PetRescue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5CF24C4E2452307000077B33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U52V863HN3;
+				INFOPLIST_FILE = PetRescueTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flo.PetRescueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetRescue.app/PetRescue";
+			};
+			name = Debug;
+		};
+		5CF24C4F2452307000077B33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U52V863HN3;
+				INFOPLIST_FILE = PetRescueTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flo.PetRescueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetRescue.app/PetRescue";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CF24C232452306B00077B33 /* Build configuration list for PBXProject "PetRescue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CF24C482452307000077B33 /* Debug */,
+				5CF24C492452307000077B33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CF24C4A2452307000077B33 /* Build configuration list for PBXNativeTarget "PetRescue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CF24C4B2452307000077B33 /* Debug */,
+				5CF24C4C2452307000077B33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CF24C4D2452307000077B33 /* Build configuration list for PBXNativeTarget "PetRescueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CF24C4E2452307000077B33 /* Debug */,
+				5CF24C4F2452307000077B33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5CF24C342452306B00077B33 /* PetRescue.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5CF24C352452306B00077B33 /* PetRescue.xcdatamodel */,
+			);
+			currentVersion = 5CF24C352452306B00077B33 /* PetRescue.xcdatamodel */;
+			path = PetRescue.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5CF24C202452306B00077B33 /* Project object */;
+}
