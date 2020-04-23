@@ -20,3 +20,4 @@
 ## Profil feature
 - [ ] Create view (table view) displaying themes
 - [ ] Add following themes : "My alerts", "My adoptions", "My informations"
+- [ ] Firebase / User defaults ?
