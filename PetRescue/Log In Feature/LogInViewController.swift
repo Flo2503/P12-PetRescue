@@ -16,13 +16,20 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerRadius([connexionButton, inscriptionButton])
+        border()
+        view.setGradientBackground(colorOne: Colors.lightBrown, colotTwo: Colors.lightGreen)
     }
 
     private func cornerRadius(_ buttons: [UIButton]) {
         for element in buttons {
             element.layer.cornerRadius = 22
-            element.layer.borderWidth = 3
-            element.layer.borderColor = UIColor.white.cgColor
         }
+    }
+    
+    private func border() {
+        inscriptionButton.layer.borderWidth = 4
+        connexionButton.layer.borderWidth = 4
+        inscriptionButton.layer.borderColor = UIColor.white.cgColor
+        connexionButton.layer.borderColor = Colors.lightGreen.cgColor
     }
 }

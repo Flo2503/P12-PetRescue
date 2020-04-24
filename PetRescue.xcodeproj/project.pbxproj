@@ -17,6 +17,8 @@
 		5CF24C3B2452307000077B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C392452307000077B33 /* LaunchScreen.storyboard */; };
 		5CF24C462452307000077B33 /* PetRescueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C452452307000077B33 /* PetRescueTests.swift */; };
 		5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C5424534C9200077B33 /* LogInViewController.swift */; };
+		5CF24C5A245389B000077B33 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C59245389B000077B33 /* GradientBackground.swift */; };
+		5CF24C5C24538DCC00077B33 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C5B24538DCC00077B33 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		5CF24C452452307000077B33 /* PetRescueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRescueTests.swift; sourceTree = "<group>"; };
 		5CF24C472452307000077B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CF24C5424534C9200077B33 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		5CF24C59245389B000077B33 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		5CF24C5B24538DCC00077B33 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A0D95798F06FFAD4326F9929 /* Pods_PetRescueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetRescueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2C9B0CD2A4AD2497FD0EFE /* Pods_PetRescue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetRescue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -162,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				5CF24C5424534C9200077B33 /* LogInViewController.swift */,
+				5CF24C5B24538DCC00077B33 /* Colors.swift */,
+				5CF24C59245389B000077B33 /* GradientBackground.swift */,
 			);
 			path = "Log In Feature";
 			sourceTree = "<group>";
@@ -353,9 +359,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */,
+				5CF24C5C24538DCC00077B33 /* Colors.swift in Sources */,
 				5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */,
 				5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */,
 				5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */,
+				5CF24C5A245389B000077B33 /* GradientBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
