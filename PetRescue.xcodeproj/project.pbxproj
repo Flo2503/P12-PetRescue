@@ -92,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				5CF24C2A2452306B00077B33 /* PetRescue */,
-				5CF24C3C2452307000077B33 /* Info.plist */,
 				5CF24C442452307000077B33 /* PetRescueTests */,
 				5CF24C292452306B00077B33 /* Products */,
 				18415C12F36B164E09EF0D04 /* Pods */,
@@ -112,6 +111,7 @@
 		5CF24C2A2452306B00077B33 /* PetRescue */ = {
 			isa = PBXGroup;
 			children = (
+				5CF24C3C2452307000077B33 /* Info.plist */,
 				5CF24C51245336C000077B33 /* Support */,
 				5CF24C502453369E00077B33 /* Storyboard */,
 				5CF24C52245336DB00077B33 /* Core Data */,
@@ -489,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U52V863HN3;
 				INFOPLIST_FILE = PetRescue/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U52V863HN3;
 				INFOPLIST_FILE = PetRescue/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
