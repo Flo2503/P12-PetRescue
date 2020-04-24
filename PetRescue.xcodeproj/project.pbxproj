@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		40DF9BDB20B30601F3F1D398 /* Pods_PetRescue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2C9B0CD2A4AD2497FD0EFE /* Pods_PetRescue.framework */; };
 		5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2B2452306B00077B33 /* AppDelegate.swift */; };
 		5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2D2452306B00077B33 /* SceneDelegate.swift */; };
-		5CF24C302452306B00077B33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2F2452306B00077B33 /* ViewController.swift */; };
 		5CF24C332452306B00077B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C312452306B00077B33 /* Main.storyboard */; };
 		5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C342452306B00077B33 /* PetRescue.xcdatamodeld */; };
 		5CF24C382452307000077B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C372452307000077B33 /* Assets.xcassets */; };
@@ -37,7 +36,6 @@
 		5CF24C282452306B00077B33 /* PetRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF24C2B2452306B00077B33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CF24C2D2452306B00077B33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5CF24C2F2452306B00077B33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5CF24C322452306B00077B33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CF24C352452306B00077B33 /* PetRescue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetRescue.xcdatamodel; sourceTree = "<group>"; };
 		5CF24C372452307000077B33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				5ABB5D58A0575D735DEA2C46 /* Pods-PetRescueTests.debug.xcconfig */,
 				5C8D726BFA961686A7E7D072 /* Pods-PetRescueTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -95,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				5CF24C2A2452306B00077B33 /* PetRescue */,
+				5CF24C3C2452307000077B33 /* Info.plist */,
 				5CF24C442452307000077B33 /* PetRescueTests */,
 				5CF24C292452306B00077B33 /* Products */,
 				18415C12F36B164E09EF0D04 /* Pods */,
@@ -114,14 +112,9 @@
 		5CF24C2A2452306B00077B33 /* PetRescue */ = {
 			isa = PBXGroup;
 			children = (
-				5CF24C2B2452306B00077B33 /* AppDelegate.swift */,
-				5CF24C2D2452306B00077B33 /* SceneDelegate.swift */,
-				5CF24C2F2452306B00077B33 /* ViewController.swift */,
-				5CF24C312452306B00077B33 /* Main.storyboard */,
-				5CF24C372452307000077B33 /* Assets.xcassets */,
-				5CF24C392452307000077B33 /* LaunchScreen.storyboard */,
-				5CF24C3C2452307000077B33 /* Info.plist */,
-				5CF24C342452306B00077B33 /* PetRescue.xcdatamodeld */,
+				5CF24C51245336C000077B33 /* Support */,
+				5CF24C502453369E00077B33 /* Storyboard */,
+				5CF24C52245336DB00077B33 /* Core Data */,
 			);
 			path = PetRescue;
 			sourceTree = "<group>";
@@ -133,6 +126,33 @@
 				5CF24C472452307000077B33 /* Info.plist */,
 			);
 			path = PetRescueTests;
+			sourceTree = "<group>";
+		};
+		5CF24C502453369E00077B33 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5CF24C312452306B00077B33 /* Main.storyboard */,
+				5CF24C392452307000077B33 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		5CF24C51245336C000077B33 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				5CF24C2B2452306B00077B33 /* AppDelegate.swift */,
+				5CF24C372452307000077B33 /* Assets.xcassets */,
+				5CF24C2D2452306B00077B33 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		5CF24C52245336DB00077B33 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				5CF24C342452306B00077B33 /* PetRescue.xcdatamodeld */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CF24C302452306B00077B33 /* ViewController.swift in Sources */,
 				5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */,
 				5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */,
 				5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */,
