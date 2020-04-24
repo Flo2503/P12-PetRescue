@@ -16,6 +16,7 @@
 		5CF24C382452307000077B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C372452307000077B33 /* Assets.xcassets */; };
 		5CF24C3B2452307000077B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C392452307000077B33 /* LaunchScreen.storyboard */; };
 		5CF24C462452307000077B33 /* PetRescueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C452452307000077B33 /* PetRescueTests.swift */; };
+		5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C5424534C9200077B33 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		5CF24C412452307000077B33 /* PetRescueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetRescueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF24C452452307000077B33 /* PetRescueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRescueTests.swift; sourceTree = "<group>"; };
 		5CF24C472452307000077B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CF24C5424534C9200077B33 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		A0D95798F06FFAD4326F9929 /* Pods_PetRescueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetRescueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2C9B0CD2A4AD2497FD0EFE /* Pods_PetRescue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetRescue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 				5CF24C3C2452307000077B33 /* Info.plist */,
 				5CF24C51245336C000077B33 /* Support */,
 				5CF24C502453369E00077B33 /* Storyboard */,
+				5CF24C5324534C5B00077B33 /* Log In Feature */,
 				5CF24C52245336DB00077B33 /* Core Data */,
 			);
 			path = PetRescue;
@@ -155,6 +158,14 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		5CF24C5324534C5B00077B33 /* Log In Feature */ = {
+			isa = PBXGroup;
+			children = (
+				5CF24C5424534C9200077B33 /* LogInViewController.swift */,
+			);
+			path = "Log In Feature";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +178,7 @@
 				5CF24C252452306B00077B33 /* Frameworks */,
 				5CF24C262452306B00077B33 /* Resources */,
 				0E1AB35685D1CFD828CA2E38 /* [CP] Embed Pods Frameworks */,
+				5CF24C5624534D1F00077B33 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -272,6 +284,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetRescue/Pods-PetRescue-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5CF24C5624534D1F00077B33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		8B99DB1AD94EE1AF8CA0E49B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */,
 				5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */,
 				5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */,
 				5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */,
@@ -489,7 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U52V863HN3;
 				INFOPLIST_FILE = PetRescue/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U52V863HN3;
 				INFOPLIST_FILE = PetRescue/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,12 @@
+  
+excluded: 
+- Products
+- Pods
+- Frameworks
+- Targets Support Files
+- Reciplease/Support
+
+disabled_rules: # rule identifiers to exclude from running
+- force_cast
+- line_length 
+- force_try
