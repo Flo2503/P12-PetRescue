@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3578B7E7C767DF5D7CCA87A8 /* Pods_PetRescueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D95798F06FFAD4326F9929 /* Pods_PetRescueTests.framework */; };
 		40DF9BDB20B30601F3F1D398 /* Pods_PetRescue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2C9B0CD2A4AD2497FD0EFE /* Pods_PetRescue.framework */; };
-		5CCB2DD42454CD070038038A /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UsersManager.swift */; };
+		5CCB2DD42454CD070038038A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UserManager.swift */; };
 		5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2B2452306B00077B33 /* AppDelegate.swift */; };
 		5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2D2452306B00077B33 /* SceneDelegate.swift */; };
 		5CF24C332452306B00077B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C312452306B00077B33 /* Main.storyboard */; };
@@ -38,7 +38,7 @@
 		2BF171235C611F8AB9CFC1C4 /* Pods-PetRescue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescue.debug.xcconfig"; path = "Target Support Files/Pods-PetRescue/Pods-PetRescue.debug.xcconfig"; sourceTree = "<group>"; };
 		5ABB5D58A0575D735DEA2C46 /* Pods-PetRescueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.debug.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C8D726BFA961686A7E7D072 /* Pods-PetRescueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.release.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.release.xcconfig"; sourceTree = "<group>"; };
-		5CCB2DD32454CD070038038A /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
+		5CCB2DD32454CD070038038A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CF24C282452306B00077B33 /* PetRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF24C2B2452306B00077B33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CF24C2D2452306B00077B33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				5CF24C3C2452307000077B33 /* Info.plist */,
 				5CF24C51245336C000077B33 /* Support */,
 				5CF24C502453369E00077B33 /* Storyboard */,
-				5CF24C5324534C5B00077B33 /* Log In Feature */,
+				5CF24C5324534C5B00077B33 /* Login Feature */,
 				5CF24C52245336DB00077B33 /* Core Data */,
 			);
 			path = PetRescue;
@@ -167,15 +167,15 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
-		5CF24C5324534C5B00077B33 /* Log In Feature */ = {
+		5CF24C5324534C5B00077B33 /* Login Feature */ = {
 			isa = PBXGroup;
 			children = (
 				5CF24C5424534C9200077B33 /* LogInViewController.swift */,
-				5CCB2DD32454CD070038038A /* UsersManager.swift */,
+				5CCB2DD32454CD070038038A /* UserManager.swift */,
 				5CF24C5B24538DCC00077B33 /* Colors.swift */,
 				5CF24C59245389B000077B33 /* GradientBackground.swift */,
 			);
-			path = "Log In Feature";
+			path = "Login Feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,7 +371,7 @@
 				5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */,
 				5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */,
 				5CF24C5A245389B000077B33 /* GradientBackground.swift in Sources */,
-				5CCB2DD42454CD070038038A /* UsersManager.swift in Sources */,
+				5CCB2DD42454CD070038038A /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
