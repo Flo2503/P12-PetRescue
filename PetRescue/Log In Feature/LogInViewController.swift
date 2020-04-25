@@ -12,6 +12,7 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var connexionButton: UIButton!
     @IBOutlet weak var inscriptionButton: UIButton!
+    @IBOutlet weak var buttonView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,10 @@ class LogInViewController: UIViewController {
             element.layer.cornerRadius = 22
         }
     }
-    
+
     private func border() {
-        inscriptionButton.layer.borderWidth = 4
-        connexionButton.layer.borderWidth = 4
+        inscriptionButton.layer.borderWidth = 3
+        connexionButton.layer.borderWidth = 3
         inscriptionButton.layer.borderColor = UIColor.white.cgColor
         connexionButton.layer.borderColor = Colors.lightGreen.cgColor
     }

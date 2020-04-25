@@ -55,6 +55,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KCx-zw-6kG"/>
                     <connections>
+                        <outlet property="buttonView" destination="wwP-L4-cun" id="yyu-YX-NqB"/>
                         <outlet property="connexionButton" destination="bhF-j3-rOd" id="0bg-Gx-9u2"/>
                         <outlet property="inscriptionButton" destination="vpK-yg-9FX" id="5ym-DS-0gF"/>
                     </connections>
