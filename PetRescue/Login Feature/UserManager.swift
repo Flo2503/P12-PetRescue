@@ -47,4 +47,16 @@ class UserManager {
             callback?(error)
         })
     }
+
+    func reloadUser(_ callback: ((Error?) -> ())? = nil) {
+        Auth.auth().currentUser?.reload(completion: { (error) in
+            callback?(error)
+        })
+    }
+
+    func sendPasswordReset(withEmail email: String, _ callback: ((Error?) -> ())? = nil) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            callback?(error)
+        }
+    }
 }
