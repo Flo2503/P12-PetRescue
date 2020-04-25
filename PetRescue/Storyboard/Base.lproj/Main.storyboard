@@ -33,6 +33,9 @@
                                         <state key="normal" title="Inscription">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="2AN-wG-nOF" kind="show" id="X6l-pT-Gwf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -62,6 +65,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="zPl-ec-oed">
+            <objects>
+                <viewController id="2AN-wG-nOF" customClass="SignUpViewController" customModule="PetRescue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HNr-TW-POg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Mha-W3-Yjf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bzC-H5-HNK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="itc-ML-LeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917" y="130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iJ7-i4-0eC">

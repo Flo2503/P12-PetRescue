@@ -21,6 +21,10 @@ class LogInViewController: UIViewController {
         view.setGradientBackground(colorOne: Colors.lightBrown, colotTwo: Colors.lightGreen)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+
     private func cornerRadius(_ buttons: [UIButton]) {
         for element in buttons {
             element.layer.cornerRadius = 22
