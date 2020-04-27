@@ -8,27 +8,33 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: NavBarSetUp {
 
-    @IBOutlet weak var mailAdress: UITextField!
+    @IBOutlet weak var emailAdress: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var passwordValidation: UITextField!
     @IBOutlet weak var validateButton: UIButton!
 
     @IBAction func dismissKeyboard(_ sender: Any) {
-        mailAdress.resignFirstResponder()
+        emailAdress.resignFirstResponder()
         password.resignFirstResponder()
         passwordValidation.resignFirstResponder()
     }
 
     @IBAction func didTapeValidate(_ sender: Any) {
-        valideInput([passwordValidation, mailAdress, password])
+        let providedEmailAddress = emailAdress.text
+        let isEmailAddressValid = isValidEmailAddress(emailAddressString: providedEmailAddress!)
+        if isEmailAddressValid {
+            print("fuck Yeah")
+        } else {
+            print("looser")
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
-        textFieldSetUp([mailAdress, password, passwordValidation])
+        textFieldSetUp([emailAdress, password, passwordValidation])
         securePassword([password, passwordValidation])
         buttonsetUp()
     }
@@ -54,18 +60,45 @@ extension SignUpViewController {
         }
     }
 
-    private func valideInput(_ textField: [UITextField]) {
-        for item in textField {
-            guard !item.text!.isEmpty else {
-                return
-            }
-        }
-    }
-
     private func buttonsetUp() {
         validateButton.layer.cornerRadius = 25
         validateButton.layer.borderWidth = 3
         validateButton.layer.borderColor = UIColor.white.cgColor
         validateButton.layer.backgroundColor = Colors.customGreen.cgColor
     }
+
+    private func correctInfo() {
+        guard !emailAdress.text!.isEmpty else {
+            return emptyFieldAlert()
+        }
+        guard !password.text!.isEmpty else {
+            return emptyFieldAlert()
+        }
+        guard !passwordValidation.text!.isEmpty else {
+            return emptyFieldAlert()
+        }
+        guard password.text == passwordValidation.text else {
+            return noMatchPasswordAlert()
+        }
+    }
+}
+
+extension SignUpViewController {
+
+     func isValidEmailAddress(emailAddressString: String) -> Bool {
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            if results.count == 0 {
+                returnValue = false
+            }
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        return  returnValue
+       }
 }

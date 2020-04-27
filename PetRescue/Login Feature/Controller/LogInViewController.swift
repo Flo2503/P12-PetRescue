@@ -18,7 +18,7 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         cornerRadius([connexionButton, inscriptionButton])
         border()
-        view.setGradientBackground(colorOne: Colors.lightBrown, colotTwo: Colors.lightGreen)
+        view.setGradientBackground(colorOne: Colors.lightBrown, colotTwo: Colors.customGreen)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -30,7 +30,7 @@ extension LogInViewController {
 
     private func cornerRadius(_ buttons: [UIButton]) {
         for element in buttons {
-            element.layer.cornerRadius = 22
+            element.layer.cornerRadius = 40
         }
     }
 
@@ -38,6 +38,6 @@ extension LogInViewController {
         inscriptionButton.layer.borderWidth = 3
         connexionButton.layer.borderWidth = 3
         inscriptionButton.layer.borderColor = UIColor.white.cgColor
-        connexionButton.layer.borderColor = Colors.lightGreen.cgColor
+        connexionButton.layer.borderColor = Colors.customGreen.cgColor
     }
 }

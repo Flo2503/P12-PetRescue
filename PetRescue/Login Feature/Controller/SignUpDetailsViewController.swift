@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpDetailsViewController: UIViewController {
+class SignUpDetailsViewController: NavBarSetUp {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var firstName: UITextField!

@@ -34,7 +34,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="2AN-wG-nOF" kind="show" id="X6l-pT-Gwf"/>
+                                            <segue destination="2AN-wG-nOF" kind="show" identifier="segueToSignUpDetailsView" id="X6l-pT-Gwf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -80,8 +80,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VMm-I1-fzB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="35"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="35"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaG-gS-fZj">
@@ -90,7 +90,7 @@
                                     <constraint firstAttribute="height" constant="40" id="GMO-5F-S43"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
-                                <color key="textColor" red="0.59634262319999998" green="0.79802173379999997" blue="0.62350577119999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="0RY-H4-tvy">
@@ -113,14 +113,14 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="500-vM-flh">
                                         <rect key="frame" x="0.0" y="194.5" width="374" height="51.5"/>
-                                        <color key="backgroundColor" red="0.59634262319999998" green="0.79802173379999997" blue="0.62350577119999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.53725490196078429" green="0.806073606" blue="0.60781627890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="didTapeValidate:" destination="2AN-wG-nOF" eventType="touchUpInside" id="ssy-7e-Nxx"/>
-                                            <segue destination="skK-Zz-ejO" kind="show" id="1iO-eA-Kpl"/>
+                                            <segue destination="skK-Zz-ejO" kind="show" identifier="segueToSignUpDetailsView" id="1iO-eA-Kpl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -149,7 +149,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="mailAdress" destination="BHb-ay-FQz" id="YEo-fR-QRU"/>
+                        <outlet property="emailAdress" destination="BHb-ay-FQz" id="h8H-3A-gp7"/>
                         <outlet property="password" destination="eQd-vx-Z6Y" id="DMx-gO-DxJ"/>
                         <outlet property="passwordValidation" destination="6ot-8h-47C" id="O6w-Kr-D1D"/>
                         <outlet property="validateButton" destination="500-vM-flh" id="9lD-mO-G97"/>
@@ -193,8 +193,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="aQv-ly-Dpe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="35"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="35"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsU-QH-FQ5">
@@ -203,7 +203,7 @@
                                     <constraint firstAttribute="height" constant="40" id="nMs-Vv-vcb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
-                                <color key="textColor" red="0.59634262319999998" green="0.79802173379999997" blue="0.62350577119999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="jfZ-zu-chx">
@@ -234,14 +234,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CodePostal" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gsp-mT-hYH">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code Postal" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gsp-mT-hYH">
                                         <rect key="frame" x="0.0" y="516.5" width="374" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miO-r3-Cky">
                                         <rect key="frame" x="0.0" y="619.5" width="374" height="54.5"/>
-                                        <color key="backgroundColor" red="0.59634262319999998" green="0.79802173379999997" blue="0.62350577119999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -281,6 +281,7 @@
             <point key="canvasLocation" x="1642.0289855072465" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="launchscreen_icon" width="500" height="500"/>
     </resources>
