@@ -22,6 +22,7 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func didTapeValidate(_ sender: Any) {
+        valideInput([passwordValidation, mailAdress, password])
     }
 
     override func viewDidLoad() {
@@ -50,6 +51,14 @@ extension SignUpViewController {
     private func securePassword(_ textField: [UITextField]) {
         for item in textField {
             item.isSecureTextEntry = true
+        }
+    }
+
+    private func valideInput(_ textField: [UITextField]) {
+        for item in textField {
+            guard !item.text!.isEmpty else {
+                return
+            }
         }
     }
 
