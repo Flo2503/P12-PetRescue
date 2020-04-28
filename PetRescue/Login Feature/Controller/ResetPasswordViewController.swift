@@ -21,9 +21,7 @@ class ResetPasswordViewController: UIViewController {
     @IBOutlet weak var validateResetPassword: UIButton!
 
     @IBAction func resetPassword(_ sender: Any) {
-        let isEmailAddressValid = TextManager.isValidEmailAddress(emailAddressString: emailAdressResetPassword.text!,
-                                                                  label: labelResetPassword,
-                                                                  textField: emailAdressResetPassword)
+        let isEmailAddressValid = ValueManager.isValidEmailAddress(emailAddressString: emailAdressResetPassword.text!, textField: emailAdressResetPassword)
         if isEmailAddressValid {
             emailAdressResetPassword.layer.borderColor = Colors.customGreen.cgColor
             labelResetPassword.text = "Mail envoyé avec succès !"

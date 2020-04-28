@@ -24,10 +24,9 @@ class SignUpViewController: NavBarSetUp {
     }
 
     @IBAction func didTapeValidate(_ sender: Any) {
-        let isEmailAddressValid = TextManager.isValidEmailAddress(emailAddressString: emailAdress.text!,
-                                                                  label: labelSignUp,
-                                                                  textField: emailAdress)
-        if isEmailAddressValid && TextManager.passwordsAreEquals(password.text!, passwordValidation.text!, labelSignUp, password, passwordValidation) && TextManager.fieldIsNotEmpty([passwordValidation, password, emailAdress]) {
+        let isEmailAddressValid = ValueManager.isValidEmailAddress(emailAddressString: emailAdress.text!, textField: emailAdress)
+
+        if isEmailAddressValid && ValueManager.passwordsAreEquals(passwordOne: password.text, passwordTwo: passwordValidation.text, fieldOne: password, fieldTwo: passwordValidation) && ValueManager.fieldIsNotEmpty([passwordValidation, password, emailAdress]) && ValueManager.isValidPassword(password: password.text, field: password) && ValueManager.isValidPassword(password: passwordValidation.text, field: passwordValidation) {
             UserManager.createUser(email: emailAdress.text!, password: password.text!)
             performSegue(withIdentifier: identifier, sender: self)
         }
@@ -40,7 +39,7 @@ class SignUpViewController: NavBarSetUp {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        TextManager.securePassword([password, passwordValidation])
+        ValueManager.securePassword([password, passwordValidation])
         DisplaySetUp.buttonsetUp(validateButton)
     }
 
