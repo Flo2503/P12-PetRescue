@@ -34,7 +34,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="2AN-wG-nOF" kind="show" identifier="segueToSignUpDetailsView" id="X6l-pT-Gwf"/>
+                                            <segue destination="2AN-wG-nOF" kind="show" identifier="" id="X6l-pT-Gwf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -120,7 +120,6 @@
                                         </state>
                                         <connections>
                                             <action selector="didTapeValidate:" destination="2AN-wG-nOF" eventType="touchUpInside" id="ssy-7e-Nxx"/>
-                                            <segue destination="skK-Zz-ejO" kind="show" identifier="segueToSignUpDetailsView" id="1iO-eA-Kpl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -153,6 +152,7 @@
                         <outlet property="password" destination="eQd-vx-Z6Y" id="DMx-gO-DxJ"/>
                         <outlet property="passwordValidation" destination="6ot-8h-47C" id="O6w-Kr-D1D"/>
                         <outlet property="validateButton" destination="500-vM-flh" id="9lD-mO-G97"/>
+                        <segue destination="skK-Zz-ejO" kind="show" identifier="segueToSignUpDetails" id="MQ1-1I-lZf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itc-ML-LeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -278,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0C-2D-n4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1642.0289855072465" y="129.91071428571428"/>
+            <point key="canvasLocation" x="1700" y="130"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

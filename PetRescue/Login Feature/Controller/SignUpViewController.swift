@@ -4,11 +4,13 @@
 //
 //  Created by Flo on 25/04/2020.
 //  Copyright © 2020 Flo. All rights reserved.
-//
+//  swiftlint:disable for_where
 
 import UIKit
 
 class SignUpViewController: NavBarSetUp {
+
+    private let identifier = "segueToSignUpDetails"
 
     @IBOutlet weak var emailAdress: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -22,24 +24,20 @@ class SignUpViewController: NavBarSetUp {
     }
 
     @IBAction func didTapeValidate(_ sender: Any) {
-        let providedEmailAddress = emailAdress.text
-        let isEmailAddressValid = isValidEmailAddress(emailAddressString: providedEmailAddress!)
-        if isEmailAddressValid {
-            print("fuck Yeah")
-        } else {
-            print("looser")
+        let isEmailAddressValid = isValidEmailAddress(emailAddressString: emailAdress.text!)
+        if isEmailAddressValid && isEqual() && fieldIsNotEmpty([passwordValidation, password, emailAdress]) {
+            performSegue(withIdentifier: identifier, sender: self)
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
-        textFieldSetUp([emailAdress, password, passwordValidation])
         securePassword([password, passwordValidation])
         buttonsetUp()
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        textFieldSetUp([emailAdress, password, passwordValidation])
     }
 }
 
@@ -66,26 +64,11 @@ extension SignUpViewController {
         validateButton.layer.borderColor = UIColor.white.cgColor
         validateButton.layer.backgroundColor = Colors.customGreen.cgColor
     }
-
-    private func correctInfo() {
-        guard !emailAdress.text!.isEmpty else {
-            return emptyFieldAlert()
-        }
-        guard !password.text!.isEmpty else {
-            return emptyFieldAlert()
-        }
-        guard !passwordValidation.text!.isEmpty else {
-            return emptyFieldAlert()
-        }
-        guard password.text == passwordValidation.text else {
-            return noMatchPasswordAlert()
-        }
-    }
 }
 
 extension SignUpViewController {
 
-     func isValidEmailAddress(emailAddressString: String) -> Bool {
+     private func isValidEmailAddress(emailAddressString: String) -> Bool {
         var returnValue = true
         let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
         do {
@@ -93,6 +76,7 @@ extension SignUpViewController {
             let nsString = emailAddressString as NSString
             let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
             if results.count == 0 {
+                emailAdress.layer.borderColor = UIColor.red.cgColor
                 returnValue = false
             }
         } catch let error as NSError {
@@ -100,5 +84,23 @@ extension SignUpViewController {
             returnValue = false
         }
         return  returnValue
-       }
+    }
+
+    private func isEqual() -> Bool {
+        if password.text == passwordValidation.text {
+            return true
+        } else {
+            passwordValidation.layer.borderColor = UIColor.red.cgColor
+            return false
+        }
+    }
+
+    private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
+        for item in textField {
+            if item.text!.isEmpty {
+                return false
+            }
+        }
+        return true
+    }
 }
