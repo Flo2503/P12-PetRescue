@@ -20,35 +20,7 @@ class SignUpDetailsViewController: NavBarSetUp {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldSetUp([name, firstName, association, adress, town, postalCode])
-        buttonsetUp()
+        DisplaySetUp.textFieldSetUp([name, firstName, association, adress, town, postalCode])
+        DisplaySetUp.buttonsetUp(validateButton)
     }
-}
-
-extension SignUpDetailsViewController {
-
-    private func textFieldSetUp(_ textField: [UITextField]) {
-        for item in textField {
-            item.layer.borderWidth = 3
-            item.layer.borderColor = Colors.customGreen.cgColor
-            item.layer.cornerRadius = 25
-            item.borderStyle = .none
-        }
-    }
-
-    private func buttonsetUp() {
-        validateButton.layer.cornerRadius = 25
-        validateButton.layer.borderWidth = 3
-        validateButton.layer.borderColor = UIColor.white.cgColor
-        validateButton.layer.backgroundColor = Colors.customGreen.cgColor
-    }
-
-    private func valideInput(_ textField: [UITextField]) {
-        for item in textField {
-            guard !item.text!.isEmpty else {
-                return
-            }
-        }
-    }
-
 }
