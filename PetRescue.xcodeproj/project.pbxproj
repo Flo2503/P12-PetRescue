@@ -11,7 +11,6 @@
 		40DF9BDB20B30601F3F1D398 /* Pods_PetRescue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2C9B0CD2A4AD2497FD0EFE /* Pods_PetRescue.framework */; };
 		5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC1245704360015AB09 /* GradientBackground.swift */; };
 		5C9D4CC424570B940015AB09 /* SignUpDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC324570B940015AB09 /* SignUpDetailsViewController.swift */; };
-		5C9D4CC624572AA70015AB09 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC524572AA70015AB09 /* AlertManager.swift */; };
 		5C9D4CC82457496C0015AB09 /* NavBarSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */; };
 		5CCB2DD42454CD070038038A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UserManager.swift */; };
 		5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD52454E45A0038038A /* SignUpViewController.swift */; };
@@ -44,7 +43,6 @@
 		5C8D726BFA961686A7E7D072 /* Pods-PetRescueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.release.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C9D4CC1245704360015AB09 /* GradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		5C9D4CC324570B940015AB09 /* SignUpDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailsViewController.swift; sourceTree = "<group>"; };
-		5C9D4CC524572AA70015AB09 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarSetUp.swift; sourceTree = "<group>"; };
 		5CCB2DD32454CD070038038A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CCB2DD52454E45A0038038A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 			children = (
 				5C9D4CA22456061C0015AB09 /* Controller */,
 				5CCB2DD32454CD070038038A /* UserManager.swift */,
-				5C9D4CC524572AA70015AB09 /* AlertManager.swift */,
 				5C9D4CC1245704360015AB09 /* GradientBackground.swift */,
 				5CF24C5B24538DCC00077B33 /* Colors.swift */,
 			);
@@ -387,7 +384,6 @@
 			files = (
 				5C9D4CC424570B940015AB09 /* SignUpDetailsViewController.swift in Sources */,
 				5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */,
-				5C9D4CC624572AA70015AB09 /* AlertManager.swift in Sources */,
 				5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */,
 				5CF24C5C24538DCC00077B33 /* Colors.swift in Sources */,
 				5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */,

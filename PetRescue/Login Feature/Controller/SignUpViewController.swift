@@ -4,7 +4,6 @@
 //
 //  Created by Flo on 25/04/2020.
 //  Copyright © 2020 Flo. All rights reserved.
-//  swiftlint:disable for_where
 
 import UIKit
 
@@ -26,6 +25,7 @@ class SignUpViewController: NavBarSetUp {
     @IBAction func didTapeValidate(_ sender: Any) {
         let isEmailAddressValid = isValidEmailAddress(emailAddressString: emailAdress.text!)
         if isEmailAddressValid && isEqual() && fieldIsNotEmpty([passwordValidation, password, emailAdress]) {
+            UserManager.createUser(email: emailAdress.text!, password: password.text!)
             performSegue(withIdentifier: identifier, sender: self)
         }
     }
@@ -87,17 +87,17 @@ extension SignUpViewController {
     }
 
     private func isEqual() -> Bool {
-        if password.text == passwordValidation.text {
-            return true
-        } else {
+        guard password.text == passwordValidation.text else {
+            password.layer.borderColor = UIColor.red.cgColor
             passwordValidation.layer.borderColor = UIColor.red.cgColor
             return false
         }
+        return true
     }
 
     private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
         for item in textField {
-            if item.text!.isEmpty {
+            guard !item.text!.isEmpty else {
                 return false
             }
         }
