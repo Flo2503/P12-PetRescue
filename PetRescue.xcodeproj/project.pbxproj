@@ -15,6 +15,7 @@
 		5CA12EFE2458CD26006AC92B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */; };
 		5CA12F002458DD03006AC92B /* ValueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12EFF2458DD03006AC92B /* ValueManager.swift */; };
 		5CA12F022458DFCD006AC92B /* DisplaySetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F012458DFCD006AC92B /* DisplaySetUp.swift */; };
+		5CA12F04245A127D006AC92B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F03245A127D006AC92B /* SignInViewController.swift */; };
 		5CCB2DD42454CD070038038A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UserManager.swift */; };
 		5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD52454E45A0038038A /* SignUpViewController.swift */; };
 		5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2B2452306B00077B33 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		5CA12EFF2458DD03006AC92B /* ValueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueManager.swift; sourceTree = "<group>"; };
 		5CA12F012458DFCD006AC92B /* DisplaySetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySetUp.swift; sourceTree = "<group>"; };
+		5CA12F03245A127D006AC92B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5CCB2DD32454CD070038038A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CCB2DD52454E45A0038038A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5CF24C282452306B00077B33 /* PetRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				5CF24C5424534C9200077B33 /* LogInViewController.swift */,
+				5CA12F03245A127D006AC92B /* SignInViewController.swift */,
 				5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */,
 				5CCB2DD52454E45A0038038A /* SignUpViewController.swift */,
 				5C9D4CC324570B940015AB09 /* SignUpDetailsViewController.swift */,
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CA12F04245A127D006AC92B /* SignInViewController.swift in Sources */,
 				5C9D4CC424570B940015AB09 /* SignUpDetailsViewController.swift in Sources */,
 				5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */,
 				5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */,

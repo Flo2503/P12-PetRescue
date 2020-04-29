@@ -28,7 +28,18 @@ class UserManager {
         if Auth.auth().currentUser == nil {
             return true
         } else {
-            label.text = "Adresse mail déjà enregistrée"
+            label.text = "Cette adresse mail est déjà utilisée"
+            button.layer.backgroundColor = UIColor.red.cgColor
+            return false
+        }
+    }
+
+    static func userExists(email: String?, label: UILabel, button: UIButton) -> Bool {
+        guard email != nil else { return false }
+        if Auth.auth().currentUser == nil {
+            return true
+        } else {
+            label.text = "Cette adresse mail n'existe pas"
             button.layer.backgroundColor = UIColor.red.cgColor
             return false
         }
