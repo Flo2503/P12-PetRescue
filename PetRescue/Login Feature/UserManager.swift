@@ -23,6 +23,17 @@ class UserManager {
         }
     }
 
+    static func userDoNotExist(email: String?, label: UILabel, button: UIButton) -> Bool {
+        guard email != nil else { return false }
+        if Auth.auth().currentUser == nil {
+            return true
+        } else {
+            label.text = "Adresse mail déjà enregistrée"
+            button.layer.backgroundColor = UIColor.red.cgColor
+            return false
+        }
+    }
+
     static func login(withEmail email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             if let err = error {
