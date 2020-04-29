@@ -24,9 +24,20 @@ class SignUpViewController: NavBarSetUp {
     }
 
     @IBAction func didTapeValidate(_ sender: Any) {
-        let isEmailAddressValid = ValueManager.isValidEmailAddress(emailAddressString: emailAdress.text!, textField: emailAdress)
 
-        if isEmailAddressValid && ValueManager.passwordsAreEquals(passwordOne: password.text, passwordTwo: passwordValidation.text, fieldOne: password, fieldTwo: passwordValidation) && ValueManager.fieldIsNotEmpty([passwordValidation, password, emailAdress]) && ValueManager.isValidPassword(password: password.text, field: password) && ValueManager.isValidPassword(password: passwordValidation.text, field: passwordValidation) && UserManager.userDoNotExist(email: emailAdress.text, label: labelSignUp, button: validateButton) {
+        let isEmailAddressValid = ValueManager.isValidEmailAddress(emailAddressString: emailAdress.text!, textField: emailAdress)
+        let passwordAreEquals = ValueManager.passwordsAreEquals(passwordOne: password.text, passwordTwo: passwordValidation.text, fieldOne: password, fieldTwo: passwordValidation)
+        let fieldIsNotEmpty = ValueManager.fieldIsNotEmpty([passwordValidation, password, emailAdress])
+        let isValidPassword = ValueManager.isValidPassword(password: password.text, field: password)
+        let isValidSecondPassword = ValueManager.isValidPassword(password: passwordValidation.text, field: passwordValidation)
+        let userDoNotExist = UserManager.userDoesNotExist(email: emailAdress.text, label: labelSignUp, button: validateButton)
+
+        if isEmailAddressValid &&
+            passwordAreEquals &&
+            fieldIsNotEmpty &&
+            isValidPassword &&
+            isValidSecondPassword &&
+            userDoNotExist {
             UserManager.createUser(email: emailAdress.text!, password: password.text!)
             performSegue(withIdentifier: identifier, sender: self)
         }

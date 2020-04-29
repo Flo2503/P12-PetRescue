@@ -23,7 +23,7 @@ class UserManager {
         }
     }
 
-    static func userDoNotExist(email: String?, label: UILabel, button: UIButton) -> Bool {
+    static func userDoesNotExist(email: String?, label: UILabel, button: UIButton) -> Bool {
         guard email != nil else { return false }
         if Auth.auth().currentUser == nil {
             return true
