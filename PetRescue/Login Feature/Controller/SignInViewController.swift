@@ -28,8 +28,11 @@ class SignInViewController: UIViewController {
         if isEmailAddressValid && fieldIsNotEmpty && userExists {
             UserManager.login(withEmail: emailAdress.text!, password: password.text!)
             print("Yes let's go !")
+        } else {
         }
     }
+
+    @IBAction func unwindToSignIn(segue: UIStoryboardSegue) { }
 
     override func viewDidLoad() {
         super.viewDidLoad()

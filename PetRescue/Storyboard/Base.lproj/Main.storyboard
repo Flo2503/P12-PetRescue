@@ -123,16 +123,28 @@
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6C-x3-0yB">
+                                <rect key="frame" x="20" y="589" width="335" height="30"/>
+                                <state key="normal" title="Mot de passe oublié ?">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="g5F-Ho-cdG" kind="presentation" id="bop-xh-9Tn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="B6C-x3-0yB" firstAttribute="top" secondItem="nv2-IO-cgo" secondAttribute="bottom" constant="8" id="0i2-bG-Crq"/>
                             <constraint firstItem="nv2-IO-cgo" firstAttribute="centerY" secondItem="aNb-PY-isY" secondAttribute="centerY" id="Bpd-RK-sc6"/>
                             <constraint firstItem="QH4-Mb-F4b" firstAttribute="leading" secondItem="VAd-HP-JxK" secondAttribute="leading" constant="20" id="Gj1-hB-h2P"/>
                             <constraint firstItem="QH4-Mb-F4b" firstAttribute="top" secondItem="VAd-HP-JxK" secondAttribute="top" id="a5r-By-1jH"/>
+                            <constraint firstItem="VAd-HP-JxK" firstAttribute="trailing" secondItem="B6C-x3-0yB" secondAttribute="trailing" constant="20" id="aZM-y1-qEe"/>
                             <constraint firstItem="VAd-HP-JxK" firstAttribute="trailing" secondItem="QH4-Mb-F4b" secondAttribute="trailing" constant="80" id="acH-0K-4R2"/>
                             <constraint firstItem="VAd-HP-JxK" firstAttribute="trailing" secondItem="nv2-IO-cgo" secondAttribute="trailing" constant="20" id="d9O-Fb-6Nm"/>
                             <constraint firstItem="nv2-IO-cgo" firstAttribute="leading" secondItem="VAd-HP-JxK" secondAttribute="leading" constant="20" id="uIk-QX-iZg"/>
+                            <constraint firstItem="B6C-x3-0yB" firstAttribute="leading" secondItem="VAd-HP-JxK" secondAttribute="leading" constant="20" id="zEz-rg-VhT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VAd-HP-JxK"/>
                         <connections>
@@ -199,7 +211,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Fermer"/>
                                 <connections>
-                                    <segue destination="Lfh-7m-BLX" kind="unwind" unwindAction="unwindToSignUpWithSegue:" id="Tv5-q0-8GW"/>
+                                    <segue destination="Lfh-7m-BLX" kind="unwind" unwindAction="unwindToSignInSegue:" id="JGs-2D-SdV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -232,7 +244,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1317.5999999999999" y="305.9113300492611"/>
+            <point key="canvasLocation" x="1319" y="-1173"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="zPl-ec-oed">
@@ -306,20 +318,6 @@
                                     <constraint firstAttribute="height" constant="400" id="WOI-f6-NDl"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcw-fa-XsK">
-                                <rect key="frame" x="20" y="576" width="335" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="YCR-de-73M"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Mot de passe oublié ?">
-                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="resetPassword:" destination="2AN-wG-nOF" eventType="touchUpInside" id="M3j-a1-2sA"/>
-                                    <segue destination="g5F-Ho-cdG" kind="presentation" id="VZb-A9-21V"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
@@ -327,11 +325,8 @@
                             <constraint firstItem="IFB-74-ZzY" firstAttribute="leading" secondItem="Mha-W3-Yjf" secondAttribute="leading" constant="20" id="5sr-OK-wHY"/>
                             <constraint firstItem="0RY-H4-tvy" firstAttribute="top" secondItem="IFB-74-ZzY" secondAttribute="bottom" constant="40" id="HXO-aN-tcS"/>
                             <constraint firstItem="IFB-74-ZzY" firstAttribute="top" secondItem="Mha-W3-Yjf" secondAttribute="top" id="HaL-F6-a3z"/>
-                            <constraint firstItem="vcw-fa-XsK" firstAttribute="top" secondItem="0RY-H4-tvy" secondAttribute="bottom" constant="8" id="PFb-iI-gYh"/>
                             <constraint firstItem="gaG-gS-fZj" firstAttribute="leading" secondItem="IFB-74-ZzY" secondAttribute="trailing" constant="8" id="VXi-Rg-r5R"/>
-                            <constraint firstItem="Mha-W3-Yjf" firstAttribute="trailing" secondItem="vcw-fa-XsK" secondAttribute="trailing" constant="20" id="ZAv-Yg-DoF"/>
                             <constraint firstItem="0RY-H4-tvy" firstAttribute="leading" secondItem="Mha-W3-Yjf" secondAttribute="leading" constant="20" id="gH6-7j-Baz"/>
-                            <constraint firstItem="vcw-fa-XsK" firstAttribute="leading" secondItem="Mha-W3-Yjf" secondAttribute="leading" constant="20" id="itp-C8-SFb"/>
                             <constraint firstItem="Mha-W3-Yjf" firstAttribute="trailing" secondItem="gaG-gS-fZj" secondAttribute="trailing" constant="20" id="n30-Ud-MLk"/>
                             <constraint firstItem="Mha-W3-Yjf" firstAttribute="trailing" secondItem="IFB-74-ZzY" secondAttribute="trailing" constant="80" id="ngs-Dl-SLH"/>
                             <constraint firstItem="Mha-W3-Yjf" firstAttribute="trailing" secondItem="0RY-H4-tvy" secondAttribute="trailing" constant="20" id="qbH-yk-Bu4"/>

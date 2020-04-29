@@ -43,11 +43,6 @@ class SignUpViewController: NavBarSetUp {
         }
     }
 
-    @IBAction func unwindToSignUp(segue: UIStoryboardSegue) { }
-
-    @IBAction func resetPassword(_ sender: Any) {
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         ValueManager.securePassword([password, passwordValidation])
