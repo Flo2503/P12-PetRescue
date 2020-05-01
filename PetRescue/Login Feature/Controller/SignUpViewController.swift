@@ -49,7 +49,6 @@ class SignUpViewController: NavBarSetUp {
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation
         ])
-        UserManager.signOut()
     }
 
     override func viewWillAppear(_ animated: Bool) {
