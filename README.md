@@ -1,8 +1,8 @@
 # Tasks
 
 ## Sign up / Sign in feature
-- [ ] Create views
-- [ ] Use Firebase for Log in. New users with mail, facebook and gmail
+- [x] Create views
+- [x] Use Firebase for Log in. New users with mail
 
 ## Alert / Adoption feature
 - [ ] Create first view (table view) with costums cells
