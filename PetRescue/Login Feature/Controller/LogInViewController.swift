@@ -30,7 +30,7 @@ extension LogInViewController {
 
     private func cornerRadius(_ buttons: [UIButton]) {
         for element in buttons {
-            element.layer.cornerRadius = 40
+            element.layer.cornerRadius = element.frame.size.height / 2
         }
     }
 

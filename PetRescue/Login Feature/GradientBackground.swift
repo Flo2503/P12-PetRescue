@@ -20,11 +20,4 @@ extension UIView {
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
         layer.insertSublayer(gradientLayer, at: 0)
     }
-
-    func cornerRadius(_ buttons: [UIButton]) {
-        for element in buttons {
-            element.layer.cornerRadius = 22
-            element.layer.borderWidth = 3
-        }
-    }
 }

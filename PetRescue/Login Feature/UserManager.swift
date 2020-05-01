@@ -15,8 +15,18 @@ class UserManager {
 
     static func createUser(email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
         Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
-            if let err = error {
-                callback?(err)
+            if let error = error {
+                callback?(error)
+                return
+            }
+            callback?(nil)
+        }
+    }
+
+    static func createDetailsUser(email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
+        Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
+            if let error = error {
+                callback?(error)
                 return
             }
             callback?(nil)

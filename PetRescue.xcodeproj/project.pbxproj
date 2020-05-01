@@ -10,7 +10,6 @@
 		3578B7E7C767DF5D7CCA87A8 /* Pods_PetRescueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D95798F06FFAD4326F9929 /* Pods_PetRescueTests.framework */; };
 		40DF9BDB20B30601F3F1D398 /* Pods_PetRescue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2C9B0CD2A4AD2497FD0EFE /* Pods_PetRescue.framework */; };
 		5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC1245704360015AB09 /* GradientBackground.swift */; };
-		5C9D4CC424570B940015AB09 /* SignUpDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC324570B940015AB09 /* SignUpDetailsViewController.swift */; };
 		5C9D4CC82457496C0015AB09 /* NavBarSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */; };
 		5CA12EFE2458CD26006AC92B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */; };
 		5CA12F002458DD03006AC92B /* InputValuesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12EFF2458DD03006AC92B /* InputValuesManager.swift */; };
@@ -47,7 +46,6 @@
 		5ABB5D58A0575D735DEA2C46 /* Pods-PetRescueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.debug.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C8D726BFA961686A7E7D072 /* Pods-PetRescueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.release.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C9D4CC1245704360015AB09 /* GradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
-		5C9D4CC324570B940015AB09 /* SignUpDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailsViewController.swift; sourceTree = "<group>"; };
 		5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarSetUp.swift; sourceTree = "<group>"; };
 		5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		5CA12EFF2458DD03006AC92B /* InputValuesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValuesManager.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				5CF24C5424534C9200077B33 /* LogInViewController.swift */,
 				5CA12F03245A127D006AC92B /* SignInViewController.swift */,
 				5CCB2DD52454E45A0038038A /* SignUpViewController.swift */,
-				5C9D4CC324570B940015AB09 /* SignUpDetailsViewController.swift */,
 				5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */,
 				5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */,
 			);
@@ -406,7 +403,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CA12F04245A127D006AC92B /* SignInViewController.swift in Sources */,
-				5C9D4CC424570B940015AB09 /* SignUpDetailsViewController.swift in Sources */,
 				5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */,
 				5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */,
 				5CA12EFE2458CD26006AC92B /* ResetPasswordViewController.swift in Sources */,

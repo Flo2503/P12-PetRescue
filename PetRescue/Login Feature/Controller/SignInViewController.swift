@@ -44,5 +44,6 @@ class SignInViewController: NavBarSetUp {
         InputValuesManager.securePassword([password])
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password])
+        UserManager.signOut()
     }
 }

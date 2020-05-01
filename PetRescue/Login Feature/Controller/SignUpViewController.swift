@@ -10,8 +10,11 @@ import UIKit
 class SignUpViewController: NavBarSetUp {
 
     private let identifier = "segueToSignUpDetails"
-    private let errorMessage = "Adresse mail ou mots de passes incorrects"
+    private let errorMessage = "Informations incorrectes"
 
+    
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var emailAdress: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var passwordValidation: UITextField!
@@ -28,7 +31,7 @@ class SignUpViewController: NavBarSetUp {
 
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!)
         let passwordsAreEquals = InputValuesManager.passwordsAreEquals(passwordOne: password.text, passwordTwo: passwordValidation.text)
-        let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([passwordValidation, password, emailAdress])
+        let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([passwordValidation, password, emailAdress, name, firstName])
         let isValidPassword = InputValuesManager.isValidPassword(password: password.text)
         let isValidSecondPassword = InputValuesManager.isValidPassword(password: passwordValidation.text)
 
@@ -49,9 +52,8 @@ class SignUpViewController: NavBarSetUp {
         super.viewDidLoad()
         InputValuesManager.securePassword([password, passwordValidation])
         ItemSetUp.buttonsetUp(validateButton)
-        ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation
+        ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation, name, firstName
         ])
-        UserManager.signOut()
     }
 
     override func viewWillAppear(_ animated: Bool) {
