@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: NavBarSetUp {
 
@@ -25,9 +26,8 @@ class SignInViewController: NavBarSetUp {
     @IBAction func tapOnValidate(_ sender: Any) {
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!)
         let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([password, emailAdress])
-        let userExists = UserManager.userExists(email: emailAdress.text)
 
-        if  isEmailAddressValid && fieldIsNotEmpty && userExists {
+        if  isEmailAddressValid && fieldIsNotEmpty {
             UserManager.login(withEmail: emailAdress.text!, password: password.text!)
             performSegue(withIdentifier: identifier, sender: self)
         } else {

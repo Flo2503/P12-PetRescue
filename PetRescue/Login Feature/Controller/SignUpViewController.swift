@@ -30,14 +30,12 @@ class SignUpViewController: NavBarSetUp {
         let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([passwordValidation, password, emailAdress])
         let isValidPassword = InputValuesManager.isValidPassword(password: password.text)
         let isValidSecondPassword = InputValuesManager.isValidPassword(password: passwordValidation.text)
-        let userDoesNotExist = !UserManager.userExists(email: emailAdress.text)
 
         if isEmailAddressValid &&
             passwordsAreEquals &&
             fieldIsNotEmpty &&
             isValidPassword &&
-            isValidSecondPassword &&
-            userDoesNotExist {
+            isValidSecondPassword {
             UserManager.createUser(email: emailAdress.text!, password: password.text!)
             performSegue(withIdentifier: identifier, sender: self)
         } else {
@@ -51,6 +49,7 @@ class SignUpViewController: NavBarSetUp {
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation
         ])
+        UserManager.signOut()
     }
 
     override func viewWillAppear(_ animated: Bool) {

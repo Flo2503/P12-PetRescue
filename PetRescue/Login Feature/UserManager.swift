@@ -23,11 +23,6 @@ class UserManager {
         }
     }
 
-    static func userExists(email: String?) -> Bool {
-        guard email != nil else { return false }
-        return Auth.auth().currentUser == nil
-    }
-
     static func login(withEmail email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             if let error = error {
