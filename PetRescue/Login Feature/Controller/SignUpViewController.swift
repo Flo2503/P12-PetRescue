@@ -9,10 +9,9 @@ import UIKit
 
 class SignUpViewController: NavBarSetUp {
 
-    private let identifier = "segueToSignUpDetails"
+    private let identifier = "segueToAlert"
     private let errorMessage = "Informations incorrectes"
 
-    
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var emailAdress: UITextField!
