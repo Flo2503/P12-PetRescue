@@ -10,6 +10,7 @@ import UIKit
 class SignUpViewController: NavBarSetUp {
 
     private let identifier = "segueToSignUpDetails"
+    private let errorMessage = "Adresse mail ou mots de passes incorrects"
 
     @IBOutlet weak var emailAdress: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -39,7 +40,8 @@ class SignUpViewController: NavBarSetUp {
             UserManager.createUser(email: emailAdress.text!, password: password.text!)
             performSegue(withIdentifier: identifier, sender: self)
         } else {
-            print("no way")
+            labelSignUp.text = errorMessage
+            validateButton.layer.backgroundColor = UIColor.red.cgColor
         }
     }
 
@@ -49,6 +51,7 @@ class SignUpViewController: NavBarSetUp {
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation
         ])
+        UserManager.signOut()
     }
 
     override func viewWillAppear(_ animated: Bool) {

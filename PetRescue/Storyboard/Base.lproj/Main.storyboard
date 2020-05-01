@@ -289,38 +289,38 @@
                                 <color key="textColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="0RY-H4-tvy">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0RY-H4-tvy">
                                 <rect key="frame" x="20" y="168" width="374" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renseignez vos informations : " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUO-1i-gsg">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adresse mail*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BHb-ay-FQz">
-                                        <rect key="frame" x="0.0" y="70" width="374" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartInsertDeleteType="no" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe* " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQd-vx-Z6Y">
-                                        <rect key="frame" x="0.0" y="139.5" width="374" height="51"/>
+                                        <rect key="frame" x="0.0" y="140" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation mot de passe*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ot-8h-47C">
-                                        <rect key="frame" x="0.0" y="209.5" width="374" height="51"/>
+                                        <rect key="frame" x="0.0" y="210" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum 8 caractères : une majuscule, une minuscule et un chiffre" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2O-jr-A9P">
-                                        <rect key="frame" x="0.0" y="279.5" width="374" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="280" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="500-vM-flh">
-                                        <rect key="frame" x="0.0" y="349" width="374" height="51"/>
+                                        <rect key="frame" x="0.0" y="350" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.53725490196078429" green="0.806073606" blue="0.60781627890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Valider">
@@ -487,6 +487,7 @@
                         <outlet property="postalCode" destination="Gsp-mT-hYH" id="rvP-ZK-jC4"/>
                         <outlet property="town" destination="6V4-0Q-Ug0" id="QVh-DF-bbQ"/>
                         <outlet property="validateButton" destination="miO-r3-Cky" id="2iT-Ib-xSR"/>
+                        <segue destination="lCk-ZM-Dea" kind="show" id="Zbj-kg-WTs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0C-2D-n4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -494,6 +495,9 @@
             <point key="canvasLocation" x="2060" y="443"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lpm-Tm-UTA"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="launchscreen_icon" width="500" height="500"/>

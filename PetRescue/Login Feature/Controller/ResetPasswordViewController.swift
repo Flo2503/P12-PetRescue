@@ -28,6 +28,7 @@ class ResetPasswordViewController: UIViewController {
             UserManager.sendPasswordReset(withEmail: emailAdressResetPassword.text!)
         } else {
             labelResetPassword.text = "Adresse mail non valide"
+            validateResetPassword.layer.backgroundColor = UIColor.red.cgColor
         }
     }
 

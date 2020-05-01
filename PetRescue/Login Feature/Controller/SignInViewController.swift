@@ -12,6 +12,7 @@ import FirebaseAuth
 class SignInViewController: NavBarSetUp {
 
     private let identifier = "segueToAlert"
+    private let erroMessage = "Adresse mail ou mot de passe incorrect"
 
     @IBOutlet weak var signInLabel: UILabel!
     @IBOutlet weak var emailAdress: UITextField!
@@ -31,7 +32,8 @@ class SignInViewController: NavBarSetUp {
             UserManager.login(withEmail: emailAdress.text!, password: password.text!)
             performSegue(withIdentifier: identifier, sender: self)
         } else {
-            print("no way")
+            validateButton.layer.backgroundColor = UIColor.red.cgColor
+            signInLabel.text = erroMessage
         }
     }
 
