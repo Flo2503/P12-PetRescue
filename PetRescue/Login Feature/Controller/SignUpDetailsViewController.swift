@@ -20,7 +20,7 @@ class SignUpDetailsViewController: NavBarSetUp {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DisplaySetUp.textFieldSetUp([name, firstName, association, adress, town, postalCode])
-        DisplaySetUp.buttonsetUp(validateButton)
+        ItemSetUp.textFieldSetUp([name, firstName, association, adress, town, postalCode])
+        ItemSetUp.buttonsetUp(validateButton)
     }
 }

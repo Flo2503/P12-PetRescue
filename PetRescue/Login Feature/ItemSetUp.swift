@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DisplaySetUp {
+class ItemSetUp {
 
     static func textFieldSetUp(_ textField: [UITextField]) {
         for item in textField {

@@ -23,32 +23,15 @@ class UserManager {
         }
     }
 
-    static func userDoesNotExist(email: String?, label: UILabel, button: UIButton) -> Bool {
+    static func userExists(email: String?) -> Bool {
         guard email != nil else { return false }
-        if Auth.auth().currentUser == nil {
-            return true
-        } else {
-            label.text = "Cette adresse mail est déjà utilisée"
-            button.layer.backgroundColor = UIColor.red.cgColor
-            return false
-        }
-    }
-
-    static func userExists(email: String?, label: UILabel, button: UIButton) -> Bool {
-        guard email != nil else { return false }
-        if Auth.auth().currentUser == nil {
-            return true
-        } else {
-            label.text = "Cette adresse mail n'existe pas"
-            button.layer.backgroundColor = UIColor.red.cgColor
-            return false
-        }
+        return Auth.auth().currentUser == nil
     }
 
     static func login(withEmail email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
-            if let err = error {
-                callback?(err)
+            if let error = error {
+                callback?(error)
                 return
             }
             callback?(nil)

@@ -25,31 +25,34 @@ class SignUpViewController: NavBarSetUp {
 
     @IBAction func tapOnValidate(_ sender: Any) {
 
-        let isEmailAddressValid = ValueManager.isValidEmailAddress(emailAddressString: emailAdress.text!, textField: emailAdress)
-        let passwordAreEquals = ValueManager.passwordsAreEquals(passwordOne: password.text, passwordTwo: passwordValidation.text, fieldOne: password, fieldTwo: passwordValidation)
-        let fieldIsNotEmpty = ValueManager.fieldIsNotEmpty([passwordValidation, password, emailAdress])
-        let isValidPassword = ValueManager.isValidPassword(password: password.text, field: password)
-        let isValidSecondPassword = ValueManager.isValidPassword(password: passwordValidation.text, field: passwordValidation)
-        let userDoesNotExist = UserManager.userDoesNotExist(email: emailAdress.text, label: labelSignUp, button: validateButton)
+        let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!)
+        let passwordsAreEquals = InputValuesManager.passwordsAreEquals(passwordOne: password.text, passwordTwo: passwordValidation.text)
+        let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([passwordValidation, password, emailAdress])
+        let isValidPassword = InputValuesManager.isValidPassword(password: password.text)
+        let isValidSecondPassword = InputValuesManager.isValidPassword(password: passwordValidation.text)
+        let userDoesNotExist = !UserManager.userExists(email: emailAdress.text)
 
         if isEmailAddressValid &&
-            passwordAreEquals &&
+            passwordsAreEquals &&
             fieldIsNotEmpty &&
             isValidPassword &&
             isValidSecondPassword &&
             userDoesNotExist {
             UserManager.createUser(email: emailAdress.text!, password: password.text!)
             performSegue(withIdentifier: identifier, sender: self)
+        } else {
+            print("no way")
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ValueManager.securePassword([password, passwordValidation])
-        DisplaySetUp.buttonsetUp(validateButton)
+        InputValuesManager.securePassword([password, passwordValidation])
+        ItemSetUp.buttonsetUp(validateButton)
+        ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation
+        ])
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        DisplaySetUp.textFieldSetUp([emailAdress, password, passwordValidation])
     }
 }

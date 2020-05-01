@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: NavBarSetUp {
+
+    private let identifier = "segueToAlert"
 
     @IBOutlet weak var signInLabel: UILabel!
     @IBOutlet weak var emailAdress: UITextField!
@@ -21,14 +23,15 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func tapOnValidate(_ sender: Any) {
-        let isEmailAddressValid = ValueManager.isValidEmailAddress(emailAddressString: emailAdress.text!, textField: emailAdress)
-        let fieldIsNotEmpty = ValueManager.fieldIsNotEmpty([password, emailAdress])
-        let userExists = UserManager.userExists(email: emailAdress.text, label: signInLabel, button: validateButton)
+        let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!)
+        let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([password, emailAdress])
+        let userExists = UserManager.userExists(email: emailAdress.text)
 
-        if isEmailAddressValid && fieldIsNotEmpty && userExists {
+        if  isEmailAddressValid && fieldIsNotEmpty && userExists {
             UserManager.login(withEmail: emailAdress.text!, password: password.text!)
-            print("Yes let's go !")
+            performSegue(withIdentifier: identifier, sender: self)
         } else {
+            print("no way")
         }
     }
 
@@ -36,11 +39,8 @@ class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ValueManager.securePassword([password])
-        DisplaySetUp.buttonsetUp(validateButton)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        DisplaySetUp.textFieldSetUp([emailAdress, password])
+        InputValuesManager.securePassword([password])
+        ItemSetUp.buttonsetUp(validateButton)
+        ItemSetUp.textFieldSetUp([emailAdress, password])
     }
 }

@@ -27,7 +27,7 @@
                                             <color key="titleColor" red="0.64712686850000001" green="0.80412607049999996" blue="0.64317407209999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <segue destination="umV-pK-Oki" kind="show" id="HdT-Ct-4Gs"/>
+                                            <segue destination="umV-pK-Oki" kind="show" id="bHC-UY-ynW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpK-yg-9FX">
@@ -157,6 +157,7 @@
                         <outlet property="password" destination="5pI-np-0GV" id="iTf-f4-0nG"/>
                         <outlet property="signInLabel" destination="hho-Ki-unG" id="3Uo-Se-wO7"/>
                         <outlet property="validateButton" destination="vvW-h2-nB4" id="7fT-o8-OLf"/>
+                        <segue destination="lCk-ZM-Dea" kind="show" identifier="segueToAlert" id="lpm-Tm-UTA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4m-Xr-2QO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,7 +167,23 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1319.2" y="-505.41871921182269"/>
+            <point key="canvasLocation" x="2060" y="-247"/>
+        </scene>
+        <!--Alert And Adoption Controller-->
+        <scene sceneID="8uD-LD-rsu">
+            <objects>
+                <viewController id="lCk-ZM-Dea" customClass="AlertAndAdoptionController" customModule="PetRescue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KdH-J9-b7n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="urh-E7-wJ1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bH6-6A-con"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnR-SK-W1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3148" y="44"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="Sx0-yC-DmR">
@@ -244,7 +261,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1319" y="-1173"/>
+            <point key="canvasLocation" x="2060" y="-935"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="zPl-ec-oed">
@@ -356,7 +373,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1319" y="978"/>
+            <point key="canvasLocation" x="1273" y="444"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iJ7-i4-0eC">
@@ -472,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0C-2D-n4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2180" y="978"/>
+            <point key="canvasLocation" x="2060" y="443"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
