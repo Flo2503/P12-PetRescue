@@ -13,21 +13,16 @@ import FirebaseStorage
 
 class UserManager {
 
-    static func createUser(email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
+    static func createUser(email: String, password: String, name: String, firstName: String, _ callback: ((Error?) -> ())? = nil) {
         Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
             if let error = error {
                 callback?(error)
                 return
-            }
-            callback?(nil)
-        }
-    }
-
-    static func createDetailsUser(email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
-        Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
-            if let error = error {
-                callback?(error)
-                return
+            } else {
+                let ref = Database.database().reference()
+                if let userID = Auth.auth().currentUser?.uid {
+                    ref.child("users").child(userID).setValue(["userName": name, "userFirstName": firstName])
+                }
             }
             callback?(nil)
         }

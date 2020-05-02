@@ -39,7 +39,7 @@ class SignUpViewController: NavBarSetUp {
             fieldIsNotEmpty &&
             isValidPassword &&
             isValidSecondPassword {
-            UserManager.createUser(email: emailAdress.text!, password: password.text!)
+            UserManager.createUser(email: emailAdress.text!, password: password.text!, name: name.text!, firstName: firstName.text!)
             performSegue(withIdentifier: identifier, sender: self)
         } else {
             labelSignUp.text = errorMessage
@@ -53,6 +53,7 @@ class SignUpViewController: NavBarSetUp {
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation, name, firstName
         ])
+        UserManager.signOut()
     }
 
     override func viewWillAppear(_ animated: Bool) {
