@@ -15,6 +15,7 @@ class MainFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var animalBreed: UILabel!
     @IBOutlet weak var animalGender: UILabel!
     @IBOutlet weak var animalLocality: UILabel!
+    @IBOutlet weak var animalAge: UILabel!
     @IBOutlet weak var whiteView: UIView!
 
     override func awakeFromNib() {
@@ -27,7 +28,7 @@ class MainFeedTableViewCell: UITableViewCell {
     }
 
     private func addShadow() {
-        whiteView.layer.shadowColor = UIColor.red.cgColor
+        whiteView.layer.shadowColor = UIColor.gray.cgColor
         whiteView.layer.shadowRadius = 2.0
         whiteView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         whiteView.layer.shadowOpacity = 2.0
