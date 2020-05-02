@@ -9,7 +9,7 @@ import UIKit
 
 class SignUpViewController: NavBarSetUp {
 
-    private let identifier = "segueToAlert"
+    private let identifier = "segueToAdoptions"
     private let errorMessage = "Informations incorrectes"
 
     @IBOutlet weak var name: UITextField!
@@ -54,8 +54,5 @@ class SignUpViewController: NavBarSetUp {
         ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation, name, firstName
         ])
         UserManager.signOut()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
     }
 }

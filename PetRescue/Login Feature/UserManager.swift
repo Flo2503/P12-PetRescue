@@ -21,7 +21,7 @@ class UserManager {
             } else {
                 let ref = Database.database().reference()
                 if let userID = Auth.auth().currentUser?.uid {
-                    ref.child("users").child(userID).setValue(["userName": name, "userFirstName": firstName])
+                    ref.child("users").child(userID).setValue(["userName": name, "userFirstName": firstName, "emailAdress": email])
                 }
             }
             callback?(nil)

@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class SignInViewController: NavBarSetUp {
 
-    private let identifier = "segueToAlert"
+    private let identifier = "segueToAdoptions"
     private let erroMessage = "Adresse mail ou mot de passe incorrect"
 
     @IBOutlet weak var signInLabel: UILabel!
