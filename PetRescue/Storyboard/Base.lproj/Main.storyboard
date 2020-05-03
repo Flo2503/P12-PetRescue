@@ -305,6 +305,7 @@
                         <outlet property="animalBreed" destination="gaV-EG-bwr" id="P6R-Fu-jZg"/>
                         <outlet property="animalGender" destination="Ug2-xR-noj" id="qGl-1B-ED7"/>
                         <outlet property="animalName" destination="J9x-8c-8sr" id="QxN-vZ-7n0"/>
+                        <outlet property="infosTextView" destination="tBP-kT-us9" id="1DZ-EC-h8h"/>
                         <outlet property="locality" destination="O6F-Ss-ctc" id="wvz-ub-Q7M"/>
                     </connections>
                 </viewController>

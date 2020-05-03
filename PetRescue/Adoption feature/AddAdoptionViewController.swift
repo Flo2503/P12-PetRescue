@@ -16,7 +16,8 @@ class AddAdoptionViewController: UIViewController {
     @IBOutlet weak var animalGender: UITextField!
     @IBOutlet weak var animalAge: UITextField!
     @IBOutlet weak var locality: UITextField!
-
+    @IBOutlet weak var infosTextView: UITextView!
+    
     @IBAction func dismissKeyboard(_ sender: Any) {
         animalName.resignFirstResponder()
         animalBreed.resignFirstResponder()
