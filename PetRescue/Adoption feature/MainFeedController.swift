@@ -10,6 +10,8 @@ import UIKit
 
 class MainFeedController: NavBarSetUp {
 
+    @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) { }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)

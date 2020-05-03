@@ -17,6 +17,8 @@
 		5CA12F04245A127D006AC92B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F03245A127D006AC92B /* SignInViewController.swift */; };
 		5CA12F09245C6309006AC92B /* MainFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F08245C6309006AC92B /* MainFeedController.swift */; };
 		5CA12F0B245E0FF0006AC92B /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */; };
+		5CA12F0D245F3DED006AC92B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CA12F0C245F3DEC006AC92B /* GoogleService-Info.plist */; };
+		5CA12F0F245F5335006AC92B /* AddAdoptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */; };
 		5CCB2DD42454CD070038038A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UserManager.swift */; };
 		5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD52454E45A0038038A /* SignUpViewController.swift */; };
 		5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2B2452306B00077B33 /* AppDelegate.swift */; };
@@ -28,7 +30,6 @@
 		5CF24C462452307000077B33 /* PetRescueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C452452307000077B33 /* PetRescueTests.swift */; };
 		5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C5424534C9200077B33 /* LogInViewController.swift */; };
 		5CF24C5C24538DCC00077B33 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C5B24538DCC00077B33 /* Colors.swift */; };
-		5CF24C612454CAB400077B33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C602454CAB400077B33 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		5CA12F03245A127D006AC92B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5CA12F08245C6309006AC92B /* MainFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedController.swift; sourceTree = "<group>"; };
 		5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
+		5CA12F0C245F3DEC006AC92B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdoptionViewController.swift; sourceTree = "<group>"; };
 		5CCB2DD32454CD070038038A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CCB2DD52454E45A0038038A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5CF24C282452306B00077B33 /* PetRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +72,6 @@
 		5CF24C472452307000077B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CF24C5424534C9200077B33 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		5CF24C5B24538DCC00077B33 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		5CF24C602454CAB400077B33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0D95798F06FFAD4326F9929 /* Pods_PetRescueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetRescueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2C9B0CD2A4AD2497FD0EFE /* Pods_PetRescue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetRescue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,13 +128,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5CA12F07245C62C4006AC92B /* Alert and adoption feature */ = {
+		5CA12F07245C62C4006AC92B /* Adoption feature */ = {
 			isa = PBXGroup;
 			children = (
 				5CA12F08245C6309006AC92B /* MainFeedController.swift */,
+				5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */,
 				5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */,
 			);
-			path = "Alert and adoption feature";
+			path = "Adoption feature";
 			sourceTree = "<group>";
 		};
 		5CF24C1F2452306B00077B33 = {
@@ -158,10 +161,10 @@
 		5CF24C2A2452306B00077B33 /* PetRescue */ = {
 			isa = PBXGroup;
 			children = (
-				5CF24C602454CAB400077B33 /* GoogleService-Info.plist */,
+				5CA12F0C245F3DEC006AC92B /* GoogleService-Info.plist */,
 				5CF24C3C2452307000077B33 /* Info.plist */,
 				5CF24C51245336C000077B33 /* Support */,
-				5CA12F07245C62C4006AC92B /* Alert and adoption feature */,
+				5CA12F07245C62C4006AC92B /* Adoption feature */,
 				5CF24C502453369E00077B33 /* Storyboard */,
 				5CF24C5324534C5B00077B33 /* Login Feature */,
 				5CF24C52245336DB00077B33 /* Core Data */,
@@ -304,7 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CF24C3B2452307000077B33 /* LaunchScreen.storyboard in Resources */,
-				5CF24C612454CAB400077B33 /* GoogleService-Info.plist in Resources */,
+				5CA12F0D245F3DED006AC92B /* GoogleService-Info.plist in Resources */,
 				5CF24C382452307000077B33 /* Assets.xcassets in Resources */,
 				5CF24C332452306B00077B33 /* Main.storyboard in Resources */,
 			);
@@ -405,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CA12F0F245F5335006AC92B /* AddAdoptionViewController.swift in Sources */,
 				5CA12F04245A127D006AC92B /* SignInViewController.swift in Sources */,
 				5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */,
 				5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */,
