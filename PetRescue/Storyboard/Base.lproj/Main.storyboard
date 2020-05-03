@@ -205,46 +205,46 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="SLT-Pj-efL">
-                                <rect key="frame" x="20" y="186" width="374" height="474"/>
+                                <rect key="frame" x="20" y="186" width="374" height="434"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renseignez les informations : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6A-4t-f0U">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="75.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="69"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9x-8c-8sr">
-                                        <rect key="frame" x="0.0" y="79.5" width="374" height="76"/>
+                                        <rect key="frame" x="0.0" y="73" width="374" height="69"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Race*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaV-EG-bwr">
-                                        <rect key="frame" x="0.0" y="159.5" width="374" height="75.5"/>
+                                        <rect key="frame" x="0.0" y="146" width="374" height="69"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Genre*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ug2-xR-noj">
-                                        <rect key="frame" x="0.0" y="239" width="374" height="75.5"/>
+                                        <rect key="frame" x="0.0" y="219" width="374" height="69"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2El-c8-opG">
-                                        <rect key="frame" x="0.0" y="318.5" width="374" height="76"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date de naissance*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2El-c8-opG">
+                                        <rect key="frame" x="0.0" y="292" width="374" height="69"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Département*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6F-Ss-ctc">
-                                        <rect key="frame" x="0.0" y="398.5" width="374" height="75.5"/>
+                                        <rect key="frame" x="0.0" y="365" width="374" height="69"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ajoutez des informations complémentaires: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tBP-kT-us9">
-                                <rect key="frame" x="20" y="668" width="374" height="140"/>
+                                <rect key="frame" x="20" y="628" width="374" height="180"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="zgC-op-SLr"/>
+                                    <constraint firstAttribute="height" constant="180" id="zgC-op-SLr"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -255,21 +255,28 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfN-KM-C4d">
                                         <rect key="frame" x="0.0" y="0.0" width="118" height="120"/>
-                                        <state key="normal" title="Photo">
+                                        <state key="normal" image="default-image">
                                             <color key="titleColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addFirstPicture:" destination="CX6-pg-MgJ" eventType="touchUpInside" id="E9K-18-bgy"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWc-eC-89p">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWc-eC-89p">
                                         <rect key="frame" x="128" y="0.0" width="118" height="120"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Photo">
+                                        <state key="normal" image="default-image">
                                             <color key="titleColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addSecondPicture:" destination="CX6-pg-MgJ" eventType="touchUpInside" id="wE8-8g-CdA"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwY-sJ-5p6">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwY-sJ-5p6">
                                         <rect key="frame" x="256" y="0.0" width="118" height="120"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Photo"/>
+                                        <state key="normal" image="default-image"/>
+                                        <connections>
+                                            <action selector="addThirdPicture:" destination="CX6-pg-MgJ" eventType="touchUpInside" id="nij-bB-Ob0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -305,8 +312,11 @@
                         <outlet property="animalBreed" destination="gaV-EG-bwr" id="P6R-Fu-jZg"/>
                         <outlet property="animalGender" destination="Ug2-xR-noj" id="qGl-1B-ED7"/>
                         <outlet property="animalName" destination="J9x-8c-8sr" id="QxN-vZ-7n0"/>
+                        <outlet property="firstPicture" destination="YfN-KM-C4d" id="Wh3-wL-Oap"/>
                         <outlet property="infosTextView" destination="tBP-kT-us9" id="1DZ-EC-h8h"/>
                         <outlet property="locality" destination="O6F-Ss-ctc" id="wvz-ub-Q7M"/>
+                        <outlet property="secondPicture" destination="HWc-eC-89p" id="roM-TJ-DFH"/>
+                        <outlet property="thirdPicture" destination="TwY-sJ-5p6" id="RHm-IK-pkT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnH-Gj-ego" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -384,7 +394,7 @@
                                                             <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-gd-Zyv">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Né le: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-gd-Zyv">
                                                             <rect key="frame" x="202" y="99" width="182" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="D7c-F3-qeC"/>
@@ -474,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnR-SK-W1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381.25" y="128.87323943661971"/>
+            <point key="canvasLocation" x="2381.1594202898555" y="128.57142857142856"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="Sx0-yC-DmR">
