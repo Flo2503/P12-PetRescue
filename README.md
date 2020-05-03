@@ -5,9 +5,9 @@
 - [x] Use Firebase for Log in. New users with mail
 
 ## Alert / Adoption feature
-- [ ] Create first view (table view) with costums cells
+- [x] Create first view (table view) with costums cells
 - [ ] Create view "Details" 
-- [ ] Create view "Add Alert / Add Adoption"
+- [x] Create view "Add Adoption"
 - [ ] Create filter feature
 - [ ] Add camera roll / camera feature
 - [ ] Use Firebase for cloud data persistence
