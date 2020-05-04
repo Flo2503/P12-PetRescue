@@ -72,7 +72,6 @@ extension AddAdoptionViewController: UIImagePickerControllerDelegate, UINavigati
 
     @objc private func chooseImage() {
         imagePicker.delegate = self
-
         let optionMenu = UIAlertController(title: "Image", message: "Choisissez une source", preferredStyle: .actionSheet)
         let openCamera = UIAlertAction(title: "Appareil photo", style: .default, handler: { _ in
             self.cameraAccess()
