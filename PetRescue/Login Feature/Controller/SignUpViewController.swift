@@ -39,8 +39,16 @@ class SignUpViewController: NavBarSetUp {
             fieldIsNotEmpty &&
             isValidPassword &&
             isValidSecondPassword {
-            UserManager.createUser(email: emailAdress.text!, password: password.text!, name: name.text!, firstName: firstName.text!)
-            performSegue(withIdentifier: identifier, sender: self)
+            if let email = emailAdress.text, let password = password.text, let name = name.text, let firstName = firstName.text {
+                UserManager.createUser(email: email, password: password, name: name, firstName: firstName, callback: {success in
+                    if success {
+                        self.performSegue(withIdentifier: self.identifier, sender: self)
+                    } else {
+                        self.labelSignUp.text = self.errorMessage
+                        self.validateButton.layer.backgroundColor = UIColor.red.cgColor
+                    }
+                })
+            }
         } else {
             labelSignUp.text = errorMessage
             validateButton.layer.backgroundColor = UIColor.red.cgColor

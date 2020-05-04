@@ -19,7 +19,7 @@
 		5CA12F0B245E0FF0006AC92B /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */; };
 		5CA12F0D245F3DED006AC92B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CA12F0C245F3DEC006AC92B /* GoogleService-Info.plist */; };
 		5CA12F0F245F5335006AC92B /* AddAdoptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */; };
-		5CA12F11245F6A66006AC92B /* AnimalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F10245F6A66006AC92B /* AnimalManager.swift */; };
+		5CA12F11245F6A66006AC92B /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F10245F6A66006AC92B /* AdManager.swift */; };
 		5CCB2DD42454CD070038038A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UserManager.swift */; };
 		5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD52454E45A0038038A /* SignUpViewController.swift */; };
 		5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2B2452306B00077B33 /* AppDelegate.swift */; };
@@ -58,7 +58,7 @@
 		5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
 		5CA12F0C245F3DEC006AC92B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdoptionViewController.swift; sourceTree = "<group>"; };
-		5CA12F10245F6A66006AC92B /* AnimalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalManager.swift; sourceTree = "<group>"; };
+		5CA12F10245F6A66006AC92B /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 		5CCB2DD32454CD070038038A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CCB2DD52454E45A0038038A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5CF24C282452306B00077B33 /* PetRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +136,7 @@
 				5CA12F08245C6309006AC92B /* MainFeedController.swift */,
 				5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */,
 				5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */,
-				5CA12F10245F6A66006AC92B /* AnimalManager.swift */,
+				5CA12F10245F6A66006AC92B /* AdManager.swift */,
 			);
 			path = "Adoption feature";
 			sourceTree = "<group>";
@@ -424,7 +424,7 @@
 				5C9D4CC82457496C0015AB09 /* NavBarSetUp.swift in Sources */,
 				5CA12F002458DD03006AC92B /* InputValuesManager.swift in Sources */,
 				5CA12F0B245E0FF0006AC92B /* MainFeedTableViewCell.swift in Sources */,
-				5CA12F11245F6A66006AC92B /* AnimalManager.swift in Sources */,
+				5CA12F11245F6A66006AC92B /* AdManager.swift in Sources */,
 				5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */,
 				5CA12F022458DFCD006AC92B /* ItemSetUp.swift in Sources */,
 				5CCB2DD42454CD070038038A /* UserManager.swift in Sources */,

@@ -13,24 +13,24 @@ import FirebaseStorage
 
 class UserManager {
 
-    static func createUser(email: String, password: String, name: String, firstName: String, _ callback: ((Error?) -> ())? = nil) {
-        Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
-            if let error = error {
-                callback?(error)
+    static func createUser(email: String, password: String, name: String, firstName: String, callback: @escaping (Bool) -> ()) {
+        Auth.auth().createUser(withEmail: email, password: password) { (_, success) in
+            if success != nil {
+                callback(false)
                 return
             } else {
                 let ref = Database.database().reference()
                 if let userID = Auth.auth().currentUser?.uid {
-                    ref.child("users").child(userID).setValue(["userName": name, "userFirstName": firstName, "emailAdress": email])
+                    ref.child("users").child(userID).setValue(["name": name, "firstName": firstName, "emailAddress": email])
                 }
             }
-            callback?(nil)
+            callback(true)
         }
     }
 
     static func login(withEmail email: String, password: String, callback: @escaping (Bool) -> ()) {
-        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
-            if let error = error {
+        Auth.auth().signIn(withEmail: email, password: password) { (_, success) in
+            if success != nil {
                 callback(false)
                 return
             }
@@ -47,21 +47,21 @@ class UserManager {
         }
     }
 
-    static func sendMailVerification(_ callback: ((Error?) -> ())? = nil) {
-        Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
-            callback?(error)
+    static func sendMailVerification(callback: @escaping (Bool) -> ()) {
+        Auth.auth().currentUser?.sendEmailVerification(completion: { (succes) in
+            callback(false)
         })
     }
 
-    static func reloadUser(_ callback: ((Error?) -> ())? = nil) {
-        Auth.auth().currentUser?.reload(completion: { (error) in
-            callback?(error)
+    static func reloadUser(callback: @escaping (Bool) -> ()) {
+        Auth.auth().currentUser?.reload(completion: { (success) in
+            callback(false)
         })
     }
 
-    static func sendPasswordReset(withEmail email: String, _ callback: ((Error?) -> ())? = nil) {
-        Auth.auth().sendPasswordReset(withEmail: email) { error in
-            callback?(error)
+    static func sendPasswordReset(withEmail email: String, callback: @escaping (Bool) -> ()) {
+        Auth.auth().sendPasswordReset(withEmail: email) { success in
+            callback(false)
         }
     }
 }

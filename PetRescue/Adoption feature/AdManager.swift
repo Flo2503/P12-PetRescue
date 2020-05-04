@@ -1,5 +1,5 @@
 //
-//  AnimalManager.swift
+//  AdManager.swift
 //  PetRescue
 //
 //  Created by Flo on 03/05/2020.
@@ -11,6 +11,6 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-class AnimalManager {
+class AdManager {
 
 }
