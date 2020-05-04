@@ -10,6 +10,8 @@ import UIKit
 
 class MainFeedController: NavBarSetUp {
 
+    private var identifier = "segueToDetails"
+
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) { }
 
     override func viewDidLoad() {
@@ -19,8 +21,13 @@ class MainFeedController: NavBarSetUp {
 }
 
 extension MainFeedController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: identifier, sender: self)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

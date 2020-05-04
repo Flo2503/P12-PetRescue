@@ -23,9 +23,17 @@ class ResetPasswordViewController: UIViewController {
     @IBAction func resetPassword(_ sender: Any) {
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdressResetPassword.text!)
         if isEmailAddressValid {
-            emailAdressResetPassword.layer.borderColor = Colors.customGreen.cgColor
-            labelResetPassword.text = "Mail envoyé avec succès !"
-            UserManager.sendPasswordReset(withEmail: emailAdressResetPassword.text!)
+            if let email = emailAdressResetPassword.text {
+                UserManager.sendPasswordReset(withEmail: email, callback: { success in
+                    if success {
+                        self.emailAdressResetPassword.layer.borderColor = Colors.customGreen.cgColor
+                        self.labelResetPassword.text = "Mail envoyé avec succès !"
+                    } else {
+                        self.labelResetPassword.text = "Adresse mail non valide"
+                        self.validateResetPassword.layer.backgroundColor = UIColor.red.cgColor
+                    }
+                })
+            }
         } else {
             labelResetPassword.text = "Adresse mail non valide"
             validateResetPassword.layer.backgroundColor = UIColor.red.cgColor

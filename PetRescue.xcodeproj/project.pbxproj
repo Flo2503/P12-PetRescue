@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3578B7E7C767DF5D7CCA87A8 /* Pods_PetRescueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D95798F06FFAD4326F9929 /* Pods_PetRescueTests.framework */; };
 		40DF9BDB20B30601F3F1D398 /* Pods_PetRescue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2C9B0CD2A4AD2497FD0EFE /* Pods_PetRescue.framework */; };
+		5C9C2F6A2460D648002A02F1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C2F692460D648002A02F1 /* DetailsViewController.swift */; };
 		5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC1245704360015AB09 /* GradientBackground.swift */; };
 		5C9D4CC82457496C0015AB09 /* NavBarSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */; };
 		5CA12EFE2458CD26006AC92B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */; };
@@ -48,6 +49,7 @@
 		2BF171235C611F8AB9CFC1C4 /* Pods-PetRescue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescue.debug.xcconfig"; path = "Target Support Files/Pods-PetRescue/Pods-PetRescue.debug.xcconfig"; sourceTree = "<group>"; };
 		5ABB5D58A0575D735DEA2C46 /* Pods-PetRescueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.debug.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C8D726BFA961686A7E7D072 /* Pods-PetRescueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.release.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C9C2F692460D648002A02F1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		5C9D4CC1245704360015AB09 /* GradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarSetUp.swift; sourceTree = "<group>"; };
 		5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5CA12F08245C6309006AC92B /* MainFeedController.swift */,
+				5C9C2F692460D648002A02F1 /* DetailsViewController.swift */,
 				5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */,
 				5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */,
 				5CA12F10245F6A66006AC92B /* AdManager.swift */,
@@ -422,6 +425,7 @@
 				5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */,
 				5CA12F09245C6309006AC92B /* MainFeedController.swift in Sources */,
 				5C9D4CC82457496C0015AB09 /* NavBarSetUp.swift in Sources */,
+				5C9C2F6A2460D648002A02F1 /* DetailsViewController.swift in Sources */,
 				5CA12F002458DD03006AC92B /* InputValuesManager.swift in Sources */,
 				5CA12F0B245E0FF0006AC92B /* MainFeedTableViewCell.swift in Sources */,
 				5CA12F11245F6A66006AC92B /* AdManager.swift in Sources */,

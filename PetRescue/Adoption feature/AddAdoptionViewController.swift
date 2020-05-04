@@ -28,9 +28,11 @@ class AddAdoptionViewController: UIViewController {
     }
 
     @IBAction func addSecondPicture(_ sender: Any) {
+        chooseImage()
     }
 
     @IBAction func addThirdPicture(_ sender: Any) {
+        chooseImage()
     }
 
     @IBAction func dismissKeyboard(_ sender: Any) {

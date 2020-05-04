@@ -42,6 +42,7 @@ class SignUpViewController: NavBarSetUp {
             if let email = emailAdress.text, let password = password.text, let name = name.text, let firstName = firstName.text {
                 UserManager.createUser(email: email, password: password, name: name, firstName: firstName, callback: {success in
                     if success {
+                        self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
                         self.performSegue(withIdentifier: self.identifier, sender: self)
                     } else {
                         self.labelSignUp.text = self.errorMessage
