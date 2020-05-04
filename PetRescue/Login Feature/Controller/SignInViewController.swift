@@ -29,8 +29,14 @@ class SignInViewController: NavBarSetUp {
         let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([password, emailAdress])
 
         if  isEmailAddressValid && fieldIsNotEmpty {
-            UserManager.login(withEmail: emailAdress.text!, password: password.text!)
-            performSegue(withIdentifier: identifier, sender: self)
+            UserManager.login(withEmail: emailAdress.text!, password: password.text!, callback: {success in
+                if success {
+                    self.performSegue(withIdentifier: self.identifier, sender: self)
+                } else {
+                    self.validateButton.layer.backgroundColor = UIColor.red.cgColor
+                    self.signInLabel.text = self.erroMessage
+                }
+            })
         } else {
             validateButton.layer.backgroundColor = UIColor.red.cgColor
             signInLabel.text = erroMessage

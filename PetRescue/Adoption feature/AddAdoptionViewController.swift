@@ -24,7 +24,7 @@ class AddAdoptionViewController: UIViewController {
     @IBOutlet weak var thirdPicture: UIButton!
 
     @IBAction func addFirstPicture(_ sender: Any) {
-        chooseSourceImage()
+        chooseImage()
     }
 
     @IBAction func addSecondPicture(_ sender: Any) {
@@ -48,7 +48,7 @@ class AddAdoptionViewController: UIViewController {
     }
 }
 
-extension AddAdoptionViewController {
+extension AddAdoptionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // Photo library access
       @objc private func libraryAccess() {
@@ -57,7 +57,7 @@ extension AddAdoptionViewController {
           present(imagePicker, animated: true, completion: nil)
       }
 
-      // Camera access (Bonus)
+      // Camera access
       @objc private func cameraAccess() {
           if UIImagePickerController.isSourceTypeAvailable(.camera) {
               imagePicker.sourceType = .camera
@@ -70,7 +70,9 @@ extension AddAdoptionViewController {
         }
     }
 
-    @objc private func chooseSourceImage() {
+    @objc private func chooseImage() {
+        imagePicker.delegate = self
+
         let optionMenu = UIAlertController(title: "Image", message: "Choisissez une source", preferredStyle: .actionSheet)
         let openCamera = UIAlertAction(title: "Appareil photo", style: .default, handler: { _ in
             self.cameraAccess()
@@ -83,5 +85,15 @@ extension AddAdoptionViewController {
         optionMenu.addAction(openLibrary)
         optionMenu.addAction(cancelAction)
         self.present(optionMenu, animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        firstPicture.setImage(image, for: .normal)
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }

@@ -28,13 +28,13 @@ class UserManager {
         }
     }
 
-    static func login(withEmail email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
+    static func login(withEmail email: String, password: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             if let error = error {
-                callback?(error)
+                callback(false)
                 return
             }
-            callback?(nil)
+            callback(true)
         }
     }
 
