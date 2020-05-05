@@ -22,8 +22,8 @@
 		5CA12F11245F6A66006AC92B /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F10245F6A66006AC92B /* AdManager.swift */; };
 		5CCB2DD42454CD070038038A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UserManager.swift */; };
 		5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD52454E45A0038038A /* SignUpViewController.swift */; };
-		5CD4148624622BCA00FFDB30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CD4148524622BCA00FFDB30 /* GoogleService-Info.plist */; };
 		5CD4148824622C2A00FFDB30 /* TabBarSetUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */; };
+		5CD4148A24622D6200FFDB30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CD4148924622D6200FFDB30 /* GoogleService-Info.plist */; };
 		5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2B2452306B00077B33 /* AppDelegate.swift */; };
 		5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2D2452306B00077B33 /* SceneDelegate.swift */; };
 		5CF24C332452306B00077B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C312452306B00077B33 /* Main.storyboard */; };
@@ -63,8 +63,8 @@
 		5CA12F10245F6A66006AC92B /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 		5CCB2DD32454CD070038038A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CCB2DD52454E45A0038038A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		5CD4148524622BCA00FFDB30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSetUpController.swift; sourceTree = "<group>"; };
+		5CD4148924622D6200FFDB30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5CF24C282452306B00077B33 /* PetRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF24C2B2452306B00077B33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CF24C2D2452306B00077B33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		5CF24C2A2452306B00077B33 /* PetRescue */ = {
 			isa = PBXGroup;
 			children = (
-				5CD4148524622BCA00FFDB30 /* GoogleService-Info.plist */,
+				5CD4148924622D6200FFDB30 /* GoogleService-Info.plist */,
 				5CF24C3C2452307000077B33 /* Info.plist */,
 				5CF24C51245336C000077B33 /* Support */,
 				5CA12F07245C62C4006AC92B /* Adoption feature */,
@@ -316,7 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CF24C3B2452307000077B33 /* LaunchScreen.storyboard in Resources */,
-				5CD4148624622BCA00FFDB30 /* GoogleService-Info.plist in Resources */,
+				5CD4148A24622D6200FFDB30 /* GoogleService-Info.plist in Resources */,
 				5CF24C382452307000077B33 /* Assets.xcassets in Resources */,
 				5CF24C332452306B00077B33 /* Main.storyboard in Resources */,
 			);
