@@ -1,5 +1,5 @@
 //
-//  TabBarViewController.swift
+//  TabBarSetUpController.swift
 //  PetRescue
 //
 //  Created by Flo on 06/05/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TabBarSetUpController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

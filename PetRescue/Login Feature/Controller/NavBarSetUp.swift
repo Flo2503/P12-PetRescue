@@ -10,6 +10,8 @@ import UIKit
 
 class NavBarSetUp: UIViewController {
 
+    private let identifier = "mainTabBar"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
@@ -19,5 +21,5 @@ class NavBarSetUp: UIViewController {
     func noShadow() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-    }
+    }    
 }
