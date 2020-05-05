@@ -46,6 +46,7 @@ class AddAdoptionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         ItemSetUp.textFieldSetUp([animalName, animalBreed, animalGender, animalAge, locality])
     }
 }

@@ -160,7 +160,7 @@
                         <outlet property="password" destination="5pI-np-0GV" id="iTf-f4-0nG"/>
                         <outlet property="signInLabel" destination="hho-Ki-unG" id="3Uo-Se-wO7"/>
                         <outlet property="validateButton" destination="vvW-h2-nB4" id="7fT-o8-OLf"/>
-                        <segue destination="lCk-ZM-Dea" kind="show" identifier="segueToAdoptions" id="wVd-ac-yvy"/>
+                        <segue destination="sRB-9N-ZR0" kind="show" identifier="segueToAdoptions" id="JTC-th-AhY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4m-Xr-2QO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,6 +175,13 @@
         <!--Add Adoption View Controller-->
         <scene sceneID="EAE-TD-0Kg">
             <objects>
+                <exit id="3f9-wl-HOj" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnH-Gj-ego" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="FRU-hP-M59">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="CX6-pg-MgJ" id="77H-ph-NzK"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <viewController id="CX6-pg-MgJ" customClass="AddAdoptionViewController" customModule="PetRescue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UD6-Dw-UhR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -319,17 +326,28 @@
                         <outlet property="thirdPicture" destination="TwY-sJ-5p6" id="RHm-IK-pkT"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fnH-Gj-ego" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="3f9-wl-HOj" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="FRU-hP-M59">
-                    <connections>
-                        <action selector="dismissKeyboard:" destination="CX6-pg-MgJ" id="77H-ph-NzK"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2381.1594202898555" y="-535.04464285714278"/>
+            <point key="canvasLocation" x="4158" y="-815"/>
         </scene>
-        <!--Main Feed Controller-->
+        <!--Tab Bar View Controller-->
+        <scene sceneID="Z4C-Vn-cMn">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FlJ-a7-pI1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController id="sRB-9N-ZR0" customClass="TabBarViewController" customModule="PetRescue" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YOv-zQ-nS0"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OTc-kZ-hSe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nfR-dk-rhj" kind="relationship" relationship="viewControllers" id="VHg-fD-ms4"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="2329" y="144"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="8uD-LD-rsu">
             <objects>
                 <viewController id="lCk-ZM-Dea" customClass="MainFeedController" customModule="PetRescue" customModuleProvider="target" sceneMemberID="viewController">
@@ -347,7 +365,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wAK-yu-YYb">
-                                <rect key="frame" x="0.0" y="136" width="414" height="726"/>
+                                <rect key="frame" x="0.0" y="136" width="414" height="677"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainFeedCell" rowHeight="180" id="81R-Gz-QGI" customClass="MainFeedTableViewCell" customModule="PetRescue" customModuleProvider="target">
@@ -474,6 +492,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="urh-E7-wJ1"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Phf-AZ-4ML"/>
                     <navigationItem key="navigationItem" id="bH6-6A-con">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="AIN-no-2m3">
                             <connections>
@@ -487,7 +506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnR-SK-W1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381.1594202898555" y="128.57142857142856"/>
+            <point key="canvasLocation" x="4159" y="-135"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="Dhx-Mg-teP">
@@ -515,6 +534,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ka-5h-33N">
                                         <rect key="frame" x="0.0" y="253.5" width="374" height="253"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="separatorColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="animalDetailsCell" textLabel="AcB-VU-6O8" style="IBUITableViewCellStyleDefault" id="zDl-aa-sDk">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
@@ -565,7 +585,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRb-lr-S03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3202.5" y="128.87323943661971"/>
+            <point key="canvasLocation" x="4984" y="-135"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="Sx0-yC-DmR">
@@ -748,7 +768,7 @@
                         <outlet property="password" destination="eQd-vx-Z6Y" id="DMx-gO-DxJ"/>
                         <outlet property="passwordValidation" destination="6ot-8h-47C" id="O6w-Kr-D1D"/>
                         <outlet property="validateButton" destination="500-vM-flh" id="9lD-mO-G97"/>
-                        <segue destination="lCk-ZM-Dea" kind="show" identifier="segueToAdoptions" id="lYV-dU-Ylc"/>
+                        <segue destination="sRB-9N-ZR0" kind="show" identifier="segueToAdoptions" id="XyM-V4-sGB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itc-ML-LeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -763,6 +783,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iJ7-i4-0eC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELb-cs-dP4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="Kt7-yN-nAh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KI5-nd-FcW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -772,13 +793,29 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="m05-PY-BgV"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ELb-cs-dP4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-764" y="130"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="EI4-dr-K8g">
+            <objects>
+                <navigationController id="nfR-dk-rhj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="TfG-E5-SwY"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fq7-6k-O2a">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lCk-ZM-Dea" kind="relationship" relationship="rootViewController" id="vZf-Ee-RXM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vFj-4u-AoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3361" y="-135"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wVd-ac-yvy"/>
+        <segue reference="JTC-th-AhY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
