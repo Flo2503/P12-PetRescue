@@ -188,7 +188,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28B-rB-4rr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3078" y="-131"/>
+            <point key="canvasLocation" x="3601" y="-500"/>
         </scene>
         <!--Add Adoption View Controller-->
         <scene sceneID="EAE-TD-0Kg">
@@ -246,7 +246,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date de naissance*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2El-c8-opG">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2El-c8-opG">
                                         <rect key="frame" x="0.0" y="292" width="374" height="69"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -345,7 +345,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3974" y="-832"/>
+            <point key="canvasLocation" x="4567" y="-1238"/>
         </scene>
         <!--mainTabBar-->
         <scene sceneID="0Fd-b0-w9m">
@@ -363,7 +363,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMA-qc-Y4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2158" y="130"/>
+            <point key="canvasLocation" x="2359" y="130"/>
         </scene>
         <!--MainFeedController-->
         <scene sceneID="8uD-LD-rsu">
@@ -430,7 +430,7 @@
                                                             <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Né le: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-gd-Zyv">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-gd-Zyv">
                                                             <rect key="frame" x="202" y="99" width="182" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="D7c-F3-qeC"/>
@@ -511,7 +511,12 @@
                         <viewLayoutGuide key="safeArea" id="urh-E7-wJ1"/>
                     </view>
                     <navigationItem key="navigationItem" id="bH6-6A-con">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="AIN-no-2m3">
+                        <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="wEf-3b-ifY">
+                            <connections>
+                                <action selector="tapLogoutButton:" destination="lCk-ZM-Dea" id="j3o-Ar-6fT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Ajouter" id="AIN-no-2m3">
                             <connections>
                                 <segue destination="CX6-pg-MgJ" kind="presentation" id="ijB-uW-27c"/>
                             </connections>
@@ -519,11 +524,13 @@
                     </navigationItem>
                     <connections>
                         <segue destination="ouR-nn-Wil" kind="show" identifier="segueToDetails" id="XK4-cT-V1B"/>
+                        <segue destination="yzq-as-Cc8" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="loi-iZ-zjh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnR-SK-W1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yzq-as-Cc8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3975" y="-131"/>
+            <point key="canvasLocation" x="4567" y="-500"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="Dhx-Mg-teP">
@@ -543,13 +550,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4wT-qH-sY0">
-                                <rect key="frame" x="20" y="136" width="374" height="676.5"/>
+                                <rect key="frame" x="20" y="136" width="374" height="669"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-oK-usR">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="222"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="219.5"/>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ka-5h-33N">
-                                        <rect key="frame" x="0.0" y="227" width="374" height="222.5"/>
+                                        <rect key="frame" x="0.0" y="224.5" width="374" height="220"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="separatorColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
@@ -573,7 +580,7 @@
                                         </prototypes>
                                     </tableView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tp0-1Z-7HY">
-                                        <rect key="frame" x="0.0" y="454.5" width="374" height="222"/>
+                                        <rect key="frame" x="0.0" y="449.5" width="374" height="219.5"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -584,7 +591,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="RLu-Ie-UW7" firstAttribute="bottom" secondItem="4wT-qH-sY0" secondAttribute="bottom" constant="0.5" id="7WE-3S-yCd"/>
+                            <constraint firstItem="RLu-Ie-UW7" firstAttribute="bottom" secondItem="4wT-qH-sY0" secondAttribute="bottom" constant="8" id="7WE-3S-yCd"/>
                             <constraint firstItem="4wT-qH-sY0" firstAttribute="leading" secondItem="RLu-Ie-UW7" secondAttribute="leading" constant="20" id="8TH-mR-a39"/>
                             <constraint firstItem="4wT-qH-sY0" firstAttribute="top" secondItem="69o-53-MeZ" secondAttribute="bottom" constant="8" id="CvJ-ND-nWt"/>
                             <constraint firstItem="RLu-Ie-UW7" firstAttribute="trailing" secondItem="4wT-qH-sY0" secondAttribute="trailing" constant="20" id="X00-Uk-Can"/>
@@ -602,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRb-lr-S03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4784" y="-131"/>
+            <point key="canvasLocation" x="5422" y="-488"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="Sx0-yC-DmR">
@@ -821,6 +828,5 @@
     <resources>
         <image name="default-image" width="800" height="600"/>
         <image name="launchscreen_icon" width="500" height="500"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>

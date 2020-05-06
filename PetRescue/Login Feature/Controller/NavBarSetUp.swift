@@ -21,5 +21,5 @@ class NavBarSetUp: UIViewController {
     func noShadow() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-    }    
+    }
 }

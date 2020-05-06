@@ -62,6 +62,5 @@ class SignUpViewController: NavBarSetUp {
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation, name, firstName
         ])
-        UserManager.signOut()
     }
 }

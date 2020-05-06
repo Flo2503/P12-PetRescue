@@ -11,8 +11,21 @@ import UIKit
 class MainFeedController: NavBarSetUp {
 
     private var identifier = "segueToDetails"
+    private var unwindIdentifier = "unwindToLogin"
 
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) { }
+
+    @IBAction func tapLogoutButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Vous êtes sur le point d'être déconnecté", message: "Continuer ?", preferredStyle: .actionSheet)
+        let logout = UIAlertAction(title: "Oui", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: self.unwindIdentifier, sender: self)
+            UserManager.signOut()
+        })
+        let cancelAction = UIAlertAction(title: "Non", style: .cancel)
+        alert.addAction(logout)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

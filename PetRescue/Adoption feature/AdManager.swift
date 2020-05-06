@@ -12,5 +12,4 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class AdManager {
-
 }

@@ -14,6 +14,8 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var inscriptionButton: UIButton!
     @IBOutlet weak var buttonView: UIStackView!
 
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) { }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerRadius([connexionButton, inscriptionButton])

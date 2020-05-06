@@ -38,19 +38,12 @@ class UserManager {
         }
     }
 
-    static func signOut() -> Bool {
+    static func signOut() {
         do {
             try Auth.auth().signOut()
-            return true
         } catch {
-            return false
+            print("")
         }
-    }
-
-    static func sendMailVerification(callback: @escaping (Bool) -> ()) {
-        Auth.auth().currentUser?.sendEmailVerification(completion: { (_) in
-            callback(false)
-        })
     }
 
     static func reloadUser(callback: @escaping (Bool) -> ()) {
