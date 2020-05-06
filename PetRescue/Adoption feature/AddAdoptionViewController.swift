@@ -12,6 +12,7 @@ class AddAdoptionViewController: UIViewController {
 
     private var imagePicker = UIImagePickerController()
     private let unwindIdentifier = "segueToMainFeed"
+    private let alertTextIsEmpty = "Informations manquantes :"
 
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var animalName: UITextField!
@@ -23,6 +24,7 @@ class AddAdoptionViewController: UIViewController {
     @IBOutlet weak var firstPicture: UIButton!
     @IBOutlet weak var secondPicture: UIButton!
     @IBOutlet weak var thirdPicture: UIButton!
+    @IBOutlet weak var addButton: UIButton!
 
     @IBAction func addFirstPicture(_ sender: Any) {
         chooseImage()
@@ -40,6 +42,9 @@ class AddAdoptionViewController: UIViewController {
         let textIsNotEmpty = InputValuesManager.fieldIsNotEmpty([animalName, animalKind, animalGender, animalAge, locality])
         if textIsNotEmpty {
             createAd()
+        } else {
+            addButton.setTitleColor(.red, for: .normal)
+            addLabel.text = alertTextIsEmpty
         }
     }
 

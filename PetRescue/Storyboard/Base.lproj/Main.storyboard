@@ -334,6 +334,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="O45-xv-QD0" id="jVD-UO-qi8"/>
                         <outlet property="addLabel" destination="B6A-4t-f0U" id="WSO-s0-Cf9"/>
                         <outlet property="animalAge" destination="2El-c8-opG" id="hpH-bR-kG8"/>
                         <outlet property="animalGender" destination="Ug2-xR-noj" id="qGl-1B-ED7"/>
@@ -422,7 +423,7 @@
                                                             <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Race" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Z9-ly-YWk">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Z9-ly-YWk">
                                                             <rect key="frame" x="202" y="41" width="182" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Irb-OQ-bfj"/>
