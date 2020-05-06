@@ -27,19 +27,8 @@ class SignInViewController: NavBarSetUp {
     @IBAction func tapOnValidate(_ sender: Any) {
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!)
         let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([password, emailAdress])
-
         if isEmailAddressValid && fieldIsNotEmpty {
-            if let email = emailAdress.text, let password = password.text {
-                UserManager.login(withEmail: email, password: password, callback: {success in
-                    if success {
-                        self.performSegue(withIdentifier: self.identifier, sender: self)
-                        self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
-                    } else {
-                        self.validateButton.layer.backgroundColor = UIColor.red.cgColor
-                        self.signInLabel.text = self.erroMessage
-                    }
-                })
-            }
+            login()
         } else {
             validateButton.layer.backgroundColor = UIColor.red.cgColor
             signInLabel.text = erroMessage
@@ -53,5 +42,19 @@ class SignInViewController: NavBarSetUp {
         InputValuesManager.securePassword([password])
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password])
+    }
+
+    private func login() {
+        if let email = emailAdress.text, let password = password.text {
+            UserManager.login(withEmail: email, password: password, callback: {success in
+                if success {
+                    self.performSegue(withIdentifier: self.identifier, sender: self)
+                    self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
+                } else {
+                    self.validateButton.layer.backgroundColor = UIColor.red.cgColor
+                    self.signInLabel.text = self.erroMessage
+                }
+            })
+        }
     }
 }

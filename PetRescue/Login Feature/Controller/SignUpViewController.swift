@@ -39,17 +39,7 @@ class SignUpViewController: NavBarSetUp {
             fieldIsNotEmpty &&
             isValidPassword &&
             isValidSecondPassword {
-            if let email = emailAdress.text, let password = password.text, let name = name.text, let firstName = firstName.text {
-                UserManager.createUser(email: email, password: password, name: name, firstName: firstName, callback: {success in
-                    if success {
-                        self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
-                        self.performSegue(withIdentifier: self.identifier, sender: self)
-                    } else {
-                        self.labelSignUp.text = self.errorMessage
-                        self.validateButton.layer.backgroundColor = UIColor.red.cgColor
-                    }
-                })
-            }
+            signUp()
         } else {
             labelSignUp.text = errorMessage
             validateButton.layer.backgroundColor = UIColor.red.cgColor
@@ -62,5 +52,19 @@ class SignUpViewController: NavBarSetUp {
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation, name, firstName
         ])
+    }
+
+    private func signUp() {
+        if let email = emailAdress.text, let password = password.text, let name = name.text, let firstName = firstName.text {
+            UserManager.createUser(email: email, password: password, name: name, firstName: firstName, callback: {success in
+                if success {
+                    self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
+                    self.performSegue(withIdentifier: self.identifier, sender: self)
+                } else {
+                    self.labelSignUp.text = self.errorMessage
+                    self.validateButton.layer.backgroundColor = UIColor.red.cgColor
+                }
+            })
+        }
     }
 }

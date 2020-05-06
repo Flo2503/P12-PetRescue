@@ -38,11 +38,12 @@ class UserManager {
         }
     }
 
-    static func signOut() {
+    static func signOut() -> Bool {
         do {
             try Auth.auth().signOut()
+            return true
         } catch {
-            print("")
+            return false
         }
     }
 

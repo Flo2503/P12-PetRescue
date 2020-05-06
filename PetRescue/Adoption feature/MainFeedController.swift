@@ -18,8 +18,11 @@ class MainFeedController: NavBarSetUp {
     @IBAction func tapLogoutButton(_ sender: Any) {
         let alert = UIAlertController(title: "Vous êtes sur le point d'être déconnecté", message: "Continuer ?", preferredStyle: .actionSheet)
         let logout = UIAlertAction(title: "Oui", style: .default, handler: { _ in
-            self.performSegue(withIdentifier: self.unwindIdentifier, sender: self)
-            UserManager.signOut()
+            if UserManager.signOut() == true {
+                self.performSegue(withIdentifier: self.unwindIdentifier, sender: self)
+            } else {
+                print("logout failure")
+            }
         })
         let cancelAction = UIAlertAction(title: "Non", style: .cancel)
         alert.addAction(logout)
