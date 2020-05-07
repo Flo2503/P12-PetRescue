@@ -12,10 +12,8 @@ class MainFeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var animalPicture: UIImageView!
     @IBOutlet weak var animalName: UILabel!
-    @IBOutlet weak var animalBreed: UILabel!
-    @IBOutlet weak var animalGender: UILabel!
+    @IBOutlet weak var animalKind: UILabel!
     @IBOutlet weak var animalLocality: UILabel!
-    @IBOutlet weak var animalAge: UILabel!
     @IBOutlet weak var whiteView: UIView!
 
     override func awakeFromNib() {
@@ -34,10 +32,9 @@ class MainFeedTableViewCell: UITableViewCell {
         whiteView.layer.shadowOpacity = 2.0
     }
 
-    func configure(name: String, breed: String, gender: String, locality: String) {
+    func configure(name: String, kind: String, gender: String, locality: String) {
         animalName.text = name
-        animalBreed.text = breed
-        animalGender.text = gender
+        animalKind.text = kind
         animalLocality.text = locality
     }
 }

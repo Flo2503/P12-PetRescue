@@ -22,19 +22,9 @@ class AddAdoptionViewController: UIViewController {
     @IBOutlet weak var locality: UITextField!
     @IBOutlet weak var infosTextView: UITextView!
     @IBOutlet weak var firstPicture: UIButton!
-    @IBOutlet weak var secondPicture: UIButton!
-    @IBOutlet weak var thirdPicture: UIButton!
     @IBOutlet weak var addButton: UIButton!
 
     @IBAction func addFirstPicture(_ sender: Any) {
-        chooseImage()
-    }
-
-    @IBAction func addSecondPicture(_ sender: Any) {
-        chooseImage()
-    }
-
-    @IBAction func addThirdPicture(_ sender: Any) {
         chooseImage()
     }
 
