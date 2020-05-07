@@ -13,6 +13,7 @@ class AddAdoptionViewController: UIViewController {
     private var imagePicker = UIImagePickerController()
     private let unwindIdentifier = "segueToMainFeed"
     private let alertTextIsEmpty = "Informations manquantes :"
+    private let image = UIImage()
 
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var animalName: UITextField!
@@ -53,8 +54,17 @@ class AddAdoptionViewController: UIViewController {
     }
 
     private func createAd() {
-        if let name = animalName.text, let kind = animalKind.text, let gender = animalGender.text, let age = animalAge.text, let locality = locality.text, let details = infosTextView.text {
-            AdManager.createAd(name: name, kind: kind, gender: gender, age: age, locality: locality, details: details)
+        if let name = animalName.text, let kind = animalKind.text, let gender = animalGender.text, let age = animalAge.text, let locality = locality.text, let details = infosTextView.text, let image = firstPicture.imageView?.image {
+            AdManager.uploadMedia(image: image, completion: { url in
+                guard let url = url else { return }
+                AdManager.createAd(name: name,
+                                   kind: kind,
+                                   gender: gender,
+                                   age: age,
+                                   locality: locality,
+                                   animalImage: url,
+                                   details: details)
+            })
             performSegue(withIdentifier: unwindIdentifier, sender: self)
         }
     }
