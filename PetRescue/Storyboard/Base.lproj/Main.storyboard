@@ -237,7 +237,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9x-8c-8sr">
                                         <rect key="frame" x="0.0" y="64" width="374" height="55.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="nickname"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type (chat, chien, autre)*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaV-EG-bwr">
                                         <rect key="frame" x="0.0" y="128.5" width="374" height="55"/>
@@ -257,7 +257,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Département ou ville" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6F-Ss-ctc">
                                         <rect key="frame" x="0.0" y="320.5" width="374" height="55.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="address-level2"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informations complémentaires : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX9-F2-gTC">
                                         <rect key="frame" x="0.0" y="385" width="374" height="55"/>
@@ -319,9 +319,9 @@
                         <outlet property="animalGender" destination="Ug2-xR-noj" id="qGl-1B-ED7"/>
                         <outlet property="animalKind" destination="gaV-EG-bwr" id="oHy-dz-LVl"/>
                         <outlet property="animalName" destination="J9x-8c-8sr" id="QxN-vZ-7n0"/>
-                        <outlet property="firstPicture" destination="YfN-KM-C4d" id="Wh3-wL-Oap"/>
                         <outlet property="infosTextView" destination="tBP-kT-us9" id="1DZ-EC-h8h"/>
                         <outlet property="locality" destination="O6F-Ss-ctc" id="wvz-ub-Q7M"/>
+                        <outlet property="picture" destination="YfN-KM-C4d" id="8ze-PL-krw"/>
                         <segue destination="3f9-wl-HOj" kind="unwind" identifier="segueToMainFeed" unwindAction="unwindToMainFeedWithSegue:" id="GZQ-I2-MWJ"/>
                     </connections>
                 </viewController>
