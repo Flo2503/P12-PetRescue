@@ -19,7 +19,7 @@
 		5CA12F09245C6309006AC92B /* MainFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F08245C6309006AC92B /* MainFeedController.swift */; };
 		5CA12F0B245E0FF0006AC92B /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */; };
 		5CA12F0F245F5335006AC92B /* AddAdoptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */; };
-		5CA12F11245F6A66006AC92B /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F10245F6A66006AC92B /* AdManager.swift */; };
+		5CB7BC02246882D100E09673 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7BC01246882D100E09673 /* Ad.swift */; };
 		5CCB2DD42454CD070038038A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UserManager.swift */; };
 		5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD52454E45A0038038A /* SignUpViewController.swift */; };
 		5CD4148824622C2A00FFDB30 /* TabBarSetUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */; };
@@ -60,7 +60,7 @@
 		5CA12F08245C6309006AC92B /* MainFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedController.swift; sourceTree = "<group>"; };
 		5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
 		5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdoptionViewController.swift; sourceTree = "<group>"; };
-		5CA12F10245F6A66006AC92B /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
+		5CB7BC01246882D100E09673 /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		5CCB2DD32454CD070038038A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CCB2DD52454E45A0038038A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSetUpController.swift; sourceTree = "<group>"; };
@@ -137,14 +137,22 @@
 		5CA12F07245C62C4006AC92B /* Adoption feature */ = {
 			isa = PBXGroup;
 			children = (
+				5CB7BC002468821B00E09673 /* Controller */,
+				5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */,
+				5CB7BC01246882D100E09673 /* Ad.swift */,
+			);
+			path = "Adoption feature";
+			sourceTree = "<group>";
+		};
+		5CB7BC002468821B00E09673 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				5CA12F08245C6309006AC92B /* MainFeedController.swift */,
 				5C9C2F692460D648002A02F1 /* DetailsViewController.swift */,
 				5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */,
-				5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */,
-				5CA12F10245F6A66006AC92B /* AdManager.swift */,
 				5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */,
 			);
-			path = "Adoption feature";
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5CF24C1F2452306B00077B33 = {
@@ -422,6 +430,7 @@
 				5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */,
 				5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */,
 				5CD4148824622C2A00FFDB30 /* TabBarSetUpController.swift in Sources */,
+				5CB7BC02246882D100E09673 /* Ad.swift in Sources */,
 				5CA12EFE2458CD26006AC92B /* ResetPasswordViewController.swift in Sources */,
 				5CF24C5C24538DCC00077B33 /* Colors.swift in Sources */,
 				5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */,
@@ -432,7 +441,6 @@
 				5C9C2F6A2460D648002A02F1 /* DetailsViewController.swift in Sources */,
 				5CA12F002458DD03006AC92B /* InputValuesManager.swift in Sources */,
 				5CA12F0B245E0FF0006AC92B /* MainFeedTableViewCell.swift in Sources */,
-				5CA12F11245F6A66006AC92B /* AdManager.swift in Sources */,
 				5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */,
 				5CA12F022458DFCD006AC92B /* ItemSetUp.swift in Sources */,
 				5CCB2DD42454CD070038038A /* UserManager.swift in Sources */,

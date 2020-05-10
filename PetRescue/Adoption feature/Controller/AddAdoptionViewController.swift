@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class AddAdoptionViewController: UIViewController {
 
     private var imagePicker = UIImagePickerController()
     private let unwindIdentifier = "segueToMainFeed"
     private let alertTextIsEmpty = "Informations manquantes :"
+    let ref = Database.database().reference(withPath: "ads")
+    var animal: [Ad] = []
 
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var animalName: UITextField!
@@ -53,19 +56,28 @@ class AddAdoptionViewController: UIViewController {
     }
 
     private func createAd() {
-        if let name = animalName.text, let kind = animalKind.text, let gender = animalGender.text, let age = animalAge.text, let locality = locality.text, let details = infosTextView.text, let image = picture.imageView?.image {
-            AdManager.uploadMedia(image: image, completion: { url in
-                guard let url = url else { return }
-                AdManager.createAd(name: name,
-                                   kind: kind,
-                                   gender: gender,
-                                   age: age,
-                                   locality: locality,
-                                   animalImage: url,
-                                   details: details)
-            })
+        guard let name = animalName.text,
+            let kind = animalKind.text,
+            let gender = animalGender.text,
+            let age = animalAge.text,
+            let locality = locality.text,
+            let details = infosTextView.text,
+            let image = picture.imageView?.image else { return }
+        Ad.uploadMedia(image: image, completion: { url in
+                       guard let url = url else { return }
+                       let animal = Ad(age: age,
+                                       animalImage: url,
+                                       details: details,
+                                       gender: gender,
+                                       kind: kind,
+                                       locality: locality,
+                                       name: name)
+
+            let animalRef = self.ref.child(name.lowercased())
+
+            animalRef.setValue(animal.toAnyObject())
+        })
             performSegue(withIdentifier: unwindIdentifier, sender: self)
-        }
     }
 }
 
