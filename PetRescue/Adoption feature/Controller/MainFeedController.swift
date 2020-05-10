@@ -13,6 +13,10 @@ class MainFeedController: NavBarSetUp {
 
     private var identifier = "segueToDetails"
     private var unwindIdentifier = "unwindToLogin"
+    private let ref = Database.database().reference(withPath: "ads")
+    private var ads: [AdManager] = []
+
+    @IBOutlet weak var adTableView: UITableView!
 
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) { }
 
@@ -34,13 +38,28 @@ class MainFeedController: NavBarSetUp {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
+        retrieveData()
+    }
+
+    private func retrieveData() {
+        ref.observe(.value, with: { snapshot in
+          var newAd: [AdManager] = []
+          for child in snapshot.children {
+            if let snapshot = child as? DataSnapshot,
+               let animalAd = AdManager(snapshot: snapshot) {
+              newAd.append(animalAd)
+            }
+          }
+          self.ads = newAd
+          self.adTableView.reloadData()
+        })
     }
 }
 
 extension MainFeedController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        return ads.count
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -51,6 +70,10 @@ extension MainFeedController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainFeedCell", for: indexPath) as? MainFeedTableViewCell else {
         return UITableViewCell()
         }
+        let animal = ads[indexPath.row]
+
+        cell.configure(name: animal.name, kind: animal.kind, locality: animal.locality)
+
         return cell
     }
 }

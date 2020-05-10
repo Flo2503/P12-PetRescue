@@ -14,8 +14,7 @@ class AddAdoptionViewController: UIViewController {
     private var imagePicker = UIImagePickerController()
     private let unwindIdentifier = "segueToMainFeed"
     private let alertTextIsEmpty = "Informations manquantes :"
-    let ref = Database.database().reference(withPath: "ads")
-    var animal: [Ad] = []
+    private let ref = Database.database().reference(withPath: "ads")
 
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var animalName: UITextField!
@@ -63,9 +62,9 @@ class AddAdoptionViewController: UIViewController {
             let locality = locality.text,
             let details = infosTextView.text,
             let image = picture.imageView?.image else { return }
-        Ad.uploadMedia(image: image, completion: { url in
+        AdManager.uploadMedia(name: name, image: image, completion: { url in
                        guard let url = url else { return }
-                       let animal = Ad(age: age,
+                       let animal = AdManager(age: age,
                                        animalImage: url,
                                        details: details,
                                        gender: gender,
@@ -73,7 +72,7 @@ class AddAdoptionViewController: UIViewController {
                                        locality: locality,
                                        name: name)
 
-            let animalRef = self.ref.child(name.lowercased())
+            let animalRef = self.ref.child("\(name.lowercased())\(InputValuesManager.randomString(length: 10))")
 
             animalRef.setValue(animal.toAnyObject())
         })

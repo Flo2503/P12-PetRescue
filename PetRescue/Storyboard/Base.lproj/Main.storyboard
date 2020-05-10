@@ -485,6 +485,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adTableView" destination="wAK-yu-YYb" id="XO4-Yr-CdE"/>
                         <segue destination="ouR-nn-Wil" kind="show" identifier="segueToDetails" id="XK4-cT-V1B"/>
                         <segue destination="yzq-as-Cc8" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="loi-iZ-zjh"/>
                     </connections>

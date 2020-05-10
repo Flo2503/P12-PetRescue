@@ -32,7 +32,7 @@ class MainFeedTableViewCell: UITableViewCell {
         whiteView.layer.shadowOpacity = 2.0
     }
 
-    func configure(name: String, kind: String, gender: String, locality: String) {
+    func configure(name: String, kind: String, locality: String) {
         animalName.text = name
         animalKind.text = kind
         animalLocality.text = locality
