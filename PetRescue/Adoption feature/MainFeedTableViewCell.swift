@@ -37,4 +37,8 @@ class MainFeedTableViewCell: UITableViewCell {
         animalKind.text = kind
         animalLocality.text = locality
     }
+
+    func configureImage(image: UIImage) {
+        animalPicture.image = image
+    }
 }

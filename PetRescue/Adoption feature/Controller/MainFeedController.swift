@@ -18,7 +18,9 @@ class MainFeedController: NavBarSetUp {
 
     @IBOutlet weak var adTableView: UITableView!
 
-    @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) { }
+    @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
+        adTableView?.reloadData()
+    }
 
     @IBAction func tapLogoutButton(_ sender: Any) {
         let alert = UIAlertController(title: "Vous êtes sur le point d'être déconnecté", message: "Continuer ?", preferredStyle: .actionSheet)
@@ -71,6 +73,13 @@ extension MainFeedController: UITableViewDataSource, UITableViewDelegate {
         return UITableViewCell()
         }
         let animal = ads[indexPath.row]
+
+        AdManager.retrieveImage(url: animal.animalImage, callback: { image in
+            if let image = image {
+                cell.configureImage(image: image)
+            }
+        })
+        print(animal.animalImage.description)
 
         cell.configure(name: animal.name, kind: animal.kind, locality: animal.locality)
 

@@ -9,7 +9,6 @@
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
-import FirebaseStorage
 
 class UserManager {
 
