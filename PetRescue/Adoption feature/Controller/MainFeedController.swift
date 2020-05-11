@@ -15,6 +15,7 @@ class MainFeedController: NavBarSetUp {
     private var unwindIdentifier = "unwindToLogin"
     private let ref = Database.database().reference(withPath: "ads")
     private var ads: [AdManager] = []
+    var selectedAd: AdManager?
 
     @IBOutlet weak var adTableView: UITableView!
 
@@ -43,6 +44,13 @@ class MainFeedController: NavBarSetUp {
         retrieveData()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == identifier {
+            let detailsVC = segue.destination as! DetailsViewController
+            detailsVC.selectedAd = selectedAd
+        }
+    }
+
     private func retrieveData() {
         ref.observe(.value, with: { snapshot in
           var newAd: [AdManager] = []
@@ -65,6 +73,7 @@ extension MainFeedController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedAd = ads[indexPath.row]
         self.performSegue(withIdentifier: identifier, sender: self)
     }
 
@@ -79,7 +88,6 @@ extension MainFeedController: UITableViewDataSource, UITableViewDelegate {
                 cell.configureImage(image: image)
             }
         })
-        print(animal.animalImage.description)
 
         cell.configure(name: animal.name, kind: animal.kind, locality: animal.locality)
 

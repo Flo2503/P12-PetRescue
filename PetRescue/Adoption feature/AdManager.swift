@@ -20,6 +20,7 @@ struct AdManager {
     let kind: String
     let locality: String
     let name: String
+    let userId: String
 
     init(age: String,
          animalImage: String,
@@ -28,6 +29,7 @@ struct AdManager {
          kind: String,
          locality: String,
          name: String,
+         userId: String,
          key: String = "") {
         self.age = age
         self.animalImage = animalImage
@@ -36,6 +38,7 @@ struct AdManager {
         self.kind = kind
         self.locality = locality
         self.name = name
+        self.userId = userId
         self.ref = nil
         self.key = key
     }
@@ -49,6 +52,7 @@ struct AdManager {
             let gender = value["gender"] as? String,
             let kind = value["kind"] as? String,
             let locality = value["locality"] as? String,
+            let userId = value["userId"] as? String,
             let name = value["name"] as? String else {
                 return  nil
         }
@@ -60,6 +64,7 @@ struct AdManager {
         self.kind = kind
         self.locality = locality
         self.name = name
+        self.userId = userId
         self.ref = snapshot.ref
         self.key = snapshot.key
     }
@@ -72,7 +77,8 @@ struct AdManager {
             "gender": gender,
             "kind": kind,
             "locality": locality,
-            "name": name
+            "name": name,
+            "userId": userId
         ]
     }
 

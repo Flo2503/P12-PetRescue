@@ -15,6 +15,7 @@ class AddAdoptionViewController: UIViewController {
     private let unwindIdentifier = "segueToMainFeed"
     private let alertTextIsEmpty = "Informations manquantes :"
     private let ref = Database.database().reference(withPath: "ads")
+    private let user = Auth.auth().currentUser!.uid.description
 
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var animalName: UITextField!
@@ -70,9 +71,10 @@ class AddAdoptionViewController: UIViewController {
                                        gender: gender,
                                        kind: kind,
                                        locality: locality,
-                                       name: name)
+                                       name: name,
+                                       userId: self.user)
 
-            let animalRef = self.ref.child("\(name.lowercased())\(InputValuesManager.randomString(length: 10))")
+            let animalRef = self.ref.childByAutoId()
 
             animalRef.setValue(animal.toAnyObject())
         })

@@ -10,26 +10,45 @@ import UIKit
 
 class DetailsViewController: NavBarSetUp {
 
-    @IBOutlet weak var animalImages: UIImageView!
+    var selectedAd: AdManager?
+
+    @IBOutlet weak var animalName: UILabel!
+    @IBOutlet weak var animalImage: UIImageView!
+    @IBOutlet weak var animalKind: UILabel!
+    @IBOutlet weak var animalGender: UILabel!
+    @IBOutlet weak var animalAge: UILabel!
+    @IBOutlet weak var anoimalLocality: UILabel!
     @IBOutlet weak var animalMoreDetails: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        display()
+        setup(label: [anoimalLocality, animalAge, animalGender, animalKind])
     }
 }
 
-extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+extension DetailsViewController {
+    private func display() {
+        if let details = selectedAd?.details, let urlImage = selectedAd?.animalImage, let name = selectedAd?.name, let kind = selectedAd?.kind, let gender = selectedAd?.gender, let age = selectedAd?.age, let locality = selectedAd?.locality {
+            animalName.text = name
+            animalKind.text = kind
+            animalGender.text = gender
+            animalAge.text = "\(age) an(s)"
+            anoimalLocality.text = "\(name) est hébergé du côté de : \(locality)"
+            animalMoreDetails.text = details
+            AdManager.retrieveImage(url: urlImage, callback: { image in
+                if let image = image {
+                    self.animalImage.image = image
+                }
+            })
+        }
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "animalDetailsCell", for: indexPath)
-        return cell
+    private func setup(label: [UILabel]) {
+        for item in label {
+            item.layer.borderWidth = 3
+            item.layer.borderColor = Colors.customGreen.cgColor
+            item.layer.cornerRadius = item.frame.size.height / 2
+        }
     }
 }
