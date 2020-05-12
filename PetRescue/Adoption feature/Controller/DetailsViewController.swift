@@ -33,8 +33,8 @@ extension DetailsViewController {
             animalName.text = name
             animalKind.text = kind
             animalGender.text = gender
-            animalAge.text = "\(age) an(s)"
-            anoimalLocality.text = "\(name) est hébergé du côté de : \(locality)"
+            animalAge.text = age
+            anoimalLocality.text = "Lieu d'hébergement actuel: \(locality)"
             animalMoreDetails.text = details
             AdManager.retrieveImage(url: urlImage, callback: { image in
                 if let image = image {
@@ -46,7 +46,7 @@ extension DetailsViewController {
 
     private func setup(label: [UILabel]) {
         for item in label {
-            item.layer.borderWidth = 3
+            item.layer.borderWidth = 1
             item.layer.borderColor = Colors.customGreen.cgColor
             item.layer.cornerRadius = item.frame.size.height / 2
         }

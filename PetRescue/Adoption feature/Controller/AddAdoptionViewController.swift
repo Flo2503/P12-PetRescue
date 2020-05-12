@@ -16,23 +16,26 @@ class AddAdoptionViewController: UIViewController {
     private let alertTextIsEmpty = "Informations manquantes :"
     private let ref = Database.database().reference(withPath: "ads")
     private let user = Auth.auth().currentUser!.uid.description
+    lazy var ageIndex = agePickerView.selectedRow(inComponent: 0).self
+    lazy var age = ageChoice[ageIndex]
+    lazy var gender = (animalGender.selectedSegmentIndex == 0) ? "Femelle" : "Mâle"
 
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var animalName: UITextField!
     @IBOutlet weak var animalKind: UITextField!
-    @IBOutlet weak var animalGender: UITextField!
-    @IBOutlet weak var animalAge: UITextField!
+    @IBOutlet weak var animalGender: UISegmentedControl!
     @IBOutlet weak var locality: UITextField!
     @IBOutlet weak var infosTextView: UITextView!
     @IBOutlet weak var picture: UIButton!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var agePickerView: UIPickerView!
 
     @IBAction func addFirstPicture(_ sender: Any) {
         chooseImage()
     }
 
     @IBAction func tapOnCreateAd(_ sender: Any) {
-        let textIsNotEmpty = InputValuesManager.fieldIsNotEmpty([animalName, animalKind, animalGender, animalAge, locality])
+        let textIsNotEmpty = InputValuesManager.fieldIsNotEmpty([animalName, animalKind, locality])
         if textIsNotEmpty {
             createAd()
         } else {
@@ -45,30 +48,27 @@ class AddAdoptionViewController: UIViewController {
         animalName.resignFirstResponder()
         animalKind.resignFirstResponder()
         animalGender.resignFirstResponder()
-        animalAge.resignFirstResponder()
         locality.resignFirstResponder()
         infosTextView.resignFirstResponder()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ItemSetUp.textFieldSetUp([animalName, animalKind, animalGender, animalAge, locality])
+        ItemSetUp.textFieldSetUp([animalName, animalKind, locality])
     }
 
     private func createAd() {
         guard let name = animalName.text,
             let kind = animalKind.text,
-            let gender = animalGender.text,
-            let age = animalAge.text,
             let locality = locality.text,
             let details = infosTextView.text,
             let image = picture.imageView?.image else { return }
         AdManager.uploadMedia(name: name, image: image, completion: { url in
                        guard let url = url else { return }
-                       let animal = AdManager(age: age,
+            let animal = AdManager(age: self.age,
                                        animalImage: url,
                                        details: details,
-                                       gender: gender,
+                                       gender: self.gender,
                                        kind: kind,
                                        locality: locality,
                                        name: name,
@@ -128,5 +128,19 @@ extension AddAdoptionViewController: UIImagePickerControllerDelegate, UINavigati
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AddAdoptionViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ageChoice.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ageChoice[row]
     }
 }

@@ -234,26 +234,33 @@
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SyS-OL-nFM">
+                                        <rect key="frame" x="0.0" y="64" width="374" height="56.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="Femelle"/>
+                                            <segment title="Mâle"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </segmentedControl>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9x-8c-8sr">
-                                        <rect key="frame" x="0.0" y="64" width="374" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="128.5" width="374" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="nickname"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type (chat, chien, autre)*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaV-EG-bwr">
-                                        <rect key="frame" x="0.0" y="128.5" width="374" height="55"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Genre* (Mâle ou Femelle)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ug2-xR-noj">
                                         <rect key="frame" x="0.0" y="192.5" width="374" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2El-c8-opG">
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnG-yW-fgA">
                                         <rect key="frame" x="0.0" y="256.5" width="374" height="55"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="CX6-pg-MgJ" id="b95-Rc-i6D"/>
+                                            <outlet property="delegate" destination="CX6-pg-MgJ" id="hAB-zy-w27"/>
+                                        </connections>
+                                    </pickerView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Département ou ville" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6F-Ss-ctc">
                                         <rect key="frame" x="0.0" y="320.5" width="374" height="55.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -315,8 +322,8 @@
                     <connections>
                         <outlet property="addButton" destination="O45-xv-QD0" id="jVD-UO-qi8"/>
                         <outlet property="addLabel" destination="B6A-4t-f0U" id="WSO-s0-Cf9"/>
-                        <outlet property="animalAge" destination="2El-c8-opG" id="hpH-bR-kG8"/>
-                        <outlet property="animalGender" destination="Ug2-xR-noj" id="qGl-1B-ED7"/>
+                        <outlet property="agePickerView" destination="rnG-yW-fgA" id="Kq1-da-t60"/>
+                        <outlet property="animalGender" destination="SyS-OL-nFM" id="Lpi-X9-Hr9"/>
                         <outlet property="animalKind" destination="gaV-EG-bwr" id="oHy-dz-LVl"/>
                         <outlet property="animalName" destination="J9x-8c-8sr" id="QxN-vZ-7n0"/>
                         <outlet property="infosTextView" destination="tBP-kT-us9" id="1DZ-EC-h8h"/>
@@ -503,10 +510,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-oK-usR">
-                                <rect key="frame" x="20" y="144" width="374" height="208"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-oK-usR">
+                                <rect key="frame" x="80" y="144" width="254" height="196"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="VcR-oK-usR" secondAttribute="height" multiplier="187:104" id="4yA-2r-fRJ"/>
+                                    <constraint firstAttribute="width" secondItem="VcR-oK-usR" secondAttribute="height" multiplier="79:61" id="SHU-jh-HnQ"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tp0-1Z-7HY">
@@ -529,28 +536,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jmx-dZ-ngz">
-                                <rect key="frame" x="20" y="360" width="374" height="285"/>
+                                <rect key="frame" x="20" y="348" width="374" height="297"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kind" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ub-Wl-98E">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="67"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-uc-lsa">
-                                        <rect key="frame" x="0.0" y="74" width="374" height="63.5"/>
+                                        <rect key="frame" x="0.0" y="77" width="374" height="66.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53S-Kw-UTJ">
-                                        <rect key="frame" x="0.0" y="147.5" width="374" height="64"/>
+                                        <rect key="frame" x="0.0" y="153.5" width="374" height="67"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pm-8W-H5B">
-                                        <rect key="frame" x="0.0" y="221.5" width="374" height="63.5"/>
+                                        <rect key="frame" x="0.0" y="230.5" width="374" height="66.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -565,10 +572,10 @@
                             <constraint firstItem="tp0-1Z-7HY" firstAttribute="leading" secondItem="RLu-Ie-UW7" secondAttribute="leading" constant="20" id="Jx7-Zl-wbT"/>
                             <constraint firstItem="RLu-Ie-UW7" firstAttribute="trailing" secondItem="jmx-dZ-ngz" secondAttribute="trailing" constant="20" id="Lb4-GS-sk3"/>
                             <constraint firstItem="RLu-Ie-UW7" firstAttribute="trailing" secondItem="69o-53-MeZ" secondAttribute="trailing" constant="20" id="T1V-aa-cd2"/>
-                            <constraint firstItem="VcR-oK-usR" firstAttribute="leading" secondItem="RLu-Ie-UW7" secondAttribute="leading" constant="20" id="WHH-K1-8dd"/>
+                            <constraint firstItem="VcR-oK-usR" firstAttribute="leading" secondItem="RLu-Ie-UW7" secondAttribute="leading" constant="80" id="WHH-K1-8dd"/>
                             <constraint firstItem="VcR-oK-usR" firstAttribute="top" secondItem="69o-53-MeZ" secondAttribute="bottom" constant="8" id="X3x-If-Nr0"/>
                             <constraint firstItem="69o-53-MeZ" firstAttribute="leading" secondItem="RLu-Ie-UW7" secondAttribute="leading" constant="20" id="c4A-Ch-zOE"/>
-                            <constraint firstItem="RLu-Ie-UW7" firstAttribute="trailing" secondItem="VcR-oK-usR" secondAttribute="trailing" constant="20" id="dbR-At-ufq"/>
+                            <constraint firstItem="RLu-Ie-UW7" firstAttribute="trailing" secondItem="VcR-oK-usR" secondAttribute="trailing" constant="80" id="dbR-At-ufq"/>
                             <constraint firstItem="69o-53-MeZ" firstAttribute="top" secondItem="RLu-Ie-UW7" secondAttribute="top" constant="8" id="fRO-Fm-YW6"/>
                             <constraint firstItem="jmx-dZ-ngz" firstAttribute="top" secondItem="VcR-oK-usR" secondAttribute="bottom" constant="8" id="h7N-4W-Uuy"/>
                             <constraint firstItem="RLu-Ie-UW7" firstAttribute="trailing" secondItem="tp0-1Z-7HY" secondAttribute="trailing" constant="20" id="k8E-En-tpC"/>
