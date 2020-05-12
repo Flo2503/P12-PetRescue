@@ -20,6 +20,7 @@
 		5CA12F0B245E0FF0006AC92B /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */; };
 		5CA12F0F245F5335006AC92B /* AddAdoptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */; };
 		5CB7BC02246882D100E09673 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7BC01246882D100E09673 /* AdManager.swift */; };
+		5CC2A26B246B330900231641 /* PickViewDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2A26A246B330900231641 /* PickViewDatas.swift */; };
 		5CCB2DD42454CD070038038A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UserManager.swift */; };
 		5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD52454E45A0038038A /* SignUpViewController.swift */; };
 		5CD4148824622C2A00FFDB30 /* TabBarSetUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */; };
@@ -61,6 +62,7 @@
 		5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
 		5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdoptionViewController.swift; sourceTree = "<group>"; };
 		5CB7BC01246882D100E09673 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
+		5CC2A26A246B330900231641 /* PickViewDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewDatas.swift; sourceTree = "<group>"; };
 		5CCB2DD32454CD070038038A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CCB2DD52454E45A0038038A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSetUpController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				5CB7BC002468821B00E09673 /* Controller */,
 				5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */,
+				5CC2A26A246B330900231641 /* PickViewDatas.swift */,
 				5CB7BC01246882D100E09673 /* AdManager.swift */,
 			);
 			path = "Adoption feature";
@@ -148,8 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				5CA12F08245C6309006AC92B /* MainFeedController.swift */,
-				5C9C2F692460D648002A02F1 /* DetailsViewController.swift */,
 				5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */,
+				5C9C2F692460D648002A02F1 /* DetailsViewController.swift */,
 				5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */,
 			);
 			path = Controller;
@@ -430,6 +433,7 @@
 				5CF24C5524534C9200077B33 /* LogInViewController.swift in Sources */,
 				5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */,
 				5CD4148824622C2A00FFDB30 /* TabBarSetUpController.swift in Sources */,
+				5CC2A26B246B330900231641 /* PickViewDatas.swift in Sources */,
 				5CB7BC02246882D100E09673 /* AdManager.swift in Sources */,
 				5CA12EFE2458CD26006AC92B /* ResetPasswordViewController.swift in Sources */,
 				5CF24C5C24538DCC00077B33 /* Colors.swift in Sources */,
