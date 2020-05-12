@@ -49,5 +49,4 @@ let ageChoice =
     "27 ans",
     "28 ans",
     "29 ans",
-    "30 ans",
-    "Autre (Détaillez plus bas)"]
+    "30 ans"]
