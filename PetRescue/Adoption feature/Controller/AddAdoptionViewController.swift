@@ -87,7 +87,7 @@ extension AddAdoptionViewController: UIImagePickerControllerDelegate, UINavigati
     // Photo library access
       @objc private func libraryAccess() {
           imagePicker.sourceType = .photoLibrary
-          imagePicker.allowsEditing = true
+          imagePicker.allowsEditing = false
           present(imagePicker, animated: true, completion: nil)
       }
 
@@ -95,7 +95,7 @@ extension AddAdoptionViewController: UIImagePickerControllerDelegate, UINavigati
       @objc private func cameraAccess() {
           if UIImagePickerController.isSourceTypeAvailable(.camera) {
               imagePicker.sourceType = .camera
-              imagePicker.allowsEditing = true
+              imagePicker.allowsEditing = false
               present(imagePicker, animated: true, completion: nil)
           } else {
             let alert = UIAlertController(title: "Appareil photo non valide", message: "Choisissez une photo dans la phototèque", preferredStyle: .alert)
@@ -121,7 +121,7 @@ extension AddAdoptionViewController: UIImagePickerControllerDelegate, UINavigati
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         picture.setImage(image, for: .normal)
         picker.dismiss(animated: true, completion: nil)
     }

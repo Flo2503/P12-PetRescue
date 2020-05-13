@@ -21,6 +21,8 @@ class SignUpViewController: NavBarSetUp {
     @IBOutlet weak var labelSignUp: UILabel!
 
     @IBAction func dismissKeyboard(_ sender: Any) {
+        name.resignFirstResponder()
+        firstName.resignFirstResponder()
         emailAdress.resignFirstResponder()
         password.resignFirstResponder()
         passwordValidation.resignFirstResponder()
