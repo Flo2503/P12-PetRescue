@@ -47,7 +47,7 @@ class SignInViewController: NavBarSetUp {
     private func login() {
         if let email = emailAdress.text, let password = password.text {
             self.validateButton.isEnabled = false
-            self.validateButton.layer.backgroundColor = UIColor.lightGray.cgColor
+            self.validateButton.layer.backgroundColor = Colors.customGreenLight.cgColor
             UserManager.login(withEmail: email, password: password, callback: { success in
                 if success {
                     self.performSegue(withIdentifier: self.identifier, sender: self)
