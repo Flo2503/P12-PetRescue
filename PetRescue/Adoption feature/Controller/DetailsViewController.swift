@@ -11,30 +11,32 @@ import UIKit
 class DetailsViewController: NavBarSetUp {
 
     var selectedAd: AdManager?
+    var adDetails: [String] = []
 
     @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var animalImage: UIImageView!
-    @IBOutlet weak var animalKind: UILabel!
-    @IBOutlet weak var animalGender: UILabel!
-    @IBOutlet weak var animalAge: UILabel!
-    @IBOutlet weak var anoimalLocality: UILabel!
     @IBOutlet weak var animalMoreDetails: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         display()
-        setup(label: [anoimalLocality, animalAge, animalGender, animalKind])
+        importDetails()
+    }
+
+    private func importDetails() {
+        if let kind = selectedAd?.kind, let gender = selectedAd?.gender, let age = selectedAd?.age, let locality = selectedAd?.locality {
+            adDetails.append("Type / Race: \(kind)")
+            adDetails.append("Genre: \(gender)")
+            adDetails.append("Age: \(age)")
+            adDetails.append("Localité: \(locality)")
+        }
     }
 }
 
 extension DetailsViewController {
     private func display() {
-        if let details = selectedAd?.details, let urlImage = selectedAd?.animalImage, let name = selectedAd?.name, let kind = selectedAd?.kind, let gender = selectedAd?.gender, let age = selectedAd?.age, let locality = selectedAd?.locality {
+        if let details = selectedAd?.details, let urlImage = selectedAd?.animalImage, let name = selectedAd?.name {
             animalName.text = name
-            animalKind.text = kind
-            animalGender.text = gender
-            animalAge.text = age
-            anoimalLocality.text = "Lieu d'hébergement actuel: \(locality)"
             animalMoreDetails.text = details
             AdManager.retrieveImage(url: urlImage, callback: { image in
                 if let image = image {
@@ -43,12 +45,17 @@ extension DetailsViewController {
             })
         }
     }
+}
 
-    private func setup(label: [UILabel]) {
-        for item in label {
-            item.layer.borderWidth = 1
-            item.layer.borderColor = Colors.customGreen.cgColor
-            item.layer.cornerRadius = item.frame.size.height / 2
-        }
+extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        adDetails.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "detailsCell", for: indexPath)
+        cell.textLabel?.text = adDetails[indexPath.row]
+
+        return cell
     }
 }

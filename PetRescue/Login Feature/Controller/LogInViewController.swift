@@ -37,8 +37,8 @@ extension LogInViewController {
     }
 
     private func border() {
-        inscriptionButton.layer.borderWidth = 3
-        connexionButton.layer.borderWidth = 3
+        inscriptionButton.layer.borderWidth = 2
+        connexionButton.layer.borderWidth = 2
         inscriptionButton.layer.borderColor = UIColor.white.cgColor
         connexionButton.layer.borderColor = Colors.customGreen.cgColor
     }

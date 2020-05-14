@@ -13,7 +13,7 @@ class ItemSetUp {
 
     static func textFieldSetUp(_ textField: [UITextField]) {
         for item in textField {
-            item.layer.borderWidth = 3
+            item.layer.borderWidth = 2
             item.layer.borderColor = Colors.customGreen.cgColor
             item.layer.cornerRadius = item.frame.size.height / 2
             item.borderStyle = .none
@@ -22,7 +22,7 @@ class ItemSetUp {
 
     static func buttonsetUp(_ button: UIButton) {
         button.layer.cornerRadius = button.frame.size.height / 2
-        button.layer.borderWidth = 3
+        button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.backgroundColor = Colors.customGreen.cgColor
     }
