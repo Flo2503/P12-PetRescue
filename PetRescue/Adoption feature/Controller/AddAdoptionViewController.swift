@@ -26,7 +26,7 @@ class AddAdoptionViewController: UIViewController {
     @IBOutlet weak var animalGender: UISegmentedControl!
     @IBOutlet weak var locality: UITextField!
     @IBOutlet weak var infosTextView: UITextView!
-    @IBOutlet weak var picture: UIButton!
+    @IBOutlet weak var animalPicture: UIImageView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var agePickerView: UIPickerView!
 
@@ -62,7 +62,7 @@ class AddAdoptionViewController: UIViewController {
             let kind = animalKind.text,
             let locality = locality.text,
             let details = infosTextView.text,
-            let image = picture.imageView?.image else { return }
+            let image = animalPicture.image else { return }
         AdManager.uploadMedia(name: name, image: image, completion: { url in
                        guard let url = url else { return }
             let animal = AdManager(age: self.age,
@@ -122,7 +122,7 @@ extension AddAdoptionViewController: UIImagePickerControllerDelegate, UINavigati
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        picture.setImage(image, for: .normal)
+        animalPicture.image = image
         picker.dismiss(animated: true, completion: nil)
     }
 

@@ -30,6 +30,7 @@ class MainFeedTableViewCell: UITableViewCell {
         whiteView.layer.shadowRadius = 2.0
         whiteView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         whiteView.layer.shadowOpacity = 2.0
+        whiteView.layer.cornerRadius = whiteView.frame.size.height / 6
     }
 
     func configure(name: String, kind: String, locality: String) {

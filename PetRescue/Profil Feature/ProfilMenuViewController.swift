@@ -10,18 +10,20 @@ import UIKit
 
 class ProfilMenuViewController: NavBarSetUp {
 
-    let menuTitle = [Menu(title: "Mon profil"),
-                     Menu(title: "Mes annonces")]
-
+    private let menuTitle = [Menu(title: "Mon profil", identifier: "segueToMyProfil"), Menu(title: "Mes annonces", identifier: "segueToMyAd")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
 
 extension ProfilMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         menuTitle.count
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

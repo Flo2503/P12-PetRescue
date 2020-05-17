@@ -45,7 +45,7 @@ class SignInViewController: NavBarSetUp {
     }
 
     private func login() {
-        if let email = emailAdress.text, let password = password.text {
+        if let email = emailAdress.text?.trimmingCharacters(in: .whitespaces), let password = password.text?.trimmingCharacters(in: .whitespaces) {
             self.validateButton.isEnabled = false
             self.validateButton.layer.backgroundColor = Colors.customGreenLight.cgColor
             UserManager.login(withEmail: email, password: password, callback: { success in

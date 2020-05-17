@@ -30,11 +30,11 @@ class SignUpViewController: NavBarSetUp {
 
     @IBAction func tapOnValidate(_ sender: Any) {
 
-        let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!)
+        let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!.trimmingCharacters(in: .whitespaces))
         let passwordsAreEquals = InputValuesManager.passwordsAreEquals(passwordOne: password.text, passwordTwo: passwordValidation.text)
         let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([passwordValidation, password, emailAdress, name, firstName])
-        let isValidPassword = InputValuesManager.isValidPassword(password: password.text)
-        let isValidSecondPassword = InputValuesManager.isValidPassword(password: passwordValidation.text)
+        let isValidPassword = InputValuesManager.isValidPassword(password: password.text?.trimmingCharacters(in: .whitespaces))
+        let isValidSecondPassword = InputValuesManager.isValidPassword(password: passwordValidation.text?.trimmingCharacters(in: .whitespaces))
 
         if isEmailAddressValid &&
             passwordsAreEquals &&

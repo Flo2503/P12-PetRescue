@@ -12,6 +12,7 @@ class DetailsViewController: NavBarSetUp {
 
     var selectedAd: AdManager?
     var adDetails: [String] = []
+    let cellTitle = ["Type/Race", "Genre", "Age", "Localité"]
 
     @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var animalImage: UIImageView!
@@ -25,10 +26,10 @@ class DetailsViewController: NavBarSetUp {
 
     private func importDetails() {
         if let kind = selectedAd?.kind, let gender = selectedAd?.gender, let age = selectedAd?.age, let locality = selectedAd?.locality {
-            adDetails.append("Type / Race: \(kind)")
-            adDetails.append("Genre: \(gender)")
-            adDetails.append("Age: \(age)")
-            adDetails.append("Localité: \(locality)")
+            adDetails.append(kind)
+            adDetails.append(gender)
+            adDetails.append(age)
+            adDetails.append(locality)
         }
     }
 }
@@ -54,7 +55,8 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailsCell", for: indexPath)
-        cell.textLabel?.text = adDetails[indexPath.row]
+        cell.detailTextLabel?.text = adDetails[indexPath.row]
+        cell.textLabel?.text = cellTitle[indexPath.row]
 
         return cell
     }
