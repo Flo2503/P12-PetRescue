@@ -10,5 +10,5 @@ import Foundation
 
 struct Menu {
     var title: String
-    identifier: String
+    var identifier: String
 }
