@@ -126,7 +126,7 @@ struct AdManager {
 
     static func getMyAds(userId: String, callback: @escaping (_ ad: [AdManager]) -> Void) {
         AdManager.retrieveData(callback: { ads in
-            callback(ads.filter() {$0.userId == userId})
+            callback(ads.filter({ $0.userId == userId }))
         })
     }
 
