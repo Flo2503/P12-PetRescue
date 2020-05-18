@@ -41,7 +41,10 @@ class MainFeedController: NavBarSetUp {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-        retrieveData()
+        AdManager.retrieveData(callback: { newAd in
+            self.ads = newAd
+            self.adTableView.reloadData()
+        })
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,20 +52,6 @@ class MainFeedController: NavBarSetUp {
             let detailsVC = segue.destination as! DetailsViewController
             detailsVC.selectedAd = selectedAd
         }
-    }
-
-    private func retrieveData() {
-        ref.observe(.value, with: { snapshot in
-          var newAd: [AdManager] = []
-          for child in snapshot.children {
-            if let snapshot = child as? DataSnapshot,
-               let animalAd = AdManager(snapshot: snapshot) {
-              newAd.append(animalAd)
-            }
-          }
-          self.ads = newAd
-          self.adTableView.reloadData()
-        })
     }
 }
 

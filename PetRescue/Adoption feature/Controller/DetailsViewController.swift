@@ -17,11 +17,13 @@ class DetailsViewController: NavBarSetUp {
     @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var animalMoreDetails: UITextView!
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         display()
         importDetails()
+        self.tableView.tableFooterView = UIView()
     }
 
     private func importDetails() {

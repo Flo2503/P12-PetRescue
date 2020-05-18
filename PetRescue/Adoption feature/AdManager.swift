@@ -11,6 +11,8 @@ import Firebase
 
 struct AdManager {
 
+    private static var ads: [AdManager]?
+
     let ref: DatabaseReference?
     let key: String
     let age: String
@@ -112,5 +114,33 @@ struct AdManager {
                 callback(nil)
             }
         }
+    }
+
+    static func retrieveData(callback: @escaping (_ newAd: [AdManager]) -> Void) {
+        if let ads = AdManager.ads {
+            callback(ads)
+        } else {
+            forceRetrieceData(callback: callback)
+        }
+    }
+
+    static func getMyAds(userId: String, callback: @escaping (_ ad: [AdManager]) -> Void) {
+        AdManager.retrieveData(callback: { ads in
+            callback(ads.filter() {$0.userId == userId})
+        })
+    }
+
+    static func forceRetrieceData(callback: @escaping (_ newAd: [AdManager]) -> Void) {
+        let ref = Database.database().reference(withPath: "ads")
+        ref.observe(.value, with: { snapshot in
+            var newAd: [AdManager] = []
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot, let animalAd = AdManager(snapshot: snapshot) {
+                    newAd.append(animalAd)
+                }
+            }
+            AdManager.ads = newAd
+            callback(newAd)
+        })
     }
 }

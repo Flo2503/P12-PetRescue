@@ -583,6 +583,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9bx-aL-0Go"/>
                     <connections>
+                        <outlet property="tableView" destination="ptK-Nl-rfI" id="dzu-gD-Xaw"/>
                         <segue destination="yyE-UW-4ES" kind="show" identifier="segueToMyAd" id="xhf-6T-hSv"/>
                         <segue destination="9Ti-3O-1eC" kind="show" identifier="segueToMyProfil" id="Tcv-8v-eOa"/>
                     </connections>
@@ -772,6 +773,7 @@
                         <outlet property="animalImage" destination="VcR-oK-usR" id="cf4-bm-Ooa"/>
                         <outlet property="animalMoreDetails" destination="tp0-1Z-7HY" id="aBy-Zv-RFg"/>
                         <outlet property="animalName" destination="69o-53-MeZ" id="NU2-tT-NBO"/>
+                        <outlet property="tableView" destination="NHu-hf-vL9" id="hku-iZ-pH7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRb-lr-S03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

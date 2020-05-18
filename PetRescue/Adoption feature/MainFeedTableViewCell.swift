@@ -41,5 +41,7 @@ class MainFeedTableViewCell: UITableViewCell {
 
     func configureImage(image: UIImage) {
         animalPicture.image = image
+        animalPicture.layer.cornerRadius = animalPicture.frame.size.height / 6
+        animalPicture.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
     }
 }

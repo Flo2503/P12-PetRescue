@@ -42,6 +42,8 @@ class SignInViewController: NavBarSetUp {
         InputValuesManager.securePassword([password])
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password])
+        emailAdress.text = "test.test1@test.fr"
+        password.text = "Test1234"
     }
 
     private func login() {
