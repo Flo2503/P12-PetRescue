@@ -13,6 +13,7 @@ class TabBarSetUpController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
+        self.tabBar.tintColor = Colors.customGreen
     }
 
     override func viewWillAppear(_ animated: Bool) {

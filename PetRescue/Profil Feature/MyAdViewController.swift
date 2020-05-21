@@ -29,11 +29,20 @@ class MyAdViewController: NavBarSetUp {
 
 extension MyAdViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        ads.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myAdCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myAdCell", for: indexPath) as? MyAdTableViewCell else {
+            return UITableViewCell()
+        }
+        let animal = ads[indexPath.row]
+        cell.configure(name: animal.name, locality: animal.locality)
+        AdManager.retrieveImage(url: animal.animalImage, callback: { image in
+            if let image = image {
+                cell.configureImage(image: image)
+            }
+        })
         return cell
     }
 }
