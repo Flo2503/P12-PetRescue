@@ -13,14 +13,12 @@ class AddAdoptionViewController: UIViewController {
 
     private var imagePicker = UIImagePickerController()
     private let unwindIdentifier = "segueToMainFeed"
-    private let alertTextIsEmpty = "Informations manquantes :"
     private let ref = Database.database().reference(withPath: "ads")
     private let user = Auth.auth().currentUser!.uid.description
     lazy var ageIndex = agePickerView.selectedRow(inComponent: 0).self
     lazy var age = ageChoice[ageIndex]
     lazy var gender = (animalGender.selectedSegmentIndex == 0) ? "Femelle" : "Mâle"
 
-    @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var animalName: UITextField!
     @IBOutlet weak var animalKind: UITextField!
     @IBOutlet weak var animalGender: UISegmentedControl!
@@ -36,11 +34,10 @@ class AddAdoptionViewController: UIViewController {
 
     @IBAction func tapOnCreateAd(_ sender: Any) {
         let textIsNotEmpty = InputValuesManager.fieldIsNotEmpty([animalName, animalKind, locality])
-        if textIsNotEmpty {
+        if textIsNotEmpty && !infosTextView.text.isEmpty {
             createAd()
         } else {
             addButton.setTitleColor(.red, for: .normal)
-            addLabel.text = alertTextIsEmpty
         }
     }
 
@@ -54,6 +51,7 @@ class AddAdoptionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ItemSetUp.makeRounded(animalPicture)
         ItemSetUp.textViewSetUp(infosTextView)
         ItemSetUp.textFieldSetUp([animalName, animalKind, locality])
     }

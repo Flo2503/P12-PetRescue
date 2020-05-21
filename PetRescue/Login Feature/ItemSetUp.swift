@@ -28,7 +28,8 @@ class ItemSetUp {
     }
 
     static func textViewSetUp(_ textView: UITextView) {
-        textView.layer.borderWidth = 2
+        textView.layer.cornerRadius = textView.frame.size.height / 8
+        textView.layer.borderWidth = 1
         textView.layer.borderColor = Colors.customGreen.cgColor
     }
 
