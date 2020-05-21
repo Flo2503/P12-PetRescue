@@ -25,6 +25,10 @@ class MyAdViewController: NavBarSetUp {
             self.ads = ads
         })
     }
+
+    private func removeAd(at index: Int) {
+        ads.remove(at: index)
+    }
 }
 
 extension MyAdViewController: UITableViewDelegate, UITableViewDataSource {
@@ -45,4 +49,12 @@ extension MyAdViewController: UITableViewDelegate, UITableViewDataSource {
         })
         return cell
     }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            removeAd(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+
 }

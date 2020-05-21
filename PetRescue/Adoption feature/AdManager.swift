@@ -143,4 +143,7 @@ struct AdManager {
             callback(newAd)
         })
     }
+
+    static func deleteAd() {
+    }
 }

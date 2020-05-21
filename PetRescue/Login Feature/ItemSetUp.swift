@@ -26,4 +26,11 @@ class ItemSetUp {
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.backgroundColor = Colors.customGreen.cgColor
     }
+
+    static func makeRounded(image: UIView) {
+        image.layer.cornerRadius = image.frame.size.width / 2
+        image.clipsToBounds = true
+        image.layer.borderWidth = 1
+        image.layer.borderColor = Colors.customGreen.cgColor
+    }
 }

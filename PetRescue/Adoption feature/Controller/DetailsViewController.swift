@@ -12,9 +12,8 @@ class DetailsViewController: NavBarSetUp {
 
     var selectedAd: AdManager?
     var adDetails: [String] = []
-    let cellTitle = ["Type/Race", "Genre", "Age", "Localité"]
+    let cellTitle = ["Nom", "Type/Race", "Genre", "Age", "Localité"]
 
-    @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var animalMoreDetails: UITextView!
     @IBOutlet weak var tableView: UITableView!
@@ -23,11 +22,13 @@ class DetailsViewController: NavBarSetUp {
         super.viewDidLoad()
         display()
         importDetails()
+        ItemSetUp.makeRounded(image: animalImage)
         self.tableView.tableFooterView = UIView()
     }
 
     private func importDetails() {
-        if let kind = selectedAd?.kind, let gender = selectedAd?.gender, let age = selectedAd?.age, let locality = selectedAd?.locality {
+        if let name = selectedAd?.name, let kind = selectedAd?.kind, let gender = selectedAd?.gender, let age = selectedAd?.age, let locality = selectedAd?.locality {
+            adDetails.append(name)
             adDetails.append(kind)
             adDetails.append(gender)
             adDetails.append(age)
@@ -38,8 +39,7 @@ class DetailsViewController: NavBarSetUp {
 
 extension DetailsViewController {
     private func display() {
-        if let details = selectedAd?.details, let urlImage = selectedAd?.animalImage, let name = selectedAd?.name {
-            animalName.text = name
+        if let details = selectedAd?.details, let urlImage = selectedAd?.animalImage {
             animalMoreDetails.text = details
             AdManager.retrieveImage(url: urlImage, callback: { image in
                 if let image = image {

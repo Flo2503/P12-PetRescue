@@ -29,7 +29,6 @@ class MyAdTableViewCell: UITableViewCell {
 
     func configureImage(image: UIImage) {
         animalPicture.image = image
-        self.animalPicture.layer.cornerRadius = self.animalPicture.frame.size.width / 2
-        self.animalPicture.clipsToBounds = true
+        ItemSetUp.makeRounded(image: animalPicture)
     }
 }
