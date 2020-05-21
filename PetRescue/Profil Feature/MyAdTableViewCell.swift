@@ -32,5 +32,4 @@ class MyAdTableViewCell: UITableViewCell {
         self.animalPicture.layer.cornerRadius = self.animalPicture.frame.size.width / 2
         self.animalPicture.clipsToBounds = true
     }
-
 }
