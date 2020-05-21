@@ -278,7 +278,7 @@
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tBP-kT-us9">
                                 <rect key="frame" x="20" y="678" width="374" height="130"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tBP-kT-us9" secondAttribute="height" multiplier="187:65" id="2Im-VL-ZHq"/>
                                 </constraints>
@@ -722,13 +722,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-oK-usR">
                                 <rect key="frame" x="42" y="88" width="330" height="330"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="330" id="YWE-N0-5Id"/>
-                                    <constraint firstAttribute="width" constant="330" id="eoZ-0a-K7O"/>
+                                    <constraint firstAttribute="width" secondItem="VcR-oK-usR" secondAttribute="height" multiplier="1:1" id="ka1-Hb-7Us"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tp0-1Z-7HY">
                                 <rect key="frame" x="20" y="678" width="374" height="135"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tp0-1Z-7HY" secondAttribute="height" multiplier="374:135" id="9yu-uX-7XN"/>
                                 </constraints>
@@ -776,12 +775,13 @@
                         <constraints>
                             <constraint firstItem="tp0-1Z-7HY" firstAttribute="top" secondItem="NHu-hf-vL9" secondAttribute="bottom" id="43N-bj-6Xv"/>
                             <constraint firstItem="tp0-1Z-7HY" firstAttribute="bottom" secondItem="RLu-Ie-UW7" secondAttribute="bottom" id="7Xx-Hq-YFv"/>
+                            <constraint firstItem="VcR-oK-usR" firstAttribute="leading" secondItem="RLu-Ie-UW7" secondAttribute="leading" constant="42" id="7vZ-LI-1gX"/>
                             <constraint firstItem="NHu-hf-vL9" firstAttribute="leading" secondItem="RLu-Ie-UW7" secondAttribute="leading" constant="20" id="7wP-2Z-sAd"/>
                             <constraint firstItem="VcR-oK-usR" firstAttribute="top" secondItem="RLu-Ie-UW7" secondAttribute="top" id="8Fz-i6-1Wn"/>
+                            <constraint firstItem="RLu-Ie-UW7" firstAttribute="trailing" secondItem="VcR-oK-usR" secondAttribute="trailing" constant="42" id="9mE-yu-hFj"/>
                             <constraint firstItem="RLu-Ie-UW7" firstAttribute="trailing" secondItem="NHu-hf-vL9" secondAttribute="trailing" constant="20" id="EuE-hk-x6F"/>
                             <constraint firstItem="tp0-1Z-7HY" firstAttribute="leading" secondItem="RLu-Ie-UW7" secondAttribute="leading" constant="20" id="Jx7-Zl-wbT"/>
                             <constraint firstItem="NHu-hf-vL9" firstAttribute="top" secondItem="VcR-oK-usR" secondAttribute="bottom" id="WWc-3a-FPU"/>
-                            <constraint firstItem="VcR-oK-usR" firstAttribute="centerX" secondItem="waE-MO-Cdo" secondAttribute="centerX" id="XS9-f5-9hB"/>
                             <constraint firstItem="RLu-Ie-UW7" firstAttribute="trailing" secondItem="tp0-1Z-7HY" secondAttribute="trailing" constant="20" id="k8E-En-tpC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RLu-Ie-UW7"/>

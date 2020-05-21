@@ -54,6 +54,7 @@ class AddAdoptionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ItemSetUp.textViewSetUp(infosTextView)
         ItemSetUp.textFieldSetUp([animalName, animalKind, locality])
     }
 

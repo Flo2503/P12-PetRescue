@@ -29,6 +29,6 @@ class MyAdTableViewCell: UITableViewCell {
 
     func configureImage(image: UIImage) {
         animalPicture.image = image
-        ItemSetUp.makeRounded(image: animalPicture)
+        ItemSetUp.makeRounded(animalPicture)
     }
 }

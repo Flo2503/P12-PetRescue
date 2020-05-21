@@ -22,7 +22,8 @@ class DetailsViewController: NavBarSetUp {
         super.viewDidLoad()
         display()
         importDetails()
-        ItemSetUp.makeRounded(image: animalImage)
+        ItemSetUp.textViewSetUp(animalMoreDetails)
+        ItemSetUp.makeRounded(animalImage)
         self.tableView.tableFooterView = UIView()
     }
 

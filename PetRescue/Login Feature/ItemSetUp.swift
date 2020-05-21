@@ -27,10 +27,15 @@ class ItemSetUp {
         button.layer.backgroundColor = Colors.customGreen.cgColor
     }
 
-    static func makeRounded(image: UIView) {
+    static func textViewSetUp(_ textView: UITextView) {
+        textView.layer.borderWidth = 2
+        textView.layer.borderColor = Colors.customGreen.cgColor
+    }
+
+    static func makeRounded(_ image: UIView) {
         image.layer.cornerRadius = image.frame.size.width / 2
         image.clipsToBounds = true
-        image.layer.borderWidth = 1
+        image.layer.borderWidth = 2
         image.layer.borderColor = Colors.customGreen.cgColor
     }
 }
