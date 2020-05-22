@@ -27,6 +27,7 @@ class AddAdoptionViewController: UIViewController {
     @IBOutlet weak var animalPicture: UIImageView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var agePickerView: UIPickerView!
+    @IBOutlet weak var addPictureButton: UIButton!
 
     @IBAction func addFirstPicture(_ sender: Any) {
         chooseImage()
@@ -54,6 +55,7 @@ class AddAdoptionViewController: UIViewController {
         ItemSetUp.makeRounded(animalPicture)
         ItemSetUp.textViewSetUp(infosTextView)
         ItemSetUp.textFieldSetUp([animalName, animalKind, locality])
+        ItemSetUp.makeRoundedButton(addPictureButton)
     }
 
     private func createAd() {

@@ -28,7 +28,7 @@ class ItemSetUp {
     }
 
     static func textViewSetUp(_ textView: UITextView) {
-        textView.layer.cornerRadius = textView.frame.size.height / 8
+        textView.layer.cornerRadius = textView.frame.size.height / 15
         textView.layer.borderWidth = 1
         textView.layer.borderColor = Colors.customGreen.cgColor
     }
@@ -38,5 +38,12 @@ class ItemSetUp {
         image.clipsToBounds = true
         image.layer.borderWidth = 2
         image.layer.borderColor = Colors.customGreen.cgColor
+    }
+
+    static func makeRoundedButton(_ button: UIButton) {
+        button.layer.cornerRadius = button.frame.size.width / 2
+        button.clipsToBounds = true
+        button.layer.borderWidth = 2
+        button.layer.borderColor = Colors.customGreen.cgColor
     }
 }

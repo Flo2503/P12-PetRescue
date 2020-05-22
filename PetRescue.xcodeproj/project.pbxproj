@@ -12,8 +12,8 @@
 		5C5C1D9D24767A7B0079DB95 /* MyAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C1D9A24767A7B0079DB95 /* MyAdViewController.swift */; };
 		5C5C1D9E24767A7B0079DB95 /* ProfilMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C1D9B24767A7B0079DB95 /* ProfilMenuViewController.swift */; };
 		5C5C1D9F24767A7B0079DB95 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C1D9C24767A7B0079DB95 /* Menu.swift */; };
-		5C5C1DA124767ADD0079DB95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C5C1DA024767ADD0079DB95 /* GoogleService-Info.plist */; };
 		5C5C1DA324767FE70079DB95 /* MyAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C1DA224767FE70079DB95 /* MyAdTableViewCell.swift */; };
+		5C5C1DA5247805C60079DB95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C5C1DA4247805C60079DB95 /* GoogleService-Info.plist */; };
 		5C9C2F6A2460D648002A02F1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C2F692460D648002A02F1 /* DetailsViewController.swift */; };
 		5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC1245704360015AB09 /* GradientBackground.swift */; };
 		5C9D4CC82457496C0015AB09 /* NavBarSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */; };
@@ -57,8 +57,8 @@
 		5C5C1D9A24767A7B0079DB95 /* MyAdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAdViewController.swift; sourceTree = "<group>"; };
 		5C5C1D9B24767A7B0079DB95 /* ProfilMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilMenuViewController.swift; sourceTree = "<group>"; };
 		5C5C1D9C24767A7B0079DB95 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		5C5C1DA024767ADD0079DB95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/OCR---Project12-PetRescue-master 2/PetRescue/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C5C1DA224767FE70079DB95 /* MyAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdTableViewCell.swift; sourceTree = "<group>"; };
+		5C5C1DA4247805C60079DB95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C8D726BFA961686A7E7D072 /* Pods-PetRescueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.release.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C9C2F692460D648002A02F1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		5C9D4CC1245704360015AB09 /* GradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
@@ -200,8 +200,8 @@
 		5CF24C2A2452306B00077B33 /* PetRescue */ = {
 			isa = PBXGroup;
 			children = (
-				5C5C1DA024767ADD0079DB95 /* GoogleService-Info.plist */,
 				5CF24C3C2452307000077B33 /* Info.plist */,
+				5C5C1DA4247805C60079DB95 /* GoogleService-Info.plist */,
 				5C5C1D9924767A7B0079DB95 /* Profil Feature */,
 				5CF24C51245336C000077B33 /* Support */,
 				5CA12F07245C62C4006AC92B /* Adoption feature */,
@@ -347,7 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CF24C3B2452307000077B33 /* LaunchScreen.storyboard in Resources */,
-				5C5C1DA124767ADD0079DB95 /* GoogleService-Info.plist in Resources */,
+				5C5C1DA5247805C60079DB95 /* GoogleService-Info.plist in Resources */,
 				5CF24C382452307000077B33 /* Assets.xcassets in Resources */,
 				5CF24C332452306B00077B33 /* Main.storyboard in Resources */,
 			);
