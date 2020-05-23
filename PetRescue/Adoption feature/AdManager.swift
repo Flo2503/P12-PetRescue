@@ -95,7 +95,11 @@ struct AdManager {
                     completion(nil)
                 } else {
                     storageRef.downloadURL(completion: { (url, error) in
-                        completion(url?.absoluteString)
+                        if let error = error {
+                            print("Error description: \(error.localizedDescription.debugDescription)")
+                        } else {
+                           completion(url?.absoluteString)
+                        }
                     })
                 }
             }
@@ -155,9 +159,10 @@ struct AdManager {
         let reference = storage.reference(forURL: url)
         reference.delete(completion: { error in
             if let error = error {
-                print(error)
+                print("Error while deleting image from firebase, url = \(url).")
+                print("Error description: \(error.localizedDescription.debugDescription)")
             } else {
-                print("ok")
+                print("Picture successfully removed")
             }
         })
     }

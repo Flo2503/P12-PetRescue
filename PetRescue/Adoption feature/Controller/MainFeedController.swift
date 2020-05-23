@@ -16,6 +16,14 @@ class MainFeedController: NavBarSetUp {
     private let ref = Database.database().reference(withPath: "ads")
     private var ads: [AdManager] = []
     var selectedAd: AdManager?
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+                     #selector(MainFeedController.handleRefresh(_:)),
+                                 for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = Colors.customGreen
+        return refreshControl
+    }()
 
     @IBOutlet weak var adTableView: UITableView!
 
@@ -45,6 +53,7 @@ class MainFeedController: NavBarSetUp {
             self.ads = newAd
             self.adTableView.reloadData()
         })
+        self.adTableView.addSubview(self.refreshControl)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,6 +61,14 @@ class MainFeedController: NavBarSetUp {
             let detailsVC = segue.destination as! DetailsViewController
             detailsVC.selectedAd = selectedAd
         }
+    }
+
+    @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
+        AdManager.forceRetrieceData(callback: { newAd in
+            self.ads = newAd
+            self.adTableView.reloadData()
+            refreshControl.endRefreshing()
+        })
     }
 }
 

@@ -22,7 +22,6 @@ class MyAdViewController: NavBarSetUp {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myAdTableView.tableFooterView = UIView()
-        print(ads.description)
         AdManager.getMyAds(userId: userId, callback: { ads in
             self.ads = ads
         })
