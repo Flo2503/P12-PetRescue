@@ -46,12 +46,6 @@ class UserManager {
         }
     }
 
-    static func reloadUser(callback: @escaping (Bool) -> ()) {
-        Auth.auth().currentUser?.reload(completion: { (_) in
-            callback(false)
-        })
-    }
-
     static func sendPasswordReset(withEmail email: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().sendPasswordReset(withEmail: email) { _ in
             callback(false)

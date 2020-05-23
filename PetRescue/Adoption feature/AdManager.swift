@@ -12,6 +12,8 @@ import Firebase
 struct AdManager {
 
     private static var ads: [AdManager]?
+    private static let dataBase = Database.database()
+    private static let storage = Storage.storage()
 
     let ref: DatabaseReference?
     let key: String
@@ -85,7 +87,7 @@ struct AdManager {
     }
 
     static func uploadMedia(name: String, image: UIImage, completion: @escaping (_ url: String?) -> Void) {
-        let storageRef = Storage.storage().reference().child("animalsPictures").child("\(name)\(InputValuesManager.randomString(length: 10)).png")
+        let storageRef = storage.reference().child("animalsPictures").child("\(name)\(InputValuesManager.randomString(length: 10)).png")
         if let uploadData = image.jpegData(compressionQuality: 0.5) {
             storageRef.putData(uploadData, metadata: nil) { (_, error) in
                 if error != nil {
@@ -101,7 +103,7 @@ struct AdManager {
     }
 
     static func retrieveImage(url: String, callback: @escaping (_ image: UIImage?) -> Void) {
-        let reference = Storage.storage().reference(forURL: url)
+        let reference = storage.reference(forURL: url)
         reference.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
             if let error = error {
                 print("Error while retreiving image from firebase, url = \(url).")
@@ -131,8 +133,8 @@ struct AdManager {
     }
 
     static func forceRetrieceData(callback: @escaping (_ newAd: [AdManager]) -> Void) {
-        let ref = Database.database().reference(withPath: "ads")
-        ref.observe(.value, with: { snapshot in
+        let reference = dataBase.reference(withPath: "ads")
+        reference.observe(.value, with: { snapshot in
             var newAd: [AdManager] = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot, let animalAd = AdManager(snapshot: snapshot) {
@@ -144,6 +146,8 @@ struct AdManager {
         })
     }
 
-    static func deleteAd() {
+    static func removeAd(withId: String) {
+        let reference = dataBase.reference().child("ads").child(withId)
+        reference.removeValue()
     }
 }

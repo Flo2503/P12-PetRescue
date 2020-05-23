@@ -14,6 +14,8 @@ class MyAdViewController: NavBarSetUp {
 
     private let userId = Auth.auth().currentUser!.uid.description
     private var ads: [AdManager] = []
+    private var identifier = "segueFromMyAdToDetails"
+    var selectedAd: AdManager?
 
     @IBOutlet weak var myAdTableView: UITableView!
 
@@ -24,6 +26,13 @@ class MyAdViewController: NavBarSetUp {
         AdManager.getMyAds(userId: userId, callback: { ads in
             self.ads = ads
         })
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == identifier {
+            let detailsVC = segue.destination as! DetailsViewController
+            detailsVC.selectedAd = selectedAd
+        }
     }
 
     private func removeAd(at index: Int) {
@@ -51,10 +60,17 @@ extension MyAdViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let animal = ads[indexPath.row]
         if editingStyle == .delete {
             removeAd(at: indexPath.row)
+            AdManager.removeAd(withId: animal.key)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedAd = ads[indexPath.row]
+        self.performSegue(withIdentifier: identifier, sender: self)
     }
 
 }
