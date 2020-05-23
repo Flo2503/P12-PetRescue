@@ -150,4 +150,15 @@ struct AdManager {
         let reference = dataBase.reference().child("ads").child(withId)
         reference.removeValue()
     }
+
+    static func removePicture(url: String) {
+        let reference = storage.reference(forURL: url)
+        reference.delete(completion: { error in
+            if let error = error {
+                print(error)
+            } else {
+                print("ok")
+            }
+        })
+    }
 }

@@ -64,6 +64,7 @@ extension MyAdViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             removeAd(at: indexPath.row)
             AdManager.removeAd(withId: animal.key)
+            AdManager.removePicture(url: animal.animalImage)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
