@@ -10,7 +10,31 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 
-class UserManager {
+struct UserManager {
+
+    private static var currentUser: [UserManager]?
+    let name: String
+    let firstName: String
+    let emailAddress: String
+
+    init(name: String, firstName: String, emailAdress: String) {
+        self.name = name
+        self.firstName = firstName
+        self.emailAddress = emailAdress
+    }
+
+    init?(snapshot: DataSnapshot) {
+        guard
+            let value = snapshot.value as? [String: AnyObject],
+            let name = value["name"] as? String,
+            let firstName = value["firstName"] as? String,
+            let emailAddress = value["emailAddress"] as? String else {
+                return  nil
+        }
+        self.name = name
+        self.firstName = firstName
+        self.emailAddress = emailAddress
+    }
 
     static func createUser(email: String, password: String, name: String, firstName: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (_, success) in
@@ -50,5 +74,20 @@ class UserManager {
         Auth.auth().sendPasswordReset(withEmail: email) { _ in
             callback(false)
         }
+    }
+
+    static func retrieveUser(user: String, callback: @escaping (_ currentUser: [UserManager]) -> Void) {
+        let ref = Database.database().reference()
+        let path = ref.child("users")
+        path.observe(.value, with: { snapshot in
+            var user: [UserManager] = []
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot, let retrieveUser = UserManager(snapshot: snapshot) {
+                    user.append(retrieveUser)
+                }
+            }
+            UserManager.currentUser = user
+            callback(user)
+        })
     }
 }

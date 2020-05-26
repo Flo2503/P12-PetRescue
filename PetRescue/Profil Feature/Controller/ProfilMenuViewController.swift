@@ -26,10 +26,13 @@ extension ProfilMenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             performSegue(withIdentifier: "segueToMyProfil", sender: self)
-        } else if indexPath.row == 1 {
+        case 1:
             performSegue(withIdentifier: "segueToMyAd", sender: self)
+        default:
+            print("No action")
         }
     }
 

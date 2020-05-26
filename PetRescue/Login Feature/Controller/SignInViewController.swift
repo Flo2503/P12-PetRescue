@@ -26,8 +26,7 @@ class SignInViewController: NavBarSetUp {
 
     @IBAction func tapOnValidate(_ sender: Any) {
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!)
-        let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([password, emailAdress])
-        if isEmailAddressValid && fieldIsNotEmpty {
+        if isEmailAddressValid && fieldIsNotEmpty([password, emailAdress]) {
             login()
         } else {
             validateButton.layer.backgroundColor = UIColor.red.cgColor
@@ -39,7 +38,7 @@ class SignInViewController: NavBarSetUp {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        InputValuesManager.securePassword([password])
+        securePassword()
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password])
         emailAdress.text = "test.test1@test.fr"
@@ -61,5 +60,18 @@ class SignInViewController: NavBarSetUp {
                 }
             })
         }
+    }
+
+    private func securePassword() {
+        password.isSecureTextEntry = true
+    }
+
+    private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
+        for item in textField {
+            guard !item.text!.isEmpty else {
+                return false
+            }
+        }
+        return true
     }
 }

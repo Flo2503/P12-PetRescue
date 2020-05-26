@@ -44,21 +44,6 @@ class InputValuesManager {
         return passwordTest.evaluate(with: password)
     }
 
-    static func securePassword(_ textField: [UITextField]) {
-        for item in textField {
-            item.isSecureTextEntry = true
-        }
-    }
-
-    static func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
-        for item in textField {
-            guard !item.text!.isEmpty else {
-                return false
-            }
-        }
-        return true
-    }
-
     static func randomString(length: Int) -> String {
       let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
       return String((0..<length).map { _ in letters.randomElement()! })

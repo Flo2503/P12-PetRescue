@@ -34,7 +34,7 @@ class AddAdoptionViewController: UIViewController {
     }
 
     @IBAction func tapOnCreateAd(_ sender: Any) {
-        let textIsNotEmpty = InputValuesManager.fieldIsNotEmpty([animalName, animalKind, locality])
+        let textIsNotEmpty = fieldIsNotEmpty([animalName, animalKind, locality])
         if textIsNotEmpty && !infosTextView.text.isEmpty {
             createAd()
         } else {
@@ -56,6 +56,15 @@ class AddAdoptionViewController: UIViewController {
         ItemSetUp.textViewSetUp(infosTextView)
         ItemSetUp.textFieldSetUp([animalName, animalKind, locality])
         ItemSetUp.makeRoundedButton(addPictureButton)
+    }
+
+    private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
+        for item in textField {
+            guard !item.text!.isEmpty else {
+                return false
+            }
+        }
+        return true
     }
 
     private func createAd() {

@@ -32,15 +32,14 @@ class SignUpViewController: NavBarSetUp {
 
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!.trimmingCharacters(in: .whitespaces))
         let passwordsAreEquals = InputValuesManager.passwordsAreEquals(passwordOne: password.text, passwordTwo: passwordValidation.text)
-        let fieldIsNotEmpty = InputValuesManager.fieldIsNotEmpty([passwordValidation, password, emailAdress, name, firstName])
         let isValidPassword = InputValuesManager.isValidPassword(password: password.text?.trimmingCharacters(in: .whitespaces))
         let isValidSecondPassword = InputValuesManager.isValidPassword(password: passwordValidation.text?.trimmingCharacters(in: .whitespaces))
 
         if isEmailAddressValid &&
             passwordsAreEquals &&
-            fieldIsNotEmpty &&
             isValidPassword &&
-            isValidSecondPassword {
+            isValidSecondPassword &&
+            fieldIsNotEmpty([passwordValidation, password, emailAdress, name, firstName]) {
             signUp()
         } else {
             labelSignUp.text = errorMessage
@@ -50,7 +49,7 @@ class SignUpViewController: NavBarSetUp {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        InputValuesManager.securePassword([password, passwordValidation])
+        securePassword()
         ItemSetUp.buttonsetUp(validateButton)
         ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation, name, firstName
         ])
@@ -72,4 +71,19 @@ class SignUpViewController: NavBarSetUp {
             })
         }
     }
+
+    private func securePassword() {
+        password.isSecureTextEntry = true
+        passwordValidation.isSecureTextEntry = true
+    }
+
+    private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
+        for item in textField {
+            guard !item.text!.isEmpty else {
+                return false
+            }
+        }
+        return true
+    }
+
 }

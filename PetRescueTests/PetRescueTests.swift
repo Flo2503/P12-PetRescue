@@ -11,24 +11,53 @@ import XCTest
 
 class PetRescueTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testGivenEmptyValue_WhenAddedValidEmail_ThenReturnTrue() {
+        let validEmail =  "test.test@test.fr"
+
+        let value = InputValuesManager.isValidEmailAddress(emailAddressString: validEmail)
+
+        XCTAssertTrue(value)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testGivenEmptyValue_WhenAddedWrongEmail_ThenReturnFalse() {
+        let invalidEmail =  "test.test@test."
+
+        let value = InputValuesManager.isValidEmailAddress(emailAddressString: invalidEmail)
+
+        XCTAssertFalse(value)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGivenEmptyValue_WhenAddedIdenticalPasswords_ThenReturnTrue() {
+        let password = "pastaBoxDu77"
+        let samePassword = "pastaBoxDu77"
+
+        let value = InputValuesManager.passwordsAreEquals(passwordOne: password, passwordTwo: samePassword)
+
+        XCTAssertTrue(value)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testGivenEmptyValue_WhenAddedDifferentPasswords_ThenReturnFalse() {
+        let password = "pastaBoxDu77"
+        let sndPassword = "pastaBoxDu02"
+
+        let value = InputValuesManager.passwordsAreEquals(passwordOne: password, passwordTwo: sndPassword)
+
+        XCTAssertFalse(value)
     }
 
+    func testGivenEmptyValue_WhenAddedValidPassword_ThenReturnTrue() {
+        let validPassword = "pastaBoxDu77"
+
+        let value = InputValuesManager.isValidPassword(password: validPassword)
+
+        XCTAssertTrue(value)
+    }
+
+    func testGivenEmptyValue_WhenAddedInvalidPassword_ThenReturnFalse() {
+        let invalidPassword = "pastaBox"
+
+        let value = InputValuesManager.isValidPassword(password: invalidPassword)
+
+        XCTAssertFalse(value)
+    }
 }
