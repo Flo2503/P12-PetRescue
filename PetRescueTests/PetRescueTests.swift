@@ -60,4 +60,12 @@ class PetRescueTests: XCTestCase {
 
         XCTAssertFalse(value)
     }
+
+    func testGiven_WhenAskRandomStringLength10_ThenReturnStringLength10() {
+        let expected = 10
+
+        let value = InputValuesManager.randomString(length: 10).count
+
+        XCTAssertEqual(expected, value)
+    }
 }
