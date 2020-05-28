@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 struct UserManager {
 
-    private static var currentUser: [UserManager]?
+    private static var currentUser: UserManager?
     let name: String
     let firstName: String
     let emailAddress: String
@@ -70,24 +70,33 @@ struct UserManager {
         }
     }
 
+    static func retrieveUser(userId: String, callback: @escaping (_ currentUser: UserManager) -> Void) {
+        let ref = Database.database().reference()
+        let path = ref.child("users").child(userId)
+        path.observe(.value, with: { snapshot in
+            if let user = UserManager(snapshot: snapshot) {
+                UserManager.currentUser = user
+                callback(user)
+            }
+        })
+    }
+
     static func sendPasswordReset(withEmail email: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().sendPasswordReset(withEmail: email) { _ in
             callback(false)
         }
     }
 
-    static func retrieveUser(user: String, callback: @escaping (_ currentUser: [UserManager]) -> Void) {
-        let ref = Database.database().reference()
-        let path = ref.child("users")
-        path.observe(.value, with: { snapshot in
-            var user: [UserManager] = []
-            for child in snapshot.children {
-                if let snapshot = child as? DataSnapshot, let retrieveUser = UserManager(snapshot: snapshot) {
-                    user.append(retrieveUser)
-                }
-            }
-            UserManager.currentUser = user
-            callback(user)
-        })
+    static func updatePassword(password: String, callback: @escaping (Bool) -> ()) {
+        Auth.auth().currentUser?.updatePassword(to: password) { _ in
+            callback(false)
+        }
     }
+
+    static func updateEmail(email: String, callback: @escaping (Bool) -> ()) {
+        Auth.auth().currentUser?.updateEmail(to: email) { _ in
+            callback(false)
+        }
+    }
+
 }
