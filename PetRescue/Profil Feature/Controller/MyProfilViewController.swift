@@ -21,17 +21,6 @@ class MyProfilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
-        getUser()
-    }
-
-    private func getUser() {
-        if let currentUser = userId {
-            UserManager.retrieveUser(userId: currentUser, callback: { currentUser in
-                self.user = currentUser
-                self.importDetails()
-                self.tableView.reloadData()
-            })
-        }
     }
 
     private func importDetails() {
@@ -51,7 +40,14 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myProfilCell", for: indexPath)
         cell.textLabel?.text = cellTitle[indexPath.row]
-        cell.detailTextLabel?.text = userInfo[indexPath.row]
+        if let currentUser = userId {
+            UserManager.retrieveUser(userId: currentUser, callback: { currentUser in
+                self.user = currentUser
+                self.importDetails()
+                cell.detailTextLabel?.text = self.userInfo[indexPath.row]
+                self.tableView.reloadData()
+            })
+        }
         return cell
     }
 }
