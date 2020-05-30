@@ -8,14 +8,19 @@
 
 import UIKit
 
+enum Section: Int {
+    case first
+    case second
+}
+
 class DetailsViewController: NavBarSetUp {
 
     var selectedAd: AdManager?
-    var adDetails: [String] = []
-    let cellTitle = ["Nom", "Type/Race", "Genre", "Age", "Localité"]
+    private var adDetails: [String] = []
+    private let cellTitle = ["Nom", "Type/Race", "Genre", "Age", "Localité"]
+    private let section =  ["Profil du compagnon", "Informations complémentaires"]
 
     @IBOutlet weak var animalImage: UIImageView!
-    @IBOutlet weak var animalMoreDetails: UITextView!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -23,8 +28,9 @@ class DetailsViewController: NavBarSetUp {
         display()
         importDetails()
         ItemSetUp.makeRounded(animalImage)
-        ItemSetUp.textViewSetUp(animalMoreDetails)
         self.tableView.tableFooterView = UIView()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
     }
 
     private func importDetails() {
@@ -40,9 +46,8 @@ class DetailsViewController: NavBarSetUp {
 
 extension DetailsViewController {
     private func display() {
-        if let details = selectedAd?.details, let urlImage = selectedAd?.animalImage {
-            animalMoreDetails.text = details
-            AdManager.retrieveImage(url: urlImage, callback: { image in
+        if let urlImage = selectedAd?.animalImage {
+             AdManager.retrieveImage(url: urlImage, callback: { image in
                 if let image = image {
                     self.animalImage.image = image
                 }
@@ -52,15 +57,38 @@ extension DetailsViewController {
 }
 
 extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return section.count
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.section[section]
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        adDetails.count
+        switch Section(rawValue: section)! {
+        case .first:
+            return adDetails.count
+        case .second:
+            return 1
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailsCell", for: indexPath)
-        cell.detailTextLabel?.text = adDetails[indexPath.row]
-        cell.textLabel?.text = cellTitle[indexPath.row]
-
-        return cell
+        guard let furtherDetailsCell = tableView.dequeueReusableCell(withIdentifier: "furtherDetailsCell", for: indexPath) as? FurtherDetailsTableViewCell else {
+            return UITableViewCell()
+        }
+        switch Section(rawValue: indexPath.section)! {
+        case .first:
+            cell.detailTextLabel?.text = adDetails[indexPath.row]
+            cell.textLabel?.text = cellTitle[indexPath.row]
+            return cell
+        case .second:
+            if let furtherDetails = selectedAd?.details {
+                furtherDetailsCell.configure(details: furtherDetails)
+            }
+            return furtherDetailsCell
+        }
     }
 }
