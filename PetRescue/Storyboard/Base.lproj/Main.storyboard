@@ -830,17 +830,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zT7-KE-bBq">
-                                                    <rect key="frame" x="8" y="0.0" width="398" height="21"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="zT7-KE-bBq" firstAttribute="leading" secondItem="4xw-U0-Ikz" secondAttribute="leading" constant="20" id="cqu-Oc-XmN"/>
                                                 <constraint firstItem="zT7-KE-bBq" firstAttribute="top" secondItem="4xw-U0-Ikz" secondAttribute="top" id="dSq-RL-UQN"/>
+                                                <constraint firstAttribute="trailing" secondItem="zT7-KE-bBq" secondAttribute="trailing" constant="20" id="jIn-zK-1ox"/>
                                                 <constraint firstAttribute="bottom" secondItem="zT7-KE-bBq" secondAttribute="bottom" id="jsT-48-ktc"/>
-                                                <constraint firstAttribute="trailing" secondItem="zT7-KE-bBq" secondAttribute="trailing" constant="8" id="nBs-ph-f76"/>
-                                                <constraint firstItem="zT7-KE-bBq" firstAttribute="leading" secondItem="4xw-U0-Ikz" secondAttribute="leading" constant="8" id="zRG-3n-Uoa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
