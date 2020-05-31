@@ -19,5 +19,5 @@
 ## Profil feature
 - [x] Create view (table view) displaying themes
 - [x] Add following themes : "My adoptions", "My informations"
-- [ ] Implement "My adoptions", "My informations" controllers
+- [x] Implement "My adoptions", "My informations" controllers
 
