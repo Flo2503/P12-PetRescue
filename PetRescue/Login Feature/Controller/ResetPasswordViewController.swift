@@ -13,7 +13,7 @@ class ResetPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ItemSetUp.textFieldSetUp([emailAdressResetPassword])
-        ItemSetUp.buttonsetUp(validateResetPassword)
+        ItemSetUp.buttonSetUp([validateResetPassword])
     }
 
     @IBOutlet weak var labelResetPassword: UILabel!

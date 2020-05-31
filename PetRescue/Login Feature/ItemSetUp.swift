@@ -20,11 +20,13 @@ class ItemSetUp {
         }
     }
 
-    static func buttonsetUp(_ button: UIButton) {
-        button.layer.cornerRadius = button.frame.size.height / 2
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.backgroundColor = Colors.customGreen.cgColor
+    static func buttonSetUp(_ item: [UIButton]) {
+        for button in item {
+            button.layer.cornerRadius = button.frame.size.height / 2
+            button.layer.borderWidth = 2
+            button.layer.borderColor = UIColor.white.cgColor
+            button.layer.backgroundColor = Colors.customGreen.cgColor
+        }
     }
 
     static func textViewSetUp(_ textView: UITextView) {

@@ -91,4 +91,10 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
             return furtherDetailsCell
         }
     }
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = Colors.customGreen
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+    }
 }

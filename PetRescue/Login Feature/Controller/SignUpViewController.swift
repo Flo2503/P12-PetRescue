@@ -50,7 +50,7 @@ class SignUpViewController: NavBarSetUp {
     override func viewDidLoad() {
         super.viewDidLoad()
         securePassword()
-        ItemSetUp.buttonsetUp(validateButton)
+        ItemSetUp.buttonSetUp([validateButton])
         ItemSetUp.textFieldSetUp([emailAdress, password, passwordValidation, name, firstName
         ])
     }
