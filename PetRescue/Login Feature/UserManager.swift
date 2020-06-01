@@ -88,8 +88,12 @@ struct UserManager {
     }
 
     static func updatePassword(password: String, callback: @escaping (Bool) -> ()) {
-        Auth.auth().currentUser?.updatePassword(to: password) { _ in
-            callback(false)
+        Auth.auth().currentUser?.updatePassword(to: password) { success in
+            if success != nil {
+                callback(false)
+                return
+            }
+            callback(true)
         }
     }
 

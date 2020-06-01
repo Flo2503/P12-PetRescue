@@ -64,7 +64,7 @@ class SignUpViewController: NavBarSetUp {
                     self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
                     self.performSegue(withIdentifier: self.identifier, sender: self)
                 } else {
-                    self.labelSignUp.text = self.errorMessage
+                    self.labelSignUp.text = "Erreur réseau, merci de réessayer"
                     self.validateButton.isEnabled = true
                     self.validateButton.layer.backgroundColor = UIColor.red.cgColor
                 }

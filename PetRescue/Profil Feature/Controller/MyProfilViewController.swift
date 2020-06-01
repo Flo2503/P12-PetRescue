@@ -21,6 +21,8 @@ class MyProfilViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var editPasswordButton: UIButton!
 
+    @IBAction func unwindToMyProfil(segue: UIStoryboardSegue) { }
+
     @IBAction func tapLogoutButton(_ sender: Any) {
         let alert = UIAlertController(title: "Vous êtes sur le point d'être déconnecté", message: "Continuer ?", preferredStyle: .actionSheet)
         let logout = UIAlertAction(title: "Oui", style: .default, handler: { _ in

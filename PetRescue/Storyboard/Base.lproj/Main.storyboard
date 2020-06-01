@@ -104,7 +104,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvW-h2-nB4">
                                         <rect key="frame" x="0.0" y="296.5" width="374" height="53.5"/>
                                         <color key="backgroundColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -604,18 +604,95 @@
             </objects>
             <point key="canvasLocation" x="4501" y="475"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Password View Controller-->
         <scene sceneID="Ph4-ZS-cjg">
             <objects>
-                <viewController id="0cV-cc-LVD" sceneMemberID="viewController">
+                <viewController id="0cV-cc-LVD" customClass="ChangePasswordViewController" customModule="PetRescue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uCG-Pc-Xov">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Gkx-X4-igv">
+                                <rect key="frame" x="20" y="271" width="374" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renseignez votre nouveau mot de passe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyC-RJ-Dm2">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G2-re-tui">
+                                        <rect key="frame" x="0.0" y="62" width="374" height="51.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation mot de passe*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sm0-8k-sdD">
+                                        <rect key="frame" x="0.0" y="124.5" width="374" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum 8 caractères : une majuscule, une minuscule et un chiffre" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKJ-e2-SbR">
+                                        <rect key="frame" x="0.0" y="186.5" width="374" height="51.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82s-p2-qq3">
+                                        <rect key="frame" x="0.0" y="249" width="374" height="51"/>
+                                        <color key="backgroundColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Valider">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapValidateButton:" destination="0cV-cc-LVD" eventType="touchUpInside" id="phw-Zo-dCU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="7uq-Yv-PJw"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmu-Do-Xxp">
+                                <rect key="frame" x="345" y="20" width="49" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aEX-Sw-IDY"/>
+                                </constraints>
+                                <state key="normal" title="Fermer"/>
+                                <connections>
+                                    <segue destination="hdd-8a-7VW" kind="unwind" identifier="unwindToMyProfil" unwindAction="unwindToMyProfilWithSegue:" id="dhy-4a-JXU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Gkx-X4-igv" firstAttribute="centerX" secondItem="uCG-Pc-Xov" secondAttribute="centerX" id="Q9v-Ur-s6E"/>
+                            <constraint firstItem="Gkx-X4-igv" firstAttribute="centerY" secondItem="uCG-Pc-Xov" secondAttribute="centerY" id="k7u-L2-ZH4"/>
+                            <constraint firstItem="h7i-I0-DbS" firstAttribute="trailing" secondItem="Rmu-Do-Xxp" secondAttribute="trailing" constant="20" id="lPc-L9-29N"/>
+                            <constraint firstItem="Rmu-Do-Xxp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h7i-I0-DbS" secondAttribute="leading" symbolic="YES" id="qPx-Gs-IcG"/>
+                            <constraint firstItem="Rmu-Do-Xxp" firstAttribute="top" secondItem="h7i-I0-DbS" secondAttribute="top" constant="20" id="r0L-Fb-oJM"/>
+                            <constraint firstItem="Gkx-X4-igv" firstAttribute="leading" secondItem="h7i-I0-DbS" secondAttribute="leading" constant="20" id="zGA-V3-mN0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="h7i-I0-DbS"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qHd-Ui-loS" appends="YES" id="c3W-Su-6Ix"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="checkNewPassword" destination="sm0-8k-sdD" id="QrS-h5-Ti9"/>
+                        <outlet property="labelNewPassword" destination="nyC-RJ-Dm2" id="CI3-Gs-Bgx"/>
+                        <outlet property="newPassword" destination="5G2-re-tui" id="Zd8-7s-kVD"/>
+                        <outlet property="validateButton" destination="82s-p2-qq3" id="7Kn-aI-jVE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8y-td-0rE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="hdd-8a-7VW" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="qHd-Ui-loS">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="0cV-cc-LVD" id="sFl-Cw-Y29"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5425" y="850"/>
         </scene>
@@ -636,20 +713,20 @@
                                 <color key="separatorColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myProfilCell" id="N9X-b5-FqG" customClass="MyProfilTableViewCell" customModule="PetRescue" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="29.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="29"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N9X-b5-FqG" id="tJo-nr-hcu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="29.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="29"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxS-a7-aU4">
-                                                    <rect key="frame" x="40" y="0.0" width="37.5" height="29.5"/>
+                                                    <rect key="frame" x="40" y="0.0" width="37.5" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1m-MH-xON">
-                                                    <rect key="frame" x="158" y="0.0" width="236" height="29.5"/>
+                                                    <rect key="frame" x="158" y="0.0" width="236" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -682,7 +759,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="r2K-Pl-Iyb" secondAttribute="height" multiplier="374:59" id="oO3-Y2-9l6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Modifier mot de passe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -696,7 +773,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yhe-0w-E4t" secondAttribute="height" multiplier="374:59" id="TBJ-ZK-EKP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Déconnexion">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -957,7 +1034,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLy-nt-KdA">
                                         <rect key="frame" x="0.0" y="245.5" width="374" height="54.5"/>
                                         <color key="backgroundColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1073,7 +1150,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="500-vM-flh">
                                         <rect key="frame" x="0.0" y="446.5" width="374" height="53.5"/>
                                         <color key="backgroundColor" red="0.53725490196078429" green="0.806073606" blue="0.60781627890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1144,7 +1221,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="XK4-cT-V1B"/>
-        <segue reference="Ibc-5a-Qnj"/>
+        <segue reference="IXy-xb-2dc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
