@@ -12,6 +12,6 @@ import UIKit
 struct Colors {
     static let lightGreen = UIColor(red: 157.0/255.0, green: 187.0/255.0, blue: 153.0/255.0, alpha: 1.0)
     static let lightBrown = UIColor(red: 170.0/255.0, green: 153.0/255.0, blue: 113.0/255.0, alpha: 1.0)
-    static let customGreen = UIColor(red: 137.0/255.0, green: 206.0/255.0, blue: 155.0/255.0, alpha: 1.0)
-    static let customGreenLight = UIColor(red: 137.0/255.0, green: 206.0/255.0, blue: 155.0/255.0, alpha: 0.5)
+    static let customGreen = UIColor(red: 145.0/255.0, green: 218.0/255.0, blue: 175.0/255.0, alpha: 1.0)
+    static let customGreenLight = UIColor(red: 145.0/255.0, green: 218.0/255.0, blue: 175.0/255.0, alpha: 0.5)
 }

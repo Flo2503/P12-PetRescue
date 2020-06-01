@@ -20,6 +20,7 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         cornerRadius([connexionButton, inscriptionButton])
         border()
+        inscriptionButton.layer.backgroundColor = Colors.customGreen.cgColor
         view.setGradientBackground(colorOne: Colors.lightBrown, colotTwo: Colors.customGreen)
     }
 

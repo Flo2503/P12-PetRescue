@@ -32,7 +32,7 @@ extension ProfilMenuViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             performSegue(withIdentifier: "segueToMyAd", sender: self)
         default:
-            print("No action")
+            return
         }
     }
 

@@ -25,7 +25,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Connexion">
-                                            <color key="titleColor" red="0.64712686850000001" green="0.80412607049999996" blue="0.64317407209999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <segue destination="umV-pK-Oki" kind="show" id="bHC-UY-ynW"/>
@@ -33,7 +33,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpK-yg-9FX">
                                         <rect key="frame" x="0.0" y="135" width="374" height="65"/>
-                                        <color key="backgroundColor" red="0.64712686850000001" green="0.80412607049999996" blue="0.64317407209999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Inscription">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,7 +103,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvW-h2-nB4">
                                         <rect key="frame" x="0.0" y="296.5" width="374" height="53.5"/>
-                                        <color key="backgroundColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -204,7 +204,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="133-9N-1Uw">
                                         <rect key="frame" x="0.0" y="0.0" width="53" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Annuler"/>
+                                        <state key="normal" title="Annuler">
+                                            <color key="titleColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
                                         <connections>
                                             <segue destination="3f9-wl-HOj" kind="unwind" unwindAction="unwindToMainFeedWithSegue:" id="ONY-Nz-J9s"/>
                                         </connections>
@@ -219,7 +221,7 @@
                                         <rect key="frame" x="324" y="0.0" width="50" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Ajouter">
-                                            <color key="titleColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <action selector="tapOnCreateAd:" destination="CX6-pg-MgJ" eventType="touchUpInside" id="iOg-sh-p0z"/>
@@ -273,7 +275,7 @@
                                     <segment title="Femelle"/>
                                     <segment title="Mâle"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="selectedSegmentTintColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom*" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9x-8c-8sr">
                                 <rect key="frame" x="20" y="298" width="374" height="60"/>
@@ -564,7 +566,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ptK-Nl-rfI">
                                 <rect key="frame" x="0.0" y="136" width="414" height="677"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="separatorColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" id="tKQ-57-2On">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -639,7 +641,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82s-p2-qq3">
                                         <rect key="frame" x="0.0" y="249" width="374" height="51"/>
-                                        <color key="backgroundColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -658,7 +660,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aEX-Sw-IDY"/>
                                 </constraints>
-                                <state key="normal" title="Fermer"/>
+                                <state key="normal" title="Fermer">
+                                    <color key="titleColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="hdd-8a-7VW" kind="unwind" identifier="unwindToMyProfil" unwindAction="unwindToMyProfilWithSegue:" id="dhy-4a-JXU"/>
                                 </connections>
@@ -704,29 +708,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbC-SH-cma">
-                                <rect key="frame" x="0.0" y="88" width="414" height="170"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbC-SH-cma">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XbC-SH-cma" secondAttribute="height" multiplier="207:85" id="vct-HM-vqE"/>
-                                </constraints>
-                                <color key="separatorColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.54462337490000001" green="0.76470588240000004" blue="0.48621237280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myProfilCell" id="N9X-b5-FqG" customClass="MyProfilTableViewCell" customModule="PetRescue" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="29"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="28.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N9X-b5-FqG" id="tJo-nr-hcu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="29"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="28.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxS-a7-aU4">
-                                                    <rect key="frame" x="40" y="0.0" width="37.5" height="29"/>
+                                                    <rect key="frame" x="40" y="0.0" width="37.5" height="28.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1m-MH-xON">
-                                                    <rect key="frame" x="158" y="0.0" width="236" height="29"/>
+                                                    <rect key="frame" x="158" y="0.0" width="236" height="28.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -747,67 +748,67 @@
                                             <outlet property="userDetails" destination="c1m-MH-xON" id="p6r-9x-av3"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="changePasswordCell" textLabel="pma-13-dg3" style="IBUITableViewCellStyleDefault" id="Zpe-If-iQV">
+                                        <rect key="frame" x="0.0" y="56.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zpe-If-iQV" id="JCU-mW-5sP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pma-13-dg3">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="logoutCell" textLabel="jvU-bP-oJ2" style="IBUITableViewCellStyleDefault" id="BSd-ez-CJ4">
+                                        <rect key="frame" x="0.0" y="100.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BSd-ez-CJ4" id="4Jg-6X-eGx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jvU-bP-oJ2">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="9Ti-3O-1eC" id="jnA-6r-skL"/>
                                     <outlet property="delegate" destination="9Ti-3O-1eC" id="8At-2f-Kw9"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2K-Pl-Iyb">
-                                <rect key="frame" x="20" y="338" width="374" height="59"/>
-                                <color key="backgroundColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="r2K-Pl-Iyb" secondAttribute="height" multiplier="374:59" id="oO3-Y2-9l6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Modifier mot de passe">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0cV-cc-LVD" kind="presentation" id="mqw-XF-Zqt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhe-0w-E4t">
-                                <rect key="frame" x="50" y="447" width="314" height="49.5"/>
-                                <color key="backgroundColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="yhe-0w-E4t" secondAttribute="height" multiplier="374:59" id="TBJ-ZK-EKP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Déconnexion">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="tapLogoutButton:" destination="9Ti-3O-1eC" eventType="touchUpInside" id="QC2-hk-7IA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="XbC-SH-cma" firstAttribute="leading" secondItem="1nN-2w-isb" secondAttribute="leading" id="06E-B6-0Yg"/>
-                            <constraint firstItem="r2K-Pl-Iyb" firstAttribute="top" secondItem="XbC-SH-cma" secondAttribute="bottom" constant="80" id="Q0D-GH-IUe"/>
+                            <constraint firstItem="XbC-SH-cma" firstAttribute="bottom" secondItem="1nN-2w-isb" secondAttribute="bottom" id="FvP-ep-ary"/>
                             <constraint firstItem="XbC-SH-cma" firstAttribute="trailing" secondItem="1nN-2w-isb" secondAttribute="trailing" id="TVu-Fo-jKI"/>
-                            <constraint firstItem="yhe-0w-E4t" firstAttribute="top" secondItem="r2K-Pl-Iyb" secondAttribute="bottom" constant="50" id="YHr-4S-Srb"/>
-                            <constraint firstItem="1nN-2w-isb" firstAttribute="trailing" secondItem="yhe-0w-E4t" secondAttribute="trailing" constant="50" id="bYE-bW-WfQ"/>
                             <constraint firstItem="XbC-SH-cma" firstAttribute="top" secondItem="1nN-2w-isb" secondAttribute="top" id="eCx-dv-ENZ"/>
-                            <constraint firstItem="1nN-2w-isb" firstAttribute="trailing" secondItem="r2K-Pl-Iyb" secondAttribute="trailing" constant="20" id="el3-6H-o4K"/>
-                            <constraint firstItem="yhe-0w-E4t" firstAttribute="leading" secondItem="1nN-2w-isb" secondAttribute="leading" constant="50" id="gWZ-Tk-mS5"/>
-                            <constraint firstItem="r2K-Pl-Iyb" firstAttribute="leading" secondItem="1nN-2w-isb" secondAttribute="leading" constant="20" id="wff-BW-x0y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1nN-2w-isb"/>
                     </view>
                     <navigationItem key="navigationItem" id="ROF-6q-nEZ"/>
                     <connections>
-                        <outlet property="editPasswordButton" destination="r2K-Pl-Iyb" id="XDD-Ko-srK"/>
-                        <outlet property="logOutButton" destination="yhe-0w-E4t" id="sEQ-TK-Y1I"/>
                         <outlet property="tableView" destination="XbC-SH-cma" id="d7U-iC-ZEy"/>
                         <segue destination="iDd-W6-I6O" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="EUd-ey-FDL"/>
+                        <segue destination="0cV-cc-LVD" kind="presentation" identifier="segueToChangePassword" id="7Iu-v3-BiA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFL-bl-ezu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="iDd-W6-I6O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5425" y="1581"/>
+            <point key="canvasLocation" x="5424.6376811594209" y="1580.3571428571429"/>
         </scene>
         <!--My Ad View Controller-->
         <scene sceneID="4fi-jO-8pB">
@@ -829,7 +830,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cFK-pK-bKT">
                                 <rect key="frame" x="0.0" y="136" width="414" height="677"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="separatorColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myAdCell" rowHeight="100" id="93r-fa-Q0E" customClass="MyAdTableViewCell" customModule="PetRescue" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
@@ -930,7 +931,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NHu-hf-vL9">
                                 <rect key="frame" x="0.0" y="351" width="414" height="462"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="separatorColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsCell" textLabel="x32-ME-dYh" detailTextLabel="7D6-za-XvK" style="IBUITableViewCellStyleValue1" id="Z4I-3a-GHB">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -1033,7 +1034,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLy-nt-KdA">
                                         <rect key="frame" x="0.0" y="245.5" width="374" height="54.5"/>
-                                        <color key="backgroundColor" red="0.53725490200000003" green="0.80784313730000001" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1053,7 +1054,10 @@
                                     <constraint firstAttribute="height" constant="30" id="qE1-jr-Tvz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Fermer"/>
+                                <color key="tintColor" red="0.54462337490000001" green="0.83475190399999999" blue="0.48621237280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Fermer">
+                                    <color key="titleColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="Lfh-7m-BLX" kind="unwind" unwindAction="unwindToSignInSegue:" id="JGs-2D-SdV"/>
                                 </connections>
@@ -1149,7 +1153,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="500-vM-flh">
                                         <rect key="frame" x="0.0" y="446.5" width="374" height="53.5"/>
-                                        <color key="backgroundColor" red="0.53725490196078429" green="0.806073606" blue="0.60781627890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1220,8 +1224,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XK4-cT-V1B"/>
-        <segue reference="IXy-xb-2dc"/>
+        <segue reference="jRC-Ce-beF"/>
+        <segue reference="Ibc-5a-Qnj"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
