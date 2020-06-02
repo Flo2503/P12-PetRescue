@@ -82,8 +82,13 @@ struct UserManager {
     }
 
     static func sendPasswordReset(withEmail email: String, callback: @escaping (Bool) -> ()) {
-        Auth.auth().sendPasswordReset(withEmail: email) { _ in
-            callback(false)
+        Auth.auth().sendPasswordReset(withEmail: email) { success in
+            if success != nil {
+                callback(false)
+                return
+            }
+            callback(true)
+
         }
     }
 

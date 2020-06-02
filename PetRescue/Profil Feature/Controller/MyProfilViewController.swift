@@ -13,6 +13,7 @@ enum ProfilSection: Int {
     case first
     case second
     case third
+    case fourth
 }
 
 class MyProfilViewController: UIViewController {
@@ -20,8 +21,9 @@ class MyProfilViewController: UIViewController {
     private let userId = Auth.auth().currentUser?.uid
     private var unwindIdentifier = "unwindToLogin"
     private let passwordSegue = "segueToChangePassword"
+    private let editEmailSegue = "segueToEditEmail"
     private let cellTitle = ["Nom", "Prénom", "Adresse mail"]
-    private let section = ["Mes informations", "Modifier mon mot de passe", "Déconnexion"]
+    private let section = ["Mes informations", "Modifier mon mot de passe", "Modifier mon adresse mail", "Déconnexion"]
     private var userInfo: [String] = []
     private var user: UserManager?
 
@@ -30,6 +32,7 @@ class MyProfilViewController: UIViewController {
     @IBAction func unwindToMyProfil(segue: UIStoryboardSegue) { }
 
     override func viewDidLoad() {
+        self.tableView.reloadData()
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
     }
@@ -60,24 +63,25 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
             return 1
         case .third:
             return 1
+        case .fourth:
+            return 1
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myProfilCell", for: indexPath) as? MyProfilTableViewCell else {
-           return UITableViewCell()
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myProfilCell", for: indexPath)
         let passwordCell = tableView.dequeueReusableCell(withIdentifier: "changePasswordCell", for: indexPath)
+        let editEmailCell = tableView.dequeueReusableCell(withIdentifier: "editEmailCell", for: indexPath)
         let logoutCell = tableView.dequeueReusableCell(withIdentifier: "logoutCell", for: indexPath)
 
         switch ProfilSection(rawValue: indexPath.section)! {
         case .first:
-            cell.configureTitle(title: cellTitle[indexPath.row])
+            cell.textLabel?.text = cellTitle[indexPath.row]
             if let currentUser = userId {
                 UserManager.retrieveUser(userId: currentUser, callback: { currentUser in
                     self.user = currentUser
                     self.importDetails()
-                    cell.configureDetails(details: self.userInfo[indexPath.row])
+                    cell.detailTextLabel?.text = self.userInfo[indexPath.row]
                     self.tableView.reloadData()
                 })
             }
@@ -85,6 +89,8 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
         case .second:
             return passwordCell
         case .third:
+            return editEmailCell
+        case .fourth:
             return logoutCell
         }
     }
@@ -96,6 +102,8 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
         case .second:
             performSegue(withIdentifier: passwordSegue, sender: self)
         case .third:
+            performSegue(withIdentifier: editEmailSegue, sender: self)
+        case .fourth:
             let alert = UIAlertController(title: "Vous êtes sur le point d'être déconnecté", message: "Continuer ?", preferredStyle: .actionSheet)
             let logout = UIAlertAction(title: "Oui", style: .default, handler: { _ in
                 if UserManager.signOut() == true {
@@ -114,6 +122,6 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = UIColor.white
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = Colors.customGreen
+        header.textLabel?.textColor = UIColor.white
     }
 }

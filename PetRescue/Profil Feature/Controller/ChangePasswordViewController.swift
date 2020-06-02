@@ -10,7 +10,7 @@ import UIKit
 
 class ChangePasswordViewController: UIViewController {
 
-    private let invalidPasswordAlert = "Mot de passe invalide"
+    private let invalidPasswordAlert = "Mot de non valide"
     private let passwordUpdateAlert = "Mot de passe modifié avec succès"
     private let networkErrorAlert = "Erreur réseau, merci de réessayer"
 
