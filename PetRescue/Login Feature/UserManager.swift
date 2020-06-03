@@ -103,8 +103,17 @@ struct UserManager {
     }
 
     static func updateEmail(email: String, callback: @escaping (Bool) -> ()) {
-        Auth.auth().currentUser?.updateEmail(to: email) { _ in
-            callback(false)
+        Auth.auth().currentUser?.updateEmail(to: email) { success in
+            if success != nil {
+                callback(false)
+                return
+            } else {
+                let ref = Database.database().reference()
+                if let userID = Auth.auth().currentUser?.uid {
+                    ref.child("users").child(userID).updateChildValues(["emailAddress": email])
+                }
+            }
+            callback(true)
         }
     }
 
