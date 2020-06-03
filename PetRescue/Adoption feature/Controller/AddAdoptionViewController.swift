@@ -55,7 +55,7 @@ class AddAdoptionViewController: UIViewController {
         ItemSetUp.makeRounded(animalPicture)
         ItemSetUp.textViewSetUp(infosTextView)
         ItemSetUp.textFieldSetUp([animalName, animalKind, locality])
-        ItemSetUp.makeRoundedButton(addPictureButton)
+        ItemSetUp.makeRoundedButton([addPictureButton])
     }
 
     private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
