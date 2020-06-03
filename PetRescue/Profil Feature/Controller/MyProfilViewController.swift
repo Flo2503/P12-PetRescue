@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
 enum ProfilSection: Int {
@@ -40,6 +41,14 @@ class MyProfilViewController: UIViewController {
     }
 
     @IBAction func tapSavePicture(_ sender: Any) {
+        if let name = user?.name, let userId = userId, let image = userPicture.image {
+            UserManager.uploadUserPicture(name: name, userId: userId, image: image, completion: { url in
+                let ref = Database.database().reference()
+                if let userID = Auth.auth().currentUser?.uid, let url = url {
+                    ref.child("users").child(userID).updateChildValues(["userPicture": url])
+                }
+            })
+        }
     }
 
     override func viewDidLoad() {

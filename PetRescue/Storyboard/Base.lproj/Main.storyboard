@@ -791,7 +791,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbC-SH-cma">
                                 <rect key="frame" x="0.0" y="346" width="414" height="467"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="separatorColor" red="0.54462337490000001" green="0.76470588240000004" blue="0.48621237280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myProfilCell" textLabel="UJ7-TH-RYq" detailTextLabel="Ppf-fY-dH4" style="IBUITableViewCellStyleValue1" id="N9X-b5-FqG">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
