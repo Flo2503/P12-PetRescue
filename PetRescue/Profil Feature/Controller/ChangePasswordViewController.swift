@@ -10,7 +10,7 @@ import UIKit
 
 class ChangePasswordViewController: UIViewController {
 
-    private let invalidPasswordAlert = "Mot de non valide"
+    private let invalidPasswordAlert = "Mot de passe non valide"
     private let passwordUpdateAlert = "Mot de passe modifié avec succès"
     private let networkErrorAlert = "Erreur réseau, merci de réessayer"
 
@@ -67,7 +67,7 @@ class ChangePasswordViewController: UIViewController {
             self.validateButton.layer.backgroundColor = Colors.customGreenLight.cgColor
             UserManager.updatePassword(password: newPassword, callback: { success in
                 if success {
-                   self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
+                    self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
                     self.labelNewPassword.text = self.passwordUpdateAlert
                 } else {
                     self.labelNewPassword.text = self.networkErrorAlert

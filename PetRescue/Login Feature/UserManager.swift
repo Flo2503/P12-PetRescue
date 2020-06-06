@@ -19,7 +19,7 @@ struct UserManager {
     let name: String
     let firstName: String
     let emailAddress: String
-    let userPicture: String
+    var userPicture: String
 
     init(name: String, firstName: String, emailAdress: String, userPicture: String) {
         self.name = name
@@ -124,8 +124,8 @@ struct UserManager {
         }
     }
 
-    static func uploadUserPicture(name: String, userId: String, image: UIImage, completion: @escaping (_ url: String?) -> Void) {
-        let storageRef = storage.reference().child("usersPictures").child(userId).child("\(name).png")
+    static func uploadUserPicture(firstName: String, userId: String, image: UIImage, completion: @escaping (_ url: String?) -> Void) {
+        let storageRef = storage.reference().child("usersPictures").child(userId).child("\(firstName).png")
         if let uploadData = image.jpegData(compressionQuality: 0.5) {
             storageRef.putData(uploadData, metadata: nil) { (_, error) in
                 if error != nil {
@@ -140,6 +140,22 @@ struct UserManager {
                         }
                     })
                 }
+            }
+        }
+    }
+
+    static func retrieveUserImage(url: String, callback: @escaping (_ image: UIImage?) -> Void) {
+        let reference = storage.reference(forURL: url)
+        reference.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            if let error = error {
+                print("Error while retreiving image from firebase, url = \(url).")
+                print("Error description: \(error.localizedDescription.debugDescription)")
+                callback(nil)
+            } else if let data = data {
+                callback(UIImage(data: data))
+            } else {
+                print("Error while retreiving image from firebase, url = \(url). Caused by nil data.")
+                callback(nil)
             }
         }
     }

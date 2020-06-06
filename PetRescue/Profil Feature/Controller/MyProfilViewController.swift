@@ -41,8 +41,12 @@ class MyProfilViewController: UIViewController {
     }
 
     @IBAction func tapSavePicture(_ sender: Any) {
-        if let name = user?.name, let userId = userId, let image = userPicture.image {
-            UserManager.uploadUserPicture(name: name, userId: userId, image: image, completion: { url in
+        self.savePictureButton.isEnabled = false
+        self.savePictureButton.layer.backgroundColor = Colors.customGreenLight.cgColor
+        if let firstName = user?.firstName, let userId = userId, let image = userPicture.image {
+            UserManager.uploadUserPicture(firstName: firstName, userId: userId, image: image, completion: { url in
+                self.savePictureButton.layer.backgroundColor = UIColor.white.cgColor
+                self.savePictureButton.isEnabled = true
                 let ref = Database.database().reference()
                 if let userID = Auth.auth().currentUser?.uid, let url = url {
                     ref.child("users").child(userID).updateChildValues(["userPicture": url])
@@ -57,7 +61,8 @@ class MyProfilViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         ItemSetUp.makeRounded(userPicture)
         ItemSetUp.makeRoundedButton([savePictureButton, choosePictureButton])
-        checkPicture()
+        getUserImage()
+        print(user?.userPicture.description ?? "walou")
     }
 
     private func importDetails() {
@@ -73,6 +78,15 @@ class MyProfilViewController: UIViewController {
             savePictureButton.isEnabled = false
             savePictureButton.layer.backgroundColor = UIColor.red.cgColor
         }
+    }
+
+    private func getUserImage() {
+        guard let urlImage = user?.userPicture else { return }
+        UserManager.retrieveUserImage(url: urlImage, callback: { image in
+            if let image = image {
+                self.userPicture.image = image
+            }
+        })
     }
 }
 

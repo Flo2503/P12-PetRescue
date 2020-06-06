@@ -64,7 +64,7 @@ class MainFeedController: NavBarSetUp {
     }
 
     @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
-        AdManager.forceRetrieceData(callback: { newAd in
+        AdManager.forceRetrieveData(callback: { newAd in
             self.ads = newAd
             self.adTableView.reloadData()
             refreshControl.endRefreshing()

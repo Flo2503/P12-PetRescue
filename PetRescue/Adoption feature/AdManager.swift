@@ -126,7 +126,7 @@ struct AdManager {
         if let ads = AdManager.ads {
             callback(ads)
         } else {
-            forceRetrieceData(callback: callback)
+            forceRetrieveData(callback: callback)
         }
     }
 
@@ -136,7 +136,7 @@ struct AdManager {
         })
     }
 
-    static func forceRetrieceData(callback: @escaping (_ newAd: [AdManager]) -> Void) {
+    static func forceRetrieveData(callback: @escaping (_ newAd: [AdManager]) -> Void) {
         let reference = dataBase.reference(withPath: "ads")
         reference.observe(.value, with: { snapshot in
             var newAd: [AdManager] = []
