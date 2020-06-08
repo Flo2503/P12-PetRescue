@@ -43,26 +43,22 @@ class MyProfilViewController: UIViewController {
     @IBAction func tapSavePicture(_ sender: Any) {
         self.savePictureButton.isEnabled = false
         self.savePictureButton.layer.backgroundColor = Colors.customGreenLight.cgColor
-        if let firstName = user?.firstName, let userId = userId, let image = userPicture.image {
-            UserManager.uploadUserPicture(firstName: firstName, userId: userId, image: image, completion: { url in
+        if let userId = userId, let image = userPicture.image {
+            UserManager.uploadUserPicture(userId: userId, image: image, completion: { _ in
                 self.savePictureButton.layer.backgroundColor = UIColor.white.cgColor
                 self.savePictureButton.isEnabled = true
-                let ref = Database.database().reference()
-                if let userID = Auth.auth().currentUser?.uid, let url = url {
-                    ref.child("users").child(userID).updateChildValues(["userPicture": url])
-                }
             })
         }
     }
 
     override func viewDidLoad() {
-        self.tableView.reloadData()
         super.viewDidLoad()
-        self.tableView.tableFooterView = UIView()
         ItemSetUp.makeRounded(userPicture)
         ItemSetUp.makeRoundedButton([savePictureButton, choosePictureButton])
+        UserManager.downloadUrl()
         getUserImage()
-        print(user?.userPicture.description ?? "walou")
+        tableView.tableFooterView = UIView()
+        tableView.reloadData()
     }
 
     private func importDetails() {
@@ -70,13 +66,6 @@ class MyProfilViewController: UIViewController {
             userInfo.append(name)
             userInfo.append(firstName)
             userInfo.append(email)
-        }
-    }
-
-    private func checkPicture() {
-        while userPicture.image == UIImage(named: "default_user") {
-            savePictureButton.isEnabled = false
-            savePictureButton.layer.backgroundColor = UIColor.red.cgColor
         }
     }
 
@@ -126,7 +115,6 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
                     self.user = currentUser
                     self.importDetails()
                     cell.detailTextLabel?.text = self.userInfo[indexPath.row]
-                    self.tableView.reloadData()
                 })
             }
             return cell

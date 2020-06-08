@@ -11,6 +11,10 @@
 		40DF9BDB20B30601F3F1D398 /* Pods_PetRescue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2C9B0CD2A4AD2497FD0EFE /* Pods_PetRescue.framework */; };
 		5C20606C2482BCC100A39EB6 /* FurtherDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20606B2482BCC100A39EB6 /* FurtherDetailsTableViewCell.swift */; };
 		5C30F0542486C15700735B31 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30F0532486C15700735B31 /* EditEmailViewController.swift */; };
+		5C30F057248BA52700735B31 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30F056248BA52700735B31 /* ChannelsViewController.swift */; };
+		5C30F059248BC08C00735B31 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30F058248BC08C00735B31 /* ChatViewController.swift */; };
+		5C30F05B248BC17000735B31 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30F05A248BC17000735B31 /* Chat.swift */; };
+		5C30F05D248BCEC900735B31 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30F05C248BCEC900735B31 /* Message.swift */; };
 		5C4DB6EC24797C9700728B46 /* MyProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DB6EB24797C9700728B46 /* MyProfilViewController.swift */; };
 		5C5C1D9D24767A7B0079DB95 /* MyAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C1D9A24767A7B0079DB95 /* MyAdViewController.swift */; };
 		5C5C1D9E24767A7B0079DB95 /* ProfilMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C1D9B24767A7B0079DB95 /* ProfilMenuViewController.swift */; };
@@ -60,6 +64,10 @@
 		5ABB5D58A0575D735DEA2C46 /* Pods-PetRescueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.debug.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C20606B2482BCC100A39EB6 /* FurtherDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurtherDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		5C30F0532486C15700735B31 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
+		5C30F056248BA52700735B31 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		5C30F058248BC08C00735B31 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		5C30F05A248BC17000735B31 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		5C30F05C248BCEC900735B31 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5C4DB6EB24797C9700728B46 /* MyProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilViewController.swift; sourceTree = "<group>"; };
 		5C5C1D9A24767A7B0079DB95 /* MyAdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAdViewController.swift; sourceTree = "<group>"; };
 		5C5C1D9B24767A7B0079DB95 /* ProfilMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilMenuViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +146,17 @@
 				A0D95798F06FFAD4326F9929 /* Pods_PetRescueTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C30F055248BA4C200735B31 /* Chat Feature */ = {
+			isa = PBXGroup;
+			children = (
+				5C30F056248BA52700735B31 /* ChannelsViewController.swift */,
+				5C30F058248BC08C00735B31 /* ChatViewController.swift */,
+				5C30F05A248BC17000735B31 /* Chat.swift */,
+				5C30F05C248BCEC900735B31 /* Message.swift */,
+			);
+			path = "Chat Feature";
 			sourceTree = "<group>";
 		};
 		5C4DB6EA24797BF000728B46 /* Controller */ = {
@@ -220,6 +239,7 @@
 		5CF24C2A2452306B00077B33 /* PetRescue */ = {
 			isa = PBXGroup;
 			children = (
+				5C30F055248BA4C200735B31 /* Chat Feature */,
 				5CF24C3C2452307000077B33 /* Info.plist */,
 				5C5C1DA4247805C60079DB95 /* GoogleService-Info.plist */,
 				5C5C1D9924767A7B0079DB95 /* Profil Feature */,
@@ -469,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5C1DA324767FE70079DB95 /* MyAdTableViewCell.swift in Sources */,
+				5C30F057248BA52700735B31 /* ChannelsViewController.swift in Sources */,
 				5C5C1D9D24767A7B0079DB95 /* MyAdViewController.swift in Sources */,
 				5CA12F0F245F5335006AC92B /* AddAdoptionViewController.swift in Sources */,
 				5CA12F04245A127D006AC92B /* SignInViewController.swift in Sources */,
@@ -480,6 +501,7 @@
 				5CB7BC02246882D100E09673 /* AdManager.swift in Sources */,
 				5CA12EFE2458CD26006AC92B /* ResetPasswordViewController.swift in Sources */,
 				5CF24C5C24538DCC00077B33 /* Colors.swift in Sources */,
+				5C30F05D248BCEC900735B31 /* Message.swift in Sources */,
 				5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */,
 				5CAB260A2485069C00A1F618 /* ChangePasswordViewController.swift in Sources */,
 				5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */,
@@ -495,7 +517,9 @@
 				5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */,
 				5C5C1D9E24767A7B0079DB95 /* ProfilMenuViewController.swift in Sources */,
 				5CA12F022458DFCD006AC92B /* ItemSetUp.swift in Sources */,
+				5C30F059248BC08C00735B31 /* ChatViewController.swift in Sources */,
 				5CCB2DD42454CD070038038A /* UserManager.swift in Sources */,
+				5C30F05B248BC17000735B31 /* Chat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

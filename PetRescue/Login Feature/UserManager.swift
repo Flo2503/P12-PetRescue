@@ -124,21 +124,16 @@ struct UserManager {
         }
     }
 
-    static func uploadUserPicture(firstName: String, userId: String, image: UIImage, completion: @escaping (_ url: String?) -> Void) {
-        let storageRef = storage.reference().child("usersPictures").child(userId).child("\(firstName).png")
+    static func uploadUserPicture(userId: String, image: UIImage, completion: @escaping (_ success: Bool) -> Void) {
+        let storageRef = storage.reference().child("usersPictures").child(userId).child("userPic.png")
         if let uploadData = image.jpegData(compressionQuality: 0.5) {
             storageRef.putData(uploadData, metadata: nil) { (_, error) in
                 if error != nil {
                     print(error!.localizedDescription)
-                    completion(nil)
+                    completion(false)
                 } else {
-                    storageRef.downloadURL(completion: { (url, error) in
-                        if let error = error {
-                            print("Error description: \(error.localizedDescription.debugDescription)")
-                        } else {
-                            completion(url?.absoluteString)
-                        }
-                    })
+                    UserManager.downloadUrl()
+                    completion(true)
                 }
             }
         }
@@ -157,6 +152,24 @@ struct UserManager {
                 print("Error while retreiving image from firebase, url = \(url). Caused by nil data.")
                 callback(nil)
             }
+        }
+    }
+
+    static func downloadUrl() {
+        print("called")
+        if let userId = Auth.auth().currentUser?.uid {
+            let storageRef = storage.reference().child("usersPictures").child(userId).child("userPic.png")
+            let ref = dataBase.reference()
+            storageRef.downloadURL(completion: { (url, error) in
+                if let error = error {
+                    print("Error description: \(error.localizedDescription.debugDescription)")
+                } else {
+                    if let url = url?.absoluteString {
+                        UserManager.currentUser?.userPicture = url
+                        ref.child("users").child(userId).updateChildValues(["userPicture": url])
+                    }
+                }
+            })
         }
     }
 }
