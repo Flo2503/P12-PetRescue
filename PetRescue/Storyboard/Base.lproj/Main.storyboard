@@ -791,62 +791,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Zpq-pw-imo" kind="relationship" relationship="rootViewController" id="B3O-7u-Lcr"/>
+                        <segue destination="kGQ-OA-Gzt" kind="relationship" relationship="rootViewController" id="aDt-Rr-63W"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSw-hd-Oya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3414" y="1896"/>
+            <point key="canvasLocation" x="3490" y="1957"/>
         </scene>
-        <!--Channels View Controller-->
-        <scene sceneID="ZI1-Rl-M7Z">
+        <!--Chat View Controller-->
+        <scene sceneID="ymg-1r-bau">
             <objects>
-                <viewController id="Zpq-pw-imo" customClass="ChannelsViewController" customModule="PetRescue" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YXO-cG-h35">
+                <viewController id="wO3-7c-uWg" customClass="ChatViewController" customModule="PetRescue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jxw-bd-5sD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eha-Fu-S5x">
-                                <rect key="frame" x="20" y="88" width="314" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="82z-YH-lxh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="27"/>
-                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nx8-h9-BhU">
-                                <rect key="frame" x="0.0" y="128" width="414" height="685"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aRq-Th-Sqy">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aRq-Th-Sqy" id="Wvl-SW-WHv">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="15I-Jn-x3a" firstAttribute="bottom" secondItem="nx8-h9-BhU" secondAttribute="bottom" id="9H3-A9-jmT"/>
-                            <constraint firstItem="nx8-h9-BhU" firstAttribute="top" secondItem="Eha-Fu-S5x" secondAttribute="bottom" id="9XC-Op-FH2"/>
-                            <constraint firstItem="15I-Jn-x3a" firstAttribute="trailing" secondItem="nx8-h9-BhU" secondAttribute="trailing" id="ElK-QQ-tZ4"/>
-                            <constraint firstItem="nx8-h9-BhU" firstAttribute="leading" secondItem="15I-Jn-x3a" secondAttribute="leading" id="Jmr-zR-Esd"/>
-                            <constraint firstItem="15I-Jn-x3a" firstAttribute="trailing" secondItem="Eha-Fu-S5x" secondAttribute="trailing" constant="80" id="ev7-gf-cet"/>
-                            <constraint firstItem="Eha-Fu-S5x" firstAttribute="top" secondItem="15I-Jn-x3a" secondAttribute="top" id="tHc-jn-AEC"/>
-                            <constraint firstItem="Eha-Fu-S5x" firstAttribute="leading" secondItem="15I-Jn-x3a" secondAttribute="leading" constant="20" id="yMV-q9-aCF"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="15I-Jn-x3a"/>
+                        <viewLayoutGuide key="safeArea" id="iBb-SU-NlI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PNc-GR-BEL"/>
+                    <navigationItem key="navigationItem" id="faD-bv-UTt"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TZj-GQ-gh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Pa-bG-WB1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4378" y="1896"/>
+            <point key="canvasLocation" x="8801" y="505"/>
         </scene>
         <!--My Profil View Controller-->
         <scene sceneID="OWL-Kp-W6B">
@@ -971,12 +937,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SE-Z6-2oj">
                                 <rect key="frame" x="247" y="136" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Res-mB-oVg"/>
                                     <constraint firstAttribute="width" constant="50" id="mXe-Rj-o7t"/>
                                 </constraints>
-                                <state key="normal" image="checkmark.rectangle" catalog="system"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="tapSavePicture:" destination="9Ti-3O-1eC" eventType="touchUpInside" id="Eph-mN-eOh"/>
                                 </connections>
@@ -1015,6 +983,47 @@
                 <exit id="iDd-W6-I6O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5475" y="1192"/>
+        </scene>
+        <!--Chanels View Controller-->
+        <scene sceneID="qXt-9S-sVa">
+            <objects>
+                <viewController id="kGQ-OA-Gzt" customClass="ChanelsViewController" customModule="PetRescue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BUo-6G-P2n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJg-IR-Uu9">
+                                <rect key="frame" x="20" y="88" width="314" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Qbg-cw-Ud0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="27"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B8g-M8-7ra">
+                                <rect key="frame" x="0.0" y="136" width="414" height="677"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cJg-IR-Uu9" firstAttribute="top" secondItem="nnb-qP-FPJ" secondAttribute="top" id="8Mq-rN-ipg"/>
+                            <constraint firstItem="B8g-M8-7ra" firstAttribute="top" secondItem="cJg-IR-Uu9" secondAttribute="bottom" constant="8" id="BUz-jX-IqS"/>
+                            <constraint firstItem="nnb-qP-FPJ" firstAttribute="trailing" secondItem="cJg-IR-Uu9" secondAttribute="trailing" constant="80" id="Fh8-cD-2mf"/>
+                            <constraint firstItem="nnb-qP-FPJ" firstAttribute="bottom" secondItem="B8g-M8-7ra" secondAttribute="bottom" id="Swk-Hj-dAe"/>
+                            <constraint firstItem="nnb-qP-FPJ" firstAttribute="trailing" secondItem="B8g-M8-7ra" secondAttribute="trailing" id="cIk-cr-cti"/>
+                            <constraint firstItem="B8g-M8-7ra" firstAttribute="leading" secondItem="nnb-qP-FPJ" secondAttribute="leading" id="pbm-Cc-QQ8"/>
+                            <constraint firstItem="cJg-IR-Uu9" firstAttribute="leading" secondItem="nnb-qP-FPJ" secondAttribute="leading" constant="20" id="vYv-T7-JWl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nnb-qP-FPJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KHy-eR-EPf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xc6-4q-Vqe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5474" y="1957"/>
         </scene>
         <!--My Ad View Controller-->
         <scene sceneID="4fi-jO-8pB">
@@ -1206,7 +1215,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RLu-Ie-UW7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="u4T-X3-qzw"/>
+                    <navigationItem key="navigationItem" id="u4T-X3-qzw">
+                        <barButtonItem key="rightBarButtonItem" image="message" id="A2X-KW-FF8">
+                            <connections>
+                                <action selector="tapOnChatButton:" destination="ouR-nn-Wil" id="bRf-gD-tzi"/>
+                                <segue destination="wO3-7c-uWg" kind="show" identifier="segueToChat" id="aKk-OI-y2m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="animalImage" destination="VcR-oK-usR" id="cf4-bm-Ooa"/>
                         <outlet property="tableView" destination="NHu-hf-vL9" id="hku-iZ-pH7"/>
@@ -1437,7 +1453,6 @@
     <resources>
         <image name="avatar" width="32" height="32"/>
         <image name="camera_icon" width="996" height="927"/>
-        <image name="checkmark.rectangle" catalog="system" width="128" height="93"/>
         <image name="default-image" width="800" height="600"/>
         <image name="default_user" width="640" height="640"/>
         <image name="launchscreen_icon" width="500" height="500"/>

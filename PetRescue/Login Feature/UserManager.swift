@@ -77,9 +77,22 @@ struct UserManager {
         }
     }
 
-    static func retrieveUser(userId: String, callback: @escaping (_ currentUser: UserManager) -> Void) {
+    static func retrieveUser(callback: @escaping (_ currentUser: UserManager) -> Void) {
         let ref = Database.database().reference()
-        let path = ref.child("users").child(userId)
+        if let userId = Auth.auth().currentUser?.uid {
+            let path = ref.child("users").child(userId)
+            path.observe(.value, with: { snapshot in
+                if let user = UserManager(snapshot: snapshot) {
+                    UserManager.currentUser = user
+                    callback(user)
+                }
+            })
+        }
+    }
+
+    static func retrieveChatUser(userChatId: String, callback: @escaping (_ currentUser: UserManager) -> Void) {
+        let ref = Database.database().reference()
+        let path = ref.child("users").child(userChatId)
         path.observe(.value, with: { snapshot in
             if let user = UserManager(snapshot: snapshot) {
                 UserManager.currentUser = user
@@ -124,16 +137,18 @@ struct UserManager {
         }
     }
 
-    static func uploadUserPicture(userId: String, image: UIImage, completion: @escaping (_ success: Bool) -> Void) {
-        let storageRef = storage.reference().child("usersPictures").child(userId).child("userPic.png")
-        if let uploadData = image.jpegData(compressionQuality: 0.5) {
-            storageRef.putData(uploadData, metadata: nil) { (_, error) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                    completion(false)
-                } else {
-                    UserManager.downloadUrl()
-                    completion(true)
+    static func uploadUserPicture(image: UIImage, completion: @escaping (_ success: Bool) -> Void) {
+        if let userId = Auth.auth().currentUser?.uid {
+            let storageRef = storage.reference().child("usersPictures").child(userId).child("userPic.png")
+            if let uploadData = image.jpegData(compressionQuality: 0.5) {
+                storageRef.putData(uploadData, metadata: nil) { (_, error) in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        completion(false)
+                    } else {
+                        UserManager.downloadUrl()
+                        completion(true)
+                    }
                 }
             }
         }

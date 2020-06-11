@@ -19,7 +19,6 @@ enum ProfilSection: Int {
 
 class MyProfilViewController: UIViewController {
 
-    private let userId = Auth.auth().currentUser?.uid
     private var imagePicker = UIImagePickerController()
     private var unwindIdentifier = "unwindToLogin"
     private let passwordSegue = "segueToChangePassword"
@@ -43,8 +42,8 @@ class MyProfilViewController: UIViewController {
     @IBAction func tapSavePicture(_ sender: Any) {
         self.savePictureButton.isEnabled = false
         self.savePictureButton.layer.backgroundColor = Colors.customGreenLight.cgColor
-        if let userId = userId, let image = userPicture.image {
-            UserManager.uploadUserPicture(userId: userId, image: image, completion: { _ in
+        if let image = userPicture.image {
+            UserManager.uploadUserPicture(image: image, completion: { _ in
                 self.savePictureButton.layer.backgroundColor = UIColor.white.cgColor
                 self.savePictureButton.isEnabled = true
             })
@@ -55,7 +54,6 @@ class MyProfilViewController: UIViewController {
         super.viewDidLoad()
         ItemSetUp.makeRounded(userPicture)
         ItemSetUp.makeRoundedButton([savePictureButton, choosePictureButton])
-        UserManager.downloadUrl()
         getUserImage()
         tableView.tableFooterView = UIView()
         tableView.reloadData()
@@ -70,6 +68,8 @@ class MyProfilViewController: UIViewController {
     }
 
     private func getUserImage() {
+        UserManager.downloadUrl()
+        print(user?.userPicture ?? "nil")
         guard let urlImage = user?.userPicture else { return }
         UserManager.retrieveUserImage(url: urlImage, callback: { image in
             if let image = image {
@@ -110,13 +110,11 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
         switch ProfilSection(rawValue: indexPath.section)! {
         case .first:
             cell.textLabel?.text = cellTitle[indexPath.row]
-            if let currentUser = userId {
-                UserManager.retrieveUser(userId: currentUser, callback: { currentUser in
-                    self.user = currentUser
-                    self.importDetails()
-                    cell.detailTextLabel?.text = self.userInfo[indexPath.row]
-                })
-            }
+            UserManager.retrieveUser(callback: { currentUser in
+                self.user = currentUser
+                self.importDetails()
+                cell.detailTextLabel?.text = self.userInfo[indexPath.row]
+            })
             return cell
         case .second:
             return passwordCell

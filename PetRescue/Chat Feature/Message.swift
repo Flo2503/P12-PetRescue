@@ -2,39 +2,47 @@
 //  Message.swift
 //  PetRescue
 //
-//  Created by Flo on 06/06/2020.
+//  Created by Flo on 09/06/2020.
 //  Copyright © 2020 Flo. All rights reserved.
 //
 
 import Foundation
+
+import UIKit
 import Firebase
+import FirebaseFirestore
 import MessageKit
-/*
+
 struct Message {
 
-    var id: String
+    var userId: String
     var content: String
-    var created: Int64
+    var created: Timestamp
     var senderID: String
     var senderName: String
+
     var dictionary: [String: Any] {
         return [
-        "id": id,
-        "content": content,
-        "created": created,
-        "senderID": senderID,
-        "senderName":senderName]
+            "id": userId,
+            "content": content,
+            "created": created,
+            "senderID": senderID,
+            "senderName": senderName]
     }
 }
 
 extension Message {
     init?(dictionary: [String: Any]) {
-        guard let id = dictionary["id"] as? String,
-        let content = dictionary["content"] as? String,
-        let created = dictionary["created"] as? Int64,
-        let senderID = dictionary["senderID"] as? String,
-        let senderName = dictionary["senderName"] as? String else { return nil }
-        self.init(id: id, content: content, created: created, senderID: senderID, senderName: senderName)
+
+        guard let userId = dictionary["userId"] as? String,
+            let content = dictionary["content"] as? String,
+            let created = dictionary["created"] as? Timestamp,
+            let senderID = dictionary["senderID"] as? String,
+            let senderName = dictionary["senderName"] as? String
+            else {return nil}
+
+        self.init(userId: userId, content: content, created: created, senderID: senderID, senderName: senderName)
+
     }
 }
 
@@ -42,16 +50,16 @@ extension Message: MessageType {
     var sender: SenderType {
         return Sender(senderId: senderID, displayName: senderName)
     }
-    
+
     var messageId: String {
-        return id
+        return userId
     }
+
     var sentDate: Date {
         return created.dateValue()
     }
+
     var kind: MessageKind {
         return .text(content)
     }
 }
-
-*/

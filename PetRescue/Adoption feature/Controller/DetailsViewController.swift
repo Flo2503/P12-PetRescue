@@ -19,9 +19,17 @@ class DetailsViewController: NavBarSetUp {
     private var adDetails: [String] = []
     private let cellTitle = ["Nom", "Type/Race", "Genre", "Age", "Localité"]
     private let section =  ["Profil du compagnon", "Informations complémentaires"]
+    private let chat = FirebaseChat()
+    private let identifier = "segueToChat"
 
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+
+    @IBAction func tapOnChatButton(_ sender: Any) {
+        /*if let userId = selectedAd?.userId {
+           chat.createNewChat(user2Id: userId)
+        }*/
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +39,13 @@ class DetailsViewController: NavBarSetUp {
         self.tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == identifier {
+            let detailsVC = segue.destination as! ChatViewController
+            detailsVC.selectedAd = selectedAd
+        }
     }
 
     private func importDetails() {
