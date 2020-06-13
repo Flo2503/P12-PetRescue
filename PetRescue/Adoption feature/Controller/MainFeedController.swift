@@ -26,6 +26,7 @@ class MainFeedController: NavBarSetUp {
     }()
 
     @IBOutlet weak var adTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
         adTableView?.reloadData()
@@ -50,6 +51,7 @@ class MainFeedController: NavBarSetUp {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
         AdManager.retrieveData(callback: { newAd in
+            self.activityIndicator.isHidden = true
             self.ads = newAd
             self.adTableView.reloadData()
         })

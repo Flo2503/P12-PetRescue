@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class ChanelsViewController: NavBarSetUp {
 
+    private var currentUserId = Auth.auth().currentUser?.uid
+
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
     }
 }

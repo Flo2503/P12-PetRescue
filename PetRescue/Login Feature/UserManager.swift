@@ -16,6 +16,7 @@ struct UserManager {
     private static var currentUser: UserManager?
     private static let storage = Storage.storage()
     private static let dataBase = Database.database()
+    static let currentConnectedUser = Auth.auth().currentUser?.uid
     let name: String
     let firstName: String
     let emailAddress: String
@@ -134,57 +135,6 @@ struct UserManager {
                 }
             }
             callback(true)
-        }
-    }
-
-    static func uploadUserPicture(image: UIImage, completion: @escaping (_ success: Bool) -> Void) {
-        if let userId = Auth.auth().currentUser?.uid {
-            let storageRef = storage.reference().child("usersPictures").child(userId).child("userPic.png")
-            if let uploadData = image.jpegData(compressionQuality: 0.5) {
-                storageRef.putData(uploadData, metadata: nil) { (_, error) in
-                    if error != nil {
-                        print(error!.localizedDescription)
-                        completion(false)
-                    } else {
-                        UserManager.downloadUrl()
-                        completion(true)
-                    }
-                }
-            }
-        }
-    }
-
-    static func retrieveUserImage(url: String, callback: @escaping (_ image: UIImage?) -> Void) {
-        let reference = storage.reference(forURL: url)
-        reference.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-            if let error = error {
-                print("Error while retreiving image from firebase, url = \(url).")
-                print("Error description: \(error.localizedDescription.debugDescription)")
-                callback(nil)
-            } else if let data = data {
-                callback(UIImage(data: data))
-            } else {
-                print("Error while retreiving image from firebase, url = \(url). Caused by nil data.")
-                callback(nil)
-            }
-        }
-    }
-
-    static func downloadUrl() {
-        print("called")
-        if let userId = Auth.auth().currentUser?.uid {
-            let storageRef = storage.reference().child("usersPictures").child(userId).child("userPic.png")
-            let ref = dataBase.reference()
-            storageRef.downloadURL(completion: { (url, error) in
-                if let error = error {
-                    print("Error description: \(error.localizedDescription.debugDescription)")
-                } else {
-                    if let url = url?.absoluteString {
-                        UserManager.currentUser?.userPicture = url
-                        ref.child("users").child(userId).updateChildValues(["userPicture": url])
-                    }
-                }
-            })
         }
     }
 }

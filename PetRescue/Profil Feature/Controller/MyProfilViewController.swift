@@ -19,7 +19,6 @@ enum ProfilSection: Int {
 
 class MyProfilViewController: UIViewController {
 
-    private var imagePicker = UIImagePickerController()
     private var unwindIdentifier = "unwindToLogin"
     private let passwordSegue = "segueToChangePassword"
     private let editEmailSegue = "segueToEditEmail"
@@ -29,32 +28,11 @@ class MyProfilViewController: UIViewController {
     private var user: UserManager?
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var userPicture: UIImageView!
-    @IBOutlet weak var choosePictureButton: UIButton!
-    @IBOutlet weak var savePictureButton: UIButton!
 
     @IBAction func unwindToMyProfil(segue: UIStoryboardSegue) { }
 
-    @IBAction func tapChoosePicture(_ sender: Any) {
-        chooseImage()
-    }
-
-    @IBAction func tapSavePicture(_ sender: Any) {
-        self.savePictureButton.isEnabled = false
-        self.savePictureButton.layer.backgroundColor = Colors.customGreenLight.cgColor
-        if let image = userPicture.image {
-            UserManager.uploadUserPicture(image: image, completion: { _ in
-                self.savePictureButton.layer.backgroundColor = UIColor.white.cgColor
-                self.savePictureButton.isEnabled = true
-            })
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        ItemSetUp.makeRounded(userPicture)
-        ItemSetUp.makeRoundedButton([savePictureButton, choosePictureButton])
-        getUserImage()
         tableView.tableFooterView = UIView()
         tableView.reloadData()
     }
@@ -65,17 +43,6 @@ class MyProfilViewController: UIViewController {
             userInfo.append(firstName)
             userInfo.append(email)
         }
-    }
-
-    private func getUserImage() {
-        UserManager.downloadUrl()
-        print(user?.userPicture ?? "nil")
-        guard let urlImage = user?.userPicture else { return }
-        UserManager.retrieveUserImage(url: urlImage, callback: { image in
-            if let image = image {
-                self.userPicture.image = image
-            }
-        })
     }
 }
 
@@ -153,54 +120,5 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
         view.tintColor = UIColor.white
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.white
-    }
-}
-
-extension MyProfilViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    // Photo library access
-      @objc private func libraryAccess() {
-          imagePicker.sourceType = .photoLibrary
-          imagePicker.allowsEditing = false
-          present(imagePicker, animated: true, completion: nil)
-      }
-
-      // Camera access
-      @objc private func cameraAccess() {
-          if UIImagePickerController.isSourceTypeAvailable(.camera) {
-              imagePicker.sourceType = .camera
-              imagePicker.allowsEditing = false
-              present(imagePicker, animated: true, completion: nil)
-          } else {
-            let alert = UIAlertController(title: "Appareil photo non valide", message: "Choisissez une photo dans la phototèque", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        }
-    }
-
-    @objc private func chooseImage() {
-        imagePicker.delegate = self
-        let optionMenu = UIAlertController(title: "Image", message: "Choisissez une source", preferredStyle: .actionSheet)
-        let openCamera = UIAlertAction(title: "Prendre une photo", style: .default, handler: { _ in
-            self.cameraAccess()
-        })
-        let openLibrary = UIAlertAction(title: "Phototèque", style: .default, handler: { _ in
-            self.libraryAccess()
-        })
-        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel)
-        optionMenu.addAction(openCamera)
-        optionMenu.addAction(openLibrary)
-        optionMenu.addAction(cancelAction)
-        self.present(optionMenu, animated: true, completion: nil)
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        userPicture.image = image
-        picker.dismiss(animated: true, completion: nil)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
     }
 }

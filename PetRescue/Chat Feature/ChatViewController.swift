@@ -10,29 +10,21 @@ import InputBarAccessoryView
 import Firebase
 import MessageKit
 import FirebaseFirestore
-import SDWebImage
 
 class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
 
     private var secondUser: UserManager?
     private var currentUser: UserManager?
+    private var currentUserName: String?
+    private let currentUserId = UserManager.currentConnectedUser
+    private var secondUserName: String?
+    private var secondUserId: String?
+    private let firebaseChat = FirebaseChat()
+    private var messages: [Message] = []
     var selectedAd: AdManager?
-
-    var currentUserName: String?
-    var currentUserUrl: String?
-    var currentUserId = Auth.auth().currentUser?.uid
-
-    var secondUserName: String?
-    var secondUserUrl: String?
-    var secondUserId: String?
-
-    private var docReference: DocumentReference?
-
-    var messages: [Message] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = secondUserName ?? ""
         self.navigationController?.navigationBar.isHidden = false
         navigationItem.largeTitleDisplayMode = .never
         maintainPositionOnKeyboardFrameChanged = true
@@ -51,8 +43,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     }
 
     // MARK: - Custom messages handlers
-    func createNewChat() {
-        let users = [self.currentUserId, self.secondUserId]
+    private func createNewChat() {
+         let users = [currentUserId, secondUserId]
          let data: [String: Any] = ["users": users]
          let database = Firestore.firestore().collection("Chats")
          database.addDocument(data: data) { (error) in
@@ -60,15 +52,15 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                  print("Unable to create chat! \(error)")
                  return
              } else {
-                 self.loadChat()
+                print("ok")
              }
          }
     }
 
-    func loadChat() {
+    /*private func loadChat() {
         //Fetch all the chats which has current user in it
         let database = Firestore.firestore().collection("Chats")
-                .whereField("users", arrayContains: Auth.auth().currentUser?.uid ?? "Not Found User 1")
+                .whereField("users", arrayContains: currentUserId ?? "Not Found User 1")
         database.getDocuments { (chatQuerySnap, error) in
             if let error = error {
                 print("Error: \(error)")
@@ -97,14 +89,12 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                                 return
                             } else {
                                 self.messages.removeAll()
-                                    for message in threadQuery!.documents {
-
-                                        let msg = Message(dictionary: message.data())
-                                        self.messages.append(msg!)
-                                        print("Data: \(msg?.content ?? "No message found")")
+                                for message in threadQuery!.documents {
+                                    if let msg = Message(dictionary: message.data()) {
+                                        self.messages.append(msg)
+                                        print("Data: \(msg.content)")
                                     }
-                                self.messagesCollectionView.reloadData()
-                                self.messagesCollectionView.scrollToBottom(animated: true)
+                                }
                             }
                             })
                             return
@@ -116,7 +106,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                 }
             }
         }
-    }
+    }*/
 
     private func insertNewMessage(_ message: Message) {
         messages.append(message)
@@ -126,37 +116,16 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         }
     }
 
-    private func save(_ message: Message) {
-        let data: [String: Any] = [
-            "content": message.content,
-            "created": message.created,
-            "id": message.userId,
-            "senderID": message.senderID,
-            "senderName": message.senderName
-        ]
-        docReference?.collection("thread").addDocument(data: data, completion: { (error) in
-            if let error = error {
-                print("Error Sending message: \(error)")
-                return
-            }
-            self.messagesCollectionView.scrollToBottom()
-        })
-    }
-
     private func currentUserInfo() {
-        if let firstName = currentUser?.firstName, let userPicture = currentUser?
-            .userPicture {
-            self.secondUserName = firstName
-            self.secondUserUrl = userPicture
+        if let firstName = currentUser?.firstName {
+            self.currentUserName = firstName
         }
 
     }
 
     private func secondUserInfo() {
-        if let firstName = secondUser?.firstName, let userPicture = secondUser?
-            .userPicture, let userId = selectedAd?.userId {
+        if let firstName = secondUser?.firstName, let userId = selectedAd?.userId {
             self.secondUserName = firstName
-            self.secondUserUrl = userPicture
             self.secondUserId = userId
         }
     }
@@ -173,6 +142,10 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
             UserManager.retrieveChatUser(userChatId: secondUser, callback: { chatUser in
                 self.secondUser = chatUser
                 self.secondUserInfo()
+                self.title = self.secondUserName
+                self.firebaseChat.loadChat(user2: self.secondUserId!, callback: { messages in
+                    self.messages = messages
+                })
             })
         }
     }
@@ -184,14 +157,15 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
     // MARK: - InputBarAccessoryViewDelegate
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        if let currentUser = currentUserId {
-            let message = Message(userId: UUID().uuidString, content: text, created: Timestamp(), senderID: currentUser, senderName: "")
+        if let currentUser = currentUserId, let userName = currentUserName {
+            let message = Message(userId: UUID().uuidString, content: text, created: Timestamp(), senderID: currentUser, senderName: userName)
 
             //messages.append(message)
             insertNewMessage(message)
-            save(message)
+            firebaseChat.save(message)
 
             inputBar.inputTextView.text = ""
+            messagesCollectionView.scrollToBottom()
             messagesCollectionView.reloadData()
             messagesCollectionView.scrollToBottom(animated: true)
         }
@@ -199,7 +173,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
     // MARK: - MessagesDataSource
     func currentSender() -> SenderType {
-        return Sender(senderId: Auth.auth().currentUser!.uid, displayName: Auth.auth().currentUser?.displayName ?? "Name not found")
+        return Sender(senderId: currentUserId!, displayName: currentUserName ?? "Name not found")
     }
 
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
@@ -223,6 +197,13 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     // MARK: - MessagesDisplayDelegate
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ? Colors.customGreen: .lightGray
+    }
+
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        avatarView.image = UIImage(named: "default_user")
+        avatarView.layer.backgroundColor = UIColor.white.cgColor
+        avatarView.layer.borderWidth = 2
+        avatarView.layer.borderColor = Colors.avatarViewBorder.cgColor
     }
 
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {

@@ -12,7 +12,6 @@ target 'PetRescue' do
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'MessageKit'
-  pod 'SDWebImage'
 
   target 'PetRescueTests' do
     inherit! :search_paths
