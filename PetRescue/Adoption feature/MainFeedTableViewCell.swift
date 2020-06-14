@@ -9,13 +9,13 @@
 import UIKit
 
 class MainFeedTableViewCell: UITableViewCell {
-
+    // MARK: - Oulets
     @IBOutlet weak var animalPicture: UIImageView!
     @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var animalKind: UILabel!
     @IBOutlet weak var animalLocality: UILabel!
     @IBOutlet weak var whiteView: UIView!
-
+    // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         addShadow()

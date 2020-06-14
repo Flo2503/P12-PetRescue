@@ -21,7 +21,7 @@
 		5C867E6424901A670011D488 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C867E6324901A670011D488 /* Message.swift */; };
 		5C867E6624901AB00011D488 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C867E6524901AB00011D488 /* ChatViewController.swift */; };
 		5C867E68249148E40011D488 /* ChanelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C867E67249148E40011D488 /* ChanelsViewController.swift */; };
-		5C867E6A24918AC80011D488 /* FirebaseChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C867E6924918AC80011D488 /* FirebaseChat.swift */; };
+		5C867E6A24918AC80011D488 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C867E6924918AC80011D488 /* ChatManager.swift */; };
 		5C9C2F6A2460D648002A02F1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C2F692460D648002A02F1 /* DetailsViewController.swift */; };
 		5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC1245704360015AB09 /* GradientBackground.swift */; };
 		5C9D4CC82457496C0015AB09 /* NavBarSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */; };
@@ -75,7 +75,7 @@
 		5C867E6324901A670011D488 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5C867E6524901AB00011D488 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		5C867E67249148E40011D488 /* ChanelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChanelsViewController.swift; sourceTree = "<group>"; };
-		5C867E6924918AC80011D488 /* FirebaseChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChat.swift; sourceTree = "<group>"; };
+		5C867E6924918AC80011D488 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		5C8D726BFA961686A7E7D072 /* Pods-PetRescueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetRescueTests.release.xcconfig"; path = "Target Support Files/Pods-PetRescueTests/Pods-PetRescueTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C9C2F692460D648002A02F1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		5C9D4CC1245704360015AB09 /* GradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			children = (
 				5C867E6124901A4B0011D488 /* Chat.swift */,
 				5C867E6324901A670011D488 /* Message.swift */,
-				5C867E6924918AC80011D488 /* FirebaseChat.swift */,
+				5C867E6924918AC80011D488 /* ChatManager.swift */,
 				5C867E6524901AB00011D488 /* ChatViewController.swift */,
 				5C867E67249148E40011D488 /* ChanelsViewController.swift */,
 			);
@@ -500,7 +500,7 @@
 				5C9D4CC2245704360015AB09 /* GradientBackground.swift in Sources */,
 				5CD4148824622C2A00FFDB30 /* TabBarSetUpController.swift in Sources */,
 				5CC2A26B246B330900231641 /* PickViewDatas.swift in Sources */,
-				5C867E6A24918AC80011D488 /* FirebaseChat.swift in Sources */,
+				5C867E6A24918AC80011D488 /* ChatManager.swift in Sources */,
 				5CB7BC02246882D100E09673 /* AdManager.swift in Sources */,
 				5CA12EFE2458CD26006AC92B /* ResetPasswordViewController.swift in Sources */,
 				5CF24C5C24538DCC00077B33 /* Colors.swift in Sources */,

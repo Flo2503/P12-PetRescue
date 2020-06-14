@@ -1212,7 +1212,6 @@
                     <navigationItem key="navigationItem" id="u4T-X3-qzw">
                         <barButtonItem key="rightBarButtonItem" image="message" id="A2X-KW-FF8">
                             <connections>
-                                <action selector="tapOnChatButton:" destination="ouR-nn-Wil" id="bRf-gD-tzi"/>
                                 <segue destination="wO3-7c-uWg" kind="show" identifier="segueToChat" id="aKk-OI-y2m"/>
                             </connections>
                         </barButtonItem>

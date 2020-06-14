@@ -14,23 +14,17 @@ enum Section: Int {
 }
 
 class DetailsViewController: NavBarSetUp {
-
+    // MARK: - Properties, instances
     var selectedAd: AdManager?
     private var adDetails: [String] = []
     private let cellTitle = ["Nom", "Type/Race", "Genre", "Age", "Localité"]
     private let section =  ["Profil du compagnon", "Informations complémentaires"]
-    private let chat = FirebaseChat()
+    private let chat = ChatManager()
     private let identifier = "segueToChat"
-
+    // MARK: - Oulets
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-
-    @IBAction func tapOnChatButton(_ sender: Any) {
-        /*if let userId = selectedAd?.userId {
-           chat.createNewChat(user2Id: userId)
-        }*/
-    }
-
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         display()
@@ -47,7 +41,7 @@ class DetailsViewController: NavBarSetUp {
             detailsVC.selectedAd = selectedAd
         }
     }
-
+    ///Import ad details in array
     private func importDetails() {
         if let name = selectedAd?.name, let kind = selectedAd?.kind, let gender = selectedAd?.gender, let age = selectedAd?.age, let locality = selectedAd?.locality {
             adDetails.append(name)
@@ -58,8 +52,9 @@ class DetailsViewController: NavBarSetUp {
         }
     }
 }
-
+// MARK: - Extensions
 extension DetailsViewController {
+    ///Retreive animal Image calling "retreiveImage" and display it in image view
     private func display() {
         if let urlImage = selectedAd?.animalImage {
              AdManager.retrieveImage(url: urlImage, callback: { image in

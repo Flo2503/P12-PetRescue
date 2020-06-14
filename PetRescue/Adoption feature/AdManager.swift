@@ -10,10 +10,11 @@ import Foundation
 import Firebase
 
 struct AdManager {
-
+    // MARK: - Properties, instances
     private static var ads: [AdManager]?
     private static let dataBase = Database.database()
     private static let storage = Storage.storage()
+    private static let ref = Database.database().reference(withPath: "ads")
 
     let ref: DatabaseReference?
     let key: String
@@ -25,7 +26,7 @@ struct AdManager {
     let locality: String
     let name: String
     let userId: String
-
+    // MARK: - Init
     init(age: String,
          animalImage: String,
          details: String,
@@ -72,7 +73,7 @@ struct AdManager {
         self.ref = snapshot.ref
         self.key = snapshot.key
     }
-
+    ///Ad object
     func toAnyObject() -> Any {
         return [
             "age": age,
@@ -85,7 +86,12 @@ struct AdManager {
             "userId": userId
         ]
     }
-
+    ///Create Ad on Firebase
+    static func createAd(animal: AdManager) {
+        let animalRef = self.ref.childByAutoId()
+        animalRef.setValue(animal.toAnyObject())
+    }
+    ///Upload picture on Firebase Storage animalsPictures/"animalName.randomString". Completion returns picture url path
     static func uploadMedia(name: String, image: UIImage, completion: @escaping (_ url: String?) -> Void) {
         let storageRef = storage.reference().child("animalsPictures").child("\(name)\(InputValuesManager.randomString(length: 10)).png")
         if let uploadData = image.jpegData(compressionQuality: 0.5) {
@@ -105,7 +111,7 @@ struct AdManager {
             }
         }
     }
-
+    ///Allow to retrieve image thanks to url. Callback returns UIimage
     static func retrieveImage(url: String, callback: @escaping (_ image: UIImage?) -> Void) {
         let reference = storage.reference(forURL: url)
         reference.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
@@ -121,7 +127,7 @@ struct AdManager {
             }
         }
     }
-
+    ///Check if ads are up to date else if call "forceRetrieveData". Callback returns array of AdManager
     static func retrieveData(callback: @escaping (_ newAd: [AdManager]) -> Void) {
         if let ads = AdManager.ads {
             callback(ads)
@@ -129,16 +135,15 @@ struct AdManager {
             forceRetrieveData(callback: callback)
         }
     }
-
+    ///Allow to get user ads by filtering users thanks to userId. Callback returns an array of AdManager
     static func getMyAds(userId: String, callback: @escaping (_ ad: [AdManager]) -> Void) {
         AdManager.retrieveData(callback: { ads in
             callback(ads.filter({ $0.userId == userId }))
         })
     }
-
+    ///Allow to retrieve ads observing path "ads". Callback returns an array of AdManager
     static func forceRetrieveData(callback: @escaping (_ newAd: [AdManager]) -> Void) {
-        let reference = dataBase.reference(withPath: "ads")
-        reference.observe(.value, with: { snapshot in
+        ref.observe(.value, with: { snapshot in
             var newAd: [AdManager] = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot, let animalAd = AdManager(snapshot: snapshot) {
@@ -149,12 +154,12 @@ struct AdManager {
             callback(newAd)
         })
     }
-
+    ///Allow to remove ad with path ads/childId
     static func removeAd(withId: String) {
         let reference = dataBase.reference().child("ads").child(withId)
         reference.removeValue()
     }
-
+    ///Allow to remove picture thanks to picture's url
     static func removePicture(url: String) {
         let reference = storage.reference(forURL: url)
         reference.delete(completion: { error in

@@ -10,12 +10,13 @@ import UIKit
 import FirebaseDatabase
 
 class MainFeedController: NavBarSetUp {
-
+    // MARK: - Properties, instances
     private var identifier = "segueToDetails"
     private var unwindIdentifier = "unwindToLogin"
     private let ref = Database.database().reference(withPath: "ads")
     private var ads: [AdManager] = []
     var selectedAd: AdManager?
+    // MARK: - Refresh control
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
@@ -24,7 +25,7 @@ class MainFeedController: NavBarSetUp {
         refreshControl.tintColor = Colors.customGreen
         return refreshControl
     }()
-
+    // MARK: - Outlets
     @IBOutlet weak var adTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 

@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-class FirebaseChat {
+class ChatManager {
 
     private var currentUserId = Auth.auth().currentUser?.uid
     private var docReference: DocumentReference?

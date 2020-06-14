@@ -20,7 +20,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     private let currentUserId = UserManager.currentConnectedUser
     private var secondUserName: String?
     private var secondUserId: String?
-    private let firebaseChat = FirebaseChat()
+    private let firebaseChat = ChatManager()
     private var messages: [Message] = []
     var selectedAd: AdManager?
 
