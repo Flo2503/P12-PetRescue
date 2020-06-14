@@ -9,13 +9,13 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-
+    // MARK: - Outlets
     @IBOutlet weak var connexionButton: UIButton!
     @IBOutlet weak var inscriptionButton: UIButton!
     @IBOutlet weak var buttonView: UIStackView!
-
+    // MARK: - Actions
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) { }
-
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerRadius([connexionButton, inscriptionButton])
@@ -28,7 +28,7 @@ class LogInViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
 }
-
+// MARK: - Extension
 extension LogInViewController {
 
     private func cornerRadius(_ buttons: [UIButton]) {

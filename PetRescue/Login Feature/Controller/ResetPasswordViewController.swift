@@ -10,16 +10,12 @@ import UIKit
 
 class ResetPasswordViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        ItemSetUp.textFieldSetUp([emailAdressResetPassword])
-        ItemSetUp.buttonSetUp([validateResetPassword])
-    }
-
+    // MARK: - Outlets
     @IBOutlet weak var labelResetPassword: UILabel!
     @IBOutlet weak var emailAdressResetPassword: UITextField!
     @IBOutlet weak var validateResetPassword: UIButton!
-
+    // MARK: - Actions
+    ///Call "sendPasswordReset" when tap
     @IBAction func resetPassword(_ sender: Any) {
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdressResetPassword.text!)
         if isEmailAddressValid {
@@ -39,8 +35,14 @@ class ResetPasswordViewController: UIViewController {
             validateResetPassword.layer.backgroundColor = UIColor.red.cgColor
         }
     }
-
+    ///Dismiss keyboard
     @IBAction func dismissKeyboard(_ sender: Any) {
         emailAdressResetPassword.resignFirstResponder()
+    }
+    // MARK: - Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ItemSetUp.textFieldSetUp([emailAdressResetPassword])
+        ItemSetUp.buttonSetUp([validateResetPassword])
     }
 }
