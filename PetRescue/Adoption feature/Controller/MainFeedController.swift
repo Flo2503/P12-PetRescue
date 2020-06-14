@@ -28,26 +28,12 @@ class MainFeedController: NavBarSetUp {
     // MARK: - Outlets
     @IBOutlet weak var adTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    // MARK: - Actions
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
         adTableView?.reloadData()
     }
-
-    @IBAction func tapLogoutButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Vous êtes sur le point d'être déconnecté", message: "Continuer ?", preferredStyle: .actionSheet)
-        let logout = UIAlertAction(title: "Oui", style: .default, handler: { _ in
-            if UserManager.signOut() == true {
-                self.performSegue(withIdentifier: self.unwindIdentifier, sender: self)
-            } else {
-                print("logout failure")
-            }
-        })
-        let cancelAction = UIAlertAction(title: "Non", style: .cancel)
-        alert.addAction(logout)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-
+    // MARK: - Methods
+    ///Call "retrieveData" method. Retrieve all ads and store them in ads array
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -58,14 +44,14 @@ class MainFeedController: NavBarSetUp {
         })
         self.adTableView.addSubview(self.refreshControl)
     }
-
+    ///Prepare for segue allowing to give the object of the selected ad to DetailsViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == identifier {
             let detailsVC = segue.destination as! DetailsViewController
             detailsVC.selectedAd = selectedAd
         }
     }
-
+    ///Handle refresh. Call "forceRetrieveData" allowing tu update ads in ''ads array" and display them
     @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
         AdManager.forceRetrieveData(callback: { newAd in
             self.ads = newAd
@@ -74,7 +60,8 @@ class MainFeedController: NavBarSetUp {
         })
     }
 }
-
+// MARK: - Extension
+///TableView extension. Display ads stored in ads array. Call "retrieveImage" alllowing to download animal image and display it in cell
 extension MainFeedController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

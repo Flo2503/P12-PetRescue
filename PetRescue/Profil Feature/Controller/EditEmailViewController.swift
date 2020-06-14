@@ -9,15 +9,16 @@
 import UIKit
 
 class EditEmailViewController: UIViewController {
-
+    // MARK: - Properties
     private let invalidEmaildAlert = "Adresse mail non valide"
     private let emailUpdateAlert = "Adresse mail modifiée avec succès"
     private let networkErrorAlert = "Erreur réseau, merci de réessayer"
-
+    // MARK: - Outlets
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var newEmailAddress: UITextField!
     @IBOutlet weak var validateButton: UIButton!
-
+    // MARK: - Actions
+    ///Check email is valid and text field isn't empty, call "editEmail"
     @IBAction func tapValidateButton(_ sender: Any) {
         let isValidEmail = InputValuesManager.isValidEmailAddress(emailAddressString: newEmailAddress.text)
 
@@ -29,7 +30,7 @@ class EditEmailViewController: UIViewController {
             validateButton.layer.backgroundColor = UIColor.red.cgColor
         }
     }
-
+    ///Dismiss keyboard
     @IBAction func dismissKeyboard(_ sender: Any) {
         newEmailAddress.resignFirstResponder()
     }
@@ -39,7 +40,7 @@ class EditEmailViewController: UIViewController {
         ItemSetUp.buttonSetUp([validateButton])
         ItemSetUp.textFieldSetUp([newEmailAddress])
     }
-
+    ///Check text field isn't empty
     private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
         for item in textField {
             guard !item.text!.isEmpty else {
@@ -48,7 +49,7 @@ class EditEmailViewController: UIViewController {
         }
         return true
     }
-
+    ///Call "updateEmail" allowing to edit user mail in realtime database
     private func editEmail() {
         if let newEmail = newEmailAddress.text {
             self.validateButton.isEnabled = false

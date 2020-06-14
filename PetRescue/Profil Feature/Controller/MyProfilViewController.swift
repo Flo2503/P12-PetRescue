@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
 
 enum ProfilSection: Int {
     case first
@@ -18,7 +16,7 @@ enum ProfilSection: Int {
 }
 
 class MyProfilViewController: UIViewController {
-
+    // MARK: - Properties, instances
     private var unwindIdentifier = "unwindToLogin"
     private let passwordSegue = "segueToChangePassword"
     private let editEmailSegue = "segueToEditEmail"
@@ -26,17 +24,17 @@ class MyProfilViewController: UIViewController {
     private let section = ["Mes informations", "Modifier mon mot de passe", "Modifier mon adresse mail", "Déconnexion"]
     private var userInfo: [String] = []
     private var user: UserManager?
-
+    // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
-
+    // MARK: - Actions
     @IBAction func unwindToMyProfil(segue: UIStoryboardSegue) { }
-
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.reloadData()
     }
-
+    
     private func importDetails() {
         if let name  = user?.name, let firstName = user?.firstName, let email = user?.emailAddress {
             userInfo.append(name)
@@ -45,7 +43,8 @@ class MyProfilViewController: UIViewController {
         }
     }
 }
-
+// MARK: - Extension
+///Table View extension
 extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return section.count
@@ -67,7 +66,7 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
             return 1
         }
     }
-
+    ///Call "retrieveUser" allowing retrieve user's informations
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myProfilCell", for: indexPath)
         let passwordCell = tableView.dequeueReusableCell(withIdentifier: "changePasswordCell", for: indexPath)
@@ -97,10 +96,13 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
         case .first:
             print("Do nothing")
         case .second:
+            // Change Password
             performSegue(withIdentifier: passwordSegue, sender: self)
         case .third:
+            // Edit email address
             performSegue(withIdentifier: editEmailSegue, sender: self)
         case .fourth:
+            // Logout
             let alert = UIAlertController(title: "Vous êtes sur le point d'être déconnecté", message: "Continuer ?", preferredStyle: .actionSheet)
             let logout = UIAlertAction(title: "Oui", style: .default, handler: { _ in
                 if UserManager.signOut() == true {

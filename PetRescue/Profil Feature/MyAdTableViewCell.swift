@@ -9,11 +9,11 @@
 import UIKit
 
 class MyAdTableViewCell: UITableViewCell {
-
+    // MARK: - Oulets
     @IBOutlet weak var animalPicture: UIImageView!
     @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var animlalLocality: UILabel!
-
+    // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()
     }

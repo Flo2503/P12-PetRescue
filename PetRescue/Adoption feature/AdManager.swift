@@ -15,7 +15,7 @@ struct AdManager {
     private static let dataBase = Database.database()
     private static let storage = Storage.storage()
     private static let ref = Database.database().reference(withPath: "ads")
-
+    // MARK: - AdManager object
     let ref: DatabaseReference?
     let key: String
     let age: String

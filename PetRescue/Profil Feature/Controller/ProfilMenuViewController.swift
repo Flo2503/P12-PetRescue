@@ -9,22 +9,23 @@
 import UIKit
 
 class ProfilMenuViewController: NavBarSetUp {
-
-    @IBOutlet weak var tableView: UITableView!
-
+    // MARK: - Property
     private let menuTitle = [Menu(title: "Mon profil"), Menu(title: "Mes annonces")]
-
+    // MARK: - Outlet
+    @IBOutlet weak var tableView: UITableView!
+    // MARK: - Method
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
     }
 }
-
+// MARK: - Extension
+// Table view extension
 extension ProfilMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         menuTitle.count
     }
-
+    ///Access to my profil ans my ads
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:

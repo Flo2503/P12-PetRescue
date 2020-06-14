@@ -65,7 +65,7 @@ class AddAdoptionViewController: UIViewController {
         }
         return true
     }
-    ///Allow to create new ad with AdManager object.  Call "uploadMedia" to push animal picture on storage. Call "createAd" pushing animal datas on real time database.
+    ///Allow to create new ad with AdManager object.  Call "uploadMedia" to push animal picture on storage. Call "createAd" pushing animal datas on realtime database.
     private func createAd() {
         guard let name = animalName.text,
             let kind = animalKind.text,
