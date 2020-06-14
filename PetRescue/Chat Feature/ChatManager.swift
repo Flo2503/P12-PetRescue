@@ -13,8 +13,9 @@ import FirebaseFirestore
 class ChatManager {
 
     private var currentUserId = Auth.auth().currentUser?.uid
-    private var docReference: DocumentReference?
     private let chatDatabase = Firestore.firestore().collection("Chats")
+    var docReference: DocumentReference?
+    var timeStamp = Timestamp()
 
     private var messages: [Message] = []
 

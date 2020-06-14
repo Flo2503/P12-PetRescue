@@ -7,20 +7,17 @@
 
 import UIKit
 import InputBarAccessoryView
-import Firebase
 import MessageKit
-import FirebaseFirestore
 
 class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
 
-    private var docReference: DocumentReference?
     private var secondUser: UserManager?
     private var currentUser: UserManager?
     private var currentUserName: String?
     private let currentUserId = UserManager.currentConnectedUser
     private var secondUserName: String?
     private var secondUserId: String?
-    private let firebaseChat = ChatManager()
+    private let chatManager = ChatManager()
     private var messages: [Message] = []
     var selectedAd: AdManager?
 
@@ -78,7 +75,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                 self.secondUser = chatUser
                 self.secondUserInfo()
                 self.title = self.secondUserName
-                self.firebaseChat.loadChat(user2: self.secondUserId!, callback: { msg in
+                self.chatManager.loadChat(user2: self.secondUserId!, callback: { msg in
                     self.messages = msg
                 })
             })
@@ -92,11 +89,11 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
     // MARK: - InputBarAccessoryViewDelegate
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        let message = Message(userId: UUID().uuidString, content: text, created: Timestamp(), senderID: currentUserId!, senderName: currentUserName!)
+        let message = Message(userId: UUID().uuidString, content: text, created: chatManager.timeStamp, senderID: currentUserId!, senderName: currentUserName!)
 
             //messages.append(message)
             insertNewMessage(message)
-            firebaseChat.save(message)
+            chatManager.save(message)
 
             inputBar.inputTextView.text = ""
             messagesCollectionView.scrollToBottom()

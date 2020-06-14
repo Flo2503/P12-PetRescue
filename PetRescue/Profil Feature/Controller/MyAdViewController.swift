@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class MyAdViewController: NavBarSetUp {
     // MARK: - Properties, instances
     private let userId = UserManager.currentConnectedUser

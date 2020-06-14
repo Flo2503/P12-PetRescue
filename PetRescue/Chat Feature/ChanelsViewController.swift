@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseFirestore
 
 class ChanelsViewController: NavBarSetUp {
 
-    private var currentUserId = Auth.auth().currentUser?.uid
+    private var currentUserId = UserManager.currentConnectedUser
 
     @IBOutlet weak var tableView: UITableView!
 

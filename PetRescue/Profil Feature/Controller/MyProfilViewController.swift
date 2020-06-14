@@ -34,7 +34,7 @@ class MyProfilViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.reloadData()
     }
-    
+
     private func importDetails() {
         if let name  = user?.name, let firstName = user?.firstName, let email = user?.emailAddress {
             userInfo.append(name)
