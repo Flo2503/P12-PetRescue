@@ -69,11 +69,9 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     // MARK: - InputBarAccessoryViewDelegate
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         let message = Message(id: UUID().uuidString, content: text, created: chatManager.timeStamp, senderID: currentUserId!, senderName: currentUser!.firstName)
-
             //messages.append(message)
             insertNewMessage(message)
             chatManager.save(message)
-
             inputBar.inputTextView.text = ""
             messagesCollectionView.reloadData()
             messagesCollectionView.scrollToBottom(animated: true)
