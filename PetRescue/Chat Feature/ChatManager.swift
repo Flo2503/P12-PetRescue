@@ -14,7 +14,7 @@ class ChatManager {
 
     private var currentUserId = Auth.auth().currentUser?.uid
     private let chatDatabase = Firestore.firestore().collection("Chats")
-    var docReference: DocumentReference?
+    private var docReference: DocumentReference?
     var timeStamp = Timestamp()
 
     private var messages: [Message] = []
@@ -150,7 +150,7 @@ class ChatManager {
         let data: [String: Any] = [
             "content": message.content,
             "created": message.created,
-            "id": message.userId,
+            "id": message.id,
             "senderID": message.senderID,
             "senderName": message.senderName
         ]

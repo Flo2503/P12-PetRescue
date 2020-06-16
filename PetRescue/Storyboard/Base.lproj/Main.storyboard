@@ -51,7 +51,7 @@
                                 <rect key="frame" x="20" y="88" width="374" height="260"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.83921568627450982" green="0.83524245019999999" blue="0.83921617270000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="wwP-L4-cun" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IDb-eH-8jV"/>
@@ -106,6 +106,7 @@
                                         <rect key="frame" x="0.0" y="296.5" width="374" height="53.5"/>
                                         <color key="backgroundColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="tintColor" red="0.59634262319999998" green="0.79802173379999997" blue="0.62350577119999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Valider">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1440,7 +1441,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jRC-Ce-beF"/>
-        <segue reference="Ibc-5a-Qnj"/>
+        <segue reference="IXy-xb-2dc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

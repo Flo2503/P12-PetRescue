@@ -36,7 +36,7 @@ class MyProfilViewController: UIViewController {
     }
 
     private func importDetails() {
-        if let name  = user?.name, let firstName = user?.firstName, let email = user?.emailAddress {
+        if let name = user?.name, let firstName = user?.firstName, let email = user?.emailAddress {
             userInfo.append(name)
             userInfo.append(firstName)
             userInfo.append(email)

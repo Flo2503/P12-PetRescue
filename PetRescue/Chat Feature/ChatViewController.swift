@@ -13,10 +13,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
     private var secondUser: UserManager?
     private var currentUser: UserManager?
-    private var currentUserName: String?
     private let currentUserId = UserManager.currentConnectedUser
-    private var secondUserName: String?
-    private var secondUserId: String?
     private let chatManager = ChatManager()
     private var messages: [Message] = []
     var selectedAd: AdManager?
@@ -36,8 +33,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        getCurrentUser()
-        getSecondUser()
+        getUsers()
     }
 
     private func insertNewMessage(_ message: Message) {
@@ -48,35 +44,18 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         }
     }
 
-    private func currentUserInfo() {
-        if let firstName = currentUser?.firstName {
-            self.currentUserName = firstName
-        }
-
-    }
-
-    private func secondUserInfo() {
-        if let firstName = secondUser?.firstName, let userId = selectedAd?.userId {
-            self.secondUserName = firstName
-            self.secondUserId = userId
-        }
-    }
-
-    private func getCurrentUser() {
+    private func getUsers() {
         UserManager.retrieveUser(callback: { user in
             self.currentUser = user
-            self.currentUserInfo()
         })
-    }
-
-    private func getSecondUser() {
         if let secondUser = selectedAd?.userId {
             UserManager.retrieveChatUser(userChatId: secondUser, callback: { chatUser in
                 self.secondUser = chatUser
-                self.secondUserInfo()
-                self.title = self.secondUserName
-                self.chatManager.loadChat(user2: self.secondUserId!, callback: { msg in
+                self.title = self.secondUser?.firstName
+                self.chatManager.loadChat(user2: self.selectedAd!.userId, callback: { msg in
                     self.messages = msg
+                    self.messagesCollectionView.reloadData()
+                    self.messagesCollectionView.scrollToBottom(animated: true)
                 })
             })
         }
@@ -89,21 +68,20 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
     // MARK: - InputBarAccessoryViewDelegate
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        let message = Message(userId: UUID().uuidString, content: text, created: chatManager.timeStamp, senderID: currentUserId!, senderName: currentUserName!)
+        let message = Message(id: UUID().uuidString, content: text, created: chatManager.timeStamp, senderID: currentUserId!, senderName: currentUser!.firstName)
 
             //messages.append(message)
             insertNewMessage(message)
             chatManager.save(message)
 
             inputBar.inputTextView.text = ""
-            messagesCollectionView.scrollToBottom()
             messagesCollectionView.reloadData()
             messagesCollectionView.scrollToBottom(animated: true)
     }
 
     // MARK: - MessagesDataSource
     func currentSender() -> SenderType {
-        return Sender(senderId: currentUserId!, displayName: currentUserName ?? "Name not found")
+        return Sender(senderId: currentUserId!, displayName: currentUser?.firstName ?? "Name not found")
     }
 
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
@@ -126,14 +104,19 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
     // MARK: - MessagesDisplayDelegate
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? Colors.customGreen: .lightGray
+        return isFromCurrentSender(message: message) ? Colors.currentUserMessageColor : Colors.secondUserMessageColor
     }
 
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        avatarView.image = UIImage(named: "default_user")
-        avatarView.layer.backgroundColor = UIColor.white.cgColor
-        avatarView.layer.borderWidth = 2
-        avatarView.layer.borderColor = Colors.avatarViewBorder.cgColor
+        if message.sender.senderId == currentUserId {
+            avatarView.image = UIImage(named: "current_user")
+            avatarView.layer.backgroundColor = UIColor.white.cgColor
+            avatarView.layer.borderWidth = 0
+        } else {
+            avatarView.image = UIImage(named: "second_user")
+            avatarView.layer.backgroundColor = UIColor.white.cgColor
+            avatarView.layer.borderWidth = 0
+        }
     }
 
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
