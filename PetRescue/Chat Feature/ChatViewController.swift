@@ -9,6 +9,7 @@ import UIKit
 import InputBarAccessoryView
 import MessageKit
 
+@available(iOS 11.0, *)
 class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
 
     private var secondUser: UserManager?
@@ -29,11 +30,22 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        getChat()
         noShadow()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         getUsers()
+    }
+
+    private func getChat() {
+        if let secondUserId = self.selectedAd?.userId {
+            self.chatManager.loadChat(user2: secondUserId, callback: { msg in
+                self.messages = msg
+                self.messagesCollectionView.reloadData()
+                self.messagesCollectionView.scrollToBottom(animated: true)
+            })
+        }
     }
 
     private func insertNewMessage(_ message: Message) {
@@ -48,15 +60,12 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         UserManager.retrieveUser(callback: { user in
             self.currentUser = user
         })
-        if let secondUser = selectedAd?.userId {
-            UserManager.retrieveChatUser(userChatId: secondUser, callback: { chatUser in
+        if let secondUserId = selectedAd?.userId {
+            UserManager.retrieveChatUser(userChatId: secondUserId, callback: { chatUser in
                 self.secondUser = chatUser
-                self.title = self.secondUser?.firstName
-                self.chatManager.loadChat(user2: self.selectedAd!.userId, callback: { msg in
-                    self.messages = msg
-                    self.messagesCollectionView.reloadData()
-                    self.messagesCollectionView.scrollToBottom(animated: true)
-                })
+                if let firstName = self.secondUser?.firstName {
+                    self.title = firstName
+                }
             })
         }
     }
@@ -68,18 +77,24 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
     // MARK: - InputBarAccessoryViewDelegate
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        let message = Message(id: UUID().uuidString, content: text, created: chatManager.timeStamp, senderID: currentUserId!, senderName: currentUser!.firstName)
+        if let currentUserId = currentUserId, let currentUserFirstName = currentUser?.firstName {
+            let message = Message(id: UUID().uuidString,
+                                  content: text,
+                                  created: chatManager.timeStamp,
+                                  senderID: currentUserId,
+                                  senderName: currentUserFirstName)
             //messages.append(message)
             insertNewMessage(message)
             chatManager.save(message)
             inputBar.inputTextView.text = ""
             messagesCollectionView.reloadData()
             messagesCollectionView.scrollToBottom(animated: true)
+        }
     }
 
     // MARK: - MessagesDataSource
     func currentSender() -> SenderType {
-        return Sender(senderId: currentUserId!, displayName: currentUser?.firstName ?? "Name not found")
+        return Sender(senderId: currentUserId!, displayName: currentUser!.firstName)
     }
 
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 11.0, *)
 class MainFeedTableViewCell: UITableViewCell {
     // MARK: - Oulets
     @IBOutlet weak var animalPicture: UIImageView!
@@ -39,6 +40,7 @@ class MainFeedTableViewCell: UITableViewCell {
         animalLocality.text = locality
     }
 
+    @available(iOS 11.0, *)
     func configureImage(image: UIImage) {
         animalPicture.image = image
         animalPicture.layer.cornerRadius = animalPicture.frame.size.height / 6

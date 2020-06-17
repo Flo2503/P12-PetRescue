@@ -42,7 +42,7 @@ class SignInViewController: NavBarSetUp {
         securePassword()
         ItemSetUp.buttonSetUp([validateButton])
         ItemSetUp.textFieldSetUp([emailAdress, password])
-        emailAdress.text = "test@test.fr"
+        emailAdress.text = "papimucho@msn.com"
         password.text = "Test1234"
     }
     ///Call "login" method in UserManager allow to login user on database with email and password

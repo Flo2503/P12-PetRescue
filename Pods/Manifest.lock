@@ -346,6 +346,7 @@ PODS:
   - InputBarAccessoryView (4.3.2):
     - InputBarAccessoryView/Core (= 4.3.2)
   - InputBarAccessoryView/Core (4.3.2)
+  - IQKeyboardManagerSwift (6.5.5)
   - leveldb-library (1.22)
   - MessageKit (3.1.0):
     - InputBarAccessoryView (~> 4.3.0)
@@ -362,6 +363,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
+  - IQKeyboardManagerSwift
   - MessageKit
 
 SPEC REPOS:
@@ -387,6 +389,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - InputBarAccessoryView
+    - IQKeyboardManagerSwift
     - leveldb-library
     - MessageKit
     - nanopb
@@ -414,11 +417,12 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   InputBarAccessoryView: 7985d418040a05fe894bd4b8328dd43ab35517c3
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: dfe286894f9f334b59bf687c68489d020e590fac
+PODFILE CHECKSUM: 7b933094630b826a32f393879d2d3111c36dad4e
 
 COCOAPODS: 1.9.1
