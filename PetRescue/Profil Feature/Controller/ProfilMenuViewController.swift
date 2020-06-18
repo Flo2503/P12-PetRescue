@@ -9,16 +9,20 @@
 import UIKit
 
 class ProfilMenuViewController: NavBarSetUp {
+
     // MARK: - Property
     private let menuTitle = [Menu(title: "Mon profil"), Menu(title: "Mes annonces")]
+
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
+
     // MARK: - Method
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
     }
 }
+
 // MARK: - Extension
 // Table view extension
 extension ProfilMenuViewController: UITableViewDelegate, UITableViewDataSource {

@@ -9,8 +9,10 @@
 import UIKit
 
 class FurtherDetailsTableViewCell: UITableViewCell {
+
     // MARK: - Outlet
     @IBOutlet weak var animalFurtherDetails: UILabel!
+
     // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()

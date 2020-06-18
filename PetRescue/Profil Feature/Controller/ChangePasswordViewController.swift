@@ -9,21 +9,25 @@
 import UIKit
 
 class ChangePasswordViewController: UIViewController {
+
     // MARK: - Properties
     private let invalidPasswordAlert = "Mot de passe non valide"
     private let passwordUpdateAlert = "Mot de passe modifié avec succès"
     private let networkErrorAlert = "Erreur réseau, merci de réessayer"
+
     // MARK: - Outlets
     @IBOutlet weak var labelNewPassword: UILabel!
     @IBOutlet weak var newPassword: UITextField!
     @IBOutlet weak var checkNewPassword: UITextField!
     @IBOutlet weak var validateButton: UIButton!
+
     // MARK: - Actions
     ///Dismiss Keyboard
     @IBAction func dismissKeyboard(_ sender: Any) {
         newPassword.resignFirstResponder()
         checkNewPassword.resignFirstResponder()
     }
+
     ///Check passwords are equals and valid, check text fields are not empty and call "changePassword" when taped
     @IBAction func tapValidateButton(_ sender: Any) {
         let passwordsAreEquals = InputValuesManager.passwordsAreEquals(passwordOne: newPassword.text, passwordTwo: checkNewPassword.text)
@@ -40,6 +44,7 @@ class ChangePasswordViewController: UIViewController {
             validateButton.layer.backgroundColor = UIColor.red.cgColor
         }
     }
+
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +52,13 @@ class ChangePasswordViewController: UIViewController {
         ItemSetUp.buttonSetUp([validateButton])
         ItemSetUp.textFieldSetUp([newPassword, checkNewPassword])
     }
+
     ///Hide user input text
     private func securePassword() {
         newPassword.isSecureTextEntry = true
         checkNewPassword.isSecureTextEntry = true
     }
+
     ///Check fields are not empty
     private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
         for item in textField {
@@ -61,6 +68,7 @@ class ChangePasswordViewController: UIViewController {
         }
         return true
     }
+
     ///Call "updatePassword" updating password on user realtime database
     private func changePassword() {
         if let newPassword = newPassword.text {

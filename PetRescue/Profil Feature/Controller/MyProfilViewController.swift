@@ -16,6 +16,7 @@ enum ProfilSection: Int {
 }
 
 class MyProfilViewController: UIViewController {
+
     // MARK: - Properties, instances
     private var unwindIdentifier = "unwindToLogin"
     private let passwordSegue = "segueToChangePassword"
@@ -24,10 +25,13 @@ class MyProfilViewController: UIViewController {
     private let section = ["Mes informations", "Modifier mon mot de passe", "Modifier mon adresse mail", "Déconnexion"]
     private var userInfo: [String] = []
     private var user: UserManager?
+
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
+
     // MARK: - Actions
     @IBAction func unwindToMyProfil(segue: UIStoryboardSegue) { }
+
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,7 @@ class MyProfilViewController: UIViewController {
         }
     }
 }
+
 // MARK: - Extension
 ///Table View extension
 extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {

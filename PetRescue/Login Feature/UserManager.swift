@@ -12,6 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 struct UserManager {
+
     // MARK: - Properties, instances
     private static var user: UserManager?
     private static var users: [UserManager]?
@@ -21,6 +22,7 @@ struct UserManager {
     let name: String
     let firstName: String
     let emailAddress: String
+
     // MARK: - Init
     init(name: String, firstName: String, emailAdress: String) {
         self.name = name
@@ -40,6 +42,7 @@ struct UserManager {
         self.firstName = firstName
         self.emailAddress = emailAddress
     }
+
     // MARK: - Firebase Methods
     ///Create user on Firebase Database and create user on Firebase authentification with password and email
     static func createUser(email: String, password: String, name: String, firstName: String, callback: @escaping (Bool) -> ()) {
@@ -56,6 +59,7 @@ struct UserManager {
             callback(true)
         }
     }
+
     ///Log in on Firebase with emaild and password
     static func login(withEmail email: String, password: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, success) in
@@ -66,6 +70,7 @@ struct UserManager {
             callback(true)
         }
     }
+
     ///Allow to logout on firebase. Return true when done
     static func signOut() -> Bool {
         do {
@@ -75,6 +80,7 @@ struct UserManager {
             return false
         }
     }
+
     ///Allow to retrieve user information observing path on Firebase: users/userId
     static func retrieveUser(callback: @escaping (_ currentUser: UserManager) -> Void) {
         let ref = Database.database().reference()
@@ -88,6 +94,7 @@ struct UserManager {
             })
         }
     }
+
     ///Allow to retrieve second user information observing path on Firebase: users/userId
     static func retrieveChatUser(userChatId: String, callback: @escaping (_ chatUser: UserManager) -> Void) {
         let ref = Database.database().reference()
@@ -99,6 +106,7 @@ struct UserManager {
             }
         })
     }
+
     ///Allow to retrieve second user information observing path on Firebase: users/userId
     static func retrieveAllChatUser(userChatId: [String], callback: @escaping (_ users: [UserManager]) -> Void) {
         let ref = Database.database().reference()
@@ -115,6 +123,7 @@ struct UserManager {
             })
         }
     }
+
     ///Send an email to the user to reset his password
     static func sendPasswordReset(withEmail email: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().sendPasswordReset(withEmail: email) { success in
@@ -126,6 +135,7 @@ struct UserManager {
 
         }
     }
+
     ///Allow to change password on Firebase Database
     static func updatePassword(password: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().currentUser?.updatePassword(to: password) { success in
@@ -136,6 +146,7 @@ struct UserManager {
             callback(true)
         }
     }
+
     /// Allow to edit email on FIrebase database
     static func updateEmail(email: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().currentUser?.updateEmail(to: email) { success in

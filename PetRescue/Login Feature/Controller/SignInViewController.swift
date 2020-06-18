@@ -10,20 +10,24 @@ import UIKit
 import FirebaseAuth
 
 class SignInViewController: NavBarSetUp {
+
     // MARK: - Properties
     private let identifier = "segueToAdoptions"
     private let erroMessage = "Adresse mail ou mot de passe incorrect"
+
     // MARK: - Outlets
     @IBOutlet weak var signInLabel: UILabel!
     @IBOutlet weak var emailAdress: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var validateButton: UIButton!
+
     // MARK: - Actions
     /// Dismiss Keyboard
     @IBAction func dismissKeyboard(_ sender: Any) {
         emailAdress.resignFirstResponder()
         password.resignFirstResponder()
     }
+
     ///Check email is valid, fields are not empty, then call "login" method
     @IBAction func tapOnValidate(_ sender: Any) {
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!)
@@ -34,6 +38,7 @@ class SignInViewController: NavBarSetUp {
             signInLabel.text = erroMessage
         }
     }
+
     // Unwind Segue
     @IBAction func unwindToSignIn(segue: UIStoryboardSegue) { }
 
@@ -45,6 +50,7 @@ class SignInViewController: NavBarSetUp {
         emailAdress.text = "papimucho@msn.com"
         password.text = "Test1234"
     }
+
     ///Call "login" method in UserManager allow to login user on database with email and password
     private func login() {
         if let email = emailAdress.text?.trimmingCharacters(in: .whitespaces), let password = password.text?.trimmingCharacters(in: .whitespaces) {
@@ -63,13 +69,16 @@ class SignInViewController: NavBarSetUp {
         }
     }
 }
+
 // MARK: - Extension
 /// Extension input Values
 extension SignInViewController {
+
     ///Hide input user value
     private func securePassword() {
         password.isSecureTextEntry = true
     }
+
     ///Check text fields are noy empty
     private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
         for item in textField {

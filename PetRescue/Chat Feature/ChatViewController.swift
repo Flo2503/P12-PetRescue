@@ -10,7 +10,6 @@ import InputBarAccessoryView
 import IQKeyboardManagerSwift
 import MessageKit
 
-@available(iOS 11.0, *)
 class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
 
     private var secondUser: UserManager?

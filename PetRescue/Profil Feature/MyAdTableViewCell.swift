@@ -13,6 +13,7 @@ class MyAdTableViewCell: UITableViewCell {
     @IBOutlet weak var animalPicture: UIImageView!
     @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var animlalLocality: UILabel!
+
     // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()

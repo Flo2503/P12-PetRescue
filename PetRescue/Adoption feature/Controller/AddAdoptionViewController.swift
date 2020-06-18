@@ -13,10 +13,12 @@ class AddAdoptionViewController: UIViewController {
     private var imagePicker = UIImagePickerController()
     private let unwindIdentifier = "segueToMainFeed"
     private let user = UserManager.currentConnectedUser
+
     // MARK: - PickerView and SelectedSegment properties
     lazy var ageIndex = agePickerView.selectedRow(inComponent: 0).self
     lazy var age = ageChoice[ageIndex]
     lazy var gender = (animalGender.selectedSegmentIndex == 0) ? "Femelle" : "Mâle"
+
     // MARK: - Outlets
     @IBOutlet weak var animalName: UITextField!
     @IBOutlet weak var animalKind: UITextField!
@@ -27,6 +29,7 @@ class AddAdoptionViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var agePickerView: UIPickerView!
     @IBOutlet weak var addPictureButton: UIButton!
+
     // MARK: - Actions
     @IBAction func addFirstPicture(_ sender: Any) {
         chooseImage()
@@ -56,6 +59,7 @@ class AddAdoptionViewController: UIViewController {
         ItemSetUp.textFieldSetUp([animalName, animalKind, locality])
         ItemSetUp.makeRoundedButton([addPictureButton])
     }
+
     ///Check text field ins't empty
     private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
         for item in textField {
@@ -65,6 +69,7 @@ class AddAdoptionViewController: UIViewController {
         }
         return true
     }
+
     ///Allow to create new ad with AdManager object.  Call "uploadMedia" to push animal picture on storage. Call "createAd" pushing animal datas on realtime database.
     private func createAd() {
         guard let name = animalName.text,
@@ -88,6 +93,7 @@ class AddAdoptionViewController: UIViewController {
             performSegue(withIdentifier: unwindIdentifier, sender: self)
     }
 }
+
 // MARK: - Extensions
 ///Camera and library access extension
 extension AddAdoptionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
