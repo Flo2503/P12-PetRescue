@@ -41,7 +41,6 @@
 		5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2B2452306B00077B33 /* AppDelegate.swift */; };
 		5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2D2452306B00077B33 /* SceneDelegate.swift */; };
 		5CF24C332452306B00077B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C312452306B00077B33 /* Main.storyboard */; };
-		5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C342452306B00077B33 /* PetRescue.xcdatamodeld */; };
 		5CF24C382452307000077B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C372452307000077B33 /* Assets.xcassets */; };
 		5CF24C3B2452307000077B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C392452307000077B33 /* LaunchScreen.storyboard */; };
 		5CF24C462452307000077B33 /* PetRescueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C452452307000077B33 /* PetRescueTests.swift */; };
@@ -97,7 +96,6 @@
 		5CF24C2B2452306B00077B33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CF24C2D2452306B00077B33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5CF24C322452306B00077B33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5CF24C352452306B00077B33 /* PetRescue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetRescue.xcdatamodel; sourceTree = "<group>"; };
 		5CF24C372452307000077B33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CF24C3A2452307000077B33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CF24C3C2452307000077B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,11 +151,9 @@
 		5C30F055248BA4C200735B31 /* Chat Feature */ = {
 			isa = PBXGroup;
 			children = (
+				5C6FB62F249C05730017A7AE /* Controller */,
 				5C867E6124901A4B0011D488 /* Chat.swift */,
 				5C867E6324901A670011D488 /* Message.swift */,
-				5C867E6924918AC80011D488 /* ChatManager.swift */,
-				5C867E6524901AB00011D488 /* ChatViewController.swift */,
-				5C867E67249148E40011D488 /* ChanelsViewController.swift */,
 			);
 			path = "Chat Feature";
 			sourceTree = "<group>";
@@ -184,28 +180,61 @@
 			path = "Profil Feature";
 			sourceTree = "<group>";
 		};
-		5C9D4CA22456061C0015AB09 /* Controller */ = {
+		5C6FB62B249C02CF0017A7AE /* Firebase service */ = {
 			isa = PBXGroup;
 			children = (
-				5CF24C5424534C9200077B33 /* LogInViewController.swift */,
-				5CA12F03245A127D006AC92B /* SignInViewController.swift */,
-				5CCB2DD52454E45A0038038A /* SignUpViewController.swift */,
-				5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */,
+				5CCB2DD32454CD070038038A /* UserManager.swift */,
+				5CB7BC01246882D100E09673 /* AdManager.swift */,
+				5C867E6924918AC80011D488 /* ChatManager.swift */,
+			);
+			path = "Firebase service";
+			sourceTree = "<group>";
+		};
+		5C6FB62C249C04410017A7AE /* Display setup */ = {
+			isa = PBXGroup;
+			children = (
+				5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */,
 				5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */,
+				5CA12F012458DFCD006AC92B /* ItemSetUp.swift */,
+				5CF24C5B24538DCC00077B33 /* Colors.swift */,
+			);
+			path = "Display setup";
+			sourceTree = "<group>";
+		};
+		5C6FB62D249C04850017A7AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5CA12EFF2458DD03006AC92B /* InputValuesManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C6FB62E249C05360017A7AE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */,
+				5C20606B2482BCC100A39EB6 /* FurtherDetailsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5C6FB62F249C05730017A7AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5C867E6524901AB00011D488 /* ChatViewController.swift */,
+				5C867E67249148E40011D488 /* ChanelsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5CA12F07245C62C4006AC92B /* Adoption feature */ = {
+		5CA12F07245C62C4006AC92B /* Ads feature */ = {
 			isa = PBXGroup;
 			children = (
 				5CB7BC002468821B00E09673 /* Controller */,
-				5CA12F0A245E0FF0006AC92B /* MainFeedTableViewCell.swift */,
-				5C20606B2482BCC100A39EB6 /* FurtherDetailsTableViewCell.swift */,
+				5C6FB62E249C05360017A7AE /* Cells */,
 				5CC2A26A246B330900231641 /* PickViewDatas.swift */,
-				5CB7BC01246882D100E09673 /* AdManager.swift */,
 			);
-			path = "Adoption feature";
+			path = "Ads feature";
 			sourceTree = "<group>";
 		};
 		5CB7BC002468821B00E09673 /* Controller */ = {
@@ -214,7 +243,6 @@
 				5CA12F08245C6309006AC92B /* MainFeedController.swift */,
 				5CA12F0E245F5335006AC92B /* AddAdoptionViewController.swift */,
 				5C9C2F692460D648002A02F1 /* DetailsViewController.swift */,
-				5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,12 +272,14 @@
 			children = (
 				5CF24C3C2452307000077B33 /* Info.plist */,
 				5C5C1DA4247805C60079DB95 /* GoogleService-Info.plist */,
-				5CF24C52245336DB00077B33 /* Core Data */,
 				5CF24C51245336C000077B33 /* Support */,
 				5CF24C502453369E00077B33 /* Storyboard */,
+				5C6FB62D249C04850017A7AE /* Model */,
+				5C6FB62C249C04410017A7AE /* Display setup */,
+				5C6FB62B249C02CF0017A7AE /* Firebase service */,
 				5C30F055248BA4C200735B31 /* Chat Feature */,
 				5C5C1D9924767A7B0079DB95 /* Profil Feature */,
-				5CA12F07245C62C4006AC92B /* Adoption feature */,
+				5CA12F07245C62C4006AC92B /* Ads feature */,
 				5CF24C5324534C5B00077B33 /* Login Feature */,
 			);
 			path = PetRescue;
@@ -283,23 +313,14 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		5CF24C52245336DB00077B33 /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-				5CF24C342452306B00077B33 /* PetRescue.xcdatamodeld */,
-			);
-			path = "Core Data";
-			sourceTree = "<group>";
-		};
 		5CF24C5324534C5B00077B33 /* Login Feature */ = {
 			isa = PBXGroup;
 			children = (
-				5C9D4CA22456061C0015AB09 /* Controller */,
-				5CCB2DD32454CD070038038A /* UserManager.swift */,
-				5CA12EFF2458DD03006AC92B /* InputValuesManager.swift */,
+				5CF24C5424534C9200077B33 /* LogInViewController.swift */,
+				5CA12F03245A127D006AC92B /* SignInViewController.swift */,
+				5CCB2DD52454E45A0038038A /* SignUpViewController.swift */,
+				5CA12EFD2458CD26006AC92B /* ResetPasswordViewController.swift */,
 				5C9D4CC1245704360015AB09 /* GradientBackground.swift */,
-				5CA12F012458DFCD006AC92B /* ItemSetUp.swift */,
-				5CF24C5B24538DCC00077B33 /* Colors.swift */,
 			);
 			path = "Login Feature";
 			sourceTree = "<group>";
@@ -508,7 +529,6 @@
 				5CAB260A2485069C00A1F618 /* ChangePasswordViewController.swift in Sources */,
 				5C867E6224901A4B0011D488 /* Chat.swift in Sources */,
 				5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */,
-				5CF24C362452306B00077B33 /* PetRescue.xcdatamodeld in Sources */,
 				5CA12F09245C6309006AC92B /* MainFeedController.swift in Sources */,
 				5C20606C2482BCC100A39EB6 /* FurtherDetailsTableViewCell.swift in Sources */,
 				5C867E68249148E40011D488 /* ChanelsViewController.swift in Sources */,
@@ -796,19 +816,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		5CF24C342452306B00077B33 /* PetRescue.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				5CF24C352452306B00077B33 /* PetRescue.xcdatamodel */,
-			);
-			currentVersion = 5CF24C352452306B00077B33 /* PetRescue.xcdatamodel */;
-			path = PetRescue.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 5CF24C202452306B00077B33 /* Project object */;
 }
