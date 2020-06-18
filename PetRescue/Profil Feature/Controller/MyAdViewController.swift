@@ -10,12 +10,14 @@ import UIKit
 
 class MyAdViewController: NavBarSetUp {
     // MARK: - Properties, instances
+    private var identifier = "segueFromMyAdToDetails"
     private let userId = UserManager.currentConnectedUser
     private var ads: [AdManager] = []
-    private var identifier = "segueFromMyAdToDetails"
     var selectedAd: AdManager?
+
     // MARK: - Outlet
     @IBOutlet weak var myAdTableView: UITableView!
+
     // MARK: - Methods
     ///Call "getMyAds" retreiving ads with userId filter
     override func viewDidLoad() {
@@ -26,6 +28,7 @@ class MyAdViewController: NavBarSetUp {
             self.ads = ads
         })
     }
+
     ///Prepare for segue giving the object of the selected ad to DetailsViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == identifier {
@@ -33,11 +36,13 @@ class MyAdViewController: NavBarSetUp {
             detailsVC.selectedAd = selectedAd
         }
     }
+
     ///Remove object in ads array
     private func removeAd(at index: Int) {
         ads.remove(at: index)
     }
 }
+
 // MARK: - Extension
 // Table view extension
 extension MyAdViewController: UITableViewDelegate, UITableViewDataSource {

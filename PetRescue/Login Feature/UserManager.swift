@@ -13,7 +13,8 @@ import FirebaseDatabase
 
 struct UserManager {
     // MARK: - Properties, instances
-    private static var currentUser: UserManager?
+    private static var user: UserManager?
+    private static var users: [UserManager]?
     private static let storage = Storage.storage()
     private static let dataBase = Database.database()
     static let currentConnectedUser = Auth.auth().currentUser?.uid
@@ -81,22 +82,38 @@ struct UserManager {
             let path = ref.child("users").child(userId)
             path.observe(.value, with: { snapshot in
                 if let user = UserManager(snapshot: snapshot) {
-                    UserManager.currentUser = user
+                    UserManager.user = user
                     callback(user)
                 }
             })
         }
     }
     ///Allow to retrieve second user information observing path on Firebase: users/userId
-    static func retrieveChatUser(userChatId: String, callback: @escaping (_ currentUser: UserManager) -> Void) {
+    static func retrieveChatUser(userChatId: String, callback: @escaping (_ chatUser: UserManager) -> Void) {
         let ref = Database.database().reference()
         let path = ref.child("users").child(userChatId)
         path.observe(.value, with: { snapshot in
             if let user = UserManager(snapshot: snapshot) {
-                UserManager.currentUser = user
+                UserManager.user = user
                 callback(user)
             }
         })
+    }
+    ///Allow to retrieve second user information observing path on Firebase: users/userId
+    static func retrieveAllChatUser(userChatId: [String], callback: @escaping (_ users: [UserManager]) -> Void) {
+        let ref = Database.database().reference()
+        for userId in userChatId as [String] {
+            let path = ref.child("users").child(userId)
+            var users: [UserManager] = []
+            path.observe(.value, with: { snapshot in
+                if let user = UserManager(snapshot: snapshot) {
+                    users.append(user)
+                    callback(users)
+                }
+                UserManager.users = users
+                callback(users)
+            })
+        }
     }
     ///Send an email to the user to reset his password
     static func sendPasswordReset(withEmail email: String, callback: @escaping (Bool) -> ()) {

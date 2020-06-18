@@ -22,8 +22,7 @@ class ChatManager {
     func createNewChat(user2: String) {
         let users = [currentUserId, user2]
         let data: [String: Any] = ["users": users]
-        let database = chatDatabase
-        database.addDocument(data: data) { (error) in
+        chatDatabase.addDocument(data: data) { (error) in
             if let error = error {
                 print("Unable to create chat! \(error)")
                 return
@@ -71,7 +70,6 @@ class ChatManager {
                             return
                         }
                     }
-                } else {
                     self.createNewChat(user2: user2)
                 }
             }
@@ -92,5 +90,28 @@ class ChatManager {
                 return
             }
         })
+    }
+
+    func getChat(callback: @escaping (_ currentUserDocuments: [Chat]?) -> Void) {
+        guard let userId = currentUserId else { return }
+        let database = chatDatabase.whereField("users", arrayContains: userId)
+        database.getDocuments { (chatQuerySnap, error) in
+            if let error = error {
+                print("Error: \(error)")
+                return
+            } else {
+                guard let queryCount = chatQuerySnap?.documents.count else { return }
+                if queryCount >= 1 {
+                    for doc in chatQuerySnap!.documents {
+                        let chat = Chat(dictionary: doc.data())
+                        var chatDocuments = [Chat]()
+                        if let chat = chat {
+                            chatDocuments.append(chat)
+                        }
+                        callback(chatDocuments)
+                    }
+                }
+            }
+        }
     }
 }

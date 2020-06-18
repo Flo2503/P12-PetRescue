@@ -7,6 +7,7 @@
 
 import UIKit
 import InputBarAccessoryView
+import IQKeyboardManagerSwift
 import MessageKit
 
 @available(iOS 11.0, *)
@@ -30,6 +31,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        IQKeyboardManager.shared.enable = false
         getChat()
         noShadow()
     }

@@ -10,12 +10,14 @@ import UIKit
 import FirebaseDatabase
 
 class MainFeedController: NavBarSetUp {
+
     // MARK: - Properties, instances
     private var identifier = "segueToDetails"
     private var unwindIdentifier = "unwindToLogin"
     private let ref = Database.database().reference(withPath: "ads")
     private var ads: [AdManager] = []
     var selectedAd: AdManager?
+
     // MARK: - Refresh control
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -25,13 +27,16 @@ class MainFeedController: NavBarSetUp {
         refreshControl.tintColor = Colors.customGreen
         return refreshControl
     }()
+
     // MARK: - Outlets
     @IBOutlet weak var adTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     // MARK: - Actions
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
         adTableView?.reloadData()
     }
+
     // MARK: - Methods
     ///Call "retrieveData" method. Retrieve all ads and store them in ads array
     override func viewDidLoad() {
@@ -44,6 +49,7 @@ class MainFeedController: NavBarSetUp {
         })
         self.adTableView.addSubview(self.refreshControl)
     }
+
     ///Prepare for segue allowing to give the object of the selected ad to DetailsViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == identifier {
@@ -51,6 +57,7 @@ class MainFeedController: NavBarSetUp {
             detailsVC.selectedAd = selectedAd
         }
     }
+
     ///Handle refresh. Call "forceRetrieveData" allowing tu update ads in ''ads array" and display them
     @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
         AdManager.forceRetrieveData(callback: { newAd in
@@ -60,6 +67,7 @@ class MainFeedController: NavBarSetUp {
         })
     }
 }
+
 // MARK: - Extension
 ///TableView extension. Display ads stored in ads array. Call "retrieveImage" alllowing to download animal image and display it in cell
 extension MainFeedController: UITableViewDataSource, UITableViewDelegate {
