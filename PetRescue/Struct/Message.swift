@@ -4,12 +4,11 @@
 //
 //  Created by Flo on 09/06/2020.
 //  Copyright © 2020 Flo. All rights reserved.
-// swiftlint:disable identifier_name
+//  swiftlint:disable identifier_name
 
 import Foundation
 
 import UIKit
-import Firebase
 import FirebaseFirestore
 import MessageKit
 

@@ -12,8 +12,9 @@ class ChanelsViewController: NavBarSetUp {
 
     private let identifier = "segueToChatViewController"
     private var currentUserId = UserManager.currentConnectedUser
+    private let userManager = UserManager()
     private let chatManager = ChatManager()
-    private var chatUserDetails: [UserManager]?
+    private var chatUserDetails: [User]?
     private var messages: [Message] = []
     private var chats: [Chat] = []
     private var allUsersId: [String] = []
@@ -51,7 +52,7 @@ class ChanelsViewController: NavBarSetUp {
     }
 
     private func getUsersInformation() {
-        UserManager.retrieveAllChatUser(userChatId: contactId, callback: { users in
+        userManager.retrieveAllChatUser(userChatId: contactId, callback: { users in
             self.chatUserDetails = users
         })
     }

@@ -8,9 +8,10 @@
 import UIKit
 
 class SignUpViewController: NavBarSetUp {
-    // MARK: - Properties
+    // MARK: - Properties, instance
     private let identifier = "segueToAdoptions"
     private let errorMessage = "Informations incorrectes"
+    private let userManager = UserManager()
 
     // MARK: - Outlets
     @IBOutlet weak var name: UITextField!
@@ -63,7 +64,7 @@ class SignUpViewController: NavBarSetUp {
         if let email = emailAdress.text, let password = password.text, let name = name.text, let firstName = firstName.text {
             self.validateButton.isEnabled = false
             self.validateButton.layer.backgroundColor = Colors.customGreenLight.cgColor
-            UserManager.createUser(email: email, password: password, name: name, firstName: firstName, callback: {success in
+            userManager.createUser(email: email, password: password, name: name, firstName: firstName, callback: {success in
                 if success {
                     self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
                     self.performSegue(withIdentifier: self.identifier, sender: self)

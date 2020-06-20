@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 class ChatManager {
 
+    // MARK: - Properties, instances
     private var currentUserId = Auth.auth().currentUser?.uid
     private let chatDatabase = Firestore.firestore().collection("Chats")
     private var docReference: DocumentReference?

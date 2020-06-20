@@ -24,7 +24,8 @@ class MyProfilViewController: UIViewController {
     private let cellTitle = ["Nom", "Prénom", "Adresse mail"]
     private let section = ["Mes informations", "Modifier mon mot de passe", "Modifier mon adresse mail", "Déconnexion"]
     private var userInfo: [String] = []
-    private var user: UserManager?
+    private var user: User?
+    private let userManager = UserManager()
 
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
@@ -81,7 +82,7 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
         switch ProfilSection(rawValue: indexPath.section)! {
         case .first:
             cell.textLabel?.text = cellTitle[indexPath.row]
-            UserManager.retrieveUser(callback: { currentUser in
+            userManager.retrieveUser(callback: { currentUser in
                 self.user = currentUser
                 self.importDetails()
                 cell.detailTextLabel?.text = self.userInfo[indexPath.row]
@@ -110,7 +111,7 @@ extension MyProfilViewController: UITableViewDelegate, UITableViewDataSource {
             // Logout
             let alert = UIAlertController(title: "Vous êtes sur le point d'être déconnecté", message: "Continuer ?", preferredStyle: .actionSheet)
             let logout = UIAlertAction(title: "Oui", style: .default, handler: { _ in
-                if UserManager.signOut() == true {
+                if self.userManager.signOut() == true {
                     self.performSegue(withIdentifier: self.unwindIdentifier, sender: self)
                 } else {
                     print("logout failure")

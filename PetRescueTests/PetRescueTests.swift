@@ -28,8 +28,8 @@ class PetRescueTests: XCTestCase {
     }
 
     func testGivenEmptyValue_WhenAddedIdenticalPasswords_ThenReturnTrue() {
-        let password = "pastaBoxDu77"
-        let samePassword = "pastaBoxDu77"
+        let password = "mireilleMathieu46"
+        let samePassword = "mireilleMathieu46"
 
         let value = InputValuesManager.passwordsAreEquals(passwordOne: password, passwordTwo: samePassword)
 
@@ -37,8 +37,8 @@ class PetRescueTests: XCTestCase {
     }
 
     func testGivenEmptyValue_WhenAddedDifferentPasswords_ThenReturnFalse() {
-        let password = "pastaBoxDu77"
-        let sndPassword = "pastaBoxDu02"
+        let password = "mireilleMathieu46"
+        let sndPassword = "mireuilleMathew46"
 
         let value = InputValuesManager.passwordsAreEquals(passwordOne: password, passwordTwo: sndPassword)
 
@@ -46,7 +46,7 @@ class PetRescueTests: XCTestCase {
     }
 
     func testGivenEmptyValue_WhenAddedValidPassword_ThenReturnTrue() {
-        let validPassword = "pastaBoxDu77"
+        let validPassword = "mireilleMathieu46"
 
         let value = InputValuesManager.isValidPassword(password: validPassword)
 
@@ -54,7 +54,7 @@ class PetRescueTests: XCTestCase {
     }
 
     func testGivenEmptyValue_WhenAddedInvalidPassword_ThenReturnFalse() {
-        let invalidPassword = "pastaBox"
+        let invalidPassword = "mireilleMathieu"
 
         let value = InputValuesManager.isValidPassword(password: invalidPassword)
 

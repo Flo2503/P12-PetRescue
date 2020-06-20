@@ -15,12 +15,13 @@ enum Section: Int {
 
 class DetailsViewController: NavBarSetUp {
     // MARK: - Properties, instances
-    var selectedAd: AdManager?
-    private var adDetails: [String] = []
+    private let identifier = "segueToChat"
     private let cellTitle = ["Nom", "Type/Race", "Genre", "Age", "Localité"]
     private let section =  ["Profil du compagnon", "Informations complémentaires"]
+    private var adDetails: [String] = []
+    var selectedAd: Ad?
     private let chat = ChatManager()
-    private let identifier = "segueToChat"
+    private let adManager = AdManager()
 
     // MARK: - Oulets
     @IBOutlet weak var animalImage: UIImageView!
@@ -62,7 +63,7 @@ extension DetailsViewController {
     ///Retreive animal Image calling "retreiveImage" and display it in image view
     private func display() {
         if let urlImage = selectedAd?.animalImage {
-             AdManager.retrieveImage(url: urlImage, callback: { image in
+             adManager.retrieveImage(url: urlImage, callback: { image in
                 if let image = image {
                     self.animalImage.image = image
                 }

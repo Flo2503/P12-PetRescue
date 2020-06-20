@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class InputValuesManager {
+
     ///Check input value, return true if email address is valid
     static func isValidEmailAddress(emailAddressString: String?) -> Bool {
         guard emailAddressString != nil else { return false }
@@ -26,13 +27,15 @@ class InputValuesManager {
             print("invalid regex: \(error.localizedDescription)")
             returnValue = false
         }
-        return  returnValue
+        return returnValue
   }
+
     ///Check input values, return true if values are equals
     static func passwordsAreEquals(passwordOne: String?, passwordTwo: String?) -> Bool {
         guard (passwordOne != nil) && passwordTwo != nil else { return false }
         return passwordOne == passwordTwo
     }
+
     ///Check input value and return true if password is valid
     static func isValidPassword(password: String?) -> Bool {
         // at least one uppercase
@@ -43,6 +46,7 @@ class InputValuesManager {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}")
         return passwordTest.evaluate(with: password)
     }
+
     ///Return random string with length with the requested size in parameter
     static func randomString(length: Int) -> String {
       let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

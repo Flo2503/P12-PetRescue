@@ -13,6 +13,7 @@ class AddAdoptionViewController: UIViewController {
     private var imagePicker = UIImagePickerController()
     private let unwindIdentifier = "segueToMainFeed"
     private let user = UserManager.currentConnectedUser
+    private let adManager = AdManager()
 
     // MARK: - PickerView and SelectedSegment properties
     lazy var ageIndex = agePickerView.selectedRow(inComponent: 0).self
@@ -78,9 +79,9 @@ class AddAdoptionViewController: UIViewController {
             let details = infosTextView.text,
             let user = user,
             let image = animalPicture.image else { return }
-        AdManager.uploadMedia(name: name, image: image, completion: { url in
+        adManager.uploadMedia(name: name, image: image, completion: { url in
             guard let url = url else { return }
-            let animal = AdManager(age: self.age,
+            let animal = Ad(age: self.age,
                                        animalImage: url,
                                        details: details,
                                        gender: self.gender,
@@ -88,7 +89,7 @@ class AddAdoptionViewController: UIViewController {
                                        locality: locality,
                                        name: name,
                                        userId: user)
-            AdManager.createAd(animal: animal)
+            self.adManager.createAd(animal: animal)
         })
             performSegue(withIdentifier: unwindIdentifier, sender: self)
     }

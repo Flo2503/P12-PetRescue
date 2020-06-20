@@ -10,6 +10,9 @@ import UIKit
 
 class ResetPasswordViewController: UIViewController {
 
+    // MARK: - Instance
+    private let userManager = UserManager()
+
     // MARK: - Outlets
     @IBOutlet weak var labelResetPassword: UILabel!
     @IBOutlet weak var emailAdressResetPassword: UITextField!
@@ -21,7 +24,7 @@ class ResetPasswordViewController: UIViewController {
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdressResetPassword.text!)
         if isEmailAddressValid {
             if let email = emailAdressResetPassword.text {
-                UserManager.sendPasswordReset(withEmail: email, callback: { success in
+                userManager.sendPasswordReset(withEmail: email, callback: { success in
                     if success {
                         self.emailAdressResetPassword.layer.borderColor = Colors.customGreen.cgColor
                         self.labelResetPassword.text = "Mail envoyé avec succès !"

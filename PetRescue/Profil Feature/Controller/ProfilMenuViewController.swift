@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct Menu {
+    var title: String
+}
+
 class ProfilMenuViewController: NavBarSetUp {
 
     // MARK: - Property

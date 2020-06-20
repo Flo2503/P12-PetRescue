@@ -12,8 +12,9 @@ class MyAdViewController: NavBarSetUp {
     // MARK: - Properties, instances
     private var identifier = "segueFromMyAdToDetails"
     private let userId = UserManager.currentConnectedUser
-    private var ads: [AdManager] = []
-    var selectedAd: AdManager?
+    private let adManager = AdManager()
+    private var ads: [Ad] = []
+    var selectedAd: Ad?
 
     // MARK: - Outlet
     @IBOutlet weak var myAdTableView: UITableView!
@@ -24,7 +25,7 @@ class MyAdViewController: NavBarSetUp {
         super.viewDidLoad()
         self.myAdTableView.tableFooterView = UIView()
         guard let userId = userId else { return }
-        AdManager.getMyAds(userId: userId, callback: { ads in
+        adManager.getMyAds(userId: userId, callback: { ads in
             self.ads = ads
         })
     }
@@ -56,7 +57,7 @@ extension MyAdViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let animal = ads[indexPath.row]
         cell.configure(name: animal.name, locality: animal.locality)
-        AdManager.retrieveImage(url: animal.animalImage, callback: { image in
+        adManager.retrieveImage(url: animal.animalImage, callback: { image in
             if let image = image {
                 cell.configureImage(image: image)
             }
@@ -68,8 +69,8 @@ extension MyAdViewController: UITableViewDelegate, UITableViewDataSource {
         let animal = ads[indexPath.row]
         if editingStyle == .delete {
             removeAd(at: indexPath.row)
-            AdManager.removeAd(withId: animal.key)
-            AdManager.removePicture(url: animal.animalImage)
+            adManager.removeAd(withId: animal.key)
+            adManager.removePicture(url: animal.animalImage)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

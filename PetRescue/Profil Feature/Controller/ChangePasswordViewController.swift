@@ -14,6 +14,7 @@ class ChangePasswordViewController: UIViewController {
     private let invalidPasswordAlert = "Mot de passe non valide"
     private let passwordUpdateAlert = "Mot de passe modifié avec succès"
     private let networkErrorAlert = "Erreur réseau, merci de réessayer"
+    private let userManager = UserManager()
 
     // MARK: - Outlets
     @IBOutlet weak var labelNewPassword: UILabel!
@@ -74,7 +75,7 @@ class ChangePasswordViewController: UIViewController {
         if let newPassword = newPassword.text {
             self.validateButton.isEnabled = false
             self.validateButton.layer.backgroundColor = Colors.customGreenLight.cgColor
-            UserManager.updatePassword(password: newPassword, callback: { success in
+            userManager.updatePassword(password: newPassword, callback: { success in
                 if success {
                     self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
                     self.labelNewPassword.text = self.passwordUpdateAlert

@@ -12,12 +12,13 @@ import MessageKit
 
 class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
 
-    private var secondUser: UserManager?
-    private var currentUser: UserManager?
+    private var secondUser: User?
+    private var currentUser: User?
+    private var messages: [Message] = []
+    var selectedAd: Ad?
     private let currentUserId = UserManager.currentConnectedUser
     private let chatManager = ChatManager()
-    private var messages: [Message] = []
-    var selectedAd: AdManager?
+    private let userManager = UserManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,11 +59,11 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     }
 
     private func getUsers() {
-        UserManager.retrieveUser(callback: { user in
+        userManager.retrieveUser(callback: { user in
             self.currentUser = user
         })
         if let secondUserId = selectedAd?.userId {
-            UserManager.retrieveChatUser(userChatId: secondUserId, callback: { chatUser in
+            userManager.retrieveChatUser(userChatId: secondUserId, callback: { chatUser in
                 self.secondUser = chatUser
                 if let firstName = self.secondUser?.firstName {
                     self.title = firstName

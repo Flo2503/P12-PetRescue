@@ -9,10 +9,11 @@
 import UIKit
 
 class EditEmailViewController: UIViewController {
-    // MARK: - Properties
+    // MARK: - Properties, instance
     private let invalidEmaildAlert = "Adresse mail non valide"
     private let emailUpdateAlert = "Adresse mail modifiée avec succès"
     private let networkErrorAlert = "Erreur réseau, merci de réessayer"
+    private let userManager = UserManager()
 
     // MARK: - Outlets
     @IBOutlet weak var label: UILabel!
@@ -59,7 +60,7 @@ class EditEmailViewController: UIViewController {
         if let newEmail = newEmailAddress.text {
             self.validateButton.isEnabled = false
             self.validateButton.layer.backgroundColor = Colors.customGreenLight.cgColor
-            UserManager.updateEmail(email: newEmail, callback: { success in
+            userManager.updateEmail(email: newEmail, callback: { success in
                 if success {
                     self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
                     self.label.text = self.emailUpdateAlert

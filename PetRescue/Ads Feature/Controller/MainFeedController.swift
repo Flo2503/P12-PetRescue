@@ -15,8 +15,9 @@ class MainFeedController: NavBarSetUp {
     private var identifier = "segueToDetails"
     private var unwindIdentifier = "unwindToLogin"
     private let ref = Database.database().reference(withPath: "ads")
-    private var ads: [AdManager] = []
-    var selectedAd: AdManager?
+    private let adManager = AdManager()
+    private var ads: [Ad] = []
+    var selectedAd: Ad?
 
     // MARK: - Refresh control
     lazy var refreshControl: UIRefreshControl = {
@@ -42,7 +43,7 @@ class MainFeedController: NavBarSetUp {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-        AdManager.retrieveData(callback: { newAd in
+        adManager.retrieveData(callback: { newAd in
             self.activityIndicator.isHidden = true
             self.ads = newAd
             self.adTableView.reloadData()
@@ -60,7 +61,7 @@ class MainFeedController: NavBarSetUp {
 
     ///Handle refresh. Call "forceRetrieveData" allowing tu update ads in ''ads array" and display them
     @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
-        AdManager.forceRetrieveData(callback: { newAd in
+        adManager.forceRetrieveData(callback: { newAd in
             self.ads = newAd
             self.adTableView.reloadData()
             refreshControl.endRefreshing()
@@ -87,7 +88,7 @@ extension MainFeedController: UITableViewDataSource, UITableViewDelegate {
         }
         let animal = ads[indexPath.row]
 
-        AdManager.retrieveImage(url: animal.animalImage, callback: { image in
+        adManager.retrieveImage(url: animal.animalImage, callback: { image in
             if let image = image {
                 cell.configureImage(image: image)
             }

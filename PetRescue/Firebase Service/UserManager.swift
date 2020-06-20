@@ -11,41 +11,18 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-struct UserManager {
+class UserManager {
 
     // MARK: - Properties, instances
-    private static var user: UserManager?
-    private static var users: [UserManager]?
-    private static let storage = Storage.storage()
-    private static let dataBase = Database.database()
+    private var user: User?
+    private var users: [User]?
+    private let storage = Storage.storage()
+    private let dataBase = Database.database()
     static let currentConnectedUser = Auth.auth().currentUser?.uid
-    let name: String
-    let firstName: String
-    let emailAddress: String
-
-    // MARK: - Init
-    init(name: String, firstName: String, emailAdress: String) {
-        self.name = name
-        self.firstName = firstName
-        self.emailAddress = emailAdress
-    }
-
-    init?(snapshot: DataSnapshot) {
-        guard
-            let value = snapshot.value as? [String: AnyObject],
-            let name = value["name"] as? String,
-            let firstName = value["firstName"] as? String,
-            let emailAddress = value["emailAddress"] as? String else {
-                return  nil
-        }
-        self.name = name
-        self.firstName = firstName
-        self.emailAddress = emailAddress
-    }
 
     // MARK: - Firebase Methods
     ///Create user on Firebase Database and create user on Firebase authentification with password and email
-    static func createUser(email: String, password: String, name: String, firstName: String, callback: @escaping (Bool) -> ()) {
+    func createUser(email: String, password: String, name: String, firstName: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (_, success) in
             if success != nil {
                 callback(false)
@@ -61,7 +38,7 @@ struct UserManager {
     }
 
     ///Log in on Firebase with emaild and password
-    static func login(withEmail email: String, password: String, callback: @escaping (Bool) -> ()) {
+    func login(withEmail email: String, password: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, success) in
             if success != nil {
                 callback(false)
@@ -72,7 +49,7 @@ struct UserManager {
     }
 
     ///Allow to logout on firebase. Return true when done
-    static func signOut() -> Bool {
+    func signOut() -> Bool {
         do {
             try Auth.auth().signOut()
             return true
@@ -82,13 +59,13 @@ struct UserManager {
     }
 
     ///Allow to retrieve user information observing path on Firebase: users/userId
-    static func retrieveUser(callback: @escaping (_ currentUser: UserManager) -> Void) {
+    func retrieveUser(callback: @escaping (_ currentUser: User) -> Void) {
         let ref = Database.database().reference()
         if let userId = Auth.auth().currentUser?.uid {
             let path = ref.child("users").child(userId)
             path.observe(.value, with: { snapshot in
-                if let user = UserManager(snapshot: snapshot) {
-                    UserManager.user = user
+                if let user = User(snapshot: snapshot) {
+                    self.user = user
                     callback(user)
                 }
             })
@@ -96,36 +73,36 @@ struct UserManager {
     }
 
     ///Allow to retrieve second user information observing path on Firebase: users/userId
-    static func retrieveChatUser(userChatId: String, callback: @escaping (_ chatUser: UserManager) -> Void) {
+    func retrieveChatUser(userChatId: String, callback: @escaping (_ chatUser: User) -> Void) {
         let ref = Database.database().reference()
         let path = ref.child("users").child(userChatId)
         path.observe(.value, with: { snapshot in
-            if let user = UserManager(snapshot: snapshot) {
-                UserManager.user = user
+            if let user = User(snapshot: snapshot) {
+                self.user = user
                 callback(user)
             }
         })
     }
 
     ///Allow to retrieve second user information observing path on Firebase: users/userId
-    static func retrieveAllChatUser(userChatId: [String], callback: @escaping (_ users: [UserManager]) -> Void) {
+    func retrieveAllChatUser(userChatId: [String], callback: @escaping (_ users: [User]?) -> Void) {
         let ref = Database.database().reference()
         for userId in userChatId as [String] {
             let path = ref.child("users").child(userId)
-            var users: [UserManager] = []
+            var users: [User] = []
             path.observe(.value, with: { snapshot in
-                if let user = UserManager(snapshot: snapshot) {
+                if let user = User(snapshot: snapshot) {
                     users.append(user)
                     callback(users)
                 }
-                UserManager.users = users
+                self.users = users
                 callback(users)
             })
         }
     }
 
     ///Send an email to the user to reset his password
-    static func sendPasswordReset(withEmail email: String, callback: @escaping (Bool) -> ()) {
+    func sendPasswordReset(withEmail email: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().sendPasswordReset(withEmail: email) { success in
             if success != nil {
                 callback(false)
@@ -137,7 +114,7 @@ struct UserManager {
     }
 
     ///Allow to change password on Firebase Database
-    static func updatePassword(password: String, callback: @escaping (Bool) -> ()) {
+    func updatePassword(password: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().currentUser?.updatePassword(to: password) { success in
             if success != nil {
                 callback(false)
@@ -148,13 +125,13 @@ struct UserManager {
     }
 
     /// Allow to edit email on FIrebase database
-    static func updateEmail(email: String, callback: @escaping (Bool) -> ()) {
+    func updateEmail(email: String, callback: @escaping (Bool) -> ()) {
         Auth.auth().currentUser?.updateEmail(to: email) { success in
             if success != nil {
                 callback(false)
                 return
             } else {
-                let ref = dataBase.reference()
+                let ref = self.dataBase.reference()
                 if let userID = Auth.auth().currentUser?.uid {
                     ref.child("users").child(userID).updateChildValues(["emailAddress": email])
                 }
