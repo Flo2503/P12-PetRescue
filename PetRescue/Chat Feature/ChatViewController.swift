@@ -15,10 +15,10 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     private var secondUser: User?
     private var currentUser: User?
     private var messages: [Message] = []
-    var selectedAd: Ad?
     private let currentUserId = UserManager.currentConnectedUser
     private let chatManager = ChatManager()
     private let userManager = UserManager()
+    var selectedAd: Ad?
 
     override func viewDidLoad() {
         super.viewDidLoad()
