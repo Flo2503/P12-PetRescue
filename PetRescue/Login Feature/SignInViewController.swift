@@ -48,7 +48,7 @@ class SignInViewController: NavBarSetUp {
         securePassword()
         ItemSetUp.buttonSetUp([validateButton])
         ItemSetUp.textFieldSetUp([emailAdress, password])
-        emailAdress.text = "dupont@gmail.com"
+        emailAdress.text = "papimucho@msn.com"
         password.text = "Test1234"
     }
 
@@ -56,7 +56,7 @@ class SignInViewController: NavBarSetUp {
     private func login() {
         if let email = emailAdress.text?.trimmingCharacters(in: .whitespaces), let password = password.text?.trimmingCharacters(in: .whitespaces) {
             self.validateButton.isEnabled = false
-            self.validateButton.layer.backgroundColor = Colors.customGreenLight.cgColor
+            self.validateButton.layer.backgroundColor = Colors.customLightGreen.cgColor
             userManager.login(withEmail: email, password: password, callback: { success in
                 if success {
                     self.performSegue(withIdentifier: self.identifier, sender: self)

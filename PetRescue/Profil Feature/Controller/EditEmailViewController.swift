@@ -59,7 +59,7 @@ class EditEmailViewController: UIViewController {
     private func editEmail() {
         if let newEmail = newEmailAddress.text {
             self.validateButton.isEnabled = false
-            self.validateButton.layer.backgroundColor = Colors.customGreenLight.cgColor
+            self.validateButton.layer.backgroundColor = Colors.customLightGreen.cgColor
             userManager.updateEmail(email: newEmail, callback: { success in
                 if success {
                     self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor

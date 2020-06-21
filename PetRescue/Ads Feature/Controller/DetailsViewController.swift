@@ -27,6 +27,7 @@ class DetailsViewController: NavBarSetUp {
     // MARK: - Oulets
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var chatIcon: UIBarButtonItem!
 
     // MARK: - Methods
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class DetailsViewController: NavBarSetUp {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         if isMyAd() == true {
-            
+            chatIcon.isEnabled = false
         }
     }
 
@@ -59,7 +60,7 @@ class DetailsViewController: NavBarSetUp {
             adDetails.append(locality)
         }
     }
-
+    ///Return true if Ad user Id equal currentuser
     private func isMyAd() -> Bool {
         return selectedAd?.userId == currentUser
     }

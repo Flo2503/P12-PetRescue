@@ -74,7 +74,7 @@ class ChangePasswordViewController: UIViewController {
     private func changePassword() {
         if let newPassword = newPassword.text {
             self.validateButton.isEnabled = false
-            self.validateButton.layer.backgroundColor = Colors.customGreenLight.cgColor
+            self.validateButton.layer.backgroundColor = Colors.customLightGreen.cgColor
             userManager.updatePassword(password: newPassword, callback: { success in
                 if success {
                     self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor

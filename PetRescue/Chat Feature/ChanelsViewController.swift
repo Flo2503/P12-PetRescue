@@ -10,47 +10,53 @@ import UIKit
 
 class ChanelsViewController: NavBarSetUp {
 
+    // MARK: - Properties, instances
     private let identifier = "segueToChatViewController"
     private var currentUserId = UserManager.currentConnectedUser
     private let userManager = UserManager()
     private let chatManager = ChatManager()
     private var chatUserDetails: [User]?
-    private var messages: [Message] = []
     private var chats: [Chat] = []
     private var allUsersId: [String] = []
     private var contactId: [String] = []
 
+    // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
 
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.tableFooterView = UIView()
-        chatManager.getChat(callback: { chat in
+        chatManager.getChatUsers(callback: { chat in
             guard let chat = chat else { return }
             self.chats = chat
             self.getAllUsersId()
             self.getContactUserId()
             self.getUsersInformation()
             self.tableView.reloadData()
+            print(self.chats.description)
             print(self.contactId)
         })
     }
 
+    /// Get all users id from chat Firestore and append in allUsersId
     private func getAllUsersId() {
         for users in chats {
             allUsersId.append(contentsOf: users.users)
         }
     }
 
+    /// Get only users id different from current user id and append in contactId
     private func getContactUserId() {
-        for (index, element) in allUsersId.enumerated() where index % 2 == 1 {
-            contactId.append(element)
+        for userId in allUsersId where userId != currentUserId {
+            contactId.append(userId)
         }
     }
 
+    /// Retrieve users informations 
     private func getUsersInformation() {
         userManager.retrieveAllChatUser(userChatId: contactId, callback: { users in
             self.chatUserDetails = users

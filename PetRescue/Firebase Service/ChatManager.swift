@@ -36,7 +36,7 @@ class ChatManager {
         }
     }
 
-    /// Load chat if chat exists with both users. Returns an array of Message
+    /// Load chat if chat exists with both users. Else call createNewChat. Returns an array of Message
     func loadChat(user2: String, callback: @escaping (_ msg: [Message]) -> Void) {
         let database = chatDatabase.whereField("users", arrayContains: currentUserId!)
         database.getDocuments { (chatQuerySnap, error) in
@@ -97,8 +97,8 @@ class ChatManager {
         })
     }
 
-    /// Fetch chat
-    func getChat(callback: @escaping (_ currentUserDocuments: [Chat]?) -> Void) {
+    /// Fetch chat users id
+    func getChatUsers(callback: @escaping (_ currentUserDocuments: [Chat]?) -> Void) {
         guard let userId = currentUserId else { return }
         let database = chatDatabase.whereField("users", arrayContains: userId)
         database.getDocuments { (chatQuerySnap, error) in

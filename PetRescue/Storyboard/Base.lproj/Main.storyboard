@@ -1218,6 +1218,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="animalImage" destination="VcR-oK-usR" id="cf4-bm-Ooa"/>
+                        <outlet property="chatIcon" destination="A2X-KW-FF8" id="Oxu-KX-cvg"/>
                         <outlet property="tableView" destination="NHu-hf-vL9" id="hku-iZ-pH7"/>
                     </connections>
                 </viewController>
@@ -1440,7 +1441,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jRC-Ce-beF"/>
-        <segue reference="2LT-D5-HtY"/>
+        <segue reference="aKk-OI-y2m"/>
         <segue reference="IXy-xb-2dc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
