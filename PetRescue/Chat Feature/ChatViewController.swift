@@ -12,6 +12,7 @@ import MessageKit
 
 class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
 
+    // MARK: - Properties, instances
     private var secondUser: User?
     private var currentUser: User?
     private var messages: [Message] = []
@@ -20,6 +21,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     private let userManager = UserManager()
     var selectedAd: Ad?
 
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
@@ -40,6 +42,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         getUsers()
     }
 
+    ///Call loadChat to get users conversation
     private func getChat() {
         if let secondUserId = self.selectedAd?.userId {
             self.chatManager.loadChat(user2: secondUserId, callback: { msg in
@@ -50,6 +53,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         }
     }
 
+    /// Insert new message in messages array then display it
     private func insertNewMessage(_ message: Message) {
         messages.append(message)
         messagesCollectionView.reloadData()
@@ -58,6 +62,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         }
     }
 
+    /// Get users informations
     private func getUsers() {
         userManager.retrieveUser(callback: { user in
             self.currentUser = user
