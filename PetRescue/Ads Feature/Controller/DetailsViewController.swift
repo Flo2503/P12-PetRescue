@@ -19,9 +19,10 @@ class DetailsViewController: NavBarSetUp {
     private let cellTitle = ["Nom", "Type/Race", "Genre", "Age", "Localité"]
     private let section =  ["Profil du compagnon", "Informations complémentaires"]
     private var adDetails: [String] = []
-    var selectedAd: Ad?
+    private let currentUser = UserManager.currentConnectedUser
     private let chat = ChatManager()
     private let adManager = AdManager()
+    var selectedAd: Ad?
 
     // MARK: - Oulets
     @IBOutlet weak var animalImage: UIImageView!
@@ -36,6 +37,9 @@ class DetailsViewController: NavBarSetUp {
         self.tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
+        if isMyAd() == true {
+            
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,6 +58,10 @@ class DetailsViewController: NavBarSetUp {
             adDetails.append(age)
             adDetails.append(locality)
         }
+    }
+
+    private func isMyAd() -> Bool {
+        return selectedAd?.userId == currentUser
     }
 }
 

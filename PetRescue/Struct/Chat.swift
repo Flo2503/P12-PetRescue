@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 
 struct Chat {
+    // MARK: - Chat Object
     var users: [String]
     var dictionary: [String: Any] {
         return ["users": users]
     }
 }
 
+// MARK: - Extension Init
 extension Chat {
     init?(dictionary: [String: Any]) {
         guard let chatUsers = dictionary["users"] as? [String] else { return nil }

@@ -14,6 +14,7 @@ import MessageKit
 
 struct Message {
 
+    // MARK: - Message Object
     var id: String
     var content: String
     var created: Timestamp
@@ -30,6 +31,8 @@ struct Message {
     }
 }
 
+// MARK: - Extension
+// Iinit
 extension Message {
     init?(dictionary: [String: Any]) {
 
@@ -48,6 +51,7 @@ extension Message {
     }
 }
 
+// Message Protocol
 extension Message: MessageType {
     var sender: SenderType {
         return Sender(senderId: senderID, displayName: senderName)

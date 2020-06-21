@@ -13,13 +13,14 @@ import FirebaseFirestore
 class ChatManager {
 
     // MARK: - Properties, instances
-    private var currentUserId = Auth.auth().currentUser?.uid
+    private var currentUserId = UserManager.currentConnectedUser
     private let chatDatabase = Firestore.firestore().collection("Chats")
     private var docReference: DocumentReference?
+    private var messages: [Message] = []
     var timeStamp = Timestamp()
 
-    private var messages: [Message] = []
-
+    // MARK: - Methods
+    /// Create new chat on Firestore if no chat already exists with both users
     func createNewChat(user2: String) {
         let users = [currentUserId, user2]
         let data: [String: Any] = ["users": users]
@@ -35,6 +36,7 @@ class ChatManager {
         }
     }
 
+    /// Load chat if chat exists with both users. Returns an array of Message
     func loadChat(user2: String, callback: @escaping (_ msg: [Message]) -> Void) {
         let database = chatDatabase.whereField("users", arrayContains: currentUserId!)
         database.getDocuments { (chatQuerySnap, error) in
@@ -71,12 +73,14 @@ class ChatManager {
                             return
                         }
                     }
+                } else {
                     self.createNewChat(user2: user2)
                 }
             }
         }
     }
 
+    /// Save messages on Firestore
     func save(_ message: Message) {
         let data: [String: Any] = [
             "content": message.content,
@@ -93,6 +97,7 @@ class ChatManager {
         })
     }
 
+    /// Fetch chat
     func getChat(callback: @escaping (_ currentUserDocuments: [Chat]?) -> Void) {
         guard let userId = currentUserId else { return }
         let database = chatDatabase.whereField("users", arrayContains: userId)

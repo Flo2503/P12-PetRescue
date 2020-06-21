@@ -27,6 +27,8 @@ class MyAdViewController: NavBarSetUp {
         guard let userId = userId else { return }
         adManager.getMyAds(userId: userId, callback: { ads in
             self.ads = ads
+            self.myAdTableView.reloadData()
+            print(ads.description)
         })
     }
 

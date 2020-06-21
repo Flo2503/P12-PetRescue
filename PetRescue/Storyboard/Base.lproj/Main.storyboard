@@ -1041,15 +1041,15 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" red="0.56984013320000004" green="0.85679477449999997" blue="0.68625348809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="myAdCell" rowHeight="100" id="93r-fa-Q0E" customClass="MyAdTableViewCell" customModule="PetRescue" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="myAdCell" id="93r-fa-Q0E" customClass="MyAdTableViewCell" customModule="PetRescue" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="93r-fa-Q0E" id="8ks-07-YgZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvQ-Ya-pT2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" id="8EU-fR-C2n">
                                                             <rect key="frame" x="8" y="10" width="80" height="80"/>
@@ -1062,7 +1062,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aky-VN-3av">
-                                                            <rect key="frame" x="109" y="54" width="305" height="21"/>
+                                                            <rect key="frame" x="109" y="54.5" width="305" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1075,7 +1075,7 @@
                                                         <constraint firstItem="aky-VN-3av" firstAttribute="leading" secondItem="8EU-fR-C2n" secondAttribute="trailing" constant="21" id="CM5-Zv-R9c"/>
                                                         <constraint firstItem="qeo-J5-azU" firstAttribute="top" secondItem="KvQ-Ya-pT2" secondAttribute="top" constant="25" id="JYg-Pg-vyj"/>
                                                         <constraint firstItem="qeo-J5-azU" firstAttribute="leading" secondItem="8EU-fR-C2n" secondAttribute="trailing" constant="21" id="Zdg-Hk-bWe"/>
-                                                        <constraint firstAttribute="height" constant="100" id="hGO-uI-WLc"/>
+                                                        <constraint firstAttribute="height" constant="100" id="lfm-a1-lHR"/>
                                                         <constraint firstAttribute="bottom" secondItem="aky-VN-3av" secondAttribute="bottom" constant="25" id="xrQ-uj-98y"/>
                                                     </constraints>
                                                 </view>
@@ -1439,7 +1439,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XK4-cT-V1B"/>
+        <segue reference="jRC-Ce-beF"/>
         <segue reference="2LT-D5-HtY"/>
         <segue reference="IXy-xb-2dc"/>
     </inferredMetricsTieBreakers>
