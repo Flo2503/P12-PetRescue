@@ -19,7 +19,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     private let currentUserId = UserManager.currentConnectedUser
     private let chatManager = ChatManager()
     private let userManager = UserManager()
-    var userDetails: User?
+    var selectedChannelUser: User?
     var selectedAd: Ad?
 
     // MARK: - Methods
@@ -34,7 +34,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        IQKeyboardManager.shared.enable = false
+        IQKeyboardManager.shared.enable = true
         getChat()
         noShadow()
     }
@@ -48,8 +48,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         if let secondUserId = self.selectedAd?.userId {
             self.chatManager.loadChat(user2: secondUserId, callback: { msg in
                 self.messages = msg
-                self.messagesCollectionView.reloadData()
                 self.messagesCollectionView.scrollToBottom(animated: true)
+                self.messagesCollectionView.reloadData()
             })
         }
     }

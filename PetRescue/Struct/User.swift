@@ -15,12 +15,14 @@ struct User {
     let name: String
     let firstName: String
     let emailAddress: String
+    let userId: String
 
     // MARK: - Init
-    init(name: String, firstName: String, emailAdress: String) {
+    init(name: String, firstName: String, emailAdress: String, userId: String) {
         self.name = name
         self.firstName = firstName
         self.emailAddress = emailAdress
+        self.userId = userId
     }
 
     init?(snapshot: DataSnapshot) {
@@ -28,11 +30,13 @@ struct User {
             let value = snapshot.value as? [String: AnyObject],
             let name = value["name"] as? String,
             let firstName = value["firstName"] as? String,
-            let emailAddress = value["emailAddress"] as? String else {
+            let emailAddress = value["emailAddress"] as? String,
+            let userId = value["userId"] as? String else {
                 return  nil
         }
         self.name = name
         self.firstName = firstName
         self.emailAddress = emailAddress
+        self.userId = userId
     }
 }

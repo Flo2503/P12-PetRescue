@@ -30,7 +30,7 @@ class UserManager {
             } else {
                 let ref = Database.database().reference()
                 if let userID = Auth.auth().currentUser?.uid {
-                    ref.child("users").child(userID).setValue(["name": name, "firstName": firstName, "emailAddress": email])
+                    ref.child("users").child(userID).setValue(["name": name, "firstName": firstName, "emailAddress": email, "userId": userID])
                 }
             }
             callback(true)
@@ -82,19 +82,6 @@ class UserManager {
                 callback(user)
             }
         })
-    }
-
-    ///Allow to retrieve second user information observing path on Firebase: users/userId
-    func retrieveAllChatUser(userChatId: [String], callback: @escaping (_ users: User) -> Void) {
-        let ref = Database.database().reference()
-        for userId in userChatId {
-            let path = ref.child("users").child(userId)
-            path.observeSingleEvent(of: .value, with: { snapshot in
-                if let user = User(snapshot: snapshot) {
-                    callback(user)
-                }
-            })
-        }
     }
 
     ///Send an email to the user to reset his password

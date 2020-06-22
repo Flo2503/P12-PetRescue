@@ -16,6 +16,7 @@ class ChanelsViewController: NavBarSetUp {
     private let userManager = UserManager()
     private let chatManager = ChatManager()
     private var chatUsersDetails: [User] = []
+    var selectedChannelUser: User?
 
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
@@ -34,11 +35,18 @@ class ChanelsViewController: NavBarSetUp {
         })
     }
 
-    /// Retrieve users informations 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == identifier {
+               let detailsVC = segue.destination as! ChatViewController
+               detailsVC.selectedChannelUser = selectedChannelUser
+           }
+       }
+
+    /// Retrieve users informations. Callback returns an user and append it in chatUserDetails
     private func getUsersInformation(chats: [Chat]) {
         for chat in chats {
             for userId in chat.users where userId != currentUserId {
-                userManager.retrieveAllChatUser(userChatId: [userId], callback: { user in
+                userManager.retrieveChatUser(userChatId: userId, callback: { user in
                     self.chatUsersDetails.append(user)
                     self.tableView.reloadData()
                 })
@@ -63,6 +71,7 @@ extension ChanelsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedChannelUser = chatUsersDetails[indexPath.row]
         self.performSegue(withIdentifier: identifier, sender: self)
     }
 
