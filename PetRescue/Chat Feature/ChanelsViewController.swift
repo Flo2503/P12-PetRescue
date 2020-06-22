@@ -15,10 +15,7 @@ class ChanelsViewController: NavBarSetUp {
     private var currentUserId = UserManager.currentConnectedUser
     private let userManager = UserManager()
     private let chatManager = ChatManager()
-    private var chatUserDetails: [User]?
-    private var chats: [Chat] = []
-    private var allUsersId: [String] = []
-    private var contactId: [String] = []
+    private var chatUsersDetails: [User] = []
 
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
@@ -30,37 +27,23 @@ class ChanelsViewController: NavBarSetUp {
 
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.tableFooterView = UIView()
+        self.chatUsersDetails = []
         chatManager.getChatUsers(callback: { chat in
             guard let chat = chat else { return }
-            self.chats = chat
-            self.getAllUsersId()
-            self.getContactUserId()
-            self.getUsersInformation()
-            self.tableView.reloadData()
-            print(self.chats.description)
-            print(self.contactId)
+            self.getUsersInformation(chats: chat)
         })
-    }
-
-    /// Get all users id from chat Firestore and append in allUsersId
-    private func getAllUsersId() {
-        for users in chats {
-            allUsersId.append(contentsOf: users.users)
-        }
-    }
-
-    /// Get only users id different from current user id and append in contactId
-    private func getContactUserId() {
-        for userId in allUsersId where userId != currentUserId {
-            contactId.append(userId)
-        }
     }
 
     /// Retrieve users informations 
-    private func getUsersInformation() {
-        userManager.retrieveAllChatUser(userChatId: contactId, callback: { users in
-            self.chatUserDetails = users
-        })
+    private func getUsersInformation(chats: [Chat]) {
+        for chat in chats {
+            for userId in chat.users where userId != currentUserId {
+                userManager.retrieveAllChatUser(userChatId: [userId], callback: { user in
+                    self.chatUsersDetails.append(user)
+                    self.tableView.reloadData()
+                })
+            }
+        }
     }
 }
 
@@ -68,18 +51,13 @@ class ChanelsViewController: NavBarSetUp {
 // Table view extension
 extension ChanelsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let chatUserDetails = chatUserDetails else {
-            return 0
-        }
+        let chatUserDetails = chatUsersDetails
         return chatUserDetails.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chanelCell", for: indexPath)
-        guard let chatUserDetails = chatUserDetails else {
-            return UITableViewCell()
-        }
-        let user = chatUserDetails[indexPath.row]
+        let user = self.chatUsersDetails[indexPath.row]
         cell.textLabel?.text = user.firstName
         return cell
     }

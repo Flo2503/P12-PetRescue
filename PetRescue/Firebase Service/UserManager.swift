@@ -85,18 +85,14 @@ class UserManager {
     }
 
     ///Allow to retrieve second user information observing path on Firebase: users/userId
-    func retrieveAllChatUser(userChatId: [String], callback: @escaping (_ users: [User]?) -> Void) {
+    func retrieveAllChatUser(userChatId: [String], callback: @escaping (_ users: User) -> Void) {
         let ref = Database.database().reference()
-        for userId in userChatId as [String] {
+        for userId in userChatId {
             let path = ref.child("users").child(userId)
-            var users: [User] = []
-            path.observe(.value, with: { snapshot in
+            path.observeSingleEvent(of: .value, with: { snapshot in
                 if let user = User(snapshot: snapshot) {
-                    users.append(user)
-                    callback(users)
+                    callback(user)
                 }
-                self.users = users
-                callback(users)
             })
         }
     }

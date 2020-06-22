@@ -19,6 +19,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     private let currentUserId = UserManager.currentConnectedUser
     private let chatManager = ChatManager()
     private let userManager = UserManager()
+    var userDetails: User?
     var selectedAd: Ad?
 
     // MARK: - Methods
