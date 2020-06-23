@@ -16,7 +16,7 @@ class ChanelsViewController: NavBarSetUp {
     private let userManager = UserManager()
     private let chatManager = ChatManager()
     private var chatUsersDetails: [User] = []
-    var selectedChannelUser: User?
+    var secondUserId: String?
 
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
@@ -38,7 +38,7 @@ class ChanelsViewController: NavBarSetUp {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if segue.identifier == identifier {
                let detailsVC = segue.destination as! ChatViewController
-               detailsVC.selectedChannelUser = selectedChannelUser
+               detailsVC.secondUserId = secondUserId
            }
        }
 
@@ -71,7 +71,7 @@ extension ChanelsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedChannelUser = chatUsersDetails[indexPath.row]
+        secondUserId = chatUsersDetails[indexPath.row].userId
         self.performSegue(withIdentifier: identifier, sender: self)
     }
 

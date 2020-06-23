@@ -23,11 +23,20 @@ class DetailsViewController: NavBarSetUp {
     private let chat = ChatManager()
     private let adManager = AdManager()
     var selectedAd: Ad?
+    var secondUserId: String?
 
     // MARK: - Oulets
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var chatIcon: UIBarButtonItem!
+
+    // MARK: - Action
+    @IBAction func tapChatIcon(_ sender: Any) {
+        if let userId = selectedAd?.userId {
+            secondUserId = userId
+        }
+        performSegue(withIdentifier: identifier, sender: self)
+    }
 
     // MARK: - Methods
     override func viewDidLoad() {
@@ -46,7 +55,7 @@ class DetailsViewController: NavBarSetUp {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == identifier {
             let detailsVC = segue.destination as! ChatViewController
-            detailsVC.selectedAd = selectedAd
+            detailsVC.secondUserId = secondUserId
         }
     }
 

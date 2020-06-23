@@ -19,8 +19,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     private let currentUserId = UserManager.currentConnectedUser
     private let chatManager = ChatManager()
     private let userManager = UserManager()
-    var selectedChannelUser: User?
-    var selectedAd: Ad?
+    var secondUserId: String?
 
     // MARK: - Methods
     override func viewDidLoad() {
@@ -34,9 +33,10 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        IQKeyboardManager.shared.enable = true
-        getChat()
+        IQKeyboardManager.shared.enable = false
         noShadow()
+        print(secondUserId ?? "nothing")
+        getChat()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,8 +45,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
     ///Call loadChat to get users conversation
     private func getChat() {
-        if let secondUserId = self.selectedAd?.userId {
-            self.chatManager.loadChat(user2: secondUserId, callback: { msg in
+        if let userId = secondUserId {
+            self.chatManager.loadChat(user2: userId, callback: { msg in
                 self.messages = msg
                 self.messagesCollectionView.scrollToBottom(animated: true)
                 self.messagesCollectionView.reloadData()
@@ -68,8 +68,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         userManager.retrieveUser(callback: { user in
             self.currentUser = user
         })
-        if let secondUserId = selectedAd?.userId {
-            userManager.retrieveChatUser(userChatId: secondUserId, callback: { chatUser in
+        if let userId = secondUserId {
+            userManager.retrieveChatUser(userChatId: userId, callback: { chatUser in
                 self.secondUser = chatUser
                 if let firstName = self.secondUser?.firstName {
                     self.title = firstName
