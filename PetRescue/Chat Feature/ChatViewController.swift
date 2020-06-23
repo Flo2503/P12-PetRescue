@@ -53,6 +53,7 @@ class ChatViewController: MessagesViewController {
         if let userId = secondUserId {
             self.chatManager.loadChat(user2: userId, callback: { msg in
                 self.messages = msg
+                self.messagesCollectionView.reloadData()
                 self.messagesCollectionView.scrollToBottom(animated: true)
             })
         }
@@ -100,10 +101,6 @@ extension ChatViewController: MessagesDataSource {
     }
 
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return 1
-    }
-
-    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
         messages.count
     }
 }
@@ -151,7 +148,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                                   created: chatManager.timeStamp,
                                   senderID: currentUserId,
                                   senderName: currentUserFirstName)
-            //messages.append(message)
+            messages.append(message)
             insertNewMessage(message)
             chatManager.save(message)
             inputBar.inputTextView.text = ""
