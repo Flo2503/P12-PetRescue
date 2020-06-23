@@ -10,13 +10,19 @@ import InputBarAccessoryView
 import IQKeyboardManagerSwift
 import MessageKit
 
-class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
+public struct Sender: SenderType {
+    public let senderId: String
+
+    public let displayName: String
+}
+
+class ChatViewController: MessagesViewController {
 
     // MARK: - Properties, instances
     private var secondUser: User?
     private var currentUser: User?
     private var messages: [Message] = []
-    private let currentUserId = UserManager.currentConnectedUser
+    private let currentUserId = UserManager.currentUserId
     private let chatManager = ChatManager()
     private let userManager = UserManager()
     var secondUserId: String?
@@ -35,7 +41,6 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         messagesCollectionView.messagesDisplayDelegate = self
         IQKeyboardManager.shared.enable = false
         noShadow()
-        print(secondUserId ?? "nothing")
         getChat()
     }
 
@@ -49,7 +54,6 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
             self.chatManager.loadChat(user2: userId, callback: { msg in
                 self.messages = msg
                 self.messagesCollectionView.scrollToBottom(animated: true)
-                self.messagesCollectionView.reloadData()
             })
         }
     }
@@ -82,27 +86,13 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
+}
 
-    // MARK: - InputBarAccessoryViewDelegate
-    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        if let currentUserId = currentUserId, let currentUserFirstName = currentUser?.firstName {
-            let message = Message(id: UUID().uuidString,
-                                  content: text,
-                                  created: chatManager.timeStamp,
-                                  senderID: currentUserId,
-                                  senderName: currentUserFirstName)
-            //messages.append(message)
-            insertNewMessage(message)
-            chatManager.save(message)
-            inputBar.inputTextView.text = ""
-            messagesCollectionView.reloadData()
-            messagesCollectionView.scrollToBottom(animated: true)
-        }
-    }
+// MARK: - Extension MessagesDataSource
+extension ChatViewController: MessagesDataSource {
 
-    // MARK: - MessagesDataSource
     func currentSender() -> SenderType {
-        return Sender(senderId: currentUserId!, displayName: currentUser!.firstName)
+        return Sender(senderId: currentUserId!, displayName: currentUser?.firstName ?? "Name")
     }
 
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
@@ -110,20 +100,25 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     }
 
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        if messages.count == 0 {
-            print("No messages to display")
-            return 0
-        } else {
-            return messages.count
-        }
+        return 1
     }
 
-    // MARK: - MessagesLayoutDelegate
+    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
+        messages.count
+    }
+}
+
+// MARK: - Extension MessagesDisplayDelegate
+extension ChatViewController: MessagesDisplayDelegate {
+
     func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return .zero
     }
+}
 
-    // MARK: - MessagesDisplayDelegate
+// MARK: - Extension MessagesLayoutDelegate
+extension ChatViewController: MessagesLayoutDelegate {
+
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ? Colors.currentUserMessageColor : Colors.secondUserMessageColor
     }
@@ -143,5 +138,25 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight: .bottomLeft
         return .bubbleTail(corner, .curved)
+    }
+}
+
+// MARK: - Extension InputBarAccessoryViewDelegate
+extension ChatViewController: InputBarAccessoryViewDelegate {
+
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        if let currentUserId = currentUserId, let currentUserFirstName = currentUser?.firstName {
+            let message = Message(id: UUID().uuidString,
+                                  content: text,
+                                  created: chatManager.timeStamp,
+                                  senderID: currentUserId,
+                                  senderName: currentUserFirstName)
+            //messages.append(message)
+            insertNewMessage(message)
+            chatManager.save(message)
+            inputBar.inputTextView.text = ""
+            messagesCollectionView.reloadData()
+            messagesCollectionView.scrollToBottom(animated: true)
+        }
     }
 }

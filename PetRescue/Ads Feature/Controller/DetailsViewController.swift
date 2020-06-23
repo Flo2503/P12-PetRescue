@@ -19,7 +19,7 @@ class DetailsViewController: NavBarSetUp {
     private let cellTitle = ["Nom", "Type/Race", "Genre", "Age", "Localité"]
     private let section =  ["Profil du compagnon", "Informations complémentaires"]
     private var adDetails: [String] = []
-    private let currentUser = UserManager.currentConnectedUser
+    private let currentUser = UserManager.currentUserId
     private let chat = ChatManager()
     private let adManager = AdManager()
     var selectedAd: Ad?

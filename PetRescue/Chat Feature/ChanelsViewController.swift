@@ -12,7 +12,7 @@ class ChanelsViewController: NavBarSetUp {
 
     // MARK: - Properties, instances
     private let identifier = "segueToChatViewController"
-    private var currentUserId = UserManager.currentConnectedUser
+    private var currentUserId = UserManager.currentUserId
     private let userManager = UserManager()
     private let chatManager = ChatManager()
     private var chatUsersDetails: [User] = []

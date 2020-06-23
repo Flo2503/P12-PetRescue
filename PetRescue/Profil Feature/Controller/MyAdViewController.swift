@@ -11,7 +11,7 @@ import UIKit
 class MyAdViewController: NavBarSetUp {
     // MARK: - Properties, instances
     private var identifier = "segueFromMyAdToDetails"
-    private let userId = UserManager.currentConnectedUser
+    private let userId = UserManager.currentUserId
     private let adManager = AdManager()
     private var ads: [Ad] = []
     var selectedAd: Ad?

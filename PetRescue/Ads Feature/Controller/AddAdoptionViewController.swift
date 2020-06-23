@@ -12,7 +12,7 @@ class AddAdoptionViewController: UIViewController {
     // MARK: - Properties, instances
     private var imagePicker = UIImagePickerController()
     private let unwindIdentifier = "segueToMainFeed"
-    private let user = UserManager.currentConnectedUser
+    private let user = UserManager.currentUserId
     private let adManager = AdManager()
 
     // MARK: - PickerView and SelectedSegment properties

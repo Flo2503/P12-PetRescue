@@ -13,7 +13,7 @@ import FirebaseFirestore
 class ChatManager {
 
     // MARK: - Properties, instances
-    private var currentUserId = UserManager.currentConnectedUser
+    private var currentUserId = UserManager.currentUserId
     private let chatDatabase = Firestore.firestore().collection("Chats")
     private var docReference: DocumentReference?
     private var messages: [Message] = []

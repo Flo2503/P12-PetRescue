@@ -18,7 +18,7 @@ class UserManager {
     private var users: [User]?
     private let storage = Storage.storage()
     private let dataBase = Database.database()
-    static let currentConnectedUser = Auth.auth().currentUser?.uid
+    static let currentUserId = Auth.auth().currentUser?.uid
 
     // MARK: - Firebase Methods
     ///Create user on Firebase Database and create user on Firebase authentification with password and email
