@@ -88,7 +88,8 @@ class ChatManager {
             "senderID": message.senderID,
             "senderName": message.senderName
         ]
-        docReference?.collection("thread").addDocument(data: data, completion: { (error) in
+        guard let docRef = docReference?.collection else { return }
+        docRef("thread").addDocument(data: data, completion: { (error) in
             if let error = error {
                 print("Error Sending message: \(error)")
                 return
@@ -107,7 +108,8 @@ class ChatManager {
             } else {
                 guard let queryCount = chatQuerySnap?.documents.count else { return }
                 if queryCount >= 1 {
-                    for doc in chatQuerySnap!.documents {
+                    guard let documents = chatQuerySnap?.documents else { return }
+                    for doc in documents {
                         let chat = Chat(dictionary: doc.data())
                         var chatDocuments = [Chat]()
                         if let chat = chat {
