@@ -25,7 +25,7 @@ class MainFeedController: NavBarSetUp {
         refreshControl.addTarget(self, action:
                      #selector(MainFeedController.handleRefresh(_:)),
                                  for: UIControl.Event.valueChanged)
-        refreshControl.tintColor = Colors.customGreen
+        refreshControl.tintColor = UIColor.red
         return refreshControl
     }()
 

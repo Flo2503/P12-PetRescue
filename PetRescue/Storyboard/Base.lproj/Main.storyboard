@@ -996,6 +996,11 @@
                                     <outlet property="delegate" destination="kGQ-OA-Gzt" id="xmY-u2-Rhm"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" id="oO3-DQ-gys">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1011,6 +1016,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KHy-eR-EPf"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="oO3-DQ-gys" id="uyX-Lt-0gZ"/>
                         <outlet property="tableView" destination="B8g-M8-7ra" id="qyM-Pe-OaG"/>
                         <segue destination="wO3-7c-uWg" kind="show" identifier="segueToChatViewController" id="2LT-D5-HtY"/>
                     </connections>
@@ -1441,8 +1447,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jRC-Ce-beF"/>
-        <segue reference="ASP-54-kt2"/>
+        <segue reference="XK4-cT-V1B"/>
+        <segue reference="2LT-D5-HtY"/>
         <segue reference="IXy-xb-2dc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53725490196078429" green="0.80784313725490198" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
