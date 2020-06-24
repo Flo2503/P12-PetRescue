@@ -44,13 +44,11 @@ class ChatManager {
                 print("Error: \(error)")
                 return
             } else {
-                guard let queryCount = chatQuerySnap?.documents.count else {
-                    return
-                }
+                guard let queryCount = chatQuerySnap?.documents.count else { return }
                 if queryCount >= 1 {
                     for doc in chatQuerySnap!.documents {
-                        let chat = Chat(dictionary: doc.data())
-                        if (chat?.users.contains(user2))! {
+                        guard let chat = Chat(dictionary: doc.data()) else { return }
+                        if chat.users.contains(user2) {
                             self.docReference = doc.reference
                              doc.reference.collection("thread")
                                 .order(by: "created", descending: false)
@@ -61,7 +59,8 @@ class ChatManager {
                             } else {
                                 self.messages.removeAll()
                                 var retreiveMessages: [Message] = []
-                                for message in threadQuery!.documents {
+                                guard let documents = threadQuery?.documents else { return }
+                                for message in documents {
                                     if let storedMessage = Message(dictionary: message.data()) {
                                         retreiveMessages.append(storedMessage)
                                         print("Data: \(storedMessage.content)")

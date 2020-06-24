@@ -21,7 +21,7 @@ class ChanelsViewController: NavBarSetUp {
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
