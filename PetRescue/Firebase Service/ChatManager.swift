@@ -63,7 +63,6 @@ class ChatManager {
                                 for message in documents {
                                     if let storedMessage = Message(dictionary: message.data()) {
                                         retreiveMessages.append(storedMessage)
-                                        print("Data: \(storedMessage.content)")
                                     }
                                 }
                                 callback(retreiveMessages)

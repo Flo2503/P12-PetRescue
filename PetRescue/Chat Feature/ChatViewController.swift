@@ -93,7 +93,11 @@ class ChatViewController: MessagesViewController {
 extension ChatViewController: MessagesDataSource {
 
     func currentSender() -> SenderType {
-        return Sender(senderId: currentUserId!, displayName: currentUser?.firstName ?? "Name")
+        if let userId = currentUserId, let name = currentUser?.firstName {
+            return Sender(senderId: userId, displayName: name)
+        } else {
+            return Sender(senderId: "defaultId", displayName: "defaultName")
+        }
     }
 
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {

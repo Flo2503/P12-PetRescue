@@ -20,7 +20,6 @@ class ChanelsViewController: NavBarSetUp {
 
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     // MARK: - Methods
     override func viewDidLoad() {
@@ -32,7 +31,6 @@ class ChanelsViewController: NavBarSetUp {
         self.chatUsersDetails = []
         chatManager.getChatUsers(callback: { chat in
             guard let chat = chat else { return }
-            self.activityIndicator.isHidden = true
             self.getUsersInformation(chats: chat)
         })
     }
