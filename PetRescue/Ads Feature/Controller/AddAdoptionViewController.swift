@@ -64,6 +64,8 @@ class AddAdoptionViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if NetworkManager.connection() == false {
             NetworkManager.alert(controller: self)
+            addButton.setTitleColor(.red, for: .normal)
+            addButton.isEnabled = false
         }
     }
 

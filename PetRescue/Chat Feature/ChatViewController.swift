@@ -47,6 +47,7 @@ class ChatViewController: MessagesViewController {
     override func viewDidAppear(_ animated: Bool) {
         if NetworkManager.connection() == false {
             NetworkManager.alert(controller: self)
+            messageInputBar.sendButton.setTitleColor(UIColor.red, for: .disabled)
         }
     }
 

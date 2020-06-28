@@ -55,6 +55,8 @@ class ResetPasswordViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if NetworkManager.connection() == false {
             NetworkManager.alert(controller: self)
+            validateResetPassword.layer.backgroundColor = Colors.customLightGreen.cgColor
+            validateResetPassword.isEnabled = false
         }
     }
 }

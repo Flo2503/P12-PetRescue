@@ -57,6 +57,8 @@ class ChangePasswordViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if NetworkManager.connection() == false {
             NetworkManager.alert(controller: self)
+            validateButton.layer.backgroundColor = Colors.customLightGreen.cgColor
+            validateButton.isEnabled = false
         }
     }
 

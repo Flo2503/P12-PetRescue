@@ -196,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */,
+				5C24729324A8A96200E9028C /* NetworkManager.swift */,
 				5C9D4CC72457496C0015AB09 /* NavBarSetUp.swift */,
 				5CA12F012458DFCD006AC92B /* ItemSetUp.swift */,
 				5CF24C5B24538DCC00077B33 /* Colors.swift */,
@@ -206,7 +207,6 @@
 		5C6FB62D249C04850017A7AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5C24729324A8A96200E9028C /* NetworkManager.swift */,
 				5CA12EFF2458DD03006AC92B /* InputValuesManager.swift */,
 			);
 			path = Model;
