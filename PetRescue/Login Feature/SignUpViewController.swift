@@ -10,7 +10,7 @@ import UIKit
 class SignUpViewController: NavBarSetUp {
     // MARK: - Properties, instance
     private let identifier = "segueToAdoptions"
-    private let errorMessage = "Informations incorrectes"
+    private let errorMessage = "Vérifiez vos informations ou votre connexion"
     private let userManager = UserManager()
 
     // MARK: - Outlets
@@ -39,7 +39,7 @@ class SignUpViewController: NavBarSetUp {
         let isValidPassword = InputValuesManager.isValidPassword(password: password.text?.trimmingCharacters(in: .whitespaces))
         let isValidSecondPassword = InputValuesManager.isValidPassword(password: passwordValidation.text?.trimmingCharacters(in: .whitespaces))
         let deviceIsOnline = NetworkManager.connection() == true
-        
+
         if isEmailAddressValid &&
             deviceIsOnline &&
             passwordsAreEquals &&

@@ -13,7 +13,7 @@ class SignInViewController: NavBarSetUp {
 
     // MARK: - Properties, instance
     private let identifier = "segueToAdoptions"
-    private let erroMessage = "Adresse mail ou mot de passe incorrect"
+    private let erroMessage = "Vérifiez vos informations ou votre connexion"
     private let userManager = UserManager()
 
     // MARK: - Outlets
