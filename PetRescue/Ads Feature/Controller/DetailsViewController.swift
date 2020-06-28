@@ -52,6 +52,12 @@ class DetailsViewController: NavBarSetUp {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == identifier {
             let detailsVC = segue.destination as! ChatViewController

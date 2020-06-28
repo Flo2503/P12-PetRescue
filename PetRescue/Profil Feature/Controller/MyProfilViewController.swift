@@ -40,6 +40,12 @@ class MyProfilViewController: UIViewController {
         tableView.reloadData()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
+
     private func importDetails() {
         if let name = user?.name, let firstName = user?.firstName, let email = user?.emailAddress {
             userInfo.append(name)

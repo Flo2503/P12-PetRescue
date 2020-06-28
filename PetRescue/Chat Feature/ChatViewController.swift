@@ -44,6 +44,12 @@ class ChatViewController: MessagesViewController {
         getChat()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         getUsers()
     }

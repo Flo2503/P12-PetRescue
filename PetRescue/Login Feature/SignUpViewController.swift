@@ -59,12 +59,18 @@ class SignUpViewController: NavBarSetUp {
         ])
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
+
     ///Call "createUser" allowing to create user on database. Use user input values: email, password, name and first name
     private func signUp() {
         if let email = emailAdress.text, let password = password.text, let name = name.text, let firstName = firstName.text {
             self.validateButton.isEnabled = false
             self.validateButton.layer.backgroundColor = Colors.customLightGreen.cgColor
-            userManager.createUser(email: email, password: password, name: name, firstName: firstName, callback: {success in
+            userManager.createUser(email: email, password: password, name: name, firstName: firstName, callback: { success in
                 if success {
                     self.validateButton.layer.backgroundColor = Colors.customGreen.cgColor
                     self.performSegue(withIdentifier: self.identifier, sender: self)

@@ -25,6 +25,12 @@ class ProfilMenuViewController: NavBarSetUp {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
 }
 
 // MARK: - Extension

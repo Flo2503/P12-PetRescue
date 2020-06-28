@@ -59,6 +59,12 @@ class MainFeedController: NavBarSetUp {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
+
     ///Handle refresh. Call "forceRetrieveData" allowing tu update ads in ''ads array" and display them
     @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
         adManager.forceRetrieveData(callback: { newAd in

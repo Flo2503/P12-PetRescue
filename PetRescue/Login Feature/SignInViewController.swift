@@ -50,6 +50,12 @@ class SignInViewController: NavBarSetUp {
         ItemSetUp.textFieldSetUp([emailAdress, password])
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
+
     ///Call "login" method in UserManager allow to login user on database with email and password
     private func login() {
         if let email = emailAdress.text?.trimmingCharacters(in: .whitespaces), let password = password.text?.trimmingCharacters(in: .whitespaces) {

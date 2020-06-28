@@ -51,4 +51,10 @@ class ResetPasswordViewController: UIViewController {
         ItemSetUp.textFieldSetUp([emailAdressResetPassword])
         ItemSetUp.buttonSetUp([validateResetPassword])
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
 }

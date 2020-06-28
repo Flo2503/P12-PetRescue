@@ -54,6 +54,12 @@ class ChangePasswordViewController: UIViewController {
         ItemSetUp.textFieldSetUp([newPassword, checkNewPassword])
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
+
     ///Hide user input text
     private func securePassword() {
         newPassword.isSecureTextEntry = true

@@ -61,6 +61,12 @@ class AddAdoptionViewController: UIViewController {
         ItemSetUp.makeRoundedButton([addPictureButton])
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
+
     ///Check text field ins't empty
     private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
         for item in textField {

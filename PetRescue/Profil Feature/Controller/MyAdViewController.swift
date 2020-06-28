@@ -32,6 +32,12 @@ class MyAdViewController: NavBarSetUp {
         })
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if NetworkManager.connection() == false {
+            NetworkManager.alert(controller: self)
+        }
+    }
+
     ///Prepare for segue giving the object of the selected ad to DetailsViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == identifier {
