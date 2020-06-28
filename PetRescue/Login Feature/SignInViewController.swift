@@ -32,7 +32,8 @@ class SignInViewController: NavBarSetUp {
     ///Check email is valid, fields are not empty, then call "login" method
     @IBAction func tapOnValidate(_ sender: Any) {
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdress.text!)
-        if isEmailAddressValid && fieldIsNotEmpty([password, emailAdress]) {
+        let deviceIsOnline = NetworkManager.connection() == true
+        if isEmailAddressValid && fieldIsNotEmpty([password, emailAdress]) && deviceIsOnline {
             login()
         } else {
             validateButton.layer.backgroundColor = UIColor.red.cgColor

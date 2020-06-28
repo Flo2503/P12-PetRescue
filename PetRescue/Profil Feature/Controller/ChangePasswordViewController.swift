@@ -34,9 +34,11 @@ class ChangePasswordViewController: UIViewController {
         let passwordsAreEquals = InputValuesManager.passwordsAreEquals(passwordOne: newPassword.text, passwordTwo: checkNewPassword.text)
         let isValidPassword = InputValuesManager.isValidPassword(password: newPassword.text?.trimmingCharacters(in: .whitespaces))
         let isValidSecondPassword = InputValuesManager.isValidPassword(password: checkNewPassword.text?.trimmingCharacters(in: .whitespaces))
+        let deviceIsOnline = NetworkManager.connection() == true
 
         if passwordsAreEquals
             && isValidPassword
+            && deviceIsOnline
             && isValidSecondPassword &&
             fieldIsNotEmpty([newPassword, checkNewPassword]) {
             changePassword()

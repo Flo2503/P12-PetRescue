@@ -22,7 +22,9 @@ class ResetPasswordViewController: UIViewController {
     ///Call "sendPasswordReset" when tap
     @IBAction func resetPassword(_ sender: Any) {
         let isEmailAddressValid = InputValuesManager.isValidEmailAddress(emailAddressString: emailAdressResetPassword.text!)
-        if isEmailAddressValid {
+        let deviceIsOnline = NetworkManager.connection() == true
+
+        if isEmailAddressValid && deviceIsOnline {
             if let email = emailAdressResetPassword.text {
                 userManager.sendPasswordReset(withEmail: email, callback: { success in
                     if success {

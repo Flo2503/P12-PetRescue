@@ -38,8 +38,10 @@ class SignUpViewController: NavBarSetUp {
         let passwordsAreEquals = InputValuesManager.passwordsAreEquals(passwordOne: password.text, passwordTwo: passwordValidation.text)
         let isValidPassword = InputValuesManager.isValidPassword(password: password.text?.trimmingCharacters(in: .whitespaces))
         let isValidSecondPassword = InputValuesManager.isValidPassword(password: passwordValidation.text?.trimmingCharacters(in: .whitespaces))
-
+        let deviceIsOnline = NetworkManager.connection() == true
+        
         if isEmailAddressValid &&
+            deviceIsOnline &&
             passwordsAreEquals &&
             isValidPassword &&
             isValidSecondPassword &&

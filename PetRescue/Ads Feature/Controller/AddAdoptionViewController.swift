@@ -38,7 +38,8 @@ class AddAdoptionViewController: UIViewController {
 
     @IBAction func tapOnCreateAd(_ sender: Any) {
         let textIsNotEmpty = fieldIsNotEmpty([animalName, animalKind, locality])
-        if textIsNotEmpty && !infosTextView.text.isEmpty {
+        let deviceIsOnline = NetworkManager.connection() == true
+        if textIsNotEmpty && !infosTextView.text.isEmpty && deviceIsOnline {
             createAd()
         } else {
             addButton.setTitleColor(.red, for: .normal)

@@ -24,8 +24,10 @@ class EditEmailViewController: UIViewController {
     ///Check email is valid and text field isn't empty, call "editEmail"
     @IBAction func tapValidateButton(_ sender: Any) {
         let isValidEmail = InputValuesManager.isValidEmailAddress(emailAddressString: newEmailAddress.text)
+        let deviceIsOnline = NetworkManager.connection() == true
 
         if isValidEmail &&
+            deviceIsOnline &&
             fieldIsNotEmpty([newEmailAddress]) {
             editEmail()
         } else {
