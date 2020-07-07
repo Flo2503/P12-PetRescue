@@ -3,7 +3,7 @@
 # Pet Rescue
 
 ## Tools
-* Add libraries to Xcode project using Cocoa **Pods** :
+* Add libraries to Xcode project using **Cocoa Pods** :
   * __IQKeyboardManager__ prevent text fields from being hidden by the keyboard
   * __MessageKit__ make adding chat 💬 to a project easy
 
@@ -16,18 +16,23 @@
  ## What is Pet Rescue ?
 The objective of the Pet Rescue application is to connect associations offering animals for adoption with individuals seeking to adopt.
 
-## Signup and authentification screens
+## Sign up and authentification
 Allow user to create an account or sign in with existing account. 
 User can also request reset passaword.
 
 <img src="img/login.png" width="200">.   <img src="img/signin.png" width="200">.   <img src="img/signup.png" width="200">
 
 ## Ads
-User can create an ad which wil be diplayed in the main feed with all posted ads. 
+User can create an ad which will be displayed in the main feed with all posted ads. 
 Tap on ad allows user to see the details of it
 
 <img src="img/add.png" width="200">.    <img src="img/feed.png" width="200">.    <img src="img/details.png" width="200">
 
+## Profil
+User can access to his profil where he can change password and email address.
+He can also access to his posted ads and delete those of his choice.
+
+<img src="img/myprofil.png" width="200">.   <img src="img/myads.png" width="200">.
 
 
 
