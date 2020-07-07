@@ -32,7 +32,9 @@ Tap on ad allows user to see the details of it
 User can access to his profil where he can change password, change email address and log out.
 He can also access to his posted ads and delete those of his choice.
 
-<img src="img/myprofil.png" width="200">.   <img src="img/myads.png" width="200">.
+<img src="img/profilmenu.png" width="200">.    <img src="img/myprofil.png" width="200">.   <img src="img/myads.png" width="200">.    <img src="img/deletead.png" width="200">.
+
+<img src="img/changepassword.png" width="200">.    <img src="img/editmail.png" width="200">.    <img src="img/logout.png" width="200">.
 
 ## Chat
 
