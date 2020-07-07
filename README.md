@@ -10,7 +10,7 @@
 * Store datas in cloud with **Firebase** :
   * __Firebase Authentification__ for personalized authentication
   * __Cloud Firestore__ store users chat
-  * __Realtime Databse__ store users datas and ads datas
+  * __Realtime Database__ store users datas and ads datas
   * __Firebase Storage__ store pictures of animals from ads 
   
  ## What is Pet Rescue ?
@@ -29,11 +29,14 @@ Tap on ad allows user to see the details of it
 <img src="img/add.png" width="200">.    <img src="img/feed.png" width="200">.    <img src="img/details.png" width="200">
 
 ## Profil
-User can access to his profil where he can change password and email address.
+User can access to his profil where he can change password, change email address and log out.
 He can also access to his posted ads and delete those of his choice.
 
 <img src="img/myprofil.png" width="200">.   <img src="img/myads.png" width="200">.
 
+## Chat
+
+<img src="img/chanels.png" width="200">.   <img src="img/message.png" width="200">.
 
 
 
