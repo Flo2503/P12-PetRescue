@@ -37,8 +37,9 @@ He can also access to his posted ads and delete those of his choice.
 <img src="img/changepassword.png" width="200">.    <img src="img/editmail.png" width="200">.    <img src="img/logout.png" width="200">.
 
 ## Chat
+User can contact the association who posted ad thanks to the icon chat in animal details screen.
 
-<img src="img/chanels.png" width="200">.   <img src="img/message.png" width="200">.
+<img src="img/details.png" width="200">   <img src="img/message.png" width="200">.    <img src="img/chanels.png" width="200">.
 
 
 
