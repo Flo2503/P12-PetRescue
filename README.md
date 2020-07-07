@@ -39,7 +39,7 @@ He can also access to his posted ads and delete those of his choice.
 ## Chat
 User can contact the association who posted ad thanks to the icon chat in animal details screen.
 
-<img src="img/details.png" width="200">   <img src="img/message.png" width="200">.    <img src="img/chanels.png" width="200">.
+<img src="img/details2.png" width="200">   <img src="img/message.png" width="200">.    <img src="img/chanels.png" width="200">.
 
 
 
