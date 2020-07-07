@@ -17,8 +17,19 @@
 The objective of the Pet Rescue application is to connect associations offering animals for adoption with individuals seeking to adopt.
 
 ## Signup and authentification screens
+Allow user to create an account or sign in with existing account. 
+User can also request reset passaword.
 
-<img src="img/login.png" width="180"> <img src="img/signup.png" width="180">
+<img src="img/login.png" width="200">.   <img src="img/signin.png" width="200">.   <img src="img/signup.png" width="200">
+
+## Main feed screen and "add and ad" screen
+Displays all posted ads.
+
+<img src="img/feed.png" width="200">.    <img src="img/add.png" width="200">
+
+
+
+
 
 
 
