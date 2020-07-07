@@ -22,10 +22,11 @@ User can also request reset passaword.
 
 <img src="img/login.png" width="200">.   <img src="img/signin.png" width="200">.   <img src="img/signup.png" width="200">
 
-## Main feed screen and "add and ad" screen
-Displays all posted ads.
+## Ads
+User can create an ad which wil be diplayed in the main feed with all posted ads. 
+Tap on ad allows user to see the details of it
 
-<img src="img/feed.png" width="200">.    <img src="img/add.png" width="200">
+<img src="img/add.png" width="200">.    <img src="img/feed.png" width="200">.    <img src="img/details.png" width="200">
 
 
 
