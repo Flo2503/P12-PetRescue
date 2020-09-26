@@ -16,7 +16,6 @@
 		5C5C1D9D24767A7B0079DB95 /* MyAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C1D9A24767A7B0079DB95 /* MyAdViewController.swift */; };
 		5C5C1D9E24767A7B0079DB95 /* ProfilMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C1D9B24767A7B0079DB95 /* ProfilMenuViewController.swift */; };
 		5C5C1DA324767FE70079DB95 /* MyAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C1DA224767FE70079DB95 /* MyAdTableViewCell.swift */; };
-		5C5C1DA5247805C60079DB95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C5C1DA4247805C60079DB95 /* GoogleService-Info.plist */; };
 		5C6FB634249E2A500017A7AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FB633249E2A500017A7AE /* User.swift */; };
 		5C6FB636249E2AD50017A7AE /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FB635249E2AD50017A7AE /* Ad.swift */; };
 		5C867E6224901A4B0011D488 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C867E6124901A4B0011D488 /* Chat.swift */; };
@@ -40,6 +39,7 @@
 		5CCB2DD42454CD070038038A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD32454CD070038038A /* UserManager.swift */; };
 		5CCB2DD62454E45A0038038A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB2DD52454E45A0038038A /* SignUpViewController.swift */; };
 		5CD4148824622C2A00FFDB30 /* TabBarSetUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */; };
+		5CF11F15251FA8DF001F6CE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CF11F14251FA8DF001F6CE3 /* GoogleService-Info.plist */; };
 		5CF24C2C2452306B00077B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2B2452306B00077B33 /* AppDelegate.swift */; };
 		5CF24C2E2452306B00077B33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF24C2D2452306B00077B33 /* SceneDelegate.swift */; };
 		5CF24C332452306B00077B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF24C312452306B00077B33 /* Main.storyboard */; };
@@ -71,7 +71,6 @@
 		5C5C1D9A24767A7B0079DB95 /* MyAdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAdViewController.swift; sourceTree = "<group>"; };
 		5C5C1D9B24767A7B0079DB95 /* ProfilMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilMenuViewController.swift; sourceTree = "<group>"; };
 		5C5C1DA224767FE70079DB95 /* MyAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdTableViewCell.swift; sourceTree = "<group>"; };
-		5C5C1DA4247805C60079DB95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C6FB633249E2A500017A7AE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C6FB635249E2AD50017A7AE /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		5C867E6124901A4B0011D488 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		5CCB2DD32454CD070038038A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5CCB2DD52454E45A0038038A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5CD4148724622C2A00FFDB30 /* TabBarSetUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSetUpController.swift; sourceTree = "<group>"; };
+		5CF11F14251FA8DF001F6CE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5CF24C282452306B00077B33 /* PetRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF24C2B2452306B00077B33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CF24C2D2452306B00077B33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,7 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				5CF24C3C2452307000077B33 /* Info.plist */,
-				5C5C1DA4247805C60079DB95 /* GoogleService-Info.plist */,
+				5CF11F14251FA8DF001F6CE3 /* GoogleService-Info.plist */,
 				5CF24C51245336C000077B33 /* Support */,
 				5CF24C502453369E00077B33 /* Storyboard */,
 				5C6FB62C249C04410017A7AE /* Display Setup */,
@@ -417,7 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CF24C3B2452307000077B33 /* LaunchScreen.storyboard in Resources */,
-				5C5C1DA5247805C60079DB95 /* GoogleService-Info.plist in Resources */,
+				5CF11F15251FA8DF001F6CE3 /* GoogleService-Info.plist in Resources */,
 				5CF24C382452307000077B33 /* Assets.xcassets in Resources */,
 				5CF24C332452306B00077B33 /* Main.storyboard in Resources */,
 			);
