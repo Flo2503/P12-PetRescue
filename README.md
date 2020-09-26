@@ -19,8 +19,9 @@ The objective of the Pet Rescue application is to connect associations offering 
 ## Sign up and authentification
 Allow user to create an account or sign in with existing account. 
 User can also request reset password.
-
-<img src="img/login.jpg" width="200">         <img src="img/signin.jpg" width="200">         <img src="img/signup.jpg" width="200">
+<p align="center">
+<img src="img/login.jpg" width="250">         <img src="img/signin.jpg" width="250">         <img src="img/signup.jpg" width="250">
+</p>
 
 ## Ads
 User can create an ad which will be displayed in the main feed with all posted ads. 
