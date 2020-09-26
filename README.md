@@ -27,20 +27,20 @@ User can also request reset password.
 User can create an ad which will be displayed in the main feed with all posted ads. 
 Tap on ad allows user to see the details of it
 <p align="center">
-<img src="img/add.jpg" width="300">          <img src="img/feed.jpg" width="300">          <img src="img/details.jpg" width="300">
+<img src="img/add.jpg" width="250">          <img src="img/feed.jpg" width="250">          <img src="img/details.jpg" width="250">
 </p>
 
 ## Profil
 User can access to his profil where he can change password, change email address and log out.
 He can also access to his posted ads and delete those of his choice.
 <p align="center">
-<img src="img/profilMenu.jpg" width="300">          <img src="img/myProfil.jpg" width="300">         <img src="img/myAds.jpg" width="300">
+<img src="img/profilMenu.jpg" width="250">          <img src="img/myProfil.jpg" width="250">         <img src="img/myAds.jpg" width="250">
 </p>
 
 ## Chat
 User can contact the association who posted ad thanks to the icon chat in animal details screen.
 <p align="center">
-<img src="img/details.jpg" width="300">         <img src="img/messages.jpg" width="300">          <img src="img/channels.jpg" width="300">
+<img src="img/details.jpg" width="250">         <img src="img/messages.jpg" width="250">          <img src="img/channels.jpg" width="250">
 </p>
 
 
